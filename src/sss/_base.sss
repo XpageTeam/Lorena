@@ -1,0 +1,224 @@
+html
+	font-size: 100%
+
+input, a, button, textarea, select
+	outline: none
+
+*::-webkit-input-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*:-moz-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*::-moz-placeholder
+	color: #adb4c6
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #adb4c6
+	opacity: 1
+
+.swiper-button-disabled
+	opacity: .5
+	pointer-events: none
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
+	-webkit-appearance: none
+	appearance: none
+	font: inherit
+
+	&:focus
+
+		&::-webkit-input-placeholder
+			opacity: 0
+
+		&:-moz-placeholder
+			opacity: 0
+
+		&::-moz-placeholder
+			opacity: 0
+
+		&:-ms-input-placeholder
+			opacity: 0
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select
+	border-radius: 0
+
+// #{$all-text-inputs}
+
+// 	&:not(.form-control):not(.comment-form__text)
+	
+// 		&::-webkit-input-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&:-moz-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&::-moz-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+// 		&:-ms-input-placeholder
+// 			color: #fff
+// 			opacity: 1
+
+*, *:after, *:before
+	box-sizing: border-box
+
+*[v-cloak]
+	display: none
+
+i.rub
+	font-family: "Roboto"
+	font-style: normal
+
+address
+	font-weight: inherit
+
+body
+	min-width: 320px
+	line-height: lh(22, 16)
+	font-family: var(--default-font)
+	font-weight: 400
+	font-size: 16px
+	background: #fff
+	color: #000
+	position: relative
+	left: 0
+	display: flex
+	flex-direction: column
+	width: 100%
+	min-height: 100vh
+
+select
+	-webkit-appearance: none
+	/* for FF */
+	-moz-appearance: none
+	text-indent: 0.01px
+	text-overflow: ''
+	/* for IE */
+	-ms-appearance: none
+	appearance: none!important
+
+	&::-ms-expand 
+		display: none
+
+.head, .footer
+	flex: none
+
+#content
+	height: 100%
+	// display: flex
+	flex-direction: column
+	transition: transform .8s ease
+	will-change: transform
+	z-index: 2
+
+a
+	color: #000
+	font-weight: inherit
+	text-decoration: none
+
+	&[href^="tel"], &[href^="mail"]
+		white-space: nowrap
+
+	&:not([class])
+		color: var(--main-color)
+		border-bottom: 1px solid transparent
+
+		&:hover, &:focus
+			border-color: currentColor
+
+.wrapper
+	// width: var(--baseWidth)
+	max-width: var(--base-width)
+	padding: 0 20px
+	margin: 0 auto
+	box-sizing: content-box
+
+input[type="submit"], button
+	cursor: pointer
+
+img, svg
+	max-width: 100%
+
+li
+	list-style: none
+
+.table-wrap
+	position: relative
+
+	&__track
+		overflow-x: auto
+		-webkit-overflow-scrolling: touch
+
+	&__shadow
+		width: 12px
+		position: absolute 0 *
+		pointer-events: none
+		background: linear-gradient(to right, rgba(#fff, .0001), rgba(#000, .1))
+		opacity: 0
+
+		&--left
+			left: 0	
+			transform: rotateZ(180deg)
+
+		&--right
+			right: 0
+
+.ico
+	display: block
+
+.soc
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: -10px
+
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 10px
+
+		&:not(:last-child)
+			margin-right: 30px
+
+.quality-btn
+	border-radius: 30px
+	background: url("../img/ico-quality.png") left 36px center no-repeat
+	background-color: var(--mainColor)
+	transition: background-color .3s ease
+	color: #fff
+	display: inline-block
+	padding: 15px 27px 16px 60px
+
+	&:hover, &:focus
+		background-color: lighten(#cb2b21, .1)
+
+.swiper-list
+	overflow: hidden
+
+.default-btn
+	border-radius: 31px
+	padding: 15px 39px 17px
+	line-height: 1
+	border: 1px solid var(--mainColor)
+	color: #fff var(--mainColor)
+	display: inline-block
+	transition: background .3s ease
+	white-space: nowrap
+
+	&:hover, &:focus
+		background: #df2f24
+
+.orange-arrow
+	display: flex
+	color: #fff
+	align-items: center
+
+	&__arrow
+		flex: none

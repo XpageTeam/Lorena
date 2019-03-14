@@ -1,0 +1,89 @@
+.head
+	position: absolute 0 * * 0
+	width: 100%
+	z-index: 3
+	color: #fff
+	text-transform: uppercase
+
+	&__wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 37px 90px 30px 40px
+
+	&__menu
+		margin: 0 1.15vw
+
+	&__links
+		display: flex
+
+		&-lc, &-fav
+
+			&:not(:last-child)
+				margin-right: 30px
+
+	a
+		color: inherit
+
+.h-favorites
+
+	&[data-count]
+		position: relative
+
+		&:after
+			content: attr(data-count)
+			color: #fff
+			position: absolute * * 100% calc(100% + 8px)
+			font-weight: 500
+			font-size: 10px
+
+.h-phone
+	font-weight: 400
+
+.h-menu
+	display: flex
+
+	&__item
+
+		&:not(:last-child)
+			margin-right: vw(60)
+
+	&__link
+		position: relative
+
+		&:after
+			content: ""
+			pointer-events: none
+			position: absolute calc(100% + 12px) 6px *
+			height: 2px
+			background: var(--main-color)
+			transition: transform .3s ease
+			transform: scaleX(0)
+
+		&:matches(:hover, :focus, .active)
+
+			&:after
+				transform: scaleX(1)
+
+.h
+
+	&-lc, &-favorites
+		display: block
+
+	&-lc
+
+		.ico
+			size: 17px 20px
+
+	&-favorites
+
+		.ico
+			size: 19px 18px
+
+.constructor-link
+	display: flex
+	align-items: center
+
+	&__icon
+		size: 18px
+		margin-right: 17px

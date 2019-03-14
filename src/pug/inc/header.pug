@@ -1,0 +1,31 @@
+header.head
+	.head__wrap
+		.head__logo
+			a.logo(href="#")
+				img(src="img/logo.svg")
+		.head__phone
+			address.h-phone
+				a(href="tel: 8 800 200 92 20") 
+					b 8 800 
+					| 200 92 20
+		nav.head__menu
+			ul.h-menu
+				li._item.-have-sub
+					a.h-menu__link.active(href="#") Компания
+				each item in ["Кухни", "Покупателю", "Акции", "Где купить?", ]
+					li._item.-have-sub
+						a.h-menu__link(href="#")=item
+		.head__constructor
+			a.constructor-link(href="#") 
+				svg._icon.ico
+					use(xlink:href="#ico-gear")
+				span._text Конструктор
+		.head__links
+			.head__links-lc
+				a.h-lc(href="#")
+					svg.ico
+						use(xlink:href="#ico-lc")
+			.head__links-fav
+				a.h-favorites(href="#" data-count="3")
+					svg.ico
+						use(xlink:href="#ico-favorite")

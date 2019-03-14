@@ -1,0 +1,45 @@
+.main-slider
+	overflow: hidden
+
+.main-slide
+
+	&__img
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute 0
+			background: rgba(#000, .5)
+			z-index: 2
+
+		img
+			display: block
+			width: 100%
+
+			&[data-src]
+				min-height: 100vh
+
+	&__title
+		position: absolute 0
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-start
+		z-index: 3
+		color: #fff
+		margin: 0 auto
+		padding: 0 20px
+		max-width: var(--base-width)
+		box-sizing: content-box
+
+		&-subtitle
+			text-transform: uppercase
+			font-weight: 500
+
+			&:not(:last-child)
+				margin-bottom: 34px
+
+		&-title
+			font-size: 64px
+			line-height: calc(62 / 64)
+			font-weight: bold
