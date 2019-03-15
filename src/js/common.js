@@ -1,4 +1,4 @@
-// import $ from "jquery"
+import $ from "jquery"
 // import is from "is_js"
 
 // import "selectize/dist/js/selectize.min.js"
@@ -10,8 +10,8 @@
 // import "./forms.js"
 
 
-// window.$ = $;
-// window.jQuery = $;
+window.$ = $;
+window.jQuery = $;
 
 
 // let scrollTimeout;

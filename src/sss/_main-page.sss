@@ -1,6 +1,24 @@
 .main-slider
 	overflow: hidden
 
+	.swiper
+
+		&-slide
+
+			&-active.js__lazy-ready
+
+				.main-slide
+
+					&__title
+
+						&-btn, &-title, &-subtitle
+							opacity: 1
+							transform: translate3d(0, 0, 0)
+
+				.string
+					transform: translate3d(0, 0, 0) !important
+					opacity: 1
+
 .main-slide
 
 	&__img
@@ -35,6 +53,7 @@
 		&-subtitle
 			text-transform: uppercase
 			font-weight: 500
+			transition-delay: 0s !important
 
 			&:not(:last-child)
 				margin-bottom: 34px
@@ -43,3 +62,23 @@
 			font-size: 64px
 			line-height: calc(62 / 64)
 			font-weight: bold
+			transition-delay: .4s !important
+
+			&:not(:last-child)
+				margin: 0 0 100px
+
+		&-btn
+			transition-delay: .9s !important
+
+		&-btn, &-title, &-subtitle
+			transform: translate3d(0, -50px, 0)
+			transition: transform .7s ease, opacity .7s ease
+			opacity: 0
+
+.string
+	white-space: nowrap
+	transition: transform .7s ease, opacity .7s ease
+	opacity: 0
+
+	br
+		display: none

@@ -222,3 +222,34 @@ li
 
 	&__arrow
 		flex: none
+		border-radius: 50%
+		background: var(--main-color)
+		size: 39px
+		position: relative
+
+		&:not(:last-child)
+			margin-right: 20px
+
+		&:matches(:after, :before)
+			content: ""
+			position: absolute
+
+		&:after
+			top: calc(50% - 3px) 
+			right: calc(50% - 3px)
+			border-right: 1px solid #fff
+			border-bottom: 1px solid #fff
+			size: 5px
+			transform: rotateZ(45deg)
+			z-index: 1
+
+		&:before
+			background: url("../img/btn-highlight.png") no-repeat
+			size: width("../img/btn-highlight.png")
+			pointer-events: none
+			top: calc(50% - height("../img/btn-highlight.png") / 2)
+			left: calc(50% - width("../img/btn-highlight.png") / 2)
+
+
+	&__text
+		z-index: 1
