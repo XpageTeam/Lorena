@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", e => {
 	;(function(){
 		const mainSlider = new Swiper(".main-slider", {
 			loop: true,
+			initialSlide: 1,
 			lazy: {
 				loadPrevNext: true,
 			},
