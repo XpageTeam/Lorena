@@ -6,6 +6,8 @@ Swiper.use([Lazy, EffectFade])
 
 document.addEventListener("DOMContentLoaded", e => {
 	;(function(){
+		let flag = false;
+
 		const mainSlider = new Swiper(".main-slider", {
 			loop: true,
 			effect: "fade",
@@ -17,14 +19,17 @@ document.addEventListener("DOMContentLoaded", e => {
 			},
 			on: {
 				lazyImageReady(slideEl, imageEl){
+					if (!flag)
+						setTimeout(function(){
+							mainSlider.slideNext()
+						}, 2500)
+
+					flag = true;
+
 					slideEl.classList.add("js__lazy-ready")
 				}
 			}
 		});
-
-		setTimeout(function(){
-			mainSlider.slideNext()
-		}, 2100)
 	})()
 
 
@@ -153,7 +158,7 @@ document.addEventListener("DOMContentLoaded", e => {
 							onComplete(){
 								const textArea = dot.querySelector(".text");
 
-								TweenLite.to(textArea, .3, {
+								TweenLite.to(textArea, .5, {
 									autoAlpha: 1
 								})
 							}
@@ -167,8 +172,8 @@ document.addEventListener("DOMContentLoaded", e => {
 						autoAlpha: 1
 					})
 
-					TweenLite.to(wave, .4, {
-						delay: .09 * i,
+					TweenLite.to(wave, .7, {
+						delay: .12 * i,
 						scale: 2.1,
 						autoAlpha: 0,
 						onComplete(){
