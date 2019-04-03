@@ -1,0 +1,1 @@
+npm uninstall babel-core babel-loader babel-polifyl babel-preset-env webpack -D

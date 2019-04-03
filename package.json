@@ -12,10 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.1.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.7",
     "but": "^2.0.1",
     "child_process": "^1.0.2",
@@ -57,8 +53,7 @@
     "style-loader": "^0.23.0",
     "sugarss": "^2.0.0",
     "uglify-js-plugin": "0.0.6",
-    "vinyl-ftp": "^0.6.1",
-    "webpack": "^3.12.0"
+    "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
     "gsap": "^2.1.2",

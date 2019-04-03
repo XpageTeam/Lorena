@@ -93,11 +93,11 @@ gulp.task("postcss", _ =>
 			require("postcss-short"),
 			require("postcss-preset-env"),
 			require("postcss-assets"),
-			require("autoprefixer"),
 			require("postcss-flexbugs-fixes"),
 			require("postcss-nesting"),
 			require("postcss-nested"),
 			require("postcss-font-magician")(require("./config/fonts.js")),
+			require("autoprefixer"),
 			require("cssnano"),
 			// require("precss"),
 		], {parser: require("sugarss")})).on("error", $.notify.onError())
