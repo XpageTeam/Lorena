@@ -4,8 +4,7 @@ const $ = require("gulp-load-plugins")(),
 	gulp = require("gulp"),
 	browserSync = require("browser-sync").create(),
 	gutil = require("gulp-util"),
-	sourcemaps = require("gulp-sourcemaps"),
-	postcss = require("gulp-postcss"),
+	sourcemap = require("gulp-sourcemaps"),
 	ftp = require("vinyl-ftp");
 
 let process = require("child_process"),
@@ -60,9 +59,9 @@ gulp.task("svg", e =>
 
 				//$("[stroke]").removeAttr("stroke")
 
-				$("[style]").removeAttr("style")
-				$("[width]").removeAttr("width")
-				$("[height]").removeAttr("height")
+				//$("[style]").removeAttr("style")
+				//$("[width]").removeAttr("width")
+				//$("[height]").removeAttr("height")
 			},
 			parserOptions: {
 				xmlMode: true
@@ -84,7 +83,7 @@ gulp.task("postcss", _ =>
 			"src/sss/*.sss", 
 			"!src/sss/_*.sss"
 		])
-		.pipe(sourcemaps.init())
+		.pipe(sourcemap.init())
 		.pipe($.postcss([
 			require("postcss-import"),
 			require('postcss-functions')({
@@ -104,7 +103,7 @@ gulp.task("postcss", _ =>
 		.pipe($.rename(path => {
 			path.extname = path.extname == ".sss" ? ".css" : path.extname;
 		}))
-		.pipe(sourcemaps.write("."))
+		.pipe(sourcemap.write("."))
 		.pipe(gulp.dest("dist/css"))
 );
 
@@ -180,9 +179,9 @@ gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "de
 
 
 const local = _ => {
-	var WP = process.exec("npm run webpack");
-	gulp.watch(["src/sss/*.sss"], gulp.series("postcss"))
+	var WP = process.exec("npm run watch");
 	gulp.watch('src/pug/**/*', gulp.series("pug"))
+	gulp.watch('src/sss/**/*.sss', gulp.series("postcss"))
 	gulp.watch("src/img/**/*", gulp.series("imagemin"))
 	gulp.watch("src/img/**/*.svg", gulp.series("svg"))
 },
@@ -192,7 +191,7 @@ watch = _ => {
 	gulp.watch("dist/img/**/*", gulp.series("deploy:img"))
 };
 
-gulp.task("deploy-to-server", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), gulp.parallel(local, watch)));
+gulp.task("deploy-to-server", gulp.series(gulp.parallel( "postcss", "pug", "imagemin"), gulp.parallel(local, watch)));
 
 gulp.task("finish:him", gulp.series(gulp.parallel("postcss", "imagemin"), gulp.parallel("deploy:css", "deploy:js")));
 

@@ -1,2 +1,33 @@
 footer.footer
-	
+	._wrap
+		.footer-top
+			._soc
+				.footer-top__soc-title Присоединяйся
+				.soc
+					a._link(href="#")
+						img(src="img/ico-vk.svg")
+					a._link(href="#")
+						img(src="img/ico-fb.svg")
+					a._link(href="#")
+						img(src="img/ico-yt.svg")
+			nav._menu
+				each menu, i in [{title: "Компания", list: ["Новости", "Партнеры", "Преимущества", "Ваша карьера", ]}, {title: "Коллекция", list: ["Городская классика", "Современная коллекция/Модерн", "Классика", ]}, {title: "Покупателю", list: ["Цена", "Рассрочка", "Отзывы", "Полезное", "7 шагов к Вашей кухне"]}, {title: "Распродажа", list: ["Акции"]}, {title: "Дилерам", list: ["Адреса салонов", "Новые открытия",]}, ]
+					ul.f-menu
+						li._item.-title
+							a.f-menu__link(href="#")=menu.title
+						each item in menu.list
+							li._item
+								a.f-menu__link(href="#")=item
+						if (i == 3)
+							li._item.-title
+								a.f-menu__link(href="#") Где купить?
+		.footer-bot
+			._copy
+				span © 2019 «LORENA кухни»
+				a(href="#") Политика конфиденциальности
+			address._phone
+				a(href="tel: 8 (800) 200-92-20") 8 (800) 200-92-20
+				span Будем рады сотрудничеству:
+			._developer
+				a.dev(href="#")
+					img(src="img/ico-developer.svg")

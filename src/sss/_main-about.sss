@@ -1,0 +1,67 @@
+.main-about
+
+	&__cont
+		background: var(--second-color)
+		padding: 140px 0 150px
+		color: #fff
+
+.main-about
+	display: flex
+	align-items: center
+
+	&__counter
+		flex: none
+
+	&__text
+		margin-left: 150px
+		max-width: 550px
+		font-size: 24px
+		line-height: calc(35 / 24)
+
+		&-btn
+			margin: 60px 0 0
+
+.about-counters
+
+	&__bottom
+		padding-left: 65px
+		margin-top: -5px
+
+		.counter
+
+			&__number
+				color: #fff
+
+	&__top
+
+		.counter
+
+			&__text
+				padding-top: 45px
+
+.counter
+	display: flex
+	align-items: flex-end
+
+	&__number
+		color: #282828
+		font-size: 250px
+		font-weight: bold
+		text-transform: uppercase
+		line-height: .7
+
+	&__text
+		white-space: nowrap
+		writing-mode: vertical-rl
+		transform: rotateZ(180deg) translateX(-10px)
+		line-height: 17px
+		font-weight: 300
+		text-transform: lowercase
+
+		&:before
+			content: ""
+			display: inline-block
+			border-radius: 50%
+			background: var(--main-color)
+			size: 9px
+			margin-bottom: 20px

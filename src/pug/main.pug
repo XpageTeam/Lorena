@@ -33,8 +33,27 @@ html(lang="ru")
 								.swiper-lazy-preloader
 							._svg
 								include ../img/scene.svg
+			.main-about__cont
+				.wrapper
+					.main-about
+						._counters
+							.about-counters
+								._top
+									.counter
+										._number(data-from="0" data-to="3") 3
+										._text Направления
+								._bottom
+									.counter
+										._number(data-from="0" data-to="57") 57
+										._text Моделей
+						._text
+							.text-page
+								p О какой кухне вы всегда мечтали? Большая, светлая, полная солнца? Уже 29 лет компания «LORENA кухни» занимается производством кухонных гарнитуров по индивидуальным проектам
+							.main-about__text-btn
+								a.arrow-btn(href="#") Каталог
 		#sprite(style="display: none")
 			<!-- Эту свг нужно вставлять инклюдом, т.к. она может меняться -->
 			include symbol/sprite.svg
 		include inc/scripts.pug
+		include inc/footer.pug
 		script(src="js/main-page.js")

@@ -48,6 +48,19 @@
 		&:not(:last-child)
 			margin-right: vw(60)
 
+		&--have-sub
+
+			.h-menu__link
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute calc(50% - 5px) -20px * *
+					border-right: 1px solid #737373
+					border-bottom: 1px solid #737373
+					size: 5px
+					transform: rotateZ(45deg)
+
 	&__link
 		position: relative
 
