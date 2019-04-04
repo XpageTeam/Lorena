@@ -1,0 +1,40 @@
+.main-catalog
+	position: relative
+
+	&__list
+		position: absolute 0
+		background: rgba(#000, .3)
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+	&__bg
+		display: block
+
+		img
+			display: block
+			width: 100%
+
+.catalog-list
+	margin: 0 auto
+	width: 100%
+	max-width: 1642px
+	display: flex
+	justify-content: space-between
+	align-items: flex-end
+
+	&__item
+		width: 384px
+
+.catalog-item
+
+	&__title
+		font-weight: 600
+		font-size: 24px
+		display: block
+		color: #fff
+		padding-bottom: 32px
+		border-bottom: 1px solid #fff
+
+		&:not(:last-child)
+			margin-bottom: 48px

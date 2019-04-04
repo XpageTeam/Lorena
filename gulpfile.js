@@ -183,7 +183,7 @@ const local = _ => {
 	gulp.watch('src/pug/**/*', gulp.series("pug"))
 	gulp.watch('src/sss/**/*.sss', gulp.series("postcss"))
 	gulp.watch("src/img/**/*", gulp.series("imagemin"))
-	gulp.watch("src/img/**/*.svg", gulp.series("svg"))
+	//gulp.watch("src/img/**/*.svg", gulp.series("svg"))
 },
 watch = _ => {
 	gulp.watch("dist/css/**/*", gulp.series("deploy:css"))
@@ -195,6 +195,6 @@ gulp.task("deploy-to-server", gulp.series(gulp.parallel( "postcss", "pug", "imag
 
 gulp.task("finish:him", gulp.series(gulp.parallel("postcss", "imagemin"), gulp.parallel("deploy:css", "deploy:js")));
 
-gulp.task("default", gulp.series(gulp.parallel("postcss", "pug", "imagemin", "move:fonts", "svg"), gulp.parallel(local, "browser-sync")))
+gulp.task("default", gulp.series(gulp.parallel("postcss", "pug", "imagemin", "move:fonts"/*, "svg"*/), gulp.parallel(local, "browser-sync")))
 
 gulp.task('clearcache', (callback) => { $.cache.clearAll(); callback();});

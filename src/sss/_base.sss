@@ -240,6 +240,15 @@ li
 	color: #fff
 	align-items: center
 
+	&--highlighted
+
+		.orange-arrow
+
+			&__arrow
+
+				&:before
+					opacity: 1
+
 	&__arrow
 		flex: none
 		border-radius: 50%
@@ -269,6 +278,17 @@ li
 			pointer-events: none
 			top: calc(50% - height("../img/btn-highlight.png") / 2)
 			left: calc(50% - width("../img/btn-highlight.png") / 2)
+			opacity: 0
+			transition: opacity .3s ease
+
+	&:hover, &:focus
+
+		.orange-arrow
+
+			&__arrow
+
+				&:before
+					opacity: 1
 
 
 	&__text

@@ -55,6 +55,7 @@
 .footer-bot
 	margin: 50px 0 0
 	align-items: center
+	font-size: 14px
 
 	&__developer
 		margin-left: auto
@@ -62,3 +63,25 @@
 	&__copy
 		width: persent(325)
 		padding-right: 20px
+
+		span
+			display: block
+
+	&__copy, &__phone
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+
+		a
+			transition: color .3s ease
+
+			&:not(:hover, :focus)
+				color: #282828
+
+			&:not([href*="tel"])
+
+				&:not(:first-child)
+					margin: 5px 0 0
+
+			&[href*="tel"]
+				color: #fff !important

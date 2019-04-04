@@ -21,7 +21,7 @@ html(lang="ru")
 									br 
 									| в деталях
 								.main-slide__title-btn
-									a.orange-arrow(href="#") 
+									a.orange-arrow.-highlighted(href="#") 
 										span._arrow
 										span._text Нам есть 
 											br
@@ -51,9 +51,41 @@ html(lang="ru")
 								p О какой кухне вы всегда мечтали? Большая, светлая, полная солнца? Уже 29 лет компания «LORENA кухни» занимается производством кухонных гарнитуров по индивидуальным проектам
 							.main-about__text-btn
 								a.arrow-btn(href="#") Каталог
-		#sprite(style="display: none")
-			<!-- Эту свг нужно вставлять инклюдом, т.к. она может меняться -->
+			.main-catalog
+				picture._bg
+					source(srcset="img/photos/main-catalog-bg.jpg" media="screen and (min-width: 659px")
+					source(srcset="img/photos/main-catalog-bg-mobile.jpg" media="screen and (max-width: 660px")
+					img
+				._list
+					.catalog-list
+						._item
+							.catalog-item
+								a._title(href="#") Современная
+									br
+									| коллекция/модерн
+								._btn
+									a.orange-arrow(href="#") 
+										span._arrow
+										span._text Смотреть коллецию
+						._item
+							.catalog-item
+								a._title(href="#") Городская
+									br
+									| классика
+								._btn
+									a.orange-arrow(href="#") 
+										span._arrow
+										span._text Смотреть коллецию
+						._item
+							.catalog-item
+								a._title(href="#") Классика
+								._btn
+									a.orange-arrow(href="#") 
+										span._arrow
+										span._text Смотреть коллецию
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
 			include symbol/sprite.svg
-		include inc/scripts.pug
 		include inc/footer.pug
+		include inc/scripts.pug
 		script(src="js/main-page.js")
