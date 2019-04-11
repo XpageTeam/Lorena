@@ -1,9 +1,4 @@
 export default class stringEffect{
-	stringCounter:number = 0
-	updateTimeout:any
-
-	private _settings: any
-	private _el: any
 
 	set settings(settings) {
 
@@ -24,13 +19,13 @@ export default class stringEffect{
 
 		this._settings = $.extend( true, {}, defaultSettings, settings);
 	}
-	get settings(): any{
+	get settings(){
 		return this._settings;
 	}
 	set $el(selector){
 		this._el = selector
 	}
-	get $el(): any{
+	get $el(){
 		return $(this._el)
 	}
 
@@ -44,7 +39,7 @@ export default class stringEffect{
 	}
 
 
-	constructor(settings: any = {}){
+	constructor(settings = {}){
 		this.settings = settings;
 
 		this.$el = this.settings.selector;
@@ -83,9 +78,9 @@ export default class stringEffect{
 
 	createStrings(){
 		let $text = this.$el.children("span"),
-			stringsDesc: any[] = [];
+			stringsDesc= [];
 
-		$text.each((i: number, el: any) => {
+		$text.each((i, el) => {
 			let $this = $(el);
 
 			// console.log(parseInt($this.position().top);
@@ -99,7 +94,7 @@ export default class stringEffect{
 		this.wrapStrings(stringsDesc);
 	}
 
-	wrapStrings(stringsDesc:any[] = []){
+	wrapStrings(stringsDesc = []){
 		this.stringCounter = 0;
 
 		let {

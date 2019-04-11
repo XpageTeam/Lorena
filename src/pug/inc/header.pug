@@ -10,16 +10,16 @@ header.head
 					| 200 92 20
 		nav.head__menu
 			ul.h-menu
-				li._item.-have-sub
+				li.h-menu__item.h-menu__item--have-sub
 					a.h-menu__link.active(href="#") Компания
 				each item in ["Кухни", "Покупателю", "Акции", "Где купить?", ]
-					li._item.-have-sub
+					li.h-menu__item.h-menu__item--have-sub
 						a.h-menu__link(href="#")=item
 		.head__constructor
 			a.constructor-link(href="#") 
-				svg._icon.ico
+				svg.constructor-link__icon.ico
 					use(xlink:href="#ico-gear")
-				span._text Конструктор
+				span.constructor-link__text Конструктор
 		.head__links
 			.head__links-lc
 				a.h-lc(href="#")

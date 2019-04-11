@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 html(lang="ru")
 	head
 		meta(charset="utf-8")
 		title Главная
 		include inc/head.pug
-		include inc/css.pug
+		//- include inc/css.pug
 	body.main.loading
 		include inc/header.pug
 		main#content
@@ -12,80 +11,129 @@ html(lang="ru")
 				.swiper-wrapper
 					.swiper-slide
 						.main-slide
-							figure._img
+							figure.main-slide__img
 								img.swiper-lazy(data-src="img/photos/main-slide-img-0.jpg")
 								.swiper-lazy-preloader
-							._title
+							.main-slide__title
 								.main-slide__title-subtitle Lorena кухни
 								.main-slide__title-title Качество 
 									br 
 									| в деталях
 								.main-slide__title-btn
-									a.orange-arrow.-highlighted(href="#") 
-										span._arrow
-										span._text Нам есть 
+									a.orange-arrow.orange-arrow--highlighted(href="#") 
+										span.orange-arrow__arrow
+										span.orange-arrow__text Нам есть 
 											br
 											| что рассказать
 					.swiper-slide
 						.main-slide
-							figure._img
+							figure.main-slide__img
 								img.swiper-lazy(data-src="img/photos/main-slide-img-1.jpg")
 								.swiper-lazy-preloader
-							._svg
+							.main-slide__svg
 								include ../img/scene.svg
 			.main-about__cont
 				.wrapper
 					.main-about
-						._counters
+						.main-about__counters
 							.about-counters
-								._top
+								.about-counters__top
 									.counter
-										._number(data-from="0" data-to="3") 3
-										._text Направления
-								._bottom
+										.counter__number(data-from="0" data-to="3") 3
+										.counter__text Направления
+								.about-counters__bottom
 									.counter
-										._number(data-from="0" data-to="57") 57
-										._text Моделей
-						._text
+										.counter__number(data-from="0" data-to="57") 57
+										.counter__text Моделей
+						.main-about__text
 							.text-page
 								p О какой кухне вы всегда мечтали? Большая, светлая, полная солнца? Уже 29 лет компания «LORENA кухни» занимается производством кухонных гарнитуров по индивидуальным проектам
 							.main-about__text-btn
 								a.arrow-btn(href="#") Каталог
 			.main-catalog
-				picture._bg
+				picture.main-catalog__bg
 					source(srcset="img/photos/main-catalog-bg.jpg" media="screen and (min-width: 659px")
 					source(srcset="img/photos/main-catalog-bg-mobile.jpg" media="screen and (max-width: 660px")
 					img
-				._list
+				.main-catalog__list
 					.catalog-list
-						._item
+						.catalog-list__item
 							.catalog-item
-								a._title(href="#") Современная
+								a.catalog-item__title(href="#") Современная
 									br
 									| коллекция/модерн
-								._btn
+								.catalog-item__btn
 									a.orange-arrow(href="#") 
-										span._arrow
-										span._text Смотреть коллецию
-						._item
+										span.orange-arrow__arrow
+										span.orange-arrow__text Смотреть коллецию
+						.catalog-list__item
 							.catalog-item
-								a._title(href="#") Городская
+								a.catalog-item__title(href="#") Городская
 									br
 									| классика
-								._btn
+								.catalog-item__btn
 									a.orange-arrow(href="#") 
-										span._arrow
-										span._text Смотреть коллецию
-						._item
+										span.orange-arrow__arrow
+										span.orange-arrow__text Смотреть коллецию
+						.catalog-list__item
 							.catalog-item
-								a._title(href="#") Классика
-								._btn
+								a.catalog-item__title(href="#") Классика
+								.catalog-item__btn
 									a.orange-arrow(href="#") 
-										span._arrow
-										span._text Смотреть коллецию
+										span.orange-arrow__arrow
+										span.orange-arrow__text Смотреть коллецию
+			.main-reviews__cont
+				.wrapper
+					.main-reviews
+						.main-reviews__slider
+							.reviews-slider
+								.swiper-wrapper
+									.swiper-slide
+										.reviews-slide
+											figure.reviews-slide__img(data-date="26.02.2019")
+												img(src="img/photos/main-reviews-img.jpg")
+											.reviews-slide__desc
+												.reviews-slide__name Наташа Александрова
+												.reviews-slide__city Магнитогорск
+												.reviews-slide__text
+													.text-page
+														p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+									- for (let i = 0; i < 10; i++)
+										.swiper-slide
+											.reviews-slide
+												figure.reviews-slide__img(data-date="26.02.2019")
+													img.swiper-lazy(data-src="img/photos/main-reviews-img.jpg")
+													.swiper-lazy-preloader
+												.reviews-slide__desc
+													.reviews-slide__name Наташа Александрова
+													.reviews-slide__city Магнитогорск
+													.reviews-slide__text
+														.text-page
+															p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+								.swiper-button-prev
+								.swiper-button-next
+						.main-reviews__counter
+							.reviews-counter
+								.reviews-counter__counter
+									.counter
+										.counter__number(data-from="0" data-to="1005") 1005
+										.counter__text отзывов
+								.reviews-counter__title «LORENA кухни» становятся лучше именно с вами. Пишите нам
+								.reviews-counter__btn
+									a.arrow-btn(href="#") Отзывы
+			.main-choose__cont
+				.wrapper
+					.main-choose
+						.main-choose__text
+							.main-choose__text-title Выберите кухню с Константином Ивлевым
+							.main-choose__text-subtitle и получи в подарок рецепт от шефа!
+							.main-choose__text-btn
+								a.arrow-btn(href="#") выбрать кухню
+						figure.main-choose__img
+							img(src="img/photos/main-ivlev.png")
 		div(style="display: none")
 			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
 			include symbol/sprite.svg
 		include inc/footer.pug
-		include inc/scripts.pug
+		//- include inc/scripts.pug
 		script(src="js/main-page.js")
