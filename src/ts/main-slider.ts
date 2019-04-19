@@ -19,7 +19,7 @@ App.domReady(() => {
 				loadPrevNext: true,
 			},
 			on: {
-				lazyImageReady(slideEl?: any, imageEl?: any) {
+				lazyImageReady(slideEl?: HTMLElement, imageEl?: HTMLElement) {
 					// if (!flag)
 					// 	setTimeout(function(){
 					// 		mainSlider.slideNext()
