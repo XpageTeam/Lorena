@@ -60,28 +60,23 @@ module.exports = {
 					}
 				]
 			},
+
+			
 			{
 			    test: /\.(png|jpg|gif|ico|svg)$/,
 			    use: [
 			    	{
 			    		loader: 'file-loader',
 					    options: {
-					        name: '[path][name].[ext]',
+					        name: '../img/[name].[ext]',
 					        context: ''
 					    }
-			    	},
-			    	// {
-			    	// 	loader: 'image-webpack-loader',
-        //     			options: {}
-			    	// }
+			    	}
 			    ],
 			},
 			{
 				test: /\.sss$/,
 				use: [
-					// {
-					// 	loader : 'file-loader',
-					// },
 					{
 						loader: "style-loader",
 						options: { sourceMap: true }
@@ -108,11 +103,20 @@ module.exports = {
 			    ]
 			},
 			{
+                test: /\.(woff|woff2|ttf|eot)$/,
+                use: [
+                	{
+                		loader : 'file-loader',
+		                options: {
+		                    name : '../fonts/[name].[ext]',
+		                    context: 'docs/'
+		                },
+                	}
+                ]
+            },
+			{
 				test: /\.pug$/,
 				use: [
-					// {
-			  //       	loader: "file-loader"
-			  //       },
 					{
 						loader: "pug-loader",
 						options: {
@@ -121,34 +125,8 @@ module.exports = {
 						}
 					},
 				]
-            //     test: /\.svg$|\.png$|\.jpe?g$/,
-            //     loader : 'url-loader',
-            //     options: {
-            //         name : '[name].[ext]',
-            //         outputPath : 'img/',
-            //         limit : 5000,
-            //     },
-            //     exclude: /(node_modules)/,
-            // },
-            // {
-            //     test: /\.gif$/,
-            //     loader : 'url-loader',
-            //     options: {
-            //         name : '[name].[ext]',
-            //         outputPath : 'img/',
-            //         emitFile : false,
-            //     },
-            //     exclude: /(node_modules)/,
             },
-            {
-                test: /\.woff?2$|\.ttf$|\.eot$/,
-                loader : 'file-loader',
-                options: {
-                    name : '[name].[ext]',
-                    outputPath : 'fonts/',
-                },
-                exclude: /(node_modules)/,
-            }
+            
 		]
 	},
 	resolve: {
@@ -169,6 +147,14 @@ module.exports = {
 			from: 'src/img/',
 			to: path.resolve(__dirname, "docs/img")
 		}]),
+		new CopyWebpackPlugin([{
+			from: 'src/fonts/',
+			to: path.resolve(__dirname, "docs/fonts")
+		}]),
+		// new CopyWebpackPlugin([{
+		// 	from: 'src/img/src',
+		// 	to: path.resolve(__dirname, "docs/img")
+		// }]),
 		new ImageminPlugin({
 			test: /\.(jpe?g|png|gif|svg)$/i,
 			optimizationLevel: 9,

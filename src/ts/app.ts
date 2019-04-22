@@ -13,7 +13,7 @@ class App {
 		const elements: any = document.querySelectorAll(selector);
 
 		return elements.length ? elements : []
-		// return this.elementsGetter(selector)
+		// return this.elementsGetter(sele ctor)
 	}
 
 	/**

@@ -1,0 +1,113 @@
+.catalog__filter
+	background: #282828
+
+.filter
+	padding: 70px 0 95px
+
+	&__inputs
+		display: flex
+		justify-content: center
+		// flex-wrap: wrap
+		align-items: flex-end
+
+		.select2
+			min-height: 47px
+
+			.selection
+				min-height: 47px
+
+			&-search
+
+				&__field
+					color: #fff !important
+					margin: 0 !important
+
+					&::-webkit-input-placeholder
+						color: #fff
+						opacity: 1
+
+					&:-moz-placeholder
+						color: #fff
+						opacity: 1
+
+					&::-moz-placeholder
+						color: #fff
+						opacity: 1
+
+					&:-ms-input-placeholder
+						color: #fff
+						opacity: 1
+
+			&-selection
+				min-height: 47px !important
+				background: none !important
+				border-radius: 0 !important
+				border: none !important
+				border-bottom: 1px solid rgba(255,255,255, .15) !important
+				padding: 10px 0 0
+
+				&__rendered
+					padding: 0 30px 0 0 !important
+					vertical-align: bottom
+					background: url("../img/ico-white-arrow.svg") center right 14px no-repeat
+
+	&__input
+		color: #fff
+		background: none
+		border: none
+		border-bottom: 1px solid rgba(255,255,255, .15)
+
+		&:not(&--select)
+			padding: 15px 0
+
+		&--price
+			background: url("../img/rub.svg") center right 9px no-repeat
+			padding-right: 30px
+
+		&--select
+			background: url("../img/ico-white-arrow.svg") center right 14px no-repeat
+			transition: opacity .3s ease
+
+			&:not(.selectized)
+				height: 47px
+				opacity: 0
+
+		&-cont
+			display: flex
+			flex-direction: column-reverse
+
+			&:not(:last-child)
+				margin-right: 62px
+
+			&--select
+				width: 36%
+
+	&__submit
+
+		&-cont
+			margin-bottom: 7px
+
+	&__label
+
+.select2
+
+	&-dropdown
+		background: var(--second-color) !important
+		border: 1px solid hsla(0,0%,100%,.15) !important
+
+	&-results
+
+		&__option
+			transition: background .3s ease
+
+			&--highlighted
+				background: var(--main-color) !important
+
+	&-selection
+
+		&__choice
+			display: flex
+			flex-direction: row-reverse
+			padding: 0 !important
+			border: 0 !important
+			background: none !important

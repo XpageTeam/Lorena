@@ -1,6 +1,7 @@
 import $ from "jquery"
 // import is from "is_js"
 import stringEffect from "../js/stringAnimate.js"
+import "select2/dist/js/select2.js"
 
 
 window.$ = $;
@@ -15,4 +16,12 @@ document.addEventListener("DOMContentLoaded", e => {
 			selector: el,
 		});
 	});
+
+	$("select:not(.no-selectize)").each(function(){
+		const $this = $(this);
+
+		$this.select2({
+			placeholder: $this.data("placeholder") || "",
+		})
+	})
 })

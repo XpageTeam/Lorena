@@ -6,6 +6,4 @@
 
 require("../sss/main.sss")
 
-document.addEventListener("DOMContentLoaded", e => {
-	
-}) 
+import "./filter"

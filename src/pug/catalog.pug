@@ -1,0 +1,43 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Каталог
+		include inc/head.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.catalog
+					.catalog__filter
+						.wrapper
+							.filter
+								form(action="#")
+									.filter__inputs
+										.filter__input-cont.filter__input-cont--select
+											select.filter__input.filter__input--select(data-placeholder="Выберите стиль кухни" multiple="")
+												option(data-count="17" value="1") Современная коллекция
+												option(data-count="18" value="2") Классика
+												option(data-count="19" value="3") Городская классика
+											label.filter__label Стиль кухни
+										.filter__input-cont
+											input.filter__input.filter__input--price(type="tel" value="200 000")
+											label.filter__label Стоимость
+										.filter__submit-cont
+											input.filter__submit.arrow-btn(type="submit" value="Применить")
+					.catalog__list
+			.main-choose__cont
+				.wrapper
+					.main-choose
+						.main-choose__text
+							.main-choose__text-title Шеф знает толк в кухнях!
+							//- .main-choose__text-subtitle и получи в подарок рецепт от шефа!
+							.main-choose__text-btn
+								a.arrow-btn(href="#") узнать больше 
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		//- include inc/scripts.pug
+		//- script(src="js/main-page.js")
