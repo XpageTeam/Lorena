@@ -5,8 +5,8 @@
 @import "_vars.sss"
 @import "_base.sss"
 @import "_text-styles.sss"
-// @import "_form-elements.sss"
-// @import "_title-block.sss"
+@import "_form-elements.sss"
+@import "_title-block.sss"
 // @import "_paginator.sss"
 
 @import "_header.sss"
@@ -18,10 +18,19 @@
 @import "_main-choose.sss"
 @import "_main-reviews.sss"
 
+@import "filter.sss"
+@import "catalog.sss"
+@import "news.sss"
+
 // @import "_standart-page.sss"
 
 @import "_footer.sss"
 
+
+.inner-content
+
+	&__title
+		margin: 80px 0 85px
 
 @media screen and (max-width: 1100px)
 	.wrapper

@@ -1,0 +1,80 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							.title-block__title
+								h1 Новости
+							nav.title-block__menu
+								ul.title-menu
+									each item in  ["компания", "Партнеры", "Преимущества", "ваша карьера", ]
+										li
+											a.title-menu__link.gray-btn(href="#")=item
+				.inner-content__content
+					.news
+						.wrapper
+							.news-list
+								- for (let j = 0; j < 2; j++)
+									each item, i in [{title: "Дизайн-встреча в новосибирске: яркие тренды 2019/2020", text: "30 января LORENA кухни в Новосибирске провела обзор трендов интерьерной моды. Тест-драйв кухни Вилладж вместе с шеф-поваром GRAUDE Алексеем Ерохиным"}, {title: "Дизайн-встреча в новосибирске: яркие тренды 2019/2020", text: "Компания LORENA кухни выступила партнером мероприятия, которого ждали все уфимские дизайнеры. 12 декабря в столице Башкортостана состоялась лекция Жени Ждановой"}, {title: "Домофест и lorena кухни в Екатеринбурге", text: "Квартирный шоппинг перед Новым годом – отличная возможность для уральцев решить свой вопрос с жильем и ремонтом"}, ]
+										.news-list__item
+											.news-item
+												.news-item__text
+													.news-text
+														.news-text__date 1 февраля 2019
+														a.news-text__title(href="#")=item.title
+														.news-text__text=item.text
+														.news-text__btn
+															a.circle-arrow-btn(href="")
+												a.news-item__img(href="#")
+													img(src="img/photos/new-"+i+".jpg", alt="")
+			.main-choose__cont.main-choose__cont--no-bg
+				.wrapper
+					.main-choose
+						.main-choose__form
+							.main-choose__text-title Заполни заявку
+							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
+								br
+								| и получи рецепт в подарок!
+							.choose-form 
+								form(action="#")
+									.choose-form__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input.default-input--select
+											select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+												option(value="Выберите город" disabled="")
+												option(value="1" selected="") Челябинск
+												option(value="2") Челябинск
+												option(value="3") Челябинск
+												option(value="4") Челябинск
+												option(value="5") Челябинск
+											label.default-input__label Город
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.choose-form__bot
+											.choose-form__bot-submit
+												input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		//- include inc/scripts.pug
+		//- script(src="js/main-page.js") 

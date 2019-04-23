@@ -120,7 +120,7 @@ select
 	z-index: 2
 
 a
-	color: #000
+	color: #fff
 	font-weight: inherit
 	text-decoration: none
 
@@ -223,6 +223,20 @@ li
 	&:hover, &:focus
 		background: #df2f24
 
+.gray-btn
+	border: 1px solid var(--border-color)
+	border-radius: 100px
+	color: #fff var(--second-color)
+	transition: border-color .3s ease, background .3s ease
+	font-weight: 500
+	font-size: 10px
+	text-transform: uppercase
+	padding: 13px 23px 14px
+
+	&:hover, &:focus
+		background: var(--main-color)
+		border-color: var(--main-color)
+
 .arrow-btn
 	color: #fff 
 	background: url("/img/white-arrow.svg") center right 24px no-repeat, var(--main-color)
@@ -293,4 +307,36 @@ li
 
 
 	&__text
+		z-index: 1
+
+.scroller
+	position: fixed 0 0 * 0
+	z-index: 10
+
+	&__progress
+		height: 2px
+		background: var(--main-color)
+		transition: width .3s ease
+
+.circle-arrow-btn
+	border-radius: 50%
+	background: var(--main-color)
+	size: 39px
+	position: relative
+	display: inline-block
+
+	&:not(:last-child)
+		margin-right: 20px
+
+	&:matches(:after, :before)
+		content: ""
+		position: absolute
+
+	&:after
+		top: calc(50% - 3px) 
+		right: calc(50% - 1px)
+		border-right: 1px solid #fff
+		border-bottom: 1px solid #fff
+		size: 5px
+		transform: rotateZ(-45deg)
 		z-index: 1

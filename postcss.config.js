@@ -15,7 +15,9 @@ module.exports = ({ file, options, env }) => {
 			require("postcss-nesting"),
 			require("postcss-nested"),
 			require('css-mqpacker'),
-			require("autoprefixer"),
+			require("autoprefixer")({
+				grid: true
+			}),
 			require('cssnano')({
 				preset: [
 					'default', {

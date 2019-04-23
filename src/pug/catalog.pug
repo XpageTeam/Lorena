@@ -7,24 +7,42 @@ html(lang="ru")
 		include inc/header.pug
 		main#content
 			.inner-content
-				.catalog
-					.catalog__filter
-						.wrapper
-							.filter
-								form(action="#")
-									.filter__inputs
-										.filter__input-cont.filter__input-cont--select
-											select.filter__input.filter__input--select(data-placeholder="Выберите стиль кухни" multiple="")
-												option(data-count="17" value="1") Современная коллекция
-												option(data-count="18" value="2") Классика
-												option(data-count="19" value="3") Городская классика
-											label.filter__label Стиль кухни
-										.filter__input-cont
-											input.filter__input.filter__input--price(type="tel" value="200 000")
-											label.filter__label Стоимость
-										.filter__submit-cont
-											input.filter__submit.arrow-btn(type="submit" value="Применить")
-					.catalog__list
+				.inner-content__content
+					.catalog
+						.catalog__filter
+							.wrapper
+								.filter
+									form(action="#")
+										.filter__inputs
+											.filter__input-cont.filter__input-cont--select
+												select.filter__input.filter__input--select(data-placeholder="Выберите стиль кухни" multiple="")
+													option(data-count="17" selected="" value="1") Современная коллекция
+													option(data-count="18" selected="" value="2") Классика
+													option(data-count="19" value="3") Городская классика
+												label.filter__label Стиль кухни
+											.filter__input-cont
+												input.filter__input.filter__input--price(type="tel" value="200 000")
+												label.filter__label Стоимость
+											.filter__submit-cont
+												input.filter__submit.arrow-btn(type="submit" value="Применить")
+						.catalog__list
+							.cat-list
+								- for (let i = 0; i <= 4; i++)
+									each item, j in ["Индастриал", "Интего", "Дюна", "Волна", ]
+										.cat-list__item
+											.cat-item
+												a.cat-item__img(href="")
+													img(src="img/photos/cat-item-"+j+".jpg", alt=item)
+													.cat-item__img-icon
+														<!-- сюда класть pinterestButton -->
+														img(src="img/pnt-btn.svg")
+													.cat-item__labels
+														if (j == 0)
+															.label.label--new new
+														if (j == 0 || j == 2)
+															.label.label--hit хит
+												.cat-item__title
+													a.cat-item__title-text(href="#")=item
 			.main-choose__cont
 				.wrapper
 					.main-choose

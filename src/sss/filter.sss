@@ -16,40 +16,8 @@
 			.selection
 				min-height: 47px
 
-			&-search
-
-				&__field
-					color: #fff !important
-					margin: 0 !important
-
-					&::-webkit-input-placeholder
-						color: #fff
-						opacity: 1
-
-					&:-moz-placeholder
-						color: #fff
-						opacity: 1
-
-					&::-moz-placeholder
-						color: #fff
-						opacity: 1
-
-					&:-ms-input-placeholder
-						color: #fff
-						opacity: 1
-
 			&-selection
 				min-height: 47px !important
-				background: none !important
-				border-radius: 0 !important
-				border: none !important
-				border-bottom: 1px solid rgba(255,255,255, .15) !important
-				padding: 10px 0 0
-
-				&__rendered
-					padding: 0 30px 0 0 !important
-					vertical-align: bottom
-					background: url("../img/ico-white-arrow.svg") center right 14px no-repeat
 
 	&__input
 		color: #fff
@@ -75,12 +43,13 @@
 		&-cont
 			display: flex
 			flex-direction: column-reverse
+			font-size: 14px
 
 			&:not(:last-child)
 				margin-right: 62px
 
 			&--select
-				width: 36%
+				width: 40%
 
 	&__submit
 
@@ -88,8 +57,56 @@
 			margin-bottom: 7px
 
 	&__label
+		color: rgba(255, 255, 255, .3)
+		margin-bottom: 10px
 
 .select2
+
+	&-search
+
+		&:not(:first-child)
+			display: none
+
+		&--dropdown
+			display: none !important
+
+	&-search
+
+		&__field
+			color: #fff !important
+			margin: 0 !important
+
+			&::-webkit-input-placeholder
+				color: #fff
+				opacity: 1
+
+			&:-moz-placeholder
+				color: #fff
+				opacity: 1
+
+			&::-moz-placeholder
+				color: #fff
+				opacity: 1
+
+			&:-ms-input-placeholder
+				color: #fff
+				opacity: 1
+
+	&-selection
+		background: none !important
+		border-radius: 0 !important
+		border: none !important
+		border-bottom: 1px solid rgba(255,255,255, .15) !important
+		padding: 10px 0 0
+
+		&--single
+			height: auto !important
+
+		&__rendered
+			padding: 0 30px 0 0 !important
+			vertical-align: bottom
+			color: #fff !important
+			background: url("../img/ico-white-arrow.svg") center right 14px no-repeat
 
 	&-dropdown
 		background: var(--second-color) !important
@@ -107,7 +124,21 @@
 
 		&__choice
 			display: flex
-			flex-direction: row-reverse
 			padding: 0 !important
 			border: 0 !important
 			background: none !important
+			margin-top: 0 !important
+
+			&:not(:last-child)
+				margin-right: 21px !important
+
+			&__remove
+				order: 1
+				font-weight: 300 !important
+				color: #fff !important
+
+			.option
+
+				&__count
+					margin: 0 5px
+					color: rgba(255, 255, 255, 0.3)

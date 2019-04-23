@@ -1,6 +1,6 @@
 import {App} from "./app"
 
-require("../sss/filter.sss")
+require("../sss/")
 
 App.domReady(() => {
 

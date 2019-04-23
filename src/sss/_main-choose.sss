@@ -2,10 +2,12 @@
 	display: flex
 	// justify-content: space-between
 
-	&__text
+	&__text, &__form
 		align-self: center
 		margin-right: 20px
 		padding: 36px 0 0
+	
+	&__text
 
 		&-title
 			font-size: 64px
@@ -31,4 +33,27 @@
 			display: block
 
 	&__cont
-		background: url("/img/lorena-bg.svg") center left vw(90) no-repeat, #282828
+
+		&:not(&--no-bg)
+			background: url("/img/lorena-bg.svg") center left vw(90) no-repeat, #282828
+
+		&--no-bg
+			background-color: #282828
+
+			.main-choose__text
+
+				&-subtitle
+					color: rgba(255, 255, 255, 0.3)
+					font-size: 14px
+					line-height: calc(20 / 14)
+
+.choose-form
+
+	&__inputs
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -40px -36px
+
+		.default-input
+			width: calc((100% - 36px * 2) / 2)
+			margin: 0 0 40px 36px
