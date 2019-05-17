@@ -1,0 +1,153 @@
+.tovar
+
+	&__slider
+		position: relative
+
+		&-arrows
+			position: absolute * 80px 64px
+			z-index: 4
+			pointer-events: none
+
+	&__desc
+		margin: -60px 0 0
+
+.tovar-arrows
+	display: flex
+
+	&__arrow
+		pointer-events: all
+
+		&--prev
+			margin-right: auto
+			transform: rotateY(180deg)
+
+			span
+				transform: rotateY(180deg)
+				display: block
+
+		&--next
+			margin-left: auto
+
+.tovar-sliders
+	overflow: hidden
+	width: 100%
+
+	&__thumbs
+		margin: -52px 0 0
+		position: relative
+		z-index: 2
+
+	&__big
+		position: relative
+
+		.swiper
+
+			&-slide, &-wrapper
+				height: auto !important
+
+		&:before
+			content: ""
+			position: absolute 0
+			background: linear-gradient(to bottom, rgba(0,0,0, .3) 27%, rgba(0,0,0, .0001) 40%)
+			z-index: 3
+
+	picture, img
+		display: block
+		width: 100%
+
+	.fancybox
+		display: block
+
+.thumbs-slider
+	display: flex
+	justify-content: flex-end
+
+	&__list
+		display: inherit
+
+		&:not(:last-child)
+			margin-right: 35px
+
+	&__slide
+		width: 202px
+		border: 8px solid var(--second-color)
+
+		&:not(:last-child)
+			margin-right: 35px
+
+	&__more
+		counter-reset: i
+		position: relative
+
+		a
+			counter-increment: i
+
+			&:last-child
+
+				&:after
+					content: "+" counter(i)
+					position: absolute 8px
+					font-size: 48px
+					display: flex
+					justify-content: center
+					align-items: center
+					white-space: nowrap
+					background: rgba(0, 0, 0, 0.5)
+
+.more-imgs
+	border: 8px solid var(--second-color)
+	width: 202px
+
+
+.tovar-desc
+
+	&__btns
+		margin: 65px 0 0
+
+	&__text
+		margin: 55px 0 0
+
+.tovar-title
+
+	&__category
+		text-transform: uppercase
+		color: rgba(#fff, .5)
+		font-size: 10px
+		line-height: 12px
+
+	&__title
+		max-width: 450px
+		font-size: 40px
+
+.tovar-btns
+	border-top: 1px solid rgba(33, 33, 33, 0.8)
+	border-bottom: 1px solid rgba(33, 33, 33, 0.8)
+	padding: 41px 0
+	display: flex
+
+	&__btn
+
+		&:first-child
+			margin-right: auto
+
+		&:nth-child(2)
+			margin-right: 29px
+
+.tovar-price
+
+	&__title
+		text-transform: uppercase
+		color: rgba(255, 255, 255, 0.5)
+		font-size: 10px
+
+	&__price
+		white-space: nowrap
+		font-size: 24px
+		line-height: calc(35 / 24)
+
+.tovar-text
+
+	&__text
+		font-size: 14px
+		margin: 50px 0 0
+		max-width: 840px

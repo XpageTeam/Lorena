@@ -33,6 +33,7 @@
 
 	&__img
 		position: relative
+		display: block
 
 		&:before
 			content: ""
@@ -40,14 +41,14 @@
 			background: rgba(#000, .5)
 			z-index: 2
 
+		source:first-child:not(.swiper-lazy-loaded) ~ img
+			min-height: 100vh
+			opacity: 0
+
 		img
 			display: block
 			width: 100%
 			transition: opacity .5s ease
-
-			&:not(.swiper-lazy-loaded)
-				min-height: 100vh
-				opacity: 0
 
 	&__title
 		position: absolute 0

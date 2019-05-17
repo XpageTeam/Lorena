@@ -112,7 +112,7 @@ select
 	flex: none
 
 #content
-	height: 100%
+	// height: 100%
 	// display: flex
 	flex-direction: column
 	transition: transform .8s ease
@@ -149,6 +149,9 @@ img, svg
 
 li
 	list-style: none
+
+.swiper-wrapper, .swiper-slide
+	height: auto !important
 
 .table-wrap
 	position: relative
@@ -224,18 +227,35 @@ li
 		background: #df2f24
 
 .gray-btn
+	padding: 13px 23px 14px
+
+.gray-arrow-btn
+	padding: 13px 40px 12px 27px
+	position: relative
+
+	&:after
+		position: absolute calc(50% - 2px) 25px * *
+		content: ""
+		size: 4px
+		border-top: 1px solid #fff
+		border-right: 1px solid #fff
+		transform: rotateZ(45deg)
+
+.gray-arrow-btn, .gray-btn
 	border: 1px solid var(--border-color)
 	border-radius: 100px
-	color: #fff var(--second-color)
-	transition: border-color .3s ease, background .3s ease
+	color: #fff
+	background-color: var(--second-color)
+	transition: border-color .3s ease, background-color .3s ease
 	font-weight: 500
 	font-size: 10px
 	text-transform: uppercase
-	padding: 13px 23px 14px
+	display: inline-block
 
 	&:hover, &:focus
-		background: var(--main-color)
+		background-color: var(--main-color)
 		border-color: var(--main-color)
+
 
 .arrow-btn
 	color: #fff 
@@ -244,6 +264,7 @@ li
 	font-size: 10px
 	border-radius: 100px
 	border: none
+	display: inline-block
 	padding: 13px 41px 14px 22px
 	transition: background-color .3s ease
 
@@ -340,3 +361,27 @@ li
 		size: 5px
 		transform: rotateZ(-45deg)
 		z-index: 1
+
+.constructor-btn, .favorite-btn
+	display: inline-block
+	text-transform: uppercase
+	font-size: 10px
+	color: #fff
+	line-height: 1
+	transition: background-color .3s ease, border-color .3s ease
+	padding: 13px 24px 14px 50px
+	border-radius: 100px
+
+.favorite-btn
+	border: 1px solid #454545
+	background: url("../img/ico-hearth-gray.svg") left 21px center no-repeat, var(--second-color)
+
+	&:hover, &:focus, &.active
+		background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--main-color)
+
+.constructor-btn
+	border: 1px solid var(--main-color)
+	background: url("../img/ico-constructor.svg") left 20px center no-repeat, var(--main-color)
+
+	&:hover, &:focus
+		background-color: lighten(#f60, .1)

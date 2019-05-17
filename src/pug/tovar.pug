@@ -3,20 +3,11 @@ html(lang="ru")
 		meta(charset="utf-8")
 		title Новости
 		include inc/head.pug
-	body.inner.loading
+		include inc/css.pug
+	body.inner.tovar.loading
 		include inc/header.pug
 		main#content
 			.inner-content
-				//- .inner-content__title
-					.wrapper
-						.title-block
-							.title-block__title
-								h1 Новости
-							nav.title-block__menu
-								ul.title-menu
-									each item in  ["компания", "Партнеры", "Преимущества", "ваша карьера", ]
-										li
-											a.title-menu__link.gray-btn(href="#")=item
 				.inner-content__content
 					.tovar
 						.tovar__slider
@@ -32,20 +23,52 @@ html(lang="ru")
 														<!-- адаптив -->
 														source(srcset="img/photos/adaptive-kitchen.jpg" media="(max-width: 660px)")
 														img
+									.tovar__slider-arrows
+										.tovar-arrows
+											a.tovar-arrows__arrow.tovar-arrows__arrow--prev.gray-arrow-btn(href="#") 
+												span кухня БРИТ
+											a.tovar-arrows__arrow.tovar-arrows__arrow--next.gray-arrow-btn(href="#") 
+												span кухня ВЕНЕТО
 								.tovar-sliders__thumbs
-									.thumbs-slider
-										.swiper-wrapper
-											- for (let i = 0; i < 3; i++)
-												.swiper-slide
+									.wrapper
+										.thumbs-slider
+											.thumbs-slider__list
+												- for (let i = 0; i < 2; i++)
 													figure.thumbs-slider__slide
 														img(src="img/photos/kitchen-small-"+i+".jpg")
-										.thumbs-slider__more
-											<!-- ссылка на третью картинку в полноэкранной галерее -->
-											a.more-imgs.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
-												img(src="img/photos/kitchen-small-2.jpg")
-											<!-- ссылки на остальные картинки большой галереи -->
-											- for (let i = 0; i < 2; i++)
-												a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+											.thumbs-slider__more
+												<!-- ссылка на третью картинку в полноэкранной галерее -->
+												a.more-imgs.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+													img(src="img/photos/kitchen-small-2.jpg")
+												<!-- ссылки на остальные картинки большой галереи -->
+												- for (let j = 0; j < 3; j++)
+													a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+						.tovar__desc
+							.wrapper
+								.tovar-desc
+									.tovar-desc__titles
+										.tovar-title
+											.tovar-title__category Городская классика
+											h1.tovar-title__title Канто
+									.tovar-desc__btns
+										.tovar-btns
+											.tovar-btns__btn
+												a.arrow-btn(href="#") Заказать дизайн-проект
+											.tovar-btns__btn
+												a.constructor-btn(href="#") Создать в конструкторе
+											.tovar-btns__btn
+												a.favorite-btn(href="#") Добавить в избранное
+									.tovar-desc__text
+										.tovar-text
+											.tovar-text__price
+												.tovar-price__title Стоимость базовой комплектации
+												.tovar-price__price от 80 700 
+													i.rub ₽
+											.tovar-text__text
+												.text-page
+													p CANTO – абсолютная новинка 2019 года, способная перевернуть ваше представление о кухне. Это самая вариативная и многоликая модель за всю историю LORENA кухни. Впервые мы даём возможность выбора филёнки и профиля в разных декорах. 
+													p Хотите лёгкости и радости бытия? Обратите внимание на женское прочтение модели. Абсолютно «иньская» - мягкая, тёплая и манящая – она создана для хозяйки с лёгким характером. Словно весна CANTO ворвётся в ваш дом и окутает его бесконечным теплом.
+													p Брутальная и контрастная CANTO станет решением для холостяцкой квартиры. «Яньский» хозяин ставит во главу угла современные технические решения и дизайн.  
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose
@@ -88,5 +111,5 @@ html(lang="ru")
 			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
 			include symbol/sprite.svg
 		include inc/footer.pug
-		//- include inc/scripts.pug
+		include inc/scripts.pug
 		//- script(src="js/main-page.js") 

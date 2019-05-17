@@ -9,8 +9,8 @@ window.jQuery = $;
 
 try{
 	document.addEventListener("DOMContentLoaded", e => {
-		// require("./jquery.fancybox.js")
-		// require("../css/jquery.fancybox.css")
+		require("./jquery.fancybox.js")
+		require("../css/jquery.fancybox.css")
 		
 		$(".main-slide__title-title").each((i, el) => {
 			new stringEffect({

@@ -3,6 +3,7 @@ html(lang="ru")
 		meta(charset="utf-8")
 		title Каталог
 		include inc/head.pug
+		include inc/css.pug
 	body.inner.loading
 		include inc/header.pug
 		main#content
@@ -54,8 +55,7 @@ html(lang="ru")
 						figure.main-choose__img
 							img(src="img/photos/another-ivlev.png")
 		div(style="display: none")
-			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
 			include symbol/sprite.svg
 		include inc/footer.pug
-		//- include inc/scripts.pug
+		include inc/scripts.pug
 		//- script(src="js/main-page.js")
