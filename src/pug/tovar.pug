@@ -19,10 +19,11 @@ html(lang="ru")
 												a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
 													picture
 														<!-- десктоп -->
-														source(srcset="img/photos/kitchen.jpg" media="(min-width: 660px)")
+														source.swiper-lazy(data-srcset="img/photos/kitchen.jpg" media="(min-width: 660px)")
 														<!-- адаптив -->
-														source(srcset="img/photos/adaptive-kitchen.jpg" media="(max-width: 660px)")
+														source.swiper-lazy(data-srcset="img/photos/adaptive-kitchen.jpg" media="(max-width: 660px)")
 														img
+												.swiper-lazy-preloader
 									.tovar__slider-arrows
 										.tovar-arrows
 											a.tovar-arrows__arrow.tovar-arrows__arrow--prev.gray-arrow-btn(href="#") 
@@ -69,6 +70,98 @@ html(lang="ru")
 													p CANTO – абсолютная новинка 2019 года, способная перевернуть ваше представление о кухне. Это самая вариативная и многоликая модель за всю историю LORENA кухни. Впервые мы даём возможность выбора филёнки и профиля в разных декорах. 
 													p Хотите лёгкости и радости бытия? Обратите внимание на женское прочтение модели. Абсолютно «иньская» - мягкая, тёплая и манящая – она создана для хозяйки с лёгким характером. Словно весна CANTO ворвётся в ваш дом и окутает его бесконечным теплом.
 													p Брутальная и контрастная CANTO станет решением для холостяцкой квартиры. «Яньский» хозяин ставит во главу угла современные технические решения и дизайн.  
+						.tovar__variants
+							.wrapper
+								.variants
+									header.variants__header
+										.variants__header-title Варианты исполнения
+										.variants__header-tabs
+											.tovar-tabs
+												a.tovar-tabs__tab(href="#door-handle") Ручки
+												a.tovar-tabs__tab.active(href="#worktop") Столешницы
+												a.tovar-tabs__tab(href="#facades") Фасады
+									main.variants__content
+										.variants-list(id="door-handle")
+											.variants-list__nav
+												.variants-plates
+													- for (let i = 0; i < 9; i++)
+														figure.variants-plates__one(tabindex="1")
+															img(src="img/photos/variants-imgs-"+i+".jpg")
+															figcaption.variants-plates__one-text Бетон арт белый
+											.variants-list__slider
+												.variants-slider
+													.swiper-wrapper
+														- for (let i = 0; i < 9; i++)
+															.swiper-slide
+																a.variants-slider__slide.fancybox(href="img/photos/variants-img.jpg" data-fancybox="door-handle")
+																	img.swiper-lazy(data-src="img/photos/variants-img.jpg")
+																.swiper-lazy-preloader
+										.variants-list.active(id="worktop")
+											.variants-list__nav
+												.variants-plates
+													- for (let i = 0; i < 9; i++)
+														figure.variants-plates__one(tabindex="1")
+															img(src="img/photos/variants-imgs-"+i+".jpg")
+															figcaption.variants-plates__one-text Бетон арт белый
+											.variants-list__slider
+												.variants-slider
+													.swiper-wrapper
+														- for (let i = 0; i < 9; i++)
+															.swiper-slide
+																a.variants-slider__slide.fancybox(href="img/photos/variants-img.jpg" data-fancybox="variants-worktop")
+																	img.swiper-lazy(data-src="img/photos/variants-img.jpg")
+																.swiper-lazy-preloader
+										.variants-list(id="facades")
+											.variants-list__nav
+												.variants-plates
+													- for (let i = 0; i < 9; i++)
+														figure.variants-plates__one(tabindex="1")
+															img(src="img/photos/variants-imgs-"+i+".jpg")
+															figcaption.variants-plates__one-text Бетон арт белый
+											.variants-list__slider
+												.variants-slider
+													.swiper-wrapper
+														- for (let i = 0; i < 9; i++)
+															.swiper-slide
+																a.variants-slider__slide.fancybox(href="img/photos/variants-img.jpg" data-fancybox="variants-facades")
+																	img.swiper-lazy(data-src="img/photos/variants-img.jpg")
+																.swiper-lazy-preloader
+						.tovar__reviews
+							.wrapper
+								.main-reviews
+									.main-reviews__slider
+										.reviews-slider
+											.swiper-wrapper
+												.swiper-slide
+													.reviews-slide
+														figure.reviews-slide__img(data-date="26.02.2019")
+															img(src="img/photos/main-reviews-img.jpg")
+														.reviews-slide__desc
+															.reviews-slide__name Наташа Александрова
+															.reviews-slide__city Магнитогорск
+															.reviews-slide__text
+																.text-page
+																	p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+												- for (let i = 0; i < 10; i++)
+													.swiper-slide
+														.reviews-slide
+															figure.reviews-slide__img(data-date="26.02.2019")
+																img.swiper-lazy(data-src="img/photos/main-reviews-img.jpg")
+																.swiper-lazy-preloader
+															.reviews-slide__desc
+																.reviews-slide__name Наташа Александрова
+																.reviews-slide__city Магнитогорск
+																.reviews-slide__text
+																	.text-page
+																		p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+									.main-reviews__counter
+										.reviews-counter
+											.reviews-counter__arrows
+												.swiper-button-prev
+												.swiper-button-next
+											.reviews-counter__title «LORENA кухни» становятся лучше именно с вами. Пишите нам
+											.reviews-counter__btn
+												a.arrow-btn(href="#") Отзывы
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose

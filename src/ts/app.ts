@@ -277,9 +277,9 @@ class EventListener extends Element{
 	*/
 	public add(event: string, callback: any, options?: EventOtions): EventListener{
 
-		App.each(this.els, function(el:HTMLElement){
+		App.each(this.els, function(el:HTMLElement, i: number){
 			el.addEventListener(event, function(event){
-				callback(this, event)
+				callback(this, event, i)
 			}, options)
 		})
 
