@@ -4,6 +4,9 @@
 	> *:not(:first-child)
 		margin-top: 32px
 
+	> *
+		max-width: 1050px
+
 	strong
 		font-weight: bold
 
@@ -14,21 +17,21 @@
 			margin-top: 40px
 
 	h2
-		font-size: 26px
-		line-height: calc(32 / 26)
+		font-size: 24px
+		line-height: calc(30 / 24)
 		margin-bottom: 40px
 
 	h3
 		font-size: 22px
-		line-height: calc(28 / 22)
+		line-height: calc(30 / 22)
 
 	h4
-		font-size: 18px
+		font-size: 20px
 		line-height: calc(28 / 18)
 
 	h5, h6
-		font-size: rem(16)
-		line-height: calc(24 / 16)
+		font-size: 18px
+		line-height: calc(24 / 18)
 
 	blockquote
 		background: var(--secondColor)
@@ -43,6 +46,7 @@
 	[align="right"]
 		float: right
 		margin-left: 44px
+		text-align: left
 
 	[align="left"]
 		float: left
@@ -54,13 +58,18 @@
 	[align]
 		margin-bottom: 35px
 
+		img
+			display: block
+
+	table, .table-wrap
+		max-width: none
+
 	table
-		font-size: 14px
 
 		thead
 
 			th, td
-				background: #ececec
+				background: #454545
 
 		td, th
 			padding: 15px
@@ -79,16 +88,10 @@
 		min-width: 100%
 
 		td, th
-			border: 1px solid #e7e7e7
-
-		tr
-
-			&:hover
-
-				td
-					background: #edf1e0
+			border: 1px solid #454545
 
 	li
+		list-style-position: inside
 
 		&:not(:first-child)
 			margin: 3px 0 0
@@ -111,30 +114,26 @@
 
 	ul
 
-		&:not([class])
+		> li
+			padding-left: 25px
 
-			> li
-				padding-left: 25px
-
-				&:before
-					content: ""
-					margin: 0 16px 2px -22px
-					display: inline-block
-					border-radius: 50%
-					background: var(--mainColor)
-					size: 6px
+			&:before
+				content: "—"
+				margin: 0 16px 2px -22px
+				display: inline-block
 
 		> li
 
-			li
-				padding-left: 30px
+			ul li
+
+				&:before
+					content: "-"
 
 	ol
 		counter-reset: i
 
 		> li
 			counter-increment: i
-			font-weight: bold
 			padding-left: 18px
 
 			&:before

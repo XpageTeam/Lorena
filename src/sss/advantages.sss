@@ -1,0 +1,89 @@
+.advantages
+	margin: 110px 0 120px
+	padding: 0 100px
+
+.advantages-list
+
+	&:after
+		clear: both
+		content: ""
+		display: table
+
+	&__item
+		display: inline-flex
+		flex-direction: column
+		border-right: 1px solid #282828
+		border-bottom: 1px solid #282828
+
+		&:not(&--text)
+			width: calc(100% / 6 - 4px)
+			height: 278px
+			vertical-align: top
+
+		&--text
+			float: left
+			size: 849px 555px
+			justify-content: center
+			padding: 30px 100px
+
+.advantage-text
+
+	&__title
+		text-transform: uppercase
+		font-size: 10px
+		color: rgba(255,255,255, .5)
+		margin-bottom: 13px
+
+	&__question
+		font-size: 24px
+		margin-bottom: 30px
+
+	&__text
+		font-size: 14px
+		line-height: calc(27 / 14)
+		max-width: 440px
+
+.advantage
+	padding: 67px 55px 20px
+	text-align: center
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+
+	&__img
+		height: 56px
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 44px
+
+		img
+			flex: none
+			max-height: 100%
+
+@supports(display: grid)
+	.advantages-list
+		display: grid
+		border-top: 1px solid #282828
+		border-left: 1px solid #282828
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+		grid-auto-columns: minmax(max-content, 2fr)
+		grid-auto-rows: 278px
+
+		&:after
+			display: none
+
+		&__item
+			margin: 0 !important
+			size: auto !important
+
+			&--text
+				grid-row: 1 / 3
+				grid-column: 1 / 4
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute -1px 1px 1px -1px
+					border: 1px solid var(--second-color)
+					pointer-events: none
