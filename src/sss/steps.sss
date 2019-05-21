@@ -1,0 +1,56 @@
+.steps
+	border-top: 1px solid #282828
+	margin: 0 0 100px
+
+	&-list
+
+		&__item
+			
+			&:not(:first-child)
+				border-top: 1px solid #282828
+
+	&__finish
+		text-align: center
+		color: #fff var(--main-color)
+		padding: 35px 20px
+		font-size: 24px
+
+.step
+	display: flex
+	align-items: center
+	padding: 49px 0 64px
+
+	&__number
+		width: 315px
+		flex: none
+
+	&__text
+		width: calc(100% - 315px)
+		font-size: 14px
+
+		.text-page
+			max-width: 725px
+
+.s-number
+	display: flex
+	justify-content: center
+	align-items: flex-end
+
+	&__number
+		font-size: 144px
+		line-height: 1
+		font-weight: bold
+
+	&__text
+		writing-mode: vertical-rl
+		transform: rotate(180deg) translateX(-10px)
+
+		&:before
+			content: ""
+			display: inline-block
+			border-radius: 50%
+			background: #f60
+			background: var(--main-color)
+			width: 9px
+			height: 9px
+			margin: 26px 0 20px
