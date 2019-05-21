@@ -8,10 +8,24 @@
 		display: flex
 		flex-direction: column
 
+	&--prices
+
+		.cat-item__title-text
+
+			&:after
+				display: none
+
 .cat-item
 	flex: 1 1 auto
 	display: flex
 	flex-direction: column
+
+	&:hover, &:focus
+
+		.cat-item
+
+			&__btn
+				opacity: 1
 
 	&__img
 		position: relative
@@ -26,11 +40,30 @@
 		&-icon
 			position: absolute * 24px 26px *
 
+	&__btn
+		position: absolute 0
+		transition: opacity .3s ease
+		display: flex
+		justify-content: center
+		align-items: center
+		background: #282828
+		opacity: 0
+
 	&__labels
 		position: absolute 28px * * 32px
 		display: flex
 
 	&__title
+		display: flex
+		justify-content: space-between
+
+		&-text
+
+			&:not(:last-child)
+				margin-right: 15px
+
+		&-price
+			white-space: nowrap
 
 		&-text
 			font-weight: 300
