@@ -18,12 +18,15 @@ App.domReady(() => {
 
 		initiallizeVariantsSlider(document.querySelector(".variants-list.active .variants-slider:not(.swiper-container-initialized)"))
 
-		event.preventDefault();
+		event.preventDefault()
 	})
+
+	/* Первоначальная инициализация активного слайдера */
+	initiallizeVariantsSlider(document.querySelector(".variants-list.active .variants-slider:not(.swiper-container-initialized)"))
 })
 
 App.domReady(() => {
-	/** Инициализация верзнего слайдера в карточке */
+	/** Инициализация верхнего слайдера в карточке */
 	const mainSlider = new Swiper(".tovar-sliders__big", {
 		effect: "fade",
 		lazy: {
@@ -35,7 +38,9 @@ App.domReady(() => {
 		}
 	})
 
-	initiallizeVariantsSlider(document.querySelector(".variants-list.active .variants-slider:not(.swiper-container-initialized)"))
+	new EventListener(".thumbs-slider__slide").add("click", (el: HTMLElement, event: Event, i: number) => {
+		mainSlider.slideTo(i)
+	})
 })
 
 /** Инициализация слайдеров */

@@ -11,6 +11,20 @@ try{
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
 		require("../css/jquery.fancybox.css")
+
+		$(".fancybox").fancybox({
+			trapFocus: false,
+			touch: false,
+			loop: true,
+			buttons: ["fullscreen", "slideShow", "close"],
+			beforeClose(instance, slide){
+
+			},
+			image: {
+				preload: true,
+			},
+			transitionEffect: "slide",
+		})
 		
 		$(".main-slide__title-title").each((i, el) => {
 			new stringEffect({
@@ -19,10 +33,8 @@ try{
 		});
 
 		$("select:not(.no-selectize)").each(function(){
-			const $this = $(this);
-
-			$this.select2({
-				placeholder: $this.data("placeholder") || "",
+			$(this).select2({
+				placeholder: $(this).data("placeholder") || "",
 				templateResult: selectionTemplate,
 				templateSelection: selectionTemplate
 			})

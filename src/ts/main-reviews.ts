@@ -4,11 +4,12 @@ import {App} from "./app"
 Swiper.use([Lazy, EffectFade, Navigation])
 
 App.domReady(() => {
-	App.each(".reviews-slider", function(el: HTMLElement){
+	App.each(".main-reviews", function(el: HTMLElement){
 		const prevEl: HTMLElement = el.querySelector(".swiper-button-prev"),
-			nextEl: HTMLElement = el.querySelector(".swiper-button-next");
+			nextEl: HTMLElement = el.querySelector(".swiper-button-next"),
+			slider: HTMLElement = el.querySelector(".reviews-slider");
 
-		new Swiper(el, {
+		new Swiper(slider, {
 			effect: "fade",
 			navigation: {
 				prevEl: prevEl,

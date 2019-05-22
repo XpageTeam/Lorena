@@ -1,7 +1,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Новости
+		title Отзывы
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
@@ -12,31 +12,44 @@ html(lang="ru")
 					.wrapper
 						.title-block
 							.title-block__title
-								h1 Новости
+								h1 Отзывы
 							nav.title-block__menu
 								ul.title-menu
-									each item in  ["компания", "Партнеры", "Преимущества", "ваша карьера", ]
+									each item in  ["цена", "рассрочка", "полезное", "7 шагов к вашей кухне"]
 										li
 											a.title-menu__link.gray-btn(href="#")=item
 				.inner-content__content
 					.wrapper
-						.news
-							.news-list
-								- for (let j = 0; j < 2; j++)
-									each item, i in [{title: "Дизайн-встреча в новосибирске: яркие тренды 2019/2020", text: "30 января LORENA кухни в Новосибирске провела обзор трендов интерьерной моды. Тест-драйв кухни Вилладж вместе с шеф-поваром GRAUDE Алексеем Ерохиным"}, {title: "Дизайн-встреча в новосибирске: яркие тренды 2019/2020", text: "Компания LORENA кухни выступила партнером мероприятия, которого ждали все уфимские дизайнеры. 12 декабря в столице Башкортостана состоялась лекция Жени Ждановой"}, {title: "Домофест и lorena кухни в Екатеринбурге", text: "Квартирный шоппинг перед Новым годом – отличная возможность для уральцев решить свой вопрос с жильем и ремонтом"}, ]
-										.news-list__item
-											.news-item
-												.news-item__text
-													.news-text
-														.news-text__date 1 февраля 2019
-														a.news-text__title(href="#")=item.title
-														.news-text__text=item.text
-														.news-text__btn
-															a.circle-arrow-btn(href="")
-												a.news-item__img(href="#")
-													img(src="img/photos/new-"+i+".jpg", alt="")
-						.show-more
-							a.show-more__btn.arrow-btn(href="#") Показать ещё
+						.reviews
+							.reviews__filter
+								form(action="#")
+									.rev-filter
+										.rev-filter__select
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="1") Челябинск
+													option(value="2") Челябинск
+													option(value="3") Челябинск
+													option(value="4") Челябинск
+												label.default-input__label Выберите город
+										.rev-filter__select
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="1") Viva
+													option(value="2") Viva
+													option(value="3") Viva
+													option(value="4") Челябинск
+												label.default-input__label Выберите модель
+										.rev-filter__select
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="1") 10
+													option(value="2") 10
+													option(value="3") 10
+													option(value="4") 10
+												label.default-input__label Показывать
+							.reviews__desc
+							.reviews__list
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose

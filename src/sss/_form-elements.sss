@@ -1,30 +1,35 @@
-#service, #quality
-	width: 1000px
+#work
+	width: 1137px
 
 .popup-form
 	display: none
-	border: 1px solid var(--borderColor)
-	padding: 55px 65px 70px !important
-	width: 655px
+	margin: 0 !important
+	padding: 50px 37px 75px !important
+	width: 765px
+	background: var(--thrid-color) !important
+
+	&::-webkit-scrollbar
+		width: 10px
+
+		&-track
+			background: var(--second-color)
+
+		&-thumb
+			background: var(--main-color)
 
 	&__title
 		font-size: 30px
 		margin-bottom: 20px
 
-	&__text, &__title, &__info
-		text-align: center
+		+ .popup-form__form
+			margin: 60px 0 0
 
 	&__text
-		color: rgba(#000, .5)
-		max-width: 745px
+		color: rgba(255,255,255, .3)
 		margin: 0 auto 50px
 
-	&__text, &__info
-		line-height: calc(20 / 12)
-		font-size: 12px
-
-	&__info
-		margin: 32px 0 0
+	&__submit
+		flex: none
 	
 	.forms
 
@@ -75,6 +80,7 @@
 		align-items: center
 		position: relative
 		user-select: none
+		font-size: 14px
 
 		&:before, &:after
 			content: ""
@@ -98,53 +104,60 @@
 			transition: opacity .1s ease
 			opacity: 0
 
-.forms__inputs
+.popup-form__inputs
 	display: flex
 	flex-wrap: wrap
-	margin: 0 0 -40px -27px
+	margin: 0 0 -55px -54px
 
-	.forms
+	&--3
 
-		&__input-cont
-			width: calc((100% - 25px * 2) / 2)
-			margin: 0 0 40px 25px
+		.default-input
+			margin: 0 0 55px 54px
 
-	&--column
+			&:not(.default-input--submit)
+				width: calc((100% - 54px * 3) / 3)
+
+			&--submit
+				width: calc((133.33% - 54px * 2) / 2)
+
+	&--2
+
+		.default-input
+			margin: 0 0 55px 54px
+
+			&:not(.default-input--submit)
+				width: calc((100% - 54px * 2) / 2)
+
+			&--submit
+				width: calc(100% - 54px)
+
+
+	&--column, &--1
 		flex-direction: column
 		margin: 0 !important
 
-		.forms
+		.default-input
+			width: 100%
+			margin: 0
 
-			&__input-cont
-				width: 100%
-				margin: 0
-
-				&:not(:first-child)
-					margin: 25px 0 0
-
-		~ .forms
-
-			&__submit
-				margin: 23px 0 0 
+			&:not(:first-child)
+				margin: 25px 0 0
 
 .form-req
-	text-align: center
-	vertical-align: top
-	font-size: 12px
-
-	i
-		font-style: normal
-		border-radius: 50%
-		color: #fff var(--mainColor)
-		size: 22px
-		display: inline-block
-		padding-top: 3px
-		margin: 0 10px 0 0
-		font-size: 15px
+	color: rgba(255,255,255, .3)
 
 .default-input
 	display: flex
 	flex-direction: column-reverse
+	font-size: 14px
+	position: relative
+
+	&--submit
+		align-items: center
+		flex-direction: row
+
+		.form-req
+			margin-left: 44px
 
 	&__input
 		border: none
@@ -264,7 +277,7 @@
 							&.active
 								background: var(--secondColor)
 
-		&[required] ~ label
+		&:required ~ label
 
 			&:after
 				content: "*"
@@ -282,7 +295,7 @@
 			position: absolute 0 * * 0
 			pointer-events: none
 
-			~ .forms__input
+			~ .default-input__input
 				width: calc(100% - 147px)
 
 	&__label
@@ -405,3 +418,15 @@
 
 	.popup-form
 		padding: 20px 16px !important
+
+.select2-container--default 
+	.select2-selection--single 
+		.select2-selection__arrow
+			display: none
+
+.fancybox
+
+	&-close
+
+		&-small
+			color: #fff !important

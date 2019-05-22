@@ -12,9 +12,27 @@ header.head
 			ul.h-menu
 				li.h-menu__item.h-menu__item--have-sub
 					a.h-menu__link.active(href="#") Компания
+					ul.h-submenu
+						li
+							a.h-submenu__link(href="#") Новости
+						li
+							a.h-submenu__link(href="#") Партнёры
+						li
+							a.h-submenu__link.active(href="#") Приемущества
+						li
+							a.h-submenu__link(href="#") Ваша карьера
 				each item in ["Кухни", "Покупателю", "Акции", "Где купить?", ]
 					li.h-menu__item.h-menu__item--have-sub
 						a.h-menu__link(href="#")=item
+						ul.h-submenu
+							li
+								a.h-submenu__link(href="#") Новости
+							li
+								a.h-submenu__link(href="#") Партнёры
+							li
+								a.h-submenu__link.active(href="#") Приемущества
+							li
+								a.h-submenu__link(href="#") Ваша карьера
 		.head__constructor
 			a.constructor-link(href="#") 
 				svg.constructor-link__icon.ico

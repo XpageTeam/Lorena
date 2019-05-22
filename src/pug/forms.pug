@@ -1,0 +1,111 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Формы
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							.title-block__title
+								h1 Формы
+							nav.title-block__menu
+								ul.title-menu
+									each item in  ["мастер-класс", "распродажа", "выездной дизайнер кухни", ]
+										li
+											a.title-menu__link.gray-btn(href="#")=item
+				.inner-content__content
+					.wrapper
+						a.fancybox.arrow-btn(href="#request") Подать заявку
+						br
+						br
+						a.fancybox.arrow-btn(href="#work") Хочу здесь работать
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		.popup-form#request
+			.popup-form__title Заполни заявку
+			.popup-form__text на бесплатный дизайн-проект своей кухни
+				br
+				| и получи рецепт в подарок!
+			.popup-form__form
+				form(action="#")
+					.popup-form__inputs.popup-form__inputs--2
+						.default-input
+							input.default-input__input(type="text" placeholder="Иван" required="")
+							label.default-input__label Имя
+							.forms__error-message
+						.default-input
+							select.default-input__input.default-input__input--select(required="" data-placeholder="Выберите город")
+								option(value="1") Челябинск
+								option(value="2") Челябинск
+								option(value="3") Челябинск
+								option(value="4") Челябинск
+								option(value="5") Челябинск
+							label.default-input__label Ваш город
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="tel" size="25" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (351) 000 00 00" required="")
+							label.default-input__label Ваш телефон
+						.default-input
+							input.default-input__input(type="email" placeholder="ivan@mail.ru" required="" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+							label.default-input__label E-mail
+							.forms__error-message
+							.forms__error-message
+						.default-input.default-input--submit
+							input.popup-form__submit.arrow-btn(type="submit" value="Отправить")
+							.form-req Нажимая на кнопку отправки сообщения, 
+								br 
+								| я соглашаюсь на обработку моих 
+								a(href="#") персональных данных
+		.popup-form#work
+			.popup-form__title Хочу здесь работать
+			.popup-form__form
+				form(action="#")
+					.popup-form__inputs.popup-form__inputs--3
+						.default-input
+							select.default-input__input.default-input__input--select(required="" data-placeholder="Выберите город")
+								option(value="1") Челябинск
+								option(value="2") Челябинск
+								option(value="3") Челябинск
+								option(value="4") Челябинск
+								option(value="5") Челябинск
+							label.default-input__label Ваш город
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="text" placeholder="Дизайнер" required="")
+							label.default-input__label На какую должность вы претендуете
+							.forms__error-message
+						.default-input.default-input--file
+							input.default-input__input.default-input__input--file(type="file" id="work-file")
+							label.default-input__label.default-input__label--file(data-text="Файл не выбран" for="work-file") 
+								span Прикрепить резюме
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="text" placeholder="Иван" required="")
+							label.default-input__label Имя
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="email" placeholder="ivan@mail.ru" required="" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+							label.default-input__label E-mail
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="tel" size="25" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (351) 000 00 00" required="")
+							label.default-input__label Ваш телефон
+							.forms__error-message
+						.default-input
+							input.default-input__input(type="text" placeholder="Введите текст")
+							label.default-input__label Сообщение
+							.forms__error-message
+						.default-input.default-input--submit
+							input.popup-form__submit.arrow-btn(type="submit" value="Отправить")
+							.form-req Нажимая на кнопку отправки сообщения, 
+								br 
+								| я соглашаюсь на обработку моих 
+								a(href="#") персональных данных
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

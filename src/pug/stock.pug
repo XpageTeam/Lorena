@@ -1,0 +1,136 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Акции
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							.title-block__title
+								h1 Акции
+							nav.title-block__menu
+								ul.title-menu
+									each item in  ["мастер-класс", "распродажа", "выездной дизайнер кухни", ]
+										li
+											a.title-menu__link.gray-btn(href="#")=item
+				.inner-content__content
+					.wrapper
+						.stock
+							.stock__banner
+								.s-banner
+									a.s-banner__img(href="#")
+										picture
+											source(media="(min-width: 660px)" srcset="img/photos/standart-page-img.jpg")
+											source(media="(max-width: 660px)" srcset="img/photos/standart-page-img.jpg")
+											<!-- если картинка одна, то её нужно выводить сразу в src у img -->
+											img
+									.s-banner__desc
+										.sb-desc
+											.sb-desc__text
+												.sb-desc__text-title Хотите участвовать в акции?
+												.sb-desc__text-text Оформите заявку прямо сейчас
+											.sb-desc__btn
+												a.arrow-btn.fancybox(href="#") Офомить заявку
+							.stock-list
+								.stock-list__item
+									.stock-item
+										a.stock-item__img(href="#")
+											picture
+												source(media="(min-width: 660px)" srcset="img/photos/stock-0.jpg")
+												source(media="(max-width: 660px)" srcset="img/photos/stock-0.jpg")
+												<!-- если картинка одна, то её нужно выводить сразу в src у img -->
+												img
+										.stock-item__text
+											a.stock-item__text-title(href="#") Рассрочка
+												br
+												| на выгодных условиях
+											.stock-item__text-btn
+												a.circle-arrow-btn(href="#")
+								.stock-list__item
+									.stock-item
+										a.stock-item__img(href="#")
+											picture
+												source(media="(min-width: 660px)" srcset="img/photos/stock-1.jpg")
+												source(media="(max-width: 660px)" srcset="img/photos/stock-1.jpg")
+												<!-- если картинка одна, то её нужно выводить сразу в src у img -->
+												img
+										.stock-item__text
+											a.stock-item__text-title(href="#") Бесплатная
+												br
+												| доставка
+												br
+												| по ЯНАО
+											.stock-item__text-btn
+												a.circle-arrow-btn(href="#")
+								.stock-list__item
+									.stock-item
+										a.stock-item__img(href="#")
+											picture
+												source(media="(min-width: 660px)" srcset="img/photos/stock-2.jpg")
+												source(media="(max-width: 660px)" srcset="img/photos/stock-2.jpg")
+												<!-- если картинка одна, то её нужно выводить сразу в src у img -->
+												img
+										.stock-item__text
+											a.stock-item__text-title(href="#") Спеццены на технику SMEG с 1 по 30 апреля во всех салонах LORENA кухни! 
+											.stock-item__text-btn
+												a.circle-arrow-btn(href="#")
+								.stock-list__item
+									.stock-item
+										a.stock-item__img(href="#")
+											picture
+												source(media="(min-width: 660px)" srcset="img/photos/stock-3.jpg")
+												source(media="(max-width: 660px)" srcset="img/photos/stock-3.jpg")
+												<!-- если картинка одна, то её нужно выводить сразу в src у img -->
+												img
+										.stock-item__text
+											a.stock-item__text-title(href="#") Гриль или кофеварка со скидкой 99,99%
+											.stock-item__text-btn
+												a.circle-arrow-btn(href="#")
+			.main-choose__cont.main-choose__cont--no-bg
+				.wrapper
+					.main-choose
+						.main-choose__form
+							.main-choose__text-title Заполни заявку
+							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
+								br
+								| и получи рецепт в подарок!
+							.choose-form 
+								form(action="#")
+									.choose-form__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input.default-input--select
+											select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+												option(value="Выберите город" disabled="")
+												option(value="1" selected="") Челябинск
+												option(value="2") Челябинск
+												option(value="3") Челябинск
+												option(value="4") Челябинск
+												option(value="5") Челябинск
+											label.default-input__label Город
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.choose-form__bot
+											.choose-form__bot-submit
+												input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 
