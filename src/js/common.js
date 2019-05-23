@@ -51,7 +51,7 @@ try{
 				if (!slider)
 					return
 
-				console.log(arguments)
+				slider.swiper.slideTo(slide.index)
 			},
 			image: {
 				preload: true,
