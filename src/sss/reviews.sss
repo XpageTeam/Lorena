@@ -1,0 +1,53 @@
+.reviews
+	margin: 0 0 110px
+
+	&__desc
+		margin: 82px 0 0
+
+.rev-filter
+	display: flex
+	align-items: flex-end
+
+	.default-input
+
+		&__label
+			color: rgba(255,255,255,.3)
+
+	&__select
+		flex: 1 1 auto
+
+		.select2
+			width: 100% !important
+
+	&__submit
+		flex: none
+		margin: 0 0 8px 60px
+
+@supports(display: grid)
+	.rev-filter
+		display: grid
+		grid-template-columns: repeat(3, 1fr) auto
+		grid-gap: 0 27px
+
+		&__submit
+			margin: 0
+			padding: 0 0 8px 33px
+
+.rev-desc
+	display: flex
+	align-items: center
+	justify-content: space-between
+	background: var(--thrid-color)
+	padding: 68px 105px 70px 95px
+
+	&__text
+
+		&-title
+			font-size: 24px
+
+			&:not(:last-child)
+				margin-bottom: 10px
+
+		&-text
+			line-height: calc(26 / 14)
+			font-size: 14px

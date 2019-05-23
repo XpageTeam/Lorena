@@ -1,7 +1,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Отзывы
+		title Адреса
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
@@ -12,56 +12,57 @@ html(lang="ru")
 					.wrapper
 						.title-block
 							.title-block__title
-								h1 Отзывы
+								h1 Адреса
 							nav.title-block__menu
 								ul.title-menu
-									each item in  ["цена", "рассрочка", "полезное", "7 шагов к вашей кухне"]
+									each item in ["новые открытия"]
 										li
 											a.title-menu__link.gray-btn(href="#")=item
 				.inner-content__content
 					.wrapper
-						.reviews
-							.reviews__filter
-								form(action="#")
-									.rev-filter
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") Челябинск
-													option(value="2") Челябинск
-													option(value="3") Челябинск
-													option(value="4") Челябинск
-												label.default-input__label Выберите город
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") Viva
-													option(value="2") Viva
-													option(value="3") Viva
-													option(value="4") Челябинск
-												label.default-input__label Выберите модель
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") 10
-													option(value="2") 10
-													option(value="3") 10
-													option(value="4") 10
-												label.default-input__label Показывать
-										.rev-filter__submit
-											input.arrow-btn(type="submit" value="Применить")
-							.reviews__desc
-								.rev-desc
-									.rev-desc__text
-										.rev-desc__text-title Более 170 000
-										.rev-desc__text-text
-											p Довольных семей по всей россии
-											p Счастливые владельцы кухни lorena
-									.rev-desc__btn
-										a.default-btn.fancybox(href="#") Оставить отзыв
-							.reviews__list
-								.rev-list
-									.rev-list__item
+						.addresses
+							.addresses__list
+								.address-list
+									each address, j in ["Актау", "Альметьевск", "Астана", "Барнаул", "Белгород", "Березники", ]
+										.address-list__item
+											.address
+												header.address__top
+													.address__top-title(data-count="1")=address
+													address.address__top-address ул. пушкина, 64
+													.address__top-btn
+														.gray-arrow-btn Подробнее о салоне
+												main.address__content
+													.address-desc
+														.address-desc__contacts
+															.address-contacts
+																.address-contacts__item.address-contacts__item--full
+																	.address-contacts__title Контакты
+																	address
+																		a(href="tel: 8 (8553) 32-05-11") 8 (8553) 32-05-11
+																	address
+																		a(href="mailto: almetyevsk1@lorena-kuhni.ru") almetyevsk1@lorena-kuhni.ru
+																.address-contacts__item
+																	.address-contacts__title График работы
+																	time пн-пт: 10.00–19.00
+																	time сб: 10.00–19.00
+																	time вс: 10.00–17.00
+																.address-contacts__item
+																	.address-contacts__title Руководитель салона
+																	p Юдина Марина
+															.address-btns
+																a.arrow-btn(href="#") Закажи бессплатный замер
+																a.gray-arrow-btn(href="#") Посмотреть на крате
+														.address-desc__slider
+															.address-slider
+																.swiper-wrapper
+																	- for (let i = 0; i < 4; i++)
+																		.swiper-slide
+																			a.address-slider__slide(href="img/photos/addres-img.jpg" data-fancybox="address-gallery-"+j)
+																				img.swiper-lazy(data-src="img/photos/addres-img.jpg")
+																			.swiper-lazy-preloader
+																.address-slider__arrows
+																	.swiper-button-prev
+																	.swiper-button-next
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose

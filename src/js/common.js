@@ -39,6 +39,24 @@ try{
 				templateSelection: selectionTemplate
 			})
 		})
+
+		$(".address-slider__slide").fancybox({
+			trapFocus: false,
+			touch: false,
+			loop: true,
+			buttons: ["fullscreen", "slideShow", "close"],
+			beforeClose(instance, slide){
+				const slider = document.querySelector(".address-slider__slide");
+
+				if (!slider)
+					return
+
+				console.log(arguments)
+			},
+			image: {
+				preload: true,
+			},
+		})
 	})
 }catch(e){
 	console.log(e)

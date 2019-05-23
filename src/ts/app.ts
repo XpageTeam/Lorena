@@ -105,15 +105,17 @@ class Element {
 	* @param selector: HTMLElement[] || NodeList || HTMLElement || Element || string
 	* @return Element
 	*/  
-	constructor (selector: HTMLElement[])
-	constructor (selector: NodeList)
-	constructor (selector: Element)
-	constructor (selector: HTMLElement)
-	constructor (selector: string)
-	constructor (selector: any){
+	constructor (selector?: HTMLElement[])
+	constructor (selector?: HTMLElement[])
+	constructor (selector?: NodeList)
+	constructor (selector?: Element)
+	constructor (selector?: string)
+	constructor (selector?: HTMLElement)
+	constructor (selector?: any){
 
-
-		if (typeof selector == "string")
+		if (!selector)
+			this.els = []
+		else if (typeof selector == "string")
 			this.els = App.elementsGetter(selector)
 		else if (selector instanceof HTMLElement)
 			this.els = [selector]
@@ -125,6 +127,34 @@ class Element {
 			this.els = selector.els
 		else
 			throw Error(`Invalid selector: ${selector}`)
+	}
+
+	/**
+	 * Метод добавление HTMLElemnt в экземпляр
+	 * класса Element
+	 * @param element: HTMLElement || NodeList || string || Element
+	 * @return Element
+	 */
+	public addElement(element: Element): Element
+	public addElement(element: NodeList): Element
+	public addElement(element: string): Element
+	public addElement(element: HTMLElement): Element
+	public addElement(element: HTMLElement[]): Element
+	public addElement(element: any): Element{
+
+		if (typeof element == "string")
+			this.els = this.els.concat(App.elementsGetter(element))
+		else if (element instanceof Element)
+			this.els = this.els.concat(element.els)
+		else if (element instanceof HTMLElement)
+			this.els = this.els.concat(element)
+		else if (element instanceof NodeList)
+			this.els = this.els.concat(App.transformNodeListToArray(element))
+		else if (element instanceof Array && (element[0] instanceof HTMLElement || !element.length))
+			this.els = this.els.concat(element)
+		else
+			throw Error(`Invalid selector: ${element}`)
+		return this
 	}
 
 
@@ -239,6 +269,10 @@ class Element {
 		return false
 	}
 
+	/** Метод поиска потомков элемента по селектору 
+	* @param selector: string - селектор искомого
+	* @return Element
+	* */
 	public find(selector: string): Element{
 		let searchingElements = new Array();
 
@@ -257,6 +291,25 @@ class Element {
 		})
 
 		return new Element(searchingElements)
+	}
+
+	/** Метод поиска родителей по селектору 
+	* @param selector: string
+	* @return Element 
+	*/
+	public closest(selector: string): Element{
+		const searchingElements = new Element();
+
+		App.each(this.els, (el: HTMLElement) => {
+			const findedElements: any = el.closest(selector);
+
+			if (!findedElements)
+				return
+
+			searchingElements.addElement(findedElements);
+		})
+
+		return searchingElements
 	}
 }
 

@@ -1,7 +1,7 @@
 html(lang="ru")
 	head
 		meta(charset="utf-8")
-		title Отзывы
+		title Полезное
 		include inc/head.pug
 		include inc/css.pug
 	body.inner.loading
@@ -12,7 +12,7 @@ html(lang="ru")
 					.wrapper
 						.title-block
 							.title-block__title
-								h1 Отзывы
+								h1 Полезное
 							nav.title-block__menu
 								ul.title-menu
 									each item in  ["цена", "рассрочка", "полезное", "7 шагов к вашей кухне"]
@@ -20,48 +20,18 @@ html(lang="ru")
 											a.title-menu__link.gray-btn(href="#")=item
 				.inner-content__content
 					.wrapper
-						.reviews
-							.reviews__filter
-								form(action="#")
-									.rev-filter
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") Челябинск
-													option(value="2") Челябинск
-													option(value="3") Челябинск
-													option(value="4") Челябинск
-												label.default-input__label Выберите город
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") Viva
-													option(value="2") Viva
-													option(value="3") Viva
-													option(value="4") Челябинск
-												label.default-input__label Выберите модель
-										.rev-filter__select
-											.default-input
-												select.default-input__input.default-input__input--select
-													option(value="1") 10
-													option(value="2") 10
-													option(value="3") 10
-													option(value="4") 10
-												label.default-input__label Показывать
-										.rev-filter__submit
-											input.arrow-btn(type="submit" value="Применить")
-							.reviews__desc
-								.rev-desc
-									.rev-desc__text
-										.rev-desc__text-title Более 170 000
-										.rev-desc__text-text
-											p Довольных семей по всей россии
-											p Счастливые владельцы кухни lorena
-									.rev-desc__btn
-										a.default-btn.fancybox(href="#") Оставить отзыв
-							.reviews__list
-								.rev-list
-									.rev-list__item
+						.useful
+							.useful-list
+								each use in ["Как создать непотопляемую столешницу? История Aqualine", "Технология brilliant неуязвимые глянцевые фасады", "Требуем, не отходя от кассы!", "Маленькая кухня: советы дизайнеров lorena (часть 1)", "Идеальная кухня: 7 советов от экспертов lorena", "Дизайнерская кухня с обоями wallart", "Светодизайн: организуем освещение на кухне", "Технология monolite: без клея, без швов, без проблем",]
+									.useful-list__item
+										.useful-item
+											header.useful-item__title
+												span=use
+												.useful-item__title-btn
+													.circle-arrow-btn
+											main.useful-item__text
+												article.text-page
+													p Заказала кухню в декабре в салоне на Радищева, 55. Менеджер Екатерина помогла определиться с выбором, подобрала технику и стеновую панель из закаленного стекла. Все изготовлено в срок, доставлено и установлено бесплатно. Кухня получилась вместительная , светлая и превзошла все мои ожидания.
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose
