@@ -21,6 +21,41 @@ html(lang="ru")
 				.inner-content__content
 					.wrapper
 						.addresses
+							.addresses__desc
+								.address-desc
+									.address-desc__text
+										.adr-text
+											.adr-text__counters
+												.adr-text__counters-item
+													.adr-counter
+														.adr-counter__number 71
+														.adr-counter__text Город
+												.adr-text__counters-item
+													.adr-counter
+														.adr-counter__number 155
+														.adr-counter__text салонов
+											.adr-text__title «Lorena кухни» - это передовые технологии, эксклюзивные материалы и лучшие специалисты
+											.adr-text__text
+												.text-page
+													p Каждая кухня LORENA – авторская работа. Она попадает в ваш дом, пройдя через руки творческих дизайнеров, высококвалифицированных рабочих, опытных технологов, неравнодушных и обязательных установщиков мебели.
+									.address-desc__map
+										.adr-map
+											figure.adr-map__img
+												img(src="img/russia-map.svg")
+											.adr-map__desc
+												.adr-map__desc-title Не нашли салон в своем городе? 
+													br 
+													| Откройте свой!
+												.adr-map__desc-btn
+													a.default-btn(href="#") Стать дилером
+							.addresses__search
+								.address-search
+									form(action="#")
+										.address-search__form
+											.address-search__form-input
+												input.adr-search__input(type="text" placeholder="Введите свой город")
+											.address-search__form-submit
+												input.adr-search__submit.arrow-btn(type="submit" value="Найти")
 							.addresses__list
 								.address-list
 									each address, j in ["Актау", "Альметьевск", "Астана", "Барнаул", "Белгород", "Березники", ]

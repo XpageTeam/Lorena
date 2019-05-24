@@ -1,0 +1,122 @@
+.partners
+	display: flex
+	flex-wrap: wrap
+	border-top: 1px solid var(--thrid-color)
+	padding: 105px 0 0
+
+	&__scrollbar
+		width: 100%
+		margin: 119px 0 0
+
+		.swiper-scrollbar
+			background: var(--thrid-color)
+			height: 2px
+
+			&-drag
+				background: var(--main-color)
+				cursor: pointer
+				
+				&:before
+					content: ""
+					position: absolute -10px
+
+
+	&__text
+		width: 940px
+		max-width: 50%
+		flex: none
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+	&__slider
+		width: calc(100% - 940px)
+		// max-width: 50%
+		overflow: hidden
+
+.partners-text
+	padding: 40px 200px
+
+	&__category
+		color: rgba(255,255,255, .3)
+		text-transform: uppercase
+		font-size: 10px
+		margin-bottom: 10px
+
+	&__title
+		line-height: calc(35 / 24)
+		font-size: 24px
+		margin-bottom: 30px
+	
+	&__text
+		font-size: 14px
+		line-height: calc(27 / 14)
+
+.partners-slider
+	size: 100% vh(555)
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	border-top: 1px solid var(--thrid-color)
+	border-left: 1px solid var(--thrid-color)
+
+	.swiper
+
+		&-wrapper
+			height: 100% !important
+
+		&-slide
+			// height: 50% !important
+			display: flex
+			flex-direction: column
+
+.partner
+	position: relative
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	border-right: 1px solid var(--thrid-color)
+	border-bottom: 1px solid var(--thrid-color)
+	display: flex
+	flex-direction: column
+
+
+	&__img
+		flex: 1 1 auto
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+
+	&__img, &__desc
+		backface-visibility: hidden
+		transform-style: preserve-3d
+		perspective: 1000px
+		transition: transform .3s ease
+
+	&__desc
+		position: absolute 0
+		transform: rotateY(180deg)
+		background: var(--thrid-color)
+		padding: 36px 38px 30px
+
+	&__title
+		text-transform: uppercase
+		font-size: 13px
+		font-weight: 500
+		line-height: 1
+		margin-bottom: 20px
+
+	&__text
+		font-size: 10px
+		line-height: calc(18 / 10)
+
+	&:hover, &:focus
+
+		.partner
+
+			&__img
+				transform: rotateY(-180deg)
+
+			&__desc
+				transform: none

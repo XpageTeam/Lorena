@@ -1,0 +1,159 @@
+.career
+
+	> div
+
+		&:nth-child(odd)
+			background: var(--thrid-color)
+
+	&__chief
+		display: flex
+		justify-content: flex-end
+		padding-right: vw(250)
+		position: relative
+
+	&__advantages
+		padding: 130px 0 120px
+
+	&__history
+		padding: 110px 0 85px
+
+	&__slider
+		padding: 82px 0
+
+.c-chief
+
+	.wrapper
+		position: absolute 0
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+	&__text
+		max-width: 520px
+
+		&-subtitle
+			font-size: 24px
+			line-height: 1
+			margin-bottom: 10px
+
+		&-title
+			font-size: 64px
+			line-height: calc(62 / 64)
+			font-weight: bold
+
+		&-btn
+			margin: 60px 0 0
+
+.c-why
+	padding: 100px 0 115px
+
+	&__title
+		margin-bottom: 65px
+		font-size: 24px
+		font-weight: 400
+		line-height: calc(35 / 24)
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+
+		&-item
+			width: 20%
+
+.cw-item
+
+	&__img
+		height: 55px
+		margin-bottom: 40px
+
+		img
+			display: block
+			max-height: 100%
+
+	&__text
+		font-size: 14px
+		line-height: calc(27 / 14)
+		max-width: 155px
+
+
+.c-advantages
+
+
+	.advantages-list
+		grid-template-columns: repeat(5, 1fr)
+
+		&__item
+
+			&--text
+				padding: 0
+				display: block
+				grid-column: 1 / 3
+
+				&:before
+					border: none !important
+
+
+	.advantage
+		text-align: left
+		align-items: flex-start
+		padding: 0 32px 20px
+
+.c-history
+
+	&__title
+		font-size: 24px
+		line-height: calc(35 / 24)
+		margin-bottom: 50px
+
+.history-list
+
+	&__item
+
+		&:not(:first-child)
+			margin: 30px 0 0
+
+.history
+	display: flex
+	background: var(--thrid-color)
+	padding: 55px 100px 55px 60px
+
+	&__user
+		width: 435px
+		flex: none
+		margin-right: repsent(120)
+
+	&__text
+		flex: 1 1 auto
+		font-size: 14px
+		line-height: calc(20 / 14)
+
+.his-user
+	display: flex
+
+	&__img
+		flex: none
+		size: 75px
+		display: flex
+		justify-content: center
+		align-items: center
+		overflow: hidden
+		border-radius: 50%
+		margin-right: 40px
+
+		img
+			border-radius: 50%
+			max-width: none
+
+	&__name
+		font-size: 18px
+		margin-bottom: 15px
+
+	&__city
+		font-size: 14px
+		line-height: calc(20 / 14)
+		color: rgba(255,255,255, .4)
+
+
+
+.career-slider
+	position: relative

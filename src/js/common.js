@@ -46,7 +46,7 @@ try{
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close"],
 			beforeClose(instance, slide){
-				const slider = document.querySelector(".address-slider__slide");
+				const slider = document.querySelector(".address.active .address-slider");
 
 				if (!slider)
 					return

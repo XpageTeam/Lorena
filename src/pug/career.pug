@@ -1,0 +1,155 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Ваша карьера
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.career
+						.career__chief
+							.c-chief
+								.wrapper
+									.c-chief__text
+										.c-chief__text-subtitle Не гневи шефа
+										.c-chief__text-title Работай в кухне Lorena
+										.c-chief__text-btn
+											a.arrow-btn(href="#") Хоче здесь работать
+								figure.c-chief__bg
+									img(src="img/photos/another-ivlev.png")
+						.career__why
+							.wrapper
+								.c-why
+									.c-why__title Потому что 
+										br
+										| «Lorena кухни» это
+									.c-why__list
+										each item, i in ["Более 29 лет на рынке", "Топ-3 национальнго бизнес-рейтинга", "Более 70 городов", "Более 1000 единомышленников", "Уникальные технологии", ]
+											.c-why__list-item
+												.cw-item
+													figure.cw-item__img
+														img(src="img/photos/cw-img-"+i+".svg")
+													figcaption.cw-item__text=item
+						.career__advantages
+							.wrapper
+								.c-advantages
+									.advantages-list
+										.advantages-list__item.advantages-list__item--text
+											.advantage-text
+												.advantage-text__question Преимущества
+													br
+													| работы в Lorena
+										each adv, i in ["Надежная федеральная компания", "Достойные условия труда", "Все по закону", "Лучшие научат важному", "Ты не один", "Постоянная мотивация к успеху", "Все в твоих руках", "Плюшки и пряники", "Льготное кредитование", "Опыт не важен, только стремление", "Растем каждый месяц"]
+											.advantages-list__item
+												.advantage
+													figure.advantage__img
+														img(src="img/photos/c-advantage-"+i+".svg")
+													figcaption.advantage__text=adv
+						.career__history
+							.wrapper
+								.c-history
+									.c-history__title Истории успеха
+									.c-history__list
+										.history-list
+											.history-list__item
+												.history
+													.history__user
+														.his-user
+															figure.his-user__img
+																img(src="img/photos/user-0.jpg")
+															.his-user__about
+																.his-user__name Наталья Новохатько 
+																.his-user__city региональный управляющий по Свердловской области
+													.history__text
+														.text-page
+															p За годы работы в компании мне удалось создать один из самых сильных филиалов LORENA, выстроить взаимопонимание с партнерами и застройщиками. Наши сотрудники с уверенностью в завтрашнем дне строят карьеру, семью, оформляют кредиты/ипотеку, потому что LORENA дает шанс расти и развиваться каждому. Через мастер-классы со звездами, международные выставки и конкурсы, мы получаем бесценный опыт и совершенно другой уровень жизни
+											.history-list__item
+												.history
+													.history__user
+														.his-user
+															figure.his-user__img
+																img(src="img/photos/user-1.jpg")
+															.his-user__about
+																.his-user__name Юлия Султанова
+																.his-user__city г. Тюмень
+													.history__text
+														.text-page
+															p Компания учит работать с информацией, анализировать окружающий мир и свои ошибки, видеть возможности в каждой ситуации. Здесь каждый, кто стремится к росту, высокому уровню жизни и благополучию, прикладывая усилия, шаг за шагом приходит к намеченной цели
+											.history-list__item
+												.history
+													.history__user
+														.his-user
+															figure.his-user__img
+																img(src="img/photos/user-2.jpg")
+															.his-user__about
+																.his-user__name Любовь Дьякова
+																.his-user__city г. Тюмень
+													.history__text
+														.text-page
+															p Меньше года назад открытие, я сама управляла процессом. Фабрика обучила, дала всё необходимое, я сформировала команду, обучила людей. Сейчас мы перевыполняем план и с каждым месяцем моя зарплата и зарплата сотрудников растет. Уже прошла семинар. Каждый день это рост и новые открытия
+						.career__slider
+							.wrapper
+								.career-slider
+									.swiper-wrapper
+										- for (let j = 0; j < 10; j++)
+											- for (let i = 0; i < 3; i++)
+												.swiper-slide
+													a.career-slider__slide(href="img/photos/career-img-"+i+".jpg" data-fancybox="career-gallery")
+														if (i == 0 && j == 0)
+															img(src="img/photos/career-img-"+i+".jpg")
+														else
+															img.swiper-lazy(data-src="img/photos/career-img-"+i+".jpg")
+															.swiper-lazy-preloader
+									.career-slider__arrows
+										.swiper-button-prev
+										.swiper-button-next
+									.career-slider__dots
+										.swiper-pagination
+						.career__vacancy
+							.wrapper последний блок не готов
+			.main-choose__cont.main-choose__cont--no-bg
+				.wrapper
+					.main-choose
+						.main-choose__form
+							.main-choose__text-title Заполни заявку
+							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
+								br
+								| и получи рецепт в подарок!
+							.choose-form 
+								form(action="#")
+									.choose-form__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input.default-input--select
+											select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+												option(value="Выберите город" disabled="")
+												option(value="1" selected="") Челябинск
+												option(value="2") Челябинск
+												option(value="3") Челябинск
+												option(value="4") Челябинск
+												option(value="5") Челябинск
+											label.default-input__label Город
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.choose-form__bot
+											.choose-form__bot-submit
+												input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 
