@@ -20,6 +20,9 @@
 	&__slider
 		padding: 82px 0
 
+	&__vacancy
+		padding: 100px 0
+
 .c-chief
 
 	.wrapper
@@ -157,3 +160,89 @@
 
 .career-slider
 	position: relative
+
+	&__arrows
+		position: absolute calc(50% - 20px) -20px *
+		display: flex
+		justify-content: space-between
+		pointer-events: none
+
+	&__slide
+		transition: opacity .3s ease
+		display: block
+		opacity: .5
+
+		img
+			display: block
+			width: 100%
+
+	.swiper-slide-active, 
+	.swiper-slide-next, 
+	.swiper-slide-next + .swiper-slide
+
+		.career-slider__slide
+			opacity: 1
+
+	.swiper
+
+
+		&-button
+
+			&-prev
+				transform: rotateZ(90deg)
+
+			&-next
+				transform: rotateZ(-90deg)
+
+			&-prev, &-next
+				border-radius: 50%
+				margin: 0
+				background: var(--main-color)
+				size: 39px
+				position: static
+				pointer-events: all
+
+				&:not(:last-child)
+					margin-right: 20px
+
+				&:matches(:after, :before)
+					content: ""
+					position: absolute
+
+				&:after
+					top: calc(50% - 3px) 
+					right: calc(50% - 3px)
+					border-right: 1px solid #fff
+					border-bottom: 1px solid #fff
+					size: 5px
+					transform: rotateZ(45deg)
+					z-index: 1
+
+.c-vacancy
+
+	&__list
+		margin-bottom: -26px
+
+		&:not(:first-child)
+			margin: 44px 0 0
+
+.cities-list
+
+	&__item
+		display: inline-block
+		margin-bottom: 26px
+
+		&:not(:last-child)
+			margin-right: 18px
+
+.city
+	border-radius: 100px
+	transition: color .3s ease, background .3s ease
+	padding: 12px 22px
+	text-transform: uppercase
+	background: var(--thrid-color)
+	display: block
+	font-size: 10px
+
+	&:hover, &:focus, &.active
+		color: #fff var(--main-color)

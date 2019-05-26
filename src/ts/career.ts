@@ -1,7 +1,7 @@
-import {App} from "./app"
-import {Swiper, Lazy, Keyboard} from "swiper/dist/js/swiper.esm"
+import {App, Element, EventListener } from "./app"
+import {Swiper, Lazy, Keyboard, Navigation} from "swiper/dist/js/swiper.esm"
 
-Swiper.use([Lazy, Keyboard])
+Swiper.use([Lazy, Keyboard, Navigation])
 
 App.domReady(() => {
 	new Swiper(".career-slider", {
@@ -16,5 +16,13 @@ App.domReady(() => {
 			enabled: true,
 			onlyInViewport: true,
 		},
+		navigation: {
+			nextEl: '.career-slider__arrows .swiper-button-next',
+			prevEl: '.career-slider__arrows .swiper-button-prev',
+		},
 	})
+})
+
+App.domReady(() => {
+
 })

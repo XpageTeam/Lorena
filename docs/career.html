@@ -73,6 +73,9 @@
                 <use xlink:href="#ico-favorite"></use>
               </svg></a></div>
         </div>
+        <div class="head__burger">
+          <div class="burger"><span></span></div>
+        </div>
       </div>
     </header>
     <main id="content">
@@ -349,7 +352,200 @@
               </div>
             </div>
             <div class="career__vacancy">
-              <div class="wrapper">последний блок не готов</div>
+              <div class="wrapper">
+                <div class="c-vacancy">
+                  <div class="c-vacancy__cities">
+                    <div class="cities-list">
+                      <div class="cities-list__item"><a class="city active" href="#">Барнаул</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">волгоград</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">ижевск</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">казань</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">кемерово</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">киров</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">курган</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">миасс</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">москвановокузнецк</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">новосибирск</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">ноябрьск</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">омск</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">ростов-на-дону</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">самара</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">санкт-петербург</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">сочитверь</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">томск</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">тюмень</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">уфа</a>
+                      </div>
+                      <div class="cities-list__item"><a class="city" href="#">челябинск</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-vacancy__list">
+                    <div class="vacancy-list">
+                      <div class="vacancy-list__item">
+                        <div class="vacancy">
+                          <header class="vacancy__title">Роководитель салона</header>
+                          <main class="vacancy__text">
+                            <div class="text-page">
+                              <p>Федеральной компании LORENA кухни на постоянную <br/>работу требуется руководитель салонов в г. Челябинск </p>
+                              <p>Задачи:</p>
+                              <ul>
+                                <li>Руководство персоналом фирменных салонов</li>
+                                <li>Оперативное и тактическое управление</li>
+                                <li>Контроль и анализ выполнения показателей, выполнение планов по обороту/ средней стоимости/кол-ву заказов</li>
+                                <li>Управление персоналом (розница/руководители салонов, дизайнеры-консультанты, сервис-менеджер): подбор, обучение, оценка. Формирование эффективной команды.</li>
+                                <li>Участие в формировании бюджета и контроль его исполнения</li>
+                              </ul>
+                            </div>
+                          </main>
+                          <footer class="vacancy__form">
+                            <div class="vacancy-form">
+                              <form action="#">
+                                <div class="popup-form__inputs popup-form__inputs--3">
+                                  <div class="default-input">
+                                    <select class="default-input__input default-input__input--select" required="" data-placeholder="Выберите город">
+                                      <option value="1">Челябинск</option>
+                                      <option value="2">Челябинск</option>
+                                      <option value="3">Челябинск</option>
+                                      <option value="4">Челябинск</option>
+                                      <option value="5">Челябинск</option>
+                                    </select>
+                                    <label class="default-input__label">Ваш город</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Дизайнер" required=""/>
+                                    <label class="default-input__label">На какую должность вы претендуете</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input default-input--file">
+                                    <input class="default-input__input default-input__input--file" type="file" id="work-file"/>
+                                    <label class="default-input__label default-input__label--file" data-text="Файл не выбран" for="work-file"> <span>Прикрепить резюме</span></label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Иван" required=""/>
+                                    <label class="default-input__label">Имя</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="email" placeholder="ivan@mail.ru" required="" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" inputmode="email"/>
+                                    <label class="default-input__label">E-mail</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="tel" size="25" inputmode="tel" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+7 (351) 000 00 00" required=""/>
+                                    <label class="default-input__label">Ваш телефон</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Введите текст"/>
+                                    <label class="default-input__label">Сообщение</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input default-input--submit">
+                                    <input class="popup-form__submit arrow-btn" type="submit" value="Отправить"/>
+                                    <div class="form-req">Нажимая на кнопку отправки сообщения, <br/>я соглашаюсь на обработку моих <a href="#">персональных данных</a></div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </footer>
+                        </div>
+                      </div>
+                      <div class="vacancy-list__item">
+                        <div class="vacancy">
+                          <header class="vacancy__title">Продавец-консультанта</header>
+                          <main class="vacancy__text">
+                            <div class="text-page">
+                              <p>Федеральной компании LORENA кухни на постоянную <br/>работу требуется руководитель салонов в г. Челябинск </p>
+                              <p>Задачи:</p>
+                              <ul>
+                                <li>Руководство персоналом фирменных салонов</li>
+                                <li>Оперативное и тактическое управление</li>
+                                <li>Контроль и анализ выполнения показателей, выполнение планов по обороту/ средней стоимости/кол-ву заказов</li>
+                                <li>Управление персоналом (розница/руководители салонов, дизайнеры-консультанты, сервис-менеджер): подбор, обучение, оценка. Формирование эффективной команды.</li>
+                                <li>Участие в формировании бюджета и контроль его исполнения</li>
+                              </ul>
+                            </div>
+                          </main>
+                          <footer class="vacancy__form">
+                            <div class="vacancy-form">
+                              <form action="#">
+                                <div class="popup-form__inputs popup-form__inputs--3">
+                                  <div class="default-input">
+                                    <select class="default-input__input default-input__input--select" required="" data-placeholder="Выберите город">
+                                      <option value="1">Челябинск</option>
+                                      <option value="2">Челябинск</option>
+                                      <option value="3">Челябинск</option>
+                                      <option value="4">Челябинск</option>
+                                      <option value="5">Челябинск</option>
+                                    </select>
+                                    <label class="default-input__label">Ваш город</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Дизайнер" required=""/>
+                                    <label class="default-input__label">На какую должность вы претендуете</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input default-input--file">
+                                    <input class="default-input__input default-input__input--file" type="file" id="work-file"/>
+                                    <label class="default-input__label default-input__label--file" data-text="Файл не выбран" for="work-file"> <span>Прикрепить резюме</span></label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Иван" required=""/>
+                                    <label class="default-input__label">Имя</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="email" placeholder="ivan@mail.ru" required="" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" inputmode="email"/>
+                                    <label class="default-input__label">E-mail</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="tel" size="25" inputmode="tel" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+7 (351) 000 00 00" required=""/>
+                                    <label class="default-input__label">Ваш телефон</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input">
+                                    <input class="default-input__input" type="text" placeholder="Введите текст"/>
+                                    <label class="default-input__label">Сообщение</label>
+                                    <div class="forms__error-message"></div>
+                                  </div>
+                                  <div class="default-input default-input--submit">
+                                    <input class="popup-form__submit arrow-btn" type="submit" value="Отправить"/>
+                                    <div class="form-req">Нажимая на кнопку отправки сообщения, <br/>я соглашаюсь на обработку моих <a href="#">персональных данных</a></div>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </footer>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

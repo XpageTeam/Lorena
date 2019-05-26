@@ -1,3 +1,7 @@
+@media (min-width: 1200px)
+	.head__burger
+		display: none
+
 .main, .tovar
 
 	.head
@@ -156,3 +160,86 @@
 	&__icon
 		size: 18px
 		margin-right: 17px
+
+
+@media (max-width: 1500px)
+	.head
+
+		&__wrap
+			padding: 20px 30px 20px
+
+		&__logo
+			max-width: 185px
+
+@media (max-width: 1400px)
+	.h-menu
+
+		&__link
+			font-size: 15px
+
+	.h-phone
+		font-size: 15px
+
+	.constructor-link
+
+		&__text
+			font-size: 15px
+
+	.h-submenu
+		padding: 35px 0 0
+
+		&:before
+			bottom: -30px
+
+@media (max-width: 1300px)
+	.head
+
+		&__logo
+			max-width: 140px
+
+	.h-menu
+
+		&__link
+
+			&:before
+				right: -8px !important
+
+
+@media (max-width: 1200px)
+	.head
+
+		&__wrap
+			padding: 10px 20px
+
+		&__menu
+			display: none
+
+		&__phone
+			margin: 0 auto 0 20px
+
+		&__constructor
+			margin: 0 20px 0 0
+
+		&__burger
+			margin-left: 30px
+
+	.burger
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		align-items: flex-end
+		size: 37px 20px
+		cursor: pointer
+
+		&:after, &:before
+			content: ""
+			height: 2px
+			background: var(--main-color)
+			display: inline-block
+
+		&:after
+			margin: 6px 0 0
+			width: 100%
+
+		&:before
+			width: calc(100% - 13px)

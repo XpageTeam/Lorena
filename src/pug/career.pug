@@ -109,7 +109,78 @@ html(lang="ru")
 									.career-slider__dots
 										.swiper-pagination
 						.career__vacancy
-							.wrapper последний блок не готов
+							.wrapper
+								.c-vacancy
+									.c-vacancy__cities
+										.cities-list
+											each city, i in ["Барнаул", "волгоград", "ижевск", "казань", "кемерово", "киров", "курган", "миасс", "москвановокузнецк", "новосибирск", "ноябрьск", "омск", "ростов-на-дону", "самара", "санкт-петербург", "сочитверь", "томск", "тюмень", "уфа", "челябинск", ]
+												.cities-list__item
+													if (i == 0)
+														a.city.active(href="#")=city
+													else
+														a.city(href="#")=city
+									.c-vacancy__list
+										.vacancy-list
+											each v, i in ["Роководитель салона", "Продавец-консультанта", ]
+												.vacancy-list__item
+													.vacancy
+														header.vacancy__title=v
+														main.vacancy__text
+															.text-page
+																p Федеральной компании LORENA кухни на постоянную 
+																	br
+																	| работу требуется руководитель салонов в г. Челябинск 
+																p Задачи:
+																ul
+																	li Руководство персоналом фирменных салонов
+																	li Оперативное и тактическое управление
+																	li Контроль и анализ выполнения показателей, выполнение планов по обороту/ средней стоимости/кол-ву заказов
+																	li Управление персоналом (розница/руководители салонов, дизайнеры-консультанты, сервис-менеджер): подбор, обучение, оценка. Формирование эффективной команды.
+																	li Участие в формировании бюджета и контроль его исполнения
+														footer.vacancy__form
+															.vacancy-form
+																form(action="#")
+																	.popup-form__inputs.popup-form__inputs--3
+																		.default-input
+																			select.default-input__input.default-input__input--select(required="" data-placeholder="Выберите город")
+																				option(value="1") Челябинск
+																				option(value="2") Челябинск
+																				option(value="3") Челябинск
+																				option(value="4") Челябинск
+																				option(value="5") Челябинск
+																			label.default-input__label Ваш город
+																			.forms__error-message
+																		.default-input
+																			input.default-input__input(type="text" placeholder="Дизайнер" required="")
+																			label.default-input__label На какую должность вы претендуете
+																			.forms__error-message
+																		.default-input.default-input--file
+																			input.default-input__input.default-input__input--file(type="file" id="work-file")
+																			label.default-input__label.default-input__label--file(data-text="Файл не выбран" for="work-file") 
+																				span Прикрепить резюме
+																			.forms__error-message
+																		.default-input
+																			input.default-input__input(type="text" placeholder="Иван" required="")
+																			label.default-input__label Имя
+																			.forms__error-message
+																		.default-input
+																			input.default-input__input(type="email" placeholder="ivan@mail.ru" required="" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+																			label.default-input__label E-mail
+																			.forms__error-message
+																		.default-input
+																			input.default-input__input(type="tel" size="25" inputmode="tel" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' placeholder="+7 (351) 000 00 00" required="")
+																			label.default-input__label Ваш телефон
+																			.forms__error-message
+																		.default-input
+																			input.default-input__input(type="text" placeholder="Введите текст")
+																			label.default-input__label Сообщение
+																			.forms__error-message
+																		.default-input.default-input--submit
+																			input.popup-form__submit.arrow-btn(type="submit" value="Отправить")
+																			.form-req Нажимая на кнопку отправки сообщения, 
+																				br 
+																				| я соглашаюсь на обработку моих 
+																				a(href="#") персональных данных
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose
