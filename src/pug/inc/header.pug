@@ -50,3 +50,52 @@ header.head
 		.head__burger
 			.burger
 				span
+aside.side-menu
+	nav.side-menu__nav
+		ul.h-menu
+			li.h-menu__item.h-menu__item--have-sub
+				a.h-menu__link.active(href="#") Компания
+				ul.h-submenu
+					li
+						button.h-submenu__close Назад
+					li
+						a.h-submenu__link(href="#") Компания
+					li
+						a.h-submenu__link(href="#") Новости
+					li
+						a.h-submenu__link(href="#") Партнёры
+					li
+						a.h-submenu__link.active(href="#") Приемущества
+					li
+						a.h-submenu__link(href="#") Ваша карьера
+			each item in ["Кухни", "Покупателю", "Акции", "Где купить?", ]
+				li.h-menu__item.h-menu__item--have-sub
+					a.h-menu__link(href="#")=item
+					ul.h-submenu
+						li
+							button.h-submenu__close Назад
+						li
+							a.h-submenu__link(href="#")=item
+						li
+							a.h-submenu__link(href="#") Новости
+						li
+							a.h-submenu__link(href="#") Партнёры
+						li
+							a.h-submenu__link.active(href="#") Приемущества
+						li
+							a.h-submenu__link(href="#") Ваша карьера
+	.side-menu__phone
+		address.h-phone
+			a(href="tel: 8 800 200 92 20") 
+				b 8 800 
+				| 200 92 20
+		span Будем рады сотрудничеству
+	.side-menu__soc
+		.footer-top__soc-title Присоединяйся
+		.soc
+			a.soc__link(href="#")
+				img(src="img/ico-vk.svg")
+			a.soc__link(href="#")
+				img(src="img/ico-fb.svg")
+			a.soc__link(href="#")
+				img(src="img/ico-yt.svg")

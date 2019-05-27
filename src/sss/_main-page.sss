@@ -136,7 +136,7 @@
 			content: ""
 			position: absolute
 
-@media (max-width: 1400px)
+@media (max-width: 1400px) and (min-width: 1000px)
 	.main-slide
 
 		&__title
@@ -146,3 +146,33 @@
 
 				&:not(:last-child)
 					margin: 0 0 60px
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.main-slide
+
+		&__title
+
+			&-title
+				font-size: 44px
+
+				&:not(:last-child)
+					margin: 0 0 40px
+
+@media (max-width: 660px)
+	.main-slide
+		display: flex
+		flex-direction: column
+
+		&__title
+			padding: 20px vw(70, 414)
+
+			&-title
+				font-size: 36px
+
+			&-btn
+				margin: 165px 0 0
+
+			&-subtitle
+
+				&:not(:last-child)
+					margin: 0 0 15px

@@ -61,3 +61,65 @@
 		picture, img
 			display: block
 			width: 100%
+
+
+@media (max-width: 1500px) and (min-width: 1000px)
+	.stock-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 30px 0 0
+
+	.stock-item
+
+		&__img
+			width: 600px
+
+@media (max-width: 1200px) and (min-width: 1000px)
+	.stock-item
+
+		&__img
+			width: 500px
+			margin-right: 4%
+
+@media (max-width: 1000px)
+	.stock
+		margin: 0 0 50px
+
+
+
+	.stock-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 40px 0 0
+
+	.stock-item
+		flex-direction: column
+
+		&__img
+			width: auto
+			margin: 0
+
+		&__text
+			margin: 20px 0 0
+			align-self: stretch
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			&-title
+				margin: 0 20px 0 0 !important
+				max-width: none
+				font-size: 20px
+
+				br
+					display: none
+
+			&-btn
+				flex: none
+
+	.sb-desc
+		padding: 20px

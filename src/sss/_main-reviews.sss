@@ -119,6 +119,17 @@
 	&__img
 		flex: none
 
+		&[data-date]
+			position: relative
+
+			&:after
+				content: attr(data-date)
+				position: absolute * * 0 0
+				color: #fff var(--main-color)
+				font-size: 14px
+				font-weight: bold
+				padding: 9px 12px 6px
+
 		img
 			display: block
 			width: 100%
@@ -182,3 +193,95 @@
 
 		&__slider
 			margin-right: 90px
+
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.main-reviews
+		flex-direction: column-reverse
+
+		&__slider
+			margin: 40px 0 0
+
+	.reviews-counter
+		text-align: center
+
+		&__title
+			max-width: none
+
+		&__counter
+			display: flex
+			justify-content: center
+			margin-bottom: 25px
+
+		&__btn
+			margin: 30px 0 0
+
+@media (max-width: 660px)
+	.main-reviews
+		flex-direction: column-reverse
+
+		&__cont
+			padding: 85px 0 20px
+
+		&__slider
+			margin: 110px 0 0
+			width: 100%
+	
+	.reviews-counter
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		.counter
+			flex-direction: column
+			align-items: flex-end
+
+			&__number
+				font-size: 72px
+
+			&__text
+				margin: 6px 0 0
+
+		&__title
+			font-size: 18px
+			font-weight: 400
+			line-height: calc(26 / 18)
+			max-width: 210px
+			text-align: center
+
+		&__btn
+			margin: 35px 0 0
+
+	.reviews-slider
+		width: 100%
+
+		.swiper
+
+			&-button
+
+				&-prev, &-next
+					top: 33vw
+
+				&-prev
+					left: 20px
+
+				&-next
+					right: 20px
+
+		.swiper
+
+			&-slide
+
+				&-next
+
+					.reviews-slide
+						transform: scale3d(.9,.9,.9)
+
+					& + .swiper-slide .reviews-slide
+						transform: scale3d(.8,.8,.8)
+
+	.reviews-slide
+
+		&__desc
+			padding: 45px 40px

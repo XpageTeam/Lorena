@@ -24,5 +24,11 @@ App.domReady(() => {
 })
 
 App.domReady(() => {
+	const vacancyList = new Element(".vacancy__title");
 
+	new EventListener(vacancyList).add("click", (el: HTMLElement) => {
+		vacancyList.closest(".vacancy").removeClass("js__opened")
+
+		new Element(el).closest(".vacancy").addClass("js__opened")
+	})
 })

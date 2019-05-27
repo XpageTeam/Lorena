@@ -1,4 +1,5 @@
-const path = require("path");
+const path = require("path"),
+	BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 	entry: {
@@ -10,6 +11,7 @@ module.exports = {
 		path: path.resolve(__dirname, "./docs/"),
 		filename: "js/[name].js",
 		// publicPath: "/img/"
+		chunkFilename: '[name].js'
 	},
 	devServer: {
 		contentBase: "./docs",
@@ -58,5 +60,21 @@ module.exports = {
 			".tsx",
 			".js"
 		]
-	}
+	},
+	// optimization: {
+	// 	// runtimeChunk: 'single',
+ //    	splitChunks: {
+	//         cacheGroups: {
+	//             vendors: {
+	//                 test: /[\\/]node_modules[\\/]|src\/ts\/app.ts/,
+	//                 name: 'vendors',
+	//                 enforce: true,
+	//                 chunks: 'all'
+	//             }
+	//         }
+ //    	}
+	// },
+	// plugins: [
+	// 	new BundleAnalyzerPlugin()
+	// ]
 }

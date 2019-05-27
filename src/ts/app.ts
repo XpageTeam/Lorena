@@ -1,6 +1,8 @@
 class App {
-	// private document: any = document;
-
+	/**
+	 * documentReady
+	 * @param {any} callback [description]
+	 */
 	public static domReady(callback: any): void {
 		try{
 			document.addEventListener("DOMContentLoaded", callback)

@@ -45,3 +45,62 @@
 		line-height: calc(35 / 24)
 		margin-bottom: 25px
 		display: inline-block
+
+
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.news-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 50px 0 0
+
+@media (max-width: 1000px)
+	.news-list
+		flex-wrap: wrap
+		display: flex
+		margin: 0 0 -30px -20px
+
+		&__item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 30px 20px !important
+
+	.news-item
+		flex-direction: column-reverse
+		position: relative
+
+		&__text
+			width: auto
+
+		&__img
+			width: 100%
+			margin: 0 0 15px
+
+	.news-text
+
+		&__date
+			position: absolute 0 * * 0
+			color: #fff var(--main-color)
+			padding: 9px 15px
+
+		&__title
+			font-size: 18px
+			margin: 0 0 10px
+
+		&__text
+			margin: 0 !important
+
+		&__btn
+			display: none
+
+@media (max-width: 660px)
+	.news-list
+		margin: 0
+
+		&__item
+			width: 100%
+			margin: 0 !important
+
+			&:not(:first-child)
+				margin: 20px 0 0 !important

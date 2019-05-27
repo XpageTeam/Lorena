@@ -62,82 +62,6 @@
 .h-phone
 	font-weight: 400
 
-.h-menu
-	display: flex
-
-	&__item
-
-		&:not(:last-child)
-			margin-right: vw(60)
-
-		&--have-sub
-			position: relative
-
-			&:hover, &:focus-within
-
-				.h-submenu
-					opacity: 1
-					pointer-events: all
-
-			.h-menu__link
-				position: relative
-
-				&:before
-					content: ""
-					position: absolute calc(50% - 5px) -20px * *
-					border-right: 1px solid #737373
-					border-bottom: 1px solid #737373
-					size: 5px
-					transform: rotateZ(45deg)
-
-	&__link
-		position: relative
-		z-index: 2
-
-		&:after
-			content: ""
-			pointer-events: none
-			position: absolute calc(100% + 12px) 6px *
-			height: 2px
-			background: var(--main-color)
-			transition: transform .3s ease
-			transform: scaleX(0)
-
-		&:matches(:hover, :focus, .active)
-
-			&:after
-				transform: scaleX(1)
-
-.h-submenu
-	position: absolute 100% * * 0
-	padding: 60px 0 0
-	transition: opacity .3s ease
-	pointer-events: none
-	opacity: 0
-
-	&:before
-		content: ""
-		background: var(--second-color)
-		position: absolute * * -60px 50%
-		transform: translateX(-50%)
-		size: 300vw 100vh
-
-	&__link
-		text-transform: none
-		font-size: 14px
-		color: rgba(255,255,255, .3)
-		transition: color .3s ease
-
-		&:matches(:hover, :focus, .active)
-			color: var(--main-color)
-
-	li
-		position: relative
-		z-index: 2
-
-		&:not(:first-child)
-			margin: 11px 0 0
-
 .h
 
 	&-lc, &-favorites
@@ -147,11 +71,13 @@
 
 		.ico
 			size: 17px 20px
+			fill: var(--main-color)
 
 	&-favorites
 
 		.ico
 			size: 19px 18px
+			fill: var(--main-color)
 
 .constructor-link
 	display: flex
@@ -160,6 +86,86 @@
 	&__icon
 		size: 18px
 		margin-right: 17px
+		fill: var(--main-color)
+
+
+
+@media (min-width: 1200px)
+	.h-menu
+		display: flex
+
+		&__item
+
+			&:not(:last-child)
+				margin-right: vw(60)
+
+			&--have-sub
+				position: relative
+
+				&:hover, &:focus-within
+
+					.h-submenu
+						opacity: 1
+						pointer-events: all
+
+				.h-menu__link
+					position: relative
+
+					&:before
+						content: ""
+						position: absolute calc(50% - 5px) -20px * *
+						border-right: 1px solid #737373
+						border-bottom: 1px solid #737373
+						size: 5px
+						transform: rotateZ(45deg)
+
+		&__link
+			position: relative
+			z-index: 2
+
+			&:after
+				content: ""
+				pointer-events: none
+				position: absolute calc(100% + 12px) 6px *
+				height: 2px
+				background: var(--main-color)
+				transition: transform .3s ease
+				transform: scaleX(0)
+
+			&:matches(:hover, :focus, .active)
+
+				&:after
+					transform: scaleX(1)
+
+	.h-submenu
+		position: absolute 100% * * 0
+		padding: 60px 0 0
+		transition: opacity .3s ease
+		pointer-events: none
+		opacity: 0
+
+		&:before
+			content: ""
+			background: var(--second-color)
+			position: absolute * * -60px 50%
+			transform: translateX(-50%)
+			size: 300vw 100vh
+
+		&__link
+			text-transform: none
+			font-size: 14px
+			color: rgba(255,255,255, .3)
+			transition: color .3s ease
+
+			&:matches(:hover, :focus, .active)
+				color: var(--main-color)
+
+		li
+			position: relative
+			z-index: 2
+
+			&:not(:first-child)
+				margin: 11px 0 0
 
 
 @media (max-width: 1500px)
@@ -243,3 +249,55 @@
 
 		&:before
 			width: calc(100% - 13px)
+
+@media (max-width: 1000px)
+	body
+		overflow-x: visible
+	.head
+		background: var(--main-color) !important
+		position: sticky 0 * * !important
+
+		&__wrap
+			padding: 10px 20px 10px 0
+
+	.constructor-link
+
+		&__icon
+			fill: #fff
+
+		&__text
+			display: none
+
+	.h-favorites, .h-lc
+
+		.ico
+			fill: #fff
+
+@media (max-width: 660px)
+	.head
+
+		&__logo
+			flex: none
+			margin-right: auto
+
+		&__phone
+			display: none
+
+		&__links
+			margin-right: auto
+
+			&-lc, &-fav
+
+				&:not(:last-child)
+					margin-right: 21px
+
+		&__constructor
+			margin-right: 21px
+
+	.constructor-link__icon
+		margin-right: 0
+
+	.logo
+
+		img
+			transform: translate(-2px, 0)

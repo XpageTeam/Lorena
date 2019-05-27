@@ -246,3 +246,48 @@
 
 	&:hover, &:focus, &.active
 		color: #fff var(--main-color)
+
+.vacancy-list
+
+	&__item
+
+		&:not(:first-child)
+			margin: 20px 0 0
+
+.vacancy
+
+	&__title
+		background: var(--thrid-color)
+		padding: 26px 45px 26px 35px
+		font-size: 20px
+		line-height: 1
+		position: relative
+		cursor: pointer
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 3px) 37px * *
+			size: 5px
+			border-right: 1px solid #fff
+			border-bottom: 1px solid #fff
+			transform: rotateZ(45deg)
+
+	&__text
+		border: 1px solid var(--thrid-color)
+		padding: 40px 35px 
+		font-size: 14px
+		line-height: calc(20 / 14)
+
+		.text-page
+			max-width: 750px
+
+	&__form
+		background: var(--thrid-color)
+		padding: 50px 35px
+
+	&:not(.js__opened)
+
+		.vacancy
+
+			&__text, &__form
+				display: none
