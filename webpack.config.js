@@ -73,7 +73,7 @@ module.exports = {
     	splitChunks: {
 	        cacheGroups: {
 	            vendors: {
-	                test: /(jquery.js|swiper.esm.js|swiper.esm.bundle.js|dom7.modular.js|select2.js|jquery.fancybox.js|jquery.fancybox.css|stringAnimate.js)/,
+	                test: /(jquery.js|swiper.esm.js|swiper.esm.bundle.js|dom7.modular.js|select2.js|jquery.fancybox.js|jquery.fancybox.css|stringAnimate.js|ssr-window.esm.js)/,
 	                name: 'js/vendors',
 	                enforce: true,
 	                chunks: 'all'

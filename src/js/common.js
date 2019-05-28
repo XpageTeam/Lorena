@@ -3,7 +3,6 @@ import $ from "jquery"
 import stringEffect from "../js/stringAnimate.js"
 import "select2/dist/js/select2.js"
 
-
 window.$ = $;
 window.jQuery = $;
 
@@ -56,6 +55,17 @@ try{
 			image: {
 				preload: true,
 			},
+		})
+
+		/** Клик по вариантам исполнения в адаптив */
+		$(".variants-plates__one").click(function(){
+			if (!window.matchMedia("(max-width: 1000px)").matches)
+				return
+
+			const index = $(this).index(),
+				$variantsContainer = $(this).closest(".variants-list");
+
+			$variantsContainer.find(`.variants-slider__slide:eq(${index})`).click()
 		})
 	})
 }catch(e){

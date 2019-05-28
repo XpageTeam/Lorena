@@ -57,3 +57,47 @@
 
 				&-btn
 					transform: rotateZ(90deg)
+
+
+@media (max-width: 1400px) and (min-width: 1200px)
+	.useful-item
+
+		&__title, &__text
+			padding: 30px
+
+@media (max-width: 1200px) and (min-width: 660px)
+	.useful-item
+
+		&__title, &__text
+			padding: 25px
+
+		&__title
+			font-size: 20px
+
+@media (max-width: 660px)
+	.useful
+		margin: 0 -20px 40px
+
+	.useful-item
+
+		&__title, &__text
+			padding: 20px
+
+		&__title
+			font-size: 18px
+			display: block
+			padding-bottom: 0
+
+			span
+				width: 100%
+
+			&-btn
+				transform: none !important
+
+				.circle-arrow-btn
+					border-radius: 0
+					border: none
+					width: 100%
+
+					&:after
+						transform: rotateZ(45deg)

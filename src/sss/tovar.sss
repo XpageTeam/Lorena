@@ -16,12 +16,20 @@
 
 	&__reviews
 		margin: 119px 0
+		overflow-x: hidden
 
 		.reviews-counter
 
 			&__arrows
 				display: flex
 				margin-bottom: 65px
+
+		.main-reviews__slider
+
+			.swiper-button
+
+				&-prev, &-next
+					display: none
 
 .tovar-arrows
 	display: flex
@@ -47,7 +55,7 @@
 	&__thumbs
 		margin: -52px 0 0
 		position: relative
-		z-index: 3
+		z-index: 5
 
 	&__big
 		position: relative
@@ -269,4 +277,216 @@
 .variants-slider
 	width: 100%
 	flex: 1 1 auto
-	// overflow: hidden
+
+
+
+@media (max-width: 1400px)
+	.tovar
+
+		&__slider
+
+			&-arrows
+				bottom: 55px
+				right: 40px
+				left: 40px
+
+		&__variants
+			margin: 40px 0 0
+
+		&__reviews
+			margin: 60px 0
+
+	.tovar-desc
+
+		&__btns, &__text
+			margin: 40px 0 0
+
+	.tovar-btns
+		padding: 30px 0
+
+	.tovar-text
+
+		&__text
+			margin: 30px 0 0
+
+@media (max-width: 1200px) and (min-width: 1000px)
+	.variants-list
+		align-items: center
+
+		&__slider
+			width: 450px
+
+@media (max-width: 1200px)
+	.variants-plates
+
+		&__one
+
+			img
+				width: 100%
+
+@media (max-width: 1000px)
+	.tovar
+
+		&__slider
+
+			&-arrows
+				position: fixed * 0 0
+				z-index: 2
+
+		&__desc
+			margin: 33px 0 0
+
+	.tovar-sliders
+
+		&__thumbs
+			margin: 10px 0 0
+
+	.tovar-arrows
+
+		&__arrow
+			width: 50%
+			border-radius: 0
+
+	.thumbs-slider
+		justify-content: center
+
+	.tovar-title
+
+		&__title
+			font-size: 30px
+			font-weight: bold
+
+	.variants-list
+
+		&__slider
+			display: none
+
+		&__nav
+			margin: 0
+
+	.variants-plates
+
+		&__one
+
+			&:after
+				display: none
+
+	.tovar__reviews
+
+		.reviews-counter
+
+			&__arrows
+				display: none
+
+		.main-reviews__slider
+
+			.swiper-button
+
+				&-prev, &-next
+					display: block
+
+@media (max-width: 660px)
+	.tovar-sliders
+
+		&__thumbs
+			
+			.wrapper
+				padding: 0
+
+	.thumbs-slider
+		justify-content: space-between
+
+		&__list
+			margin: 0 !important
+			width: 66.66%
+
+		&__slide
+			width: 50%
+			margin: 0 !important
+
+		&__more
+			width: 33.33%
+
+			a
+
+				&:last-child
+
+					&:after
+						font-size: 24px
+
+	.more-imgs
+		width: 100%
+
+	.tovar-desc
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		position: relative
+		padding: 0 0 80px
+
+		&__btns
+			width: 90px
+			flex: none
+			margin: 0
+
+		&__titles
+			width: calc(100% - 110px)
+
+		&__text
+			border-top: 1px solid var(--thrid-color)
+			margin: 35px 0 0
+			padding: 35px 0 0
+
+	.tovar-btns
+		padding: 0
+		border: none
+		flex-direction: row-reverse
+		justify-content: flex-end
+
+		&__btn
+
+			&:not(:first-child)
+				margin-left: 10px	
+
+			&:first-child
+				position: absolute * 0 0
+
+	.favorite-btn, .constructor-btn
+		border-radius: 50%
+		overflow: hidden
+		text-indent: -9999px
+		padding: 0
+		size: 40px
+		background-position: center !important
+
+	.tovar
+
+		&__variants
+			margin: 55px 0 0
+
+	.variants
+
+		&__header
+			display: block
+			padding: 0
+			border: none
+			margin: 0 0 20px
+
+			&-title
+				margin-bottom: 18px
+		
+	.variants-plates
+		margin: 0 0 -15px -15px
+
+		&__one
+			width: calc((100% - 15px * 2) / 2)
+			margin: 0 0 15px 15px
+
+	.tovar-tabs
+
+		&__tab
+			flex: 1 1 auto
+			text-align: center
+			margin: 0 !important
+			padding: 19px 10px
+			background: var(--thrid-color)

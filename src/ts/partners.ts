@@ -44,6 +44,18 @@ App.domReady(() => {
 			},
 			1700: {
 				slidesPerView: 2
+			},
+			1100: {
+				slidesPerView: 1
+			},
+			1000: {
+				slidesPerView: 3
+			},
+			660: {
+				slidesPerView: 2
+			},
+			400: {
+				slidesPerView: 1
 			}
 		}
 	})
@@ -54,10 +66,13 @@ App.domReady(() => {
 })
 
 const getSlidesPerColumn = (): number => {
-	const screenHeight = window.innerHeight;
+	const screenHeight = window.innerHeight,
+		screenWidth = window.innerWidth;
 
 	if (screenHeight >= 1200)
 		return 3
+	else if (screenWidth < 660)
+		return 1
 	else if (screenHeight >= 650)
 		return 2
 	else 

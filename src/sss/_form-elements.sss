@@ -169,7 +169,7 @@
 		color: #fff
 		background-color: #282828
 
-		&--error:not(:valid)
+		&--error:not(:valid), &.error:not(:valid)
 			border-color: red
 
 			~ .forms__error-message
@@ -301,6 +301,31 @@
 	&__label
 		margin-bottom: 10px
 
+		&--file
+			display: flex
+			align-items: center
+			justify-content: space-between
+			cursor: pointer
+
+			&[data-text]
+
+				&:after
+					content: attr(data-text)
+					font-size: 12px
+					color: rgba(255,255,255, .3)
+					white-space: nowrap
+					overflow: hidden
+					text-overflow: ellipsis
+					margin-left: 10px
+
+			span
+				flex: none
+				border-radius: 100px
+				background: url("../img/ico-add-file.svg") center right 18px no-repeat, var(--second-color)
+				text-transform: uppercase
+				font-size: 10px
+				padding: 13px 45px 13px 24px
+
 .forms
 	
 	&__error
@@ -357,6 +382,17 @@
 					bottom: 4px
 					height: 2px
 
+.select2-container--default 
+	.select2-selection--single 
+		.select2-selection__arrow
+			display: none
+
+.fancybox
+
+	&-close
+
+		&-small
+			color: #fff !important
 
 @media screen and (max-width: 1000px)
 	.popup-form
@@ -418,15 +454,28 @@
 
 	.popup-form
 		padding: 20px 16px !important
+		height: 100%
 
-.select2-container--default 
-	.select2-selection--single 
-		.select2-selection__arrow
-			display: none
+		&__text
+			font-size: 14px
 
-.fancybox
+		&__inputs
+			margin: 0
+			display: block
 
-	&-close
+			.default-input
+				margin: 0
+				width: 100% !important
 
-		&-small
-			color: #fff !important
+				&:not(:first-child)
+					margin: 20px 0 0
+
+				&__label
+					margin: 0
+
+				&--submit
+					display: block
+					text-align: center
+
+					.form-req
+						margin: 20px 0 0

@@ -24,11 +24,17 @@
 	&__text
 		text-align: center
 		position: absolute 0
+		z-index: 1
 		background: rgba(#000, .5)
 		display: flex
 		flex-direction: column
 		justify-content: center
 		padding: 90px 0 0
+
+		&-subtitle
+			text-transform: uppercase
+			font-size: 13px
+			margin-bottom: 15px
 
 		&-title
 			font-weight: bold
@@ -37,6 +43,15 @@
 
 		&-btn
 			margin: 110px 0 0
+
+			.default-btn
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute -9px
+					border: 1px solid var(--main-color)
+					border-radius: 100px
 
 .about-text
 	padding: 75px 0 120px

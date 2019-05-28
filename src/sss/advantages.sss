@@ -1,3 +1,6 @@
+/** Это старые стили приемуществ, но они используются
+* на странице "карьера" */
+
 .advantages
 	margin: 110px 0 120px
 	padding: 0 100px
@@ -87,3 +90,137 @@
 					position: absolute -1px 1px 1px -1px
 					border: 1px solid var(--second-color)
 					pointer-events: none
+
+/** Конец старых стилей */
+
+.n-advantages
+	display: flex
+	border: 1px solid var(--thrid-color)
+
+	&__slider
+		background: var(--thrid-color)
+		flex: none
+		width: 834px
+		overflow: hidden
+
+		.swiper-slide
+
+			&:not(:first-child)
+				opacity: 0
+
+	&__list
+		display: flex
+		flex-direction: column
+		// padding: 30px
+
+.advantages-slider
+	min-height: 434px
+	box-sizing: content-box
+	padding: 125px 104px 125px 135px
+	display: flex
+	flex-direction: column
+
+	&__nav
+		margin: auto 0 0
+		padding: 20px 0 0
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+
+		&-arrows
+			display: flex
+
+		.swiper
+
+			&-button
+
+				&-prev
+					transform: rotateZ(90deg)
+
+				&-next
+					transform: rotateZ(-90deg)
+
+				&-prev, &-next
+					border-radius: 50%
+					background: var(--main-color)
+					size: 39px
+					position: static
+
+					&:not(:last-child)
+						margin-right: 20px
+
+					&:matches(:after, :before)
+						content: ""
+						position: absolute
+
+					&:after
+						top: calc(50% - 3px) 
+						right: calc(50% - 3px)
+						border-right: 1px solid #fff
+						border-bottom: 1px solid #fff
+						size: 5px
+						transform: rotateZ(45deg)
+						z-index: 1
+
+			&-pagination
+				position: static
+				color: rgba(255, 255, 255, .5)
+				font-size: 18px
+			
+				&-current
+					color: #fff
+
+
+.advantages-slide
+
+	&__subtitle
+		text-transform: uppercase
+		color: rgba(255, 255, 255, .5)
+		font-size: 10px
+		margin-bottom: 15px
+
+	&__title
+		font-size: 24px
+		line-height: calc(35 / 24)
+		font-weight: 300
+
+	&__text
+		font-size: 14px
+		line-height: calc(27 / 14)
+		margin: 32px 0 0
+		max-width: 430px
+
+.advantage-list
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	padding: 70px 65px
+
+	&__item
+		flex: 1 1 auto
+		display: flex
+		align-items: center
+
+		&-img
+			width: 60px
+			flex: none
+			margin-right: 105px
+
+			img
+				display: block
+
+.advantage-desc
+
+	&__title
+		font-size: 13px
+		text-transform: uppercase
+		line-height: calc(25 / 13)
+
+	&__text
+		font-size: 14px
+		line-height: calc(27 / 14)
+		margin: 20px 0 0
+
+	&__notice
+		color: rgba(255,255,255, .5)
+		font-size: 14px

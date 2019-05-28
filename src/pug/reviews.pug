@@ -4,23 +4,34 @@ html(lang="ru")
 		title Отзывы
 		include inc/head.pug
 		include inc/css.pug
-	body.inner.loading
+	body.inner.tovar.loading
 		include inc/header.pug
 		main#content
 			.inner-content
-				.inner-content__title
-					.wrapper
-						.title-block
-							.title-block__title
-								h1 Отзывы
-							nav.title-block__menu
-								ul.title-menu
-									each item in  ["цена", "рассрочка", "полезное", "7 шагов к вашей кухне"]
-										li
-											a.title-menu__link.gray-btn(href="#")=item
 				.inner-content__content
-					.wrapper
-						.reviews
+					.reviews
+						.reviews__img
+							.about-img
+								picture
+									source(media="(min-width: 660px)" srcset="img/photos/reviews-top-img.jpg")
+									source(media="(max-width: 660px)" srcset="img/photos/reviews-top-img.jpg")
+									img
+								.about-img__text
+									.about-img__text-subtitle Счастливые владельцы кухни lorena
+									.about-img__text-title Более 170 000 довольных семей
+										br
+										| по всей России
+									.about-img__text-btn
+										a.default-btn(href="#") оставить отзыв
+						.wrapper
+							.title-block
+								.title-block__title
+									h1 Отзывы
+								nav.title-block__menu
+									ul.title-menu
+										each item in  ["цена", "рассрочка", "полезное", "7 шагов к вашей кухне"]
+											li
+												a.title-menu__link.gray-btn(href="#")=item
 							.reviews__filter
 								form(action="#")
 									.rev-filter
@@ -61,11 +72,36 @@ html(lang="ru")
 										a.default-btn.fancybox(href="#") Оставить отзыв
 							.reviews__list
 								.rev-list
-									.rev-list__item
-										br 
-										br 
-										br
-										h1(style="font-size: 34px; text-align: center") ещё не готово
+									each rev, i in [{name: "Наташа Александрова", text: ""}, {name: "Надежда", text: ""}, {name: "Алексей", text: ""}, {name: "Елена Волошина", text: ""},  ]
+										.rev-list__item
+											.review
+												if (i < 2)
+													.review__img
+														a.fancybox(href="img/photos/rev-img-"+i+".jpg" data-fancybox="rev-gallery-"+i)
+															img(src="img/photos/rev-img-"+i+".jpg")
+														a.fancybox(href="img/photos/rev-img-"+i+".jpg" data-fancybox="rev-gallery-"+i)
+														a.fancybox(href="img/photos/rev-img-"+i+".jpg" data-fancybox="rev-gallery-"+i)
+														a.fancybox(href="img/photos/rev-img-"+i+".jpg" data-fancybox="rev-gallery-"+i)
+														a.fancybox(href="img/photos/rev-img-"+i+".jpg" data-fancybox="rev-gallery-"+i)
+														.review-date 26.02.2019
+												else
+													.review__date
+														.review-date 26.02.2019
+												.review__text
+													.rev-text
+														.rev-text__title
+															.rev-text__title-name=rev.name
+															.rev-text__title-city Магнитогорск&nbsp;&nbsp;/&nbsp;&nbsp;Viva
+														.rev-text__text.rev-text__text--annons
+															.text-page
+																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+														.rev-text__text.rev-text__text--full
+															.text-page 
+																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+													.rev-more
+														a(href="#") Читать весь отзыв
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose
