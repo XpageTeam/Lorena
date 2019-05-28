@@ -8,6 +8,7 @@ import "./career"
 import "./forms"
 import "./reviews"
 import "./advantages"
+import "./nav-scrolling"
 import {App, Element, MobileMenu, EventListener} from "./app"
 
 const adaptiveMedia = "(max-width: 1200px)";
