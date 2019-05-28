@@ -1,9 +1,11 @@
 const path = require("path"),
 	BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+const ignoredGSAPFiles = ['BezierPlugin', 'DirectionalRotationPlugin', 'RoundPropsPlugin'];
+
 module.exports = {
 	entry: {
-		vendors: "./src/js/common.js",
+		base: "./src/js/common.js",
 		common: "./src/ts/common.ts",
 		"main-page": "./src/ts/main-page.ts",
 	},
@@ -21,6 +23,11 @@ module.exports = {
 	devtool: 'source-map',
 	module: {
 		rules: [
+			{
+				test: /\.js$/,
+				include: ignoredGSAPFiles.map(fileName => path.resolve('node_modules/gsap/' + fileName)),
+				loader: 'null-loader',
+			},
 			{
 				test: /\.js$/,
 				loader: "babel-loader",
@@ -61,19 +68,25 @@ module.exports = {
 			".js"
 		]
 	},
-	// optimization: {
-	// 	// runtimeChunk: 'single',
- //    	splitChunks: {
-	//         cacheGroups: {
-	//             vendors: {
-	//                 test: /[\\/]node_modules[\\/]|src\/ts\/app.ts/,
-	//                 name: 'vendors',
-	//                 enforce: true,
-	//                 chunks: 'all'
-	//             }
-	//         }
- //    	}
-	// },
+	optimization: {
+		// runtimeChunk: 'single',
+    	splitChunks: {
+	        cacheGroups: {
+	            vendors: {
+	                test: /(jquery.js|swiper.esm.js|swiper.esm.bundle.js|dom7.modular.js|select2.js|jquery.fancybox.js|jquery.fancybox.css|stringAnimate.js)/,
+	                name: 'js/vendors',
+	                enforce: true,
+	                chunks: 'all'
+	            },
+	            xpage: {
+	            	test: /app.ts$/,
+	            	name: 'js/xpage',
+	                enforce: true,
+	                chunks: 'all'
+	            }
+	        }
+    	}
+	},
 	// plugins: [
 	// 	new BundleAnalyzerPlugin()
 	// ]
