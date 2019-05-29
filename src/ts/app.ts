@@ -107,7 +107,7 @@ class Element {
 	* @param selector: HTMLElement[] || NodeList || HTMLElement || Element || string
 	* @return Element
 	*/  
-	constructor (selector?: HTMLElement[])
+	constructor (selector?: EventTarget)
 	constructor (selector?: HTMLElement[])
 	constructor (selector?: NodeList)
 	constructor (selector?: Element)
@@ -312,6 +312,29 @@ class Element {
 		})
 
 		return searchingElements
+	}
+
+
+	public text(text?: string): Element
+	public text(text?: string): string[]
+	public text(text?: string): string
+	public text(text?: string): any{
+		if (text){
+			App.each(this.els, (el: HTMLElement) => {
+				el.innerText = text
+			})
+			return this
+		}else if (this.length > 1){
+			let textArray: string[] = [];
+
+			App.each(this.els, (el: HTMLElement) => {
+				textArray.push(el.innerText)
+			})
+			return textArray
+		}else
+			return this.els[0].innerText
+
+		return this
 	}
 }
 

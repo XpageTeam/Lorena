@@ -1,4 +1,7 @@
-import {App, Element} from "./app"
+import {Swiper, Keyboard} from 'swiper/dist/js/swiper.esm.js'
+import {App} from "./app"
+
+Swiper.use([Keyboard])
 
 App.domReady(() => {
 	;(function(){
@@ -6,5 +9,14 @@ App.domReady(() => {
 			if (i > 1)
 				el.style.opacity = (1 / i).toString()
 		})
-	})()
+	})//()
+
+	new Swiper(".time-line", {
+		slidesPerView: 4,
+		// freeMode: true,
+		keyboard: {
+			enabled: true,
+			onlyInViewport: true,
+		}
+	})
 })

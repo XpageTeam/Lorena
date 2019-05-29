@@ -1,7 +1,7 @@
 import "./tovar"
 import "./timeline"
 import "./standart-page"
-import "./useful"
+// import "./useful"
 import "./addresses"
 import "./partners"
 import "./career"

@@ -1,5 +1,7 @@
 import {App, EventListener} from "./app"
-import Swiper from "swiper"
+import {Swiper, Lazy, Navigation} from 'swiper/dist/js/swiper.esm.js'
+
+Swiper.use([Lazy, Navigation])
 
 interface Shadows {
 	right: HTMLElement,
@@ -65,7 +67,6 @@ App.domReady(() => {
 
 		new Swiper(el, {
 			loop: true,
-			a11y: false,
 			lazy: {
 				loadPrevNext: true,
 				loadOnTransitionStart: true,

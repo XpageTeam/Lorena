@@ -160,6 +160,7 @@
 	position: relative
 	display: flex
 	flex: 1 1 auto
+	width: var(--base-width)
 
 	&:before
 		content: ""
@@ -167,10 +168,30 @@
 		height: 1px
 		background: linear-gradient(to right, var(--main-color), rgba(255,255,255, .0001))
 
+	.swiper
+
+		&-slide
+
+			&-next
+
+				+ .swiper-slide
+					opacity: .8
+
+					+ .swiper-slide
+						opacity: .6
+
+						+ .swiper-slide
+							opacity: .4
+
+							~ .swiper-slide
+								opacity: .2
+	
 	&__item
 		width: 300px
 		padding: 70px 0 0
 		position: relative
+		// border-top: 1px solid var(--main-color)
+		transition: opacity .3s ease
 
 		&:not(:last-child)
 			padding-right: 14px
@@ -209,3 +230,175 @@
 			font-size: 18px
 			line-height: calc(26 / 18)
 			max-width: 198px
+
+@media (max-width: 1500px)
+	.about-text
+		padding: 0 0 60px
+
+		&__advantages
+			margin: 40px 0 0
+
+		&__desc
+			width: 480px
+
+	.mission
+		padding: 60px 0
+
+		&__right
+			width: 675px
+
+	.timeline
+		padding: 80px
+
+		&__line
+			margin: 90px 0 0
+
+@media (max-width: 1200px) and (min-width: 1000px)
+	.about-img
+
+		&__text
+
+			&-btn
+				margin: 50px 0 0
+
+
+@media (max-width: 1100px)
+	.about-text
+
+		&__desc
+			width: calc(100% - 430px)
+
+		&__map
+			width: 400px
+
+	.cw-item__img
+		margin-bottom: 15px
+
+	.timeline
+
+		&__title
+			max-width: 100%
+
+			.mission-desc__title
+				max-width: none
+
+		&__text
+			margin-left: 0
+
+@media (max-width: 1000px)
+	.about
+
+		&__text
+			margin: 30px 0 0
+
+	.about-text
+		display: block
+
+		&__desc
+			width: auto
+
+		&__map
+			display: none
+
+	.c-why
+
+		&__list
+			flex-wrap: wrap
+			margin-bottom: -20px
+
+			&-item
+				width: 33.33%
+				margin-bottom: 20px
+
+	.cw-item
+
+		&__img
+			margin-bottom: 5px
+
+	.mission
+		padding: 30px 0
+		display: block
+
+		&__left
+			margin-right: 0
+
+		&__right
+			margin: 25px 0 0
+			width: auto
+
+	.mission-desc
+		display: flex
+		align-items: center
+		flex-direction: row
+		justify-content: space-between
+
+		&__btn
+			padding: 0 0 0 20px
+			margin: 0 0 0 auto
+
+	.hearth-btn, .pers-btn
+		size: 80px
+
+	.mission-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+	.timeline
+		padding: 20px
+
+		&__text
+			padding: 30px 0 0
+
+		&__line
+			margin: 50px 0 0
+
+	.time-line
+
+		&__item
+			width: auto
+			padding: 50px 0 0
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.about-img
+
+		&__text
+			padding: 30px 0 0
+
+			&-btn
+				margin: 30px 0 0
+
+			&-title
+				font-size: 26px
+
+@media (max-width: 660px)
+	.c-why
+
+		&__list
+
+			&-item
+				width: 50%
+
+	.about-img
+
+		picture, &:after
+			display: none
+
+		&__text
+			position: static
+			background: none
+			padding: 55px 0 0
+
+			&-title
+				font-size: 20px
+
+			&-btn
+				margin: 30px 0 0
+
+	.hearth-btn, .pers-btn
+		size: 50px
+
+	.timeline
+		padding: 20px 0

@@ -142,7 +142,8 @@
 
 	&__title
 		max-width: 450px
-		font-size: 40px
+		font-size: 30px
+		font-weight: bold
 
 .tovar-btns
 	border-top: 1px solid rgba(33, 33, 33, 0.8)
@@ -225,6 +226,16 @@
 	display: flex 
 	flex-wrap: wrap
 	margin: 0 0 -25px -25px
+
+	&:hover
+
+		.variants-plates
+
+			&__one
+			
+				&:after
+					opacity: 1
+
 
 	&__one
 		width: calc((100% - 25px * 3) / 3)

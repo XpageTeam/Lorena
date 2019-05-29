@@ -6,6 +6,12 @@
 		align-self: center
 		margin-right: 20px
 		padding: 36px 0 0
+
+	&__form
+		margin-right: 100px
+
+		+ .main-choose__img
+			margin-right: -260px
 	
 	&__text
 
@@ -20,6 +26,7 @@
 		&-subtitle
 			font-size: 18px
 			line-height: calc(26 / 18)
+			margin-bottom: 50px
 
 		&-btn
 			margin: 65px 0 0
@@ -35,7 +42,7 @@
 	&__cont
 
 		&:not(&--no-bg)
-			background: url("/img/lorena-bg.svg") center left vw(90) no-repeat, #282828
+			background: url("../img/lorena-bg.svg") center left vw(90) no-repeat, #282828
 
 		&--no-bg
 			background-color: #282828
@@ -58,12 +65,48 @@
 			width: calc((100% - 36px * 2) / 2)
 			margin: 0 0 40px 36px
 
+	&__bot
 
+		&-submit
+			margin-left: 36px
+
+@media (max-width: 1400px)
+	.main-choose
+
+		&__form
+			padding: 0
+
+			+ .main-choose__img
+				max-width: 500px
+				margin-right: -100px
+
+		&__text
+
+			&-subtitle
+				margin-bottom: 30px
+
+	.choose-form
+
+		&__inputs
+			margin-bottom: 0
+
+@media (max-width: 1200px) and (min-width: 1000px)
+	.main-choose
+
+		&__form
+			margin-right: 40px
 
 @media (max-width: 1000px)
 	.main-choose
 		padding: 30px 0
 		display: block
+
+		&__form
+			margin-right: 0
+			width: 100%
+
+			+ .main-choose__img
+				display: none
 
 		&__cont
 			background-image: none !important
@@ -85,8 +128,10 @@
 				margin: 40px 0 0
 
 @media (max-width: 660px)
-	.main-choose
+	.main .main-choose
 		padding: 73px vw(52, 414) 90px
+	
+	.main-choose
 
 		&__text
 			padding: 0 60px 0 0
@@ -96,3 +141,22 @@
 			&-title
 				font-size: 22px
 				line-height: calc(28 / 22)
+
+	.choose-form
+
+		&__inputs
+			margin: 0
+			display: block
+
+			.default-input
+				width: auto 
+				margin: 0
+
+				&:not(:first-child)
+					margin: 25px 0 0
+
+		&__bot
+			margin: 25px 0 0
+
+			&-submit
+				margin: 0

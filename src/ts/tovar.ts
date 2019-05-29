@@ -1,8 +1,8 @@
 import {App, Element, EventListener} from "./app"
 import "./main-reviews"
-import {Swiper, Lazy, EffectFade, EffectCube, Keyboard} from "swiper/dist/js/swiper.esm"
+import {Swiper, Lazy, EffectFade, Keyboard} from "swiper/dist/js/swiper.esm"
 
-Swiper.use([Lazy, EffectFade, EffectCube, Keyboard])
+Swiper.use([Lazy, EffectFade, Keyboard])
 
 App.domReady(() => {
 	/** Переключение табов */
@@ -49,10 +49,7 @@ const initiallizeVariantsSlider = (slider: HTMLElement) => {
 		return
 
 	const thisSlider = new Swiper(slider, {
-		effect: "cube",
-		cubeEffect: {
-		    slideShadows: false,
-		},
+		effect: "fade",
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 2
