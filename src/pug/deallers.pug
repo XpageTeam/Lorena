@@ -1,0 +1,243 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Дилерам
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.tovar.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.about
+						.about__img
+							.about-img
+								picture
+									source(media="(min-width: 660px)" srcset="img/photos/about-img.jpg")
+									source(media="(max-width: 660px)" srcset="img/photos/about-img.jpg")
+									img
+								.about-img__text
+									.about-img__text-title Оправдываем доверие покупателей
+										br
+										| на протяжении 30 лет!
+									.about-img__text-btn
+										a.play-btn.fancybox(href="https://www.youtube.com/embed/PLLcZF0fF7U")
+											span.play-btn__btn
+											span.play-btn__text Смотреть видеоролик
+						.about__text
+							.wrapper
+								.about-text
+									.about-text__desc
+										.adr-text
+											.adr-text__counters
+												.adr-text__counters-item
+													.adr-counter
+														.adr-counter__number 71
+														.adr-counter__text Город
+												.adr-text__counters-item
+													.adr-counter
+														.adr-counter__number 155
+														.adr-counter__text салонов
+											.adr-text__title «Lorena кухни» - это передовые технологии, эксклюзивные материалы и лучшие специалисты
+											.adr-text__text
+												.text-page
+													p Каждая кухня LORENA – авторская работа. Она попадает в ваш дом, пройдя через руки творческих дизайнеров, высококвалифицированных рабочих, опытных технологов, неравнодушных и обязательных установщиков мебели.
+									.about-text__map
+										figure.about-map
+											img(src="img/russia-in-circles.svg")
+						.dealer__list
+							.wrapper
+								.dealler-list
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dealer-"+0+".svg", alt="Aqualine!")
+											figcaption.dealer__text Aqualine!
+												br 
+												| Влагостойкие столешницы
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dealer-"+1+".svg", alt="Brilliant")
+											figcaption.dealer__text Brilliant 
+												br
+												| Суперглянцевые фасады
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dealer-"+2+".svg", alt="Monolite")
+											figcaption.dealer__text Monolite
+												br
+												| Лазерное кромление
+						.dealer__columns
+							.wrapper
+								.dealer-columns
+									.dealer-columns__item
+										.text-page
+											ul
+												li Востребованный продукт-купили более 170 000 семей.
+												li Оптимальное соотношение цена/качество.
+												li Персональный менеджер-куратор.
+												li Отлаженная логистика.
+												li Стратегическое консультирование.
+									.dealer-columns__item
+										.text-page
+											ul
+												li Рекламная поддержка и продвижение.
+												li Бесплатный дизайн-проект салона.
+												li Обучение персонала на фабрике.
+												li Ежегодные конференции для владельцев салонов.
+						.dealer__list
+							.wrapper
+								.dealler-list
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dl-"+0+".svg")
+											figcaption.dealer__text Срок окупаемости вложений от 10 месяцев
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dl-"+1+".svg")
+											figcaption.dealer__text Высокая рентабельность бизнеса
+									.dealler-list__item
+										.dealer
+											figure.dealer__img
+												img(src="img/photos/dl-"+2+".svg")
+											figcaption.dealer__text Специальные условия дилерам
+						.dealer__form
+							.wrapper
+								.dealer-form
+									.dealer-form__title
+										.dealer-form__title-text Стать дилером
+										.dealer-form__title-subtitle Стать дилером просто, заполните форму он-лайн и наши специалисты свяжутся с вами!
+									form(action="#")
+										.dealer-form__inputs
+											.default-input.default-input--50p
+												input.default-input__input(type="text" required="" placeholder="ОАО Газпром")
+												label.default-input__label Название организации с организационно-правовой формой
+												.forms__error-message
+											.default-input.default-input--50p
+												input.default-input__input(type="text" required="")
+												label.default-input__label Контактное лицо
+												.forms__error-message
+											.default-input.default-input--select
+												select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+													option(value="Выберите город" disabled="")
+													option(value="1" selected="") Челябинск
+													option(value="2") Челябинск
+													option(value="3") Челябинск
+													option(value="4") Челябинск
+													option(value="5") Челябинск
+												label.default-input__label Город
+												.forms__error-message
+											.default-input
+												input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+												label.default-input__label Телефон с указанием кода города
+												.forms__error-message
+											.default-input
+												input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+												label.default-input__label E-mail
+												.forms__error-message
+											.default-input.default-input--50p
+												input.default-input__input(type="text" placeholder="Введите текст")
+												label.default-input__label Сообщение
+												.forms__error-message
+											.default-input.default-input--50p.default-input--select
+												select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите способ" required)
+													option(value="Выберите город" disabled="")
+													option(value="1" selected="") Че123
+													option(value="2") Ч1232
+													option(value="3") Ч1232
+													option(value="4") Ч1232
+													option(value="5") Ч1232
+												label.default-input__label Как вы узнали о нас
+												.forms__error-message
+										.dealer-form__bot
+											.dealer-form__bot-submit
+												input.arrow-btn(type="submit" value="Отправить")
+											.dealer-form__bot-req
+												.form-req Нажимая на кнопку отправки сообщения, 
+													br 
+													| я соглашаюсь на обработку моих 
+													a(href="#") персональных данных
+						.tovar__reviews
+							.wrapper
+								.main-reviews
+									.main-reviews__slider
+										.reviews-slider
+											.swiper-wrapper
+												.swiper-slide
+													.reviews-slide
+														figure.reviews-slide__img(data-date="26.02.2019")
+															img(src="img/photos/main-reviews-img.jpg")
+														.reviews-slide__desc
+															.reviews-slide__name Наташа Александрова
+															.reviews-slide__city Магнитогорск
+															.reviews-slide__text
+																.text-page
+																	p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+												- for (let i = 0; i < 10; i++)
+													.swiper-slide
+														.reviews-slide
+															figure.reviews-slide__img(data-date="26.02.2019")
+																img.swiper-lazy(data-src="img/photos/main-reviews-img.jpg")
+																.swiper-lazy-preloader
+															.reviews-slide__desc
+																.reviews-slide__name Наташа Александрова
+																.reviews-slide__city Магнитогорск
+																.reviews-slide__text
+																	.text-page
+																		p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+									.main-reviews__counter
+										.reviews-counter
+											.reviews-counter__arrows
+												.swiper-button-prev
+												.swiper-button-next
+											.reviews-counter__title Познакомьтесь с отзывами партнеров
+											.reviews-counter__btn
+												a.arrow-btn(href="#") Отзывы
+			.main-choose__cont.main-choose__cont--no-bg
+				.wrapper
+					.main-choose
+						.main-choose__form
+							.main-choose__text-title Заполни заявку
+							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
+								br
+								| и получи рецепт в подарок!
+							.choose-form 
+								form(action="#")
+									.choose-form__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input.default-input--select
+											select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+												option(value="Выберите город" disabled="")
+												option(value="1" selected="") Челябинск
+												option(value="2") Челябинск
+												option(value="3") Челябинск
+												option(value="4") Челябинск
+												option(value="5") Челябинск
+											label.default-input__label Город
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.choose-form__bot
+											.choose-form__bot-submit
+												input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

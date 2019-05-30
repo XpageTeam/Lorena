@@ -159,6 +159,13 @@
 		.form-req
 			margin-left: 44px
 
+	&__subtext
+		font-size: 14px
+		position: absolute calc(100% + 5px) 0 *
+
+		span
+			color: rgba(255, 255, 255, .3)
+
 	&__input
 		border: none
 		border-bottom: 1px solid rgba(255,255,255, .15)
@@ -169,7 +176,7 @@
 		color: #fff
 		background-color: #282828
 
-		&--error:not(:valid), &.error:not(:valid)
+		&--error:not(:valid), &.error:not(:valid), &.forms__input_error:not(:valid)
 			border-color: red
 
 			~ .forms__error-message
@@ -393,6 +400,12 @@
 
 		&-small
 			color: #fff !important
+
+.forms-recaptcha
+
+	+ .choose-form__bot
+		margin-top: 20px
+
 
 @media screen and (max-width: 1000px)
 	.popup-form

@@ -19,10 +19,13 @@
 	.head
 		position: absolute 0 * * 0
 		width: 100%
-		transition: background .3s ease
 
-		&:hover, &:focus
-			background: var(--second-color)
+		&__menu
+
+			&:hover, &:focus
+
+				.h-menu:befire
+					opacity: 1
 
 .inner:not(.tovar)
 
@@ -105,6 +108,14 @@
 @media (min-width: 1200px)
 	.h-menu
 		display: flex
+
+		&:before
+			content: ""
+			position: absolute 0
+			background: var(--second-color)
+			opacity: 0
+			pointer-events: none
+			transition: opacity .3s ease
 
 		&__item
 

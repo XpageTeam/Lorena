@@ -74,10 +74,10 @@ module.exports = (env, argv) => {
 	    	splitChunks: {
 		        cacheGroups: {
 		            vendors: {
-		                test: /node_modules/,
+		                test: /^.*node_modules((?!gsap).)*$/,
 		                name: 'js/vendors',
 		                enforce: true,
-		                chunks: 'all'
+		                chunks: 'all',
 		            },
 		            lol: {
 		                test: /(jquery.fancybox.js|jquery.fancybox.css|stringAnimate.js)/,

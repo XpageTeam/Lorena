@@ -231,6 +231,88 @@
 			line-height: calc(26 / 18)
 			max-width: 198px
 
+.dealer
+
+	&__list
+		margin: 10px 0 70px
+
+.dealler-list
+	background: var(--thrid-color)
+	padding: 65px 20px 70px
+	display: flex
+	justify-content: space-around
+	text-align: center
+
+.dealer
+
+	&__img
+		height: 67px
+
+		img
+			max-height: 100%
+
+	&__text
+		margin: 40px 0 0
+		font-size: 14px
+		line-height: calc(27 / 14)
+		display: inline-block
+		max-width: 210px
+
+.dealer__form
+	margin-bottom: 110px
+
+.dealer-columns
+	padding: 40px 0
+	display: flex
+	font-size: 14px
+	line-height: calc(27 / 14) 
+
+	&__item
+		padding: 0 30px 0 0
+		width: 50%
+
+.dealer-form
+	background: var(--thrid-color)
+
+	&__title
+		padding: 44px 37px
+		border-bottom: 1px solid var(--border-color)
+
+		&-text
+			font-weight: 400
+			font-size: 20px
+
+		&-subtitle
+			margin: 14px 0 0
+			font-size: 14px
+			color: rgba(255,255,255, .3)
+
+	&__inputs
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -65px -50px
+
+		.default-input
+			margin: 0 0 65px 50px
+
+			&:not(.default-input--50p)
+				width: calc((100% - 50px * 3) / 3)
+
+			&--50p
+				width: calc((100% - 50px * 2) / 2)
+	form
+		padding: 40px 37px 63px
+
+	&__bot
+		display: flex
+		align-items: center
+		margin: 62px 0 0
+
+		&-submit
+
+			&:not(:last-child)
+				margin-right: 25px
+
 @media (max-width: 1500px)
 	.about-text
 		padding: 0 0 60px

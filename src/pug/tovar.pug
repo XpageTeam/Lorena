@@ -35,8 +35,12 @@ html(lang="ru")
 										.thumbs-slider
 											.thumbs-slider__list
 												- for (let i = 0; i < 2; i++)
-													figure.thumbs-slider__slide
-														img(src="img/photos/kitchen-small-"+i+".jpg")
+													if (i == 0)
+														figure.thumbs-slider__slide.active
+															img(src="img/photos/kitchen-small-"+i+".jpg")
+													else
+														figure.thumbs-slider__slide
+															img(src="img/photos/kitchen-small-"+i+".jpg")
 											.thumbs-slider__more
 												<!-- ссылка на третью картинку в полноэкранной галерее -->
 												a.more-imgs.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")

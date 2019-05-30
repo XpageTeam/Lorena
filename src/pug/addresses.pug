@@ -63,41 +63,96 @@ html(lang="ru")
 											.address
 												header.address__top
 													.address__top-title(data-count="1")=address
-													address.address__top-address ул. пушкина, 64
 													.address__top-btn
-														.gray-arrow-btn Подробнее о салоне
+														.gray-arrow-btn Подробнее
 												main.address__content
-													.address-desc
-														.address-desc__contacts
-															.address-contacts
-																.address-contacts__item.address-contacts__item--full
-																	.address-contacts__title Контакты
-																	address
-																		a(href="tel: 8 (8553) 32-05-11") 8 (8553) 32-05-11
-																	address
-																		a(href="mailto: almetyevsk1@lorena-kuhni.ru") almetyevsk1@lorena-kuhni.ru
-																.address-contacts__item
-																	.address-contacts__title График работы
-																	time пн-пт: 10.00–19.00
-																	time сб: 10.00–19.00
-																	time вс: 10.00–17.00
-																.address-contacts__item
-																	.address-contacts__title Руководитель салона
-																	p Юдина Марина
-															.address-btns
-																a.arrow-btn(href="#") Закажи бессплатный замер
-																a.gray-arrow-btn(href="#") Посмотреть на крате
-														.address-desc__slider
-															.address-slider
-																.swiper-wrapper
-																	- for (let i = 0; i < 4; i++)
-																		.swiper-slide
-																			a.address-slider__slide(href="img/photos/addres-img.jpg" data-fancybox="address-gallery-"+j)
-																				img.swiper-lazy(data-src="img/photos/addres-img.jpg")
-																			.swiper-lazy-preloader
-																.address-slider__arrows
-																	.swiper-button-prev
-																	.swiper-button-next
+													.address-tabs
+														.address-tabs__tab.active(data-id="0")
+															.address-detail
+																address.address-detail__address ул. Малышева, 5 
+																	br
+																	| ТРЦ «Алатырь», 3 этаж
+																.address-detail__btn
+																	button.gray-arrow-btn Подробнее о салоне
+														.address-tabs__tab(data-id="1")
+															.address-detail
+																address.address-detail__address ул. Краснолесья, 133, 
+																	br
+																	| ТРЦ «Академический», 3 этаж
+																.address-detail__btn
+																	button.gray-arrow-btn Подробнее о салоне
+														.address-tabs__tab(data-id="2")
+															.address-detail
+																address.address-detail__address ул. Краснолесья, 133, 
+																	br 
+																	| ТРЦ «Академический», 3 этаж
+																.address-detail__btn
+																	button.gray-arrow-btn Подробнее о салоне
+													- for (let i = 0; i < 3; i ++)
+														if (i == 0)
+															.address-desc.active(data-id=i)
+																.address-desc__contacts
+																	.address-contacts
+																		.address-contacts__item.address-contacts__item--full
+																			.address-contacts__title Контакты
+																			address
+																				a(href="tel: 8 (8553) 32-05-11") 8 (8553) 32-05-11
+																			address
+																				a(href="mailto: almetyevsk1@lorena-kuhni.ru") almetyevsk1@lorena-kuhni.ru
+																		.address-contacts__item
+																			.address-contacts__title График работы
+																			time пн-пт: 10.00–19.00
+																			time сб: 10.00–19.00
+																			time вс: 10.00–17.00
+																		.address-contacts__item
+																			.address-contacts__title Руководитель салона
+																			p Юдина Марина
+																	.address-btns
+																		a.arrow-btn(href="#") Закажи бессплатный замер
+																		a.gray-arrow-btn(href="#") Посмотреть на крате
+																.address-desc__slider
+																	.address-slider
+																		.swiper-wrapper
+																			- for (let i = 0; i < 4; i++)
+																				.swiper-slide
+																					a.address-slider__slide(href="img/photos/addres-img.jpg" data-fancybox="address-gallery-"+j)
+																						img.swiper-lazy(data-src="img/photos/addres-img.jpg")
+																					.swiper-lazy-preloader
+																		.address-slider__arrows
+																			.swiper-button-prev
+																			.swiper-button-next
+														else
+															.address-desc(data-id=i)
+																.address-desc__contacts
+																	.address-contacts
+																		.address-contacts__item.address-contacts__item--full
+																			.address-contacts__title Контакты
+																			address
+																				a(href="tel: 8 (8553) 32-05-11") 8 (8553) 32-05-11
+																			address
+																				a(href="mailto: almetyevsk1@lorena-kuhni.ru") almetyevsk1@lorena-kuhni.ru
+																		.address-contacts__item
+																			.address-contacts__title График работы
+																			time пн-пт: 10.00–19.00
+																			time сб: 10.00–19.00
+																			time вс: 10.00–17.00
+																		.address-contacts__item
+																			.address-contacts__title Руководитель салона
+																			p Юдина Марина
+																	.address-btns
+																		a.arrow-btn(href="#") Закажи бессплатный замер
+																		a.gray-arrow-btn(href="#") Посмотреть на крате
+																.address-desc__slider
+																	.address-slider
+																		.swiper-wrapper
+																			- for (let i = 0; i < 4; i++)
+																				.swiper-slide
+																					a.address-slider__slide(href="img/photos/addres-img.jpg" data-fancybox="address-gallery-"+j)
+																						img.swiper-lazy(data-src="img/photos/addres-img.jpg")
+																					.swiper-lazy-preloader
+																		.address-slider__arrows
+																			.swiper-button-prev
+																			.swiper-button-next
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose

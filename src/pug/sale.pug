@@ -1,0 +1,74 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Распродажа
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.catalog
+						.catalog__filter
+							.wrapper
+								.title-block
+									.title-block__title
+										h1 Распродажа
+									nav.title-block__menu
+										ul.title-menu
+											each item in  ["мастер-класс", "выездной дизайнер кухни"]
+												li
+													a.title-menu__link.gray-btn(href="#")=item
+								.filter
+									form(action="#")
+										.filter__inputs
+											.filter__input-cont.filter__input-cont--select
+												select.filter__input.filter__input--select(data-placeholder="Выберите стиль кухни" multiple="")
+													option(data-count="17" selected="" value="1") Современная коллекция
+													option(data-count="18" value="2") Классика
+													option(data-count="19" value="3") Городская классика
+												label.filter__label Стиль кухни
+											.filter__input-cont.filter__input-cont--select
+												select.filter__input.filter__input--select(data-placeholder="Выберите планировку" multiple="")
+													option(selected="" value="1") Все
+													option(value="2") Все
+													option(value="3") Все
+												label.filter__label Планировка
+											.filter__input-cont.filter__input-cont--select
+												select.filter__input.filter__input--select(data-placeholder="Выберите размер" multiple="")
+													option(selected="" value="1") Все
+													option(value="2") Все
+													option(value="3") Все
+												label.filter__label Размер
+											.filter__submit-cont
+												input.filter__submit.arrow-btn(type="submit" value="Применить")
+						.catalog__list
+							.cat-list.cat-list--prices
+								- for (let i = 0; i <= 4; i++)
+									each item, j in ["Индастриал", "Интего", "Дюна", "Волна", ]
+										.cat-list__item
+											.cat-item
+												a.cat-item__img(href="")
+													img(src="img/photos/cat-item-"+j+".jpg", alt=item)
+													.cat-item__btn
+														.arrow-btn Рассчитать стоимость
+												.cat-item__title
+													a.cat-item__title-text(href="#")=item
+													.cat-item__title-price 200 000 
+														i.rub  ₽
+			.main-choose__cont
+				.wrapper
+					.main-choose
+						.main-choose__text
+							.main-choose__text-title Шеф знает толк в кухнях!
+							//- .main-choose__text-subtitle и получи в подарок рецепт от шефа!
+							.main-choose__text-btn
+								a.arrow-btn(href="#") узнать больше 
+						figure.main-choose__img
+							img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js")

@@ -314,7 +314,9 @@ class Element {
 		return searchingElements
 	}
 
-
+	/** Метод для изменения и получения innerText
+	* @param text?: string
+	* @return ELement || string[] || string */
 	public text(text?: string): Element
 	public text(text?: string): string[]
 	public text(text?: string): string
@@ -333,8 +335,16 @@ class Element {
 			return textArray
 		}else
 			return this.els[0].innerText
+	}
 
-		return this
+	/** Метод для получения конкретного элемента по индексу 
+	* @param index: number
+	* @return Element*/
+	public get(index: number): Element{
+		if (this.els[index])
+			return new Element(this.els[index])
+		else
+			return new Element()
 	}
 }
 

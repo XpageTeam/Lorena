@@ -1,7 +1,7 @@
 import $ from "jquery"
 // import is from "is_js"
 import stringEffect from "../js/stringAnimate.js"
-import "select2/dist/js/select2.js"
+import "../js/select2.js"
 
 window.$ = $;
 window.jQuery = $;
@@ -33,7 +33,8 @@ try{
 
 		$("select:not(.no-selectize)").each(function(){
 			$(this).select2({
-				placeholder: $(this).data("placeholder") || "",
+				minimumResultsForSearch: Infinity,
+				placeholder: $(this).data("placeholder"),
 				templateResult: selectionTemplate,
 				templateSelection: selectionTemplate
 			})

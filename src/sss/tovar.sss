@@ -16,7 +16,7 @@
 
 	&__reviews
 		margin: 119px 0
-		overflow-x: hidden
+		overflow: hidden
 
 		.reviews-counter
 
@@ -30,6 +30,12 @@
 
 				&-prev, &-next
 					display: none
+
+	&__all
+		margin: 95px auto 0
+		max-width: 1920px
+		background: var(--thrid-color)
+		padding: 80px 20px 85px
 
 .tovar-arrows
 	display: flex
@@ -65,17 +71,19 @@
 			&-slide, &-wrapper
 				height: auto !important
 
+		picture, img
+			height: calc(100vh - 160px)
+
 		&:before
 			content: ""
 			position: absolute 0
-			background: linear-gradient(to bottom, rgba(0,0,0, .3) 27%, rgba(0,0,0, .0001) 40%)
+			background: url("../img/top-slider-shadow.png") repeat-x
 			z-index: 3
 			pointer-events: none
 
 	picture, img
 		display: block
 		width: 100%
-		max-height: 100vh
 		object-fit: cover
 		object-position: center
 
@@ -96,9 +104,13 @@
 		width: 202px
 		cursor: pointer
 		border: 8px solid var(--second-color)
+		transition: border-color .3s ease
 
 		&:not(:last-child)
 			margin-right: 35px
+
+		&:hover, &:focus, &.active
+			border-color: var(--main-color)
 
 	&__more
 		counter-reset: i
@@ -150,6 +162,11 @@
 	border-bottom: 1px solid rgba(33, 33, 33, 0.8)
 	padding: 41px 0
 	display: flex
+	align-items: center
+
+	&__prices
+		margin-right: auto
+		padding-right: 20px
 
 	&__btn
 
@@ -158,6 +175,31 @@
 
 		&:nth-child(2)
 			margin-right: 29px
+
+.tovar-prices
+	display: flex
+	align-items: center
+
+	&__sale
+		background: var(--thrid-color)
+		font-size: 18px
+		border-radius: 5px
+		padding: 11px
+		margin-right: 54px
+
+		span
+			font-size: 24px
+
+	&__price
+		font-size: 24px
+
+		&:not(:last-child)
+			margin-right: 20px
+
+	&__last
+		color: rgba(255,255,255, .3)
+		font-size: 14px
+		text-decoration: line-through
 
 .tovar-price
 
@@ -172,11 +214,27 @@
 		line-height: calc(35 / 24)
 
 .tovar-text
+	max-width: 840px
 
 	&__text
 		font-size: 14px
 		margin: 50px 0 0
-		max-width: 840px
+
+	&__price
+
+		&-list
+			display: flex
+
+			.tovar-text__price
+				flex: 1 1 auto
+
+				&:not(:last-child)
+					margin-right: 35px
+
+			.tovar-price
+
+				&__price
+					font-size: 14px
 
 .variants
 
@@ -325,6 +383,62 @@
 	object-fit: cover
 	object-position: center
 
+
+.all-slider
+	overflow: hidden
+	margin: 0 auto
+	max-width: var(--base-width)
+	
+	&__title
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-size: 24px
+		font-weight: 400
+		margin-bottom: 73px
+
+		span
+
+			&:not(:last-child)
+				margin-right: 30px
+
+		&-arrows
+			display: flex
+
+			.swiper
+
+				&-button
+
+					&-prev
+						transform: rotateZ(90deg)
+
+					&-next
+						transform: rotateZ(-90deg)
+
+					&-prev, &-next
+						border-radius: 50%
+						background: var(--main-color)
+						size: 39px
+						position: static
+						margin-top: 0
+
+						&:not(:last-child)
+							margin-right: 20px
+
+						&:matches(:after, :before)
+							content: ""
+							position: absolute
+
+						&:after
+							top: calc(50% - 3px) 
+							right: calc(50% - 3px)
+							border-right: 1px solid #fff
+							border-bottom: 1px solid #fff
+							size: 5px
+							transform: rotateZ(45deg)
+							z-index: 1
+
+
 @media (max-width: 1400px)
 	.tovar
 
@@ -341,6 +455,10 @@
 		&__reviews
 			margin: 60px 0
 
+		&__all
+			margin: 50px 0 0
+			padding: 50px 20px
+
 	.tovar-desc
 
 		&__btns, &__text
@@ -353,6 +471,11 @@
 
 		&__text
 			margin: 30px 0 0
+
+	.all-slider
+
+		&__title
+			margin-bottom: 30px
 
 @media (max-width: 1200px) and (min-width: 1000px)
 	.variants-list
@@ -430,6 +553,12 @@
 				&-prev, &-next
 					display: block
 
+	.tovar-btns
+		flex-wrap: wrap
+
+		&__prices, &__city
+			margin-bottom: 20px
+
 @media (max-width: 660px)
 	.tovar-sliders
 
@@ -459,20 +588,71 @@
 					&:after
 						font-size: 24px
 
+	.tovar-text
+
+		&__price
+
+			&-list
+				flex-direction: column
+
+				.tovar-text__price
+					margin-right: 0 !important
+					width: 100% !important
+
+					&:not(:first-child)
+						margin: 15px 0 0
+
 	.more-imgs
 		width: 100%
+
+	.tovar__all
+
 
 	.tovar-desc
 		display: flex
 		flex-wrap: wrap
 		align-items: center
 		position: relative
-		padding: 0 0 80px
+		padding: 0 0 0
+		position: relative
 
 		&__btns
 			width: 90px
 			flex: none
 			margin: 0
+
+			&--sale
+				width: 100%
+				margin: 20px 0 0
+
+				.tovar-btns
+
+					&__city
+						position: absolute 5px 0 * *
+
+					&__prices
+						padding-right: 0
+						margin-right: 0
+
+				.tovar-prices
+					flex-wrap: wrap
+					justify-content: space-between
+
+					&__sale, &__price
+						font-size: 16px
+						white-space: nowrap
+						margin-right: 0 !important
+
+					&__sale
+						width: calc(100% - 130px)
+						text-align: center
+
+						span
+							font-size: 20px
+
+					&__last
+						margin: -10px 0 0 auto
+
 
 		&__titles
 			width: calc(100% - 110px)

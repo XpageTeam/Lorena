@@ -1,0 +1,120 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Детальная распродажа 
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.tovar.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.tovar
+						.tovar__slider
+							.tovar-sliders
+								.tovar-sliders__big
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											.swiper-slide
+												a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+													picture
+														<!-- десктоп -->
+														source.swiper-lazy(data-srcset="img/photos/kitchen.jpg" media="(min-width: 660px)")
+														<!-- адаптив -->
+														source.swiper-lazy(data-srcset="img/photos/adaptive-kitchen.jpg" media="(max-width: 660px)")
+														img
+												.swiper-lazy-preloader
+									.tovar__slider-arrows
+										.tovar-arrows
+											a.tovar-arrows__arrow.tovar-arrows__arrow--prev.gray-arrow-btn(href="#") 
+												span кухня БРИТ
+											a.tovar-arrows__arrow.tovar-arrows__arrow--next.gray-arrow-btn(href="#") 
+												span кухня ВЕНЕТО
+								.tovar-sliders__thumbs
+									.wrapper
+										.thumbs-slider
+											.thumbs-slider__list
+												- for (let i = 0; i < 2; i++)
+													if (i == 0)
+														figure.thumbs-slider__slide.active
+															img(src="img/photos/kitchen-small-"+i+".jpg")
+													else
+														figure.thumbs-slider__slide
+															img(src="img/photos/kitchen-small-"+i+".jpg")
+											.thumbs-slider__more
+												<!-- ссылка на третью картинку в полноэкранной галерее -->
+												a.more-imgs.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+													img(src="img/photos/kitchen-small-2.jpg")
+												<!-- ссылки на остальные картинки большой галереи -->
+												- for (let j = 0; j < 3; j++)
+													a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+						.tovar__desc
+							.wrapper
+								.tovar-desc
+									.tovar-desc__titles
+										.tovar-title
+											.tovar-title__category Городская классика
+											h1.tovar-title__title Канто
+									.tovar-desc__btns.tovar-desc__btns--sale
+										.tovar-btns
+											.tovar-btns__prices
+												.tovar-prices
+													.tovar-prices__sale Ваша скидка: 
+														span 50%
+													.tovar-prices__price от 80 700 
+														i.rub ₽
+													.tovar-prices__last 516 460 
+														i.rub ₽
+											.tovar-btns__city
+												.address__top-address г. Киров
+											.tovar-btns__btn
+												a.arrow-btn(href="#") Оформить заявку
+									.tovar-desc__text
+										.tovar-text
+											.tovar-text__price-list
+												.tovar-text__price
+													.tovar-price__title планировка
+													.tovar-price__price Прямая
+												.tovar-text__price
+													.tovar-price__title Размеры
+													.tovar-price__price 3400*2510*910
+												.tovar-text__price
+													.tovar-price__title Остров
+													.tovar-price__price 1780*800
+												.tovar-text__price
+													.tovar-price__title ящики выдвижные
+													.tovar-price__price Hettich Ящички в кухне из массива
+											.tovar-text__text
+												.text-page
+													p В распродаже участвует только выставочный образец, представленный на фотографиях. Скидка действует только на кухонные гарнитуры, и не распостраняется на бытовую технику. Все акции и дополнительные скидки компании на кухонные гарнитуры из раздела «Распродажа» не распространяются! 
+						.tovar__all
+							.all-slider
+								.all-slider__title
+									span Все предложения
+									.all-slider__title-arrows
+										.swiper-button-prev
+										.swiper-button-next
+								.all-slider__slider
+									.swiper-wrapper
+										- for (let i = 0; i <= 4; i++)
+											each item, j in ["Индастриал", "Интего", "Дюна", "Волна", ]	
+												.swiper-slide
+													.cat-item
+														a.cat-item__img(href="")
+															if (j == 0)
+																img(src="img/photos/cat-item-"+j+".jpg", alt=item)
+															else
+																img.swiper-lazy(data-src="img/photos/cat-item-"+j+".jpg", alt=item)
+																.swiper-lazy-preloader
+															.cat-item__btn
+																.arrow-btn Рассчитать стоимость
+														.cat-item__title
+															a.cat-item__title-text(href="#")=item
+															.cat-item__title-price 200 000 
+																i.rub  ₽
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

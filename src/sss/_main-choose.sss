@@ -1,3 +1,9 @@
+@keyframes moveBg
+	0%
+		background-position: center left
+	100%
+		background-position: center left -3355px
+
 .main-choose
 	display: flex
 	// justify-content: space-between
@@ -42,7 +48,8 @@
 	&__cont
 
 		&:not(&--no-bg)
-			background: url("../img/lorena-bg.svg") center left vw(90) no-repeat, #282828
+			animation: moveBg 20s linear infinite
+			background: url("../img/lorena-bg.svg") center left repeat-x, #282828
 
 		&--no-bg
 			background-color: #282828
