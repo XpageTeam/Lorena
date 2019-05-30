@@ -13,15 +13,12 @@ html(lang="ru")
 						.n-advantages
 							.n-advantages__slider
 								.advantages-slider
-									.swiper-wrapper
-										- for (let i = 0; i < 6; i++)
-											.swiper-slide
-												.advantages-slide
-													.advantages-slide__subtitle преимущества
-													.advantages-slide__title Почему нас советуют друзьям?
-													.advantages-slide__text 
-														p Настоящее мастерство рождается с опытом. 
-														p 29 лет компания LORENA занимается производством кухонных гарнитуров. И за весь свой долгий путь мы выявили 3 составляющих идеальной кухни: долговечность, красота и комфорт
+									.advantages-slide
+										.advantages-slide__subtitle преимущества
+										.advantages-slide__title Почему нас советуют друзьям?
+										.advantages-slide__text 
+											p Настоящее мастерство рождается с опытом. 
+											p 29 лет компания LORENA занимается производством кухонных гарнитуров. И за весь свой долгий путь мы выявили 3 составляющих идеальной кухни: долговечность, красота и комфорт
 									.advantages-slider__nav
 										.advantages-slider__nav-arrows
 											.swiper-button-prev
@@ -30,28 +27,26 @@ html(lang="ru")
 											.swiper-pagination
 							.n-advantages__list
 								.advantage-list
-									.advantage-list__item
-										figure.advantage-list__item-img
-											img(src="img/photos/n-advantage-0.svg")
-										.advantage-list__item-desc
-											.advantages-desc
-												.advantage-desc__title Без опозданий и рассрочек
-												.advantage-desc__text У нас четкие сроки производства, а это значит, что Ваша кухня прибудет к вам в обозначенный день и час
-									.advantage-list__item
-										figure.advantage-list__item-img
-											img(src="img/photos/n-advantage-1.svg")
-										.advantage-list__item-desc
-											.advantage-desc
-												.advantage-desc__title 0 рублей
-												.advantage-desc__text Мы сократили ваши затраты, сделав замер, дизайн-проект, доставку и монтаж БЕСПЛАТНЫМИ*
-												.advantage-desc__notice *кроме Москвы и Санкт-Петербурга
-									.advantage-list__item
-										figure.advantage-list__item-img
-											img(src="img/photos/n-advantage-2.svg")
-										.advantage-list__item-desc
-											.advantage-desc
-												.advantage-desc__title Без хлопот
-												.advantage-desc__text Мы ценим ваши деньги и время. И поэтому самостоятельно организуем доставку и установку
+									.swiper-wrapper
+										each adv, i in ["0 рублей", "Без опозданий и рассрочек", "Без хлопот", "Кухня как искусство", "Эталон красоты", "Радость выбора", "Только у нас", "Всегда актуальная кухня", "Без шаблонов", "Здоровье привыше всего", "Безопасность для самых маленьких", "AQUALINE", "Антивандальное покрытие", "BRILLIANT", "MONOLITE", "Без шума", "Неубиваемая фурнитура", "Кухня с начинкой", "Разумный подход", "Кухня под ключ", "Нет мелкому шрифту и сноскам", "Разумная экономия времени", "Известный бренд", "Порядок за 5 минут", "10 лет", "170 000+", "29 лет"]
+											.swiper-slide
+												if (i == 0)
+													.advantage-list__item
+														figure.advantage-list__item-img
+															img(src="img/photos/advantage-"+i+".svg")
+														.advantage-list__item-desc
+															.advantage-desc
+																.advantage-desc__title 0 рублей
+																.advantage-desc__text Мы сократили ваши затраты, сделав замер, дизайн-проект, доставку и монтаж БЕСПЛАТНЫМИ*
+																.advantage-desc__notice *кроме Москвы и Санкт-Петербурга
+												else
+													.advantage-list__item
+														figure.advantage-list__item-img
+															img(src="img/photos/advantage-"+i+".svg")
+														.advantage-list__item-desc
+															.advantages-desc
+																.advantage-desc__title=adv
+																.advantage-desc__text У нас четкие сроки производства, а это значит, что Ваша кухня прибудет к вам в обозначенный день и час
 
 		div(style="display: none")
 			include symbol/sprite.svg

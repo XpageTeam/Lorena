@@ -1,7 +1,7 @@
 import $ from "jquery"
 // import is from "is_js"
-import stringEffect from "../js/stringAnimate.js"
-import "../js/select2.js"
+import stringEffect from "./stringAnimate.js"
+import "./select2.js"
 
 window.$ = $;
 window.jQuery = $;
@@ -9,13 +9,19 @@ window.jQuery = $;
 try{
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
-		require("../css/jquery.fancybox.css")
+		let isFancyboxCssRequired = false;
 
 		$(".fancybox").fancybox({
 			trapFocus: false,
 			touch: false,
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close"],
+			beforeShow(){
+				if (!isFancyboxCssRequired){
+					require("../css/jquery.fancybox.css")
+					isFancyboxCssRequired = true
+				}
+			},
 			beforeClose(instance, slide){
 
 			},
@@ -45,6 +51,12 @@ try{
 			touch: false,
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close"],
+			beforeShow(){
+				if (!isFancyboxCssRequired){
+					require("../css/jquery.fancybox.css")
+					isFancyboxCssRequired = true
+				}
+			},
 			beforeClose(instance, slide){
 				const slider = document.querySelector(".address.active .address-slider");
 

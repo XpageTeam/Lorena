@@ -2,8 +2,9 @@
 * на странице "карьера" */
 
 .advantages
-	margin: 110px 0 120px
+	margin: 110px auto 120px
 	padding: 0 100px
+	max-width: 1920px
 
 .advantages-list
 
@@ -112,6 +113,8 @@
 		display: flex
 		flex-direction: column
 		// padding: 30px
+		height: 684px
+		width: calc(100% - 834px)
 
 .advantages-slider
 	min-height: 434px
@@ -193,10 +196,9 @@
 		max-width: 430px
 
 .advantage-list
-	flex: 1 1 auto
-	display: flex
-	flex-direction: column
 	padding: 70px 65px
+	size: 100%
+	overflow: hidden
 
 	&__item
 		flex: 1 1 auto
@@ -233,6 +235,9 @@
 		padding: 0 50px
 		margin: 60px 0
 
+	.n-advantages__list
+		height: 620px
+
 @media (max-width: 1600px) and (min-width: 1500px)
 	.advantages-slider
 		padding: 100px
@@ -244,6 +249,8 @@
 
 			&-img
 				margin-right: 50px
+
+
 
 @media (max-width: 1500px)
 	.advantages
@@ -267,6 +274,15 @@
 		&__text
 			margin: 10px 0 0
 
+	.n-advantages
+
+		&__slider
+			width: 660px
+
+		&__list
+			width: calc(100% - 660px)
+			height: 600px
+
 @media (max-width: 1400px)
 	.advantages
 		padding: 0 20px
@@ -285,6 +301,7 @@
 
 		&__slider, &__list
 			width: auto
+			height: auto
 
 	.advantages-slider
 		min-height: 0
@@ -294,7 +311,7 @@
 		padding: 35px 0
 
 		&__item
-			width: 33.33%
+			// width: 33.33%
 			flex-direction: column
 			padding: 0 30px
 
