@@ -346,6 +346,27 @@ class Element {
 		else
 			return new Element()
 	}
+
+
+	/** Метод в разработке */
+	public prev(selector?: string): Element{
+		const searchingElements = new Element();
+
+		App.each(this.els, (el: HTMLElement) => {
+			const findedElements: any = el.previousElementSibling;
+
+			if (!findedElements)
+				return
+
+			if (selector){
+				if (findedElements.classList.contains(selector.replace(".", "")))
+					searchingElements.addElement(findedElements)
+			}else
+				searchingElements.addElement(findedElements)
+		})
+
+		return searchingElements
+	}
 }
 
 interface EventOtions{

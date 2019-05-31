@@ -46,3 +46,7 @@ App.domReady(() => {
 		event.preventDefault()
 	})
 })
+
+// App.domReady(() => {
+// 	new Element(".f-menu__item--title:first-child:last-child").closest(".f-menu").prev(".f-menu")
+// })

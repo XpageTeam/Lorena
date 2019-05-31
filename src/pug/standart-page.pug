@@ -13,6 +13,11 @@ html(lang="ru")
 						.title-block
 							.title-block__title
 								h1 Новые открытия
+							nav.title-block__menu
+								ul.title-menu
+									each item in ["назад"]
+										li
+											a.title-menu__link.gray-arrow-btn(href="#")=item
 				.inner-content__content
 					.wrapper
 						.standart-page

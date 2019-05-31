@@ -277,8 +277,6 @@
 	&__slider
 		width: 550px
 		flex: none
-		display: flex
-		flex-direction: column
 
 .variants-plates
 	display: flex 
@@ -320,6 +318,7 @@
 			position: absolute 0
 			transition: opacity .3s ease, background .3s ease, border-color .3s ease
 			background: rgba(51, 51, 51, .8)
+			opacity: 0
 
 		&:after
 			content: ""
@@ -347,16 +346,18 @@
 						border-color: var(--main-color)
 
 .variants-slider
-	width: 100%
-	flex: 1 1 auto
+	size: 100% 549px
 	display: flex
 	flex-direction: column
+	background: var(--thrid-color)
+	position: sticky 20px * * 
 
 	.swiper
 
 		&-slide
 			display: flex
 			flex-direction: column
+			background: var(--thrid-color)
 
 		&-wrapper
 			flex: 1 1 auto
@@ -499,7 +500,7 @@
 
 			&-arrows
 				position: fixed * 0 0
-				z-index: 2
+				z-index: 10
 
 		&__desc
 			margin: 33px 0 0
@@ -605,7 +606,11 @@
 	.more-imgs
 		width: 100%
 
-	.tovar__all
+	.tovar-btns__btn 
+		// margin-left: 0 !important
+
+		&:nth-child(2)
+			margin-right: 0
 
 
 	.tovar-desc
@@ -613,11 +618,11 @@
 		flex-wrap: wrap
 		align-items: center
 		position: relative
-		padding: 0 0 0
+		padding: 0 0 80px
 		position: relative
 
 		&__btns
-			width: 90px
+			width: 110px
 			flex: none
 			margin: 0
 

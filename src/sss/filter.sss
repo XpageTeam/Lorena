@@ -44,12 +44,16 @@
 			display: flex
 			flex-direction: column-reverse
 			font-size: 14px
+			position: relative
 
 			&:not(:last-child)
 				margin-right: 62px
 
 			&--select
 				width: 40%
+
+			.default-input__subtext
+				font-size: 12px
 
 	&__submit
 
@@ -147,7 +151,7 @@
 
 @media (max-width: 1500px) and (min-width: 660px)
 	.filter
-		padding: 50px 0
+		padding: 30px 0 40px
 
 @media (max-width: 1300px) and (min-width: 660px)
 	.filter
@@ -155,6 +159,11 @@
 		&__inputs
 			justify-content: space-between
 
+@media (max-width: 1000px)
+	.filter
+		
+		&__inputs
+			flex-wrap: wrap
 
 @media (max-width: 660px)
 	.filter

@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
 					  ]
 					},
 					// exclude: /\/node_modules\/(?!dom7|ssr-window|swiper)\//,
-					exclude: /(node_modules)/,
+					exclude: /^.*node_modules((?!dom7|ssr-window|swiper).)*$/,
 				},
 				{
 					test: /\.ts$/,

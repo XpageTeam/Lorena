@@ -27,6 +27,7 @@ const makeEvent = () => {
 	new EventListener(".rev-more a").add("click", (el: HTMLElement, e: Event) => {
 		const $this = new Element(el).closest(".review");
 
+		e.preventDefault()
 		if ($this.hasClass("js__opened")){
 			$this.removeClass("js__opened")
 
@@ -39,6 +40,5 @@ const makeEvent = () => {
 
 		el.blur()
 
-		e.preventDefault()
 	})
 }

@@ -52,7 +52,7 @@ App.domReady(() => {
 			},
 			660: {
 				direction: "horizontal",
-				slidesPerColumn: 2,
+				slidesPerColumn: 1,
 				loop: false,
 				slidesPerView: 1,
 				spaceBetween: 20

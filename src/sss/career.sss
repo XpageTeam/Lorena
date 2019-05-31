@@ -254,6 +254,9 @@
 		&:not(:first-child)
 			margin: 20px 0 0
 
+	&:not(.active)
+		display: none
+
 .vacancy
 
 	&__title
@@ -291,3 +294,300 @@
 
 			&__text, &__form
 				display: none
+
+
+
+
+@media (max-width: 1500px)
+	.c-chief
+
+		&__bg
+
+			img
+				max-height: vh(700)
+
+	.c-why
+		padding: 60px 0
+
+		&__title
+			margin-bottom: 30px
+
+	.cw-item
+
+		&__img
+			margin-bottom: 15px
+
+	.career__advantages
+		padding: 60px 0
+
+		.advantages-list
+			grid-auto-rows: auto
+	
+	.career__history, .career__slider,
+	.career__vacancy
+		padding: 60px 0
+
+	.c-history
+
+
+		&__title
+			margin-bottom: 30px
+
+@media (max-width: 1200px)
+	.c-chief
+
+		&__bg
+
+			img
+				max-height: vh(600)
+
+	.career__advantages
+
+		.advantages-list
+
+			&__item
+
+				&--text
+					grid-row: 1
+
+	.c-advantages
+
+		.advantage
+			padding: 0 20px 20px
+
+			&__img
+				margin-bottom: 20px
+
+	.history
+		padding: 30px 40px
+
+@media (max-width: 1000px)
+	.career__advantages,	
+	.career__history, .career__slider,
+	.career__vacancy, .c-why
+		padding: 30px 0
+
+	.career
+
+		&__chief
+			padding: 0
+
+	.c-chief
+		overflow: hidden
+
+		&__bg
+			margin-right: -100px
+
+			img
+				height: 400px
+
+	.c-why
+
+		&__title
+			font-size: 20px
+
+			br
+				display: none
+
+	.career__advantages 
+
+		.advantages-list
+			grid-template-columns: repeat(4, 1fr)
+
+			&__item
+
+				&--text
+					grid-column: 1 / 5
+
+		.advantage-text
+
+			&__question
+				font-size: 20px
+
+			br
+				display: none
+
+		.advantage
+			padding: 0 20px 20px 0
+
+	.c-history
+
+		&__title
+			font-size: 20px
+
+	.history
+		padding: 30px 20px
+		display: block
+
+		&__text
+			margin: 25px 0 0
+
+	.c-vacancy
+
+		&__list
+
+			&:not(:first-child)
+				margin: 20px 0 0
+
+	.city
+		padding: 11px 15px
+
+	.cities-list
+
+		&__item
+			margin-bottom: 15px
+
+	.vacancy
+
+		&__title
+			padding: 20px 45px 20px 20px
+
+		&__text
+			padding: 30px 20px
+
+		&__form
+			padding: 30px 20px
+
+	.vacancy-form
+
+		.popup-form
+
+			&__inputs
+				margin: 0 0 -30px -20px
+
+		.default-input
+			margin: 0 0 30px 20px
+
+			&:not(.default-input--submit)
+				width: calc((100% - 20px * 2) / 2)
+
+			&--submit
+				width: calc(100% - 20px)
+
+	.career__slider
+		overflow: hidden
+
+@media (max-width: 660px)
+	.c-chief
+
+		&__text
+
+			&-subtitle
+				font-size: 18px
+
+			&-title
+				font-size: 26px
+				max-width: 205px
+
+			&-btn
+				margin: 25px 0 0
+
+		&__bg
+
+			img
+				height: 240px
+
+	.career__advantages 
+
+		.advantages-list
+			grid-template-columns: repeat(2, 1fr)
+
+			&__item
+
+				&--text
+					grid-column: 1 / 3
+
+		.advantage
+			padding: 0 0 20px
+
+			&__text
+				font-size: 14px
+
+	.history
+
+		&__user
+			width: 100%
+
+
+	.his-user
+
+		&__img
+			margin-right: 20px
+
+	.c-vacancy
+
+		&__cities
+			position: relative
+			height: 35px
+
+			&:after
+				content: ""
+				top: calc(50% - 3px)
+				right: 20px
+				position: absolute
+				width: 5px
+				height: 5px
+				border-right: 1px solid #fff
+				border-bottom: 1px solid #fff
+				transform: rotate(45deg)
+				z-index: 3
+				pointer-events: none
+
+			&:not(.js__opened)
+				overflow: hidden			
+
+				.cities-list
+					overflow: hidden
+
+	.cities-list
+		display: flex
+		flex-direction: column
+		position: absolute 0 0 *
+		z-index: 3
+		-webkit-overflow-scrolling: touch
+		max-height: 30vh
+		overflow-y: auto
+
+		&::-webkit-scrollbar
+			width: 9px
+
+			&-thumb
+				background: var(--main-color)
+				border: 1px solid var(--thrid-color)
+
+			&-track
+				background: var(--second-color)
+				border: 1px solid var(--thrid-color)
+
+		&__item
+			margin: 0 !important
+			display: block
+
+			&.active
+				position: sticky 0 * *
+				order: -1
+
+	.city
+		display: block
+		border-radius: 0
+
+	.vacancy
+
+		&__title
+			font-size: 16px
+
+			&:after
+				right: 20px
+
+		&__title, &__text, &__form
+			padding: 15px
+
+	.vacancy-form 
+	
+		.popup-form__inputs, .default-input
+			margin: 0
+
+		.default-input
+
+			&:not(:first-child)
+				margin: 15px 0 0
