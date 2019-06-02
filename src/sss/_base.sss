@@ -20,9 +20,16 @@ input, a, button, textarea, select
 	color: #adb4c6
 	opacity: 1
 
-.swiper-button-disabled
-	opacity: .5
-	pointer-events: none
+.swiper-button
+
+	&-prev, &-next
+
+		&::selection
+			background: transparent !important
+
+	&-disabled
+		opacity: .5
+		pointer-events: none
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
 	-webkit-appearance: none
@@ -302,7 +309,7 @@ li
 
 		&:after
 			top: calc(50% - 3px) 
-			right: calc(50% - 3px)
+			right: calc(50% - 2px)
 			border-right: 1px solid #fff
 			border-bottom: 1px solid #fff
 			size: 5px
@@ -346,6 +353,7 @@ li
 	size: 39px
 	position: relative
 	display: inline-block
+	transition: background .3s ease
 
 	&:not(:last-child)
 		margin-right: 20px
@@ -363,6 +371,9 @@ li
 		transform: rotateZ(-45deg)
 		z-index: 1
 
+	&:hover, &:focus
+		background-color: lighten(#f60, .1)
+
 .constructor-btn, .favorite-btn
 	display: inline-block
 	text-transform: uppercase
@@ -375,10 +386,16 @@ li
 
 .favorite-btn
 	border: 1px solid #454545
-	background: url("../img/ico-hearth-gray.svg") left 21px center no-repeat, var(--second-color)
+	background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--second-color)
 
 	&:hover, &:focus, &.active
 		background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--main-color)
+
+@media (max-width: 660px)
+	.favorite-btn
+
+		&:not(:hover, :focus, .active)
+			background-image: url("../img/ico-hearth-gray.svg")
 
 .constructor-btn
 	border: 1px solid var(--main-color)
