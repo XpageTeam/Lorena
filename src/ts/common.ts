@@ -9,9 +9,14 @@ import "./forms"
 import "./reviews"
 import "./advantages"
 import "./nav-scrolling"
+import "./about"
 import {App, Element, MobileMenu, EventListener} from "./app"
 
 const adaptiveMedia = "(max-width: 1200px)";
+
+declare global {
+    interface Window {animateScroll: Function; }
+}
 
 App.domReady(() => {
 	new MobileMenu({
@@ -44,6 +49,12 @@ App.domReady(() => {
 		sideMenu.removeClass("js__submenu-opened")
 
 		event.preventDefault()
+	})
+
+	new EventListener(".main-slide__title-btn").add("click", (el: HTMLElement) => {
+		const target: HTMLElement = document.querySelector(".main-about__cont");
+
+		window.animateScroll(target.offsetTop + 100)
 	})
 })
 

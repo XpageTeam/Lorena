@@ -1,7 +1,7 @@
 import {App} from "./app"
-import {Swiper, Lazy, Keyboard, Scrollbar} from "swiper/dist/js/swiper.esm"
+import {Swiper, Lazy, Keyboard, Scrollbar, Navigation} from "swiper/dist/js/swiper.esm"
 
-Swiper.use([Lazy, Keyboard, Scrollbar])
+Swiper.use([Lazy, Keyboard, Scrollbar, Navigation])
 
 App.domReady(() => {
 	const partnersSlider = new Swiper(".partners-slider", {
@@ -9,6 +9,10 @@ App.domReady(() => {
 		slidesPerView: "auto",
 		freeMode: true,
 		roundLengths: true,
+		navigation: {
+			prevEl: ".partners-text__text-arrows .swiper-button-prev",
+			nextEl: ".partners-text__text-arrows .swiper-button-next"
+		},
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 1000 //слайдер криво подгружает

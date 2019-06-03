@@ -22,6 +22,11 @@
 			&__btn
 				opacity: 1
 
+			&__title
+
+				&-text
+					color: var(--main-color)
+
 	&__img
 		position: relative
 
@@ -70,13 +75,14 @@
 
 		&-text
 			font-weight: 300
+			transition: color .3s ease
 			padding-right: 30px
 			position: relative
 
 			&:after
 				content: ""
-				border-top: 1px solid #fff
-				border-right: 1px solid #fff
+				border-top: 1px solid currentColor
+				border-right: 1px solid currentColor
 				size: 5px
 				position: absolute calc(50% - 3px) 0 * *
 				transform: rotateZ(45deg)

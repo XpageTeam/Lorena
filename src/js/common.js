@@ -6,7 +6,15 @@ import "./select2.js"
 window.$ = $;
 window.jQuery = $;
 
-(function() {
+$(function(){
+	window.animateScroll = function(offset = 20){
+		$("html, body").animate({
+			scrollTop: offset
+		})
+	}
+})
+
+;(function() {
 
   // проверяем поддержку
   if (!Element.prototype.matches) {
@@ -55,9 +63,6 @@ try{
 					require("../css/jquery.fancybox.css")
 					isFancyboxCssRequired = true
 				}
-			},
-			beforeClose(instance, slide){
-
 			},
 			image: {
 				preload: true,
