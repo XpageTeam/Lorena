@@ -1,7 +1,8 @@
 .about
 
 	&__mission
-		background: var(--thrid-color)
+		background: url("../img/mission-bg.jpg") center no-repeat
+		background-size: cover
 
 	&__timeline
 		background: url("../img/timeline-bg.jpg") center no-repeat
@@ -115,16 +116,63 @@
 			font-size: 24px
 			line-height: calc(35 / 24)
 
+		&-arrows
+			display: flex
+			margin: 49px 0 0
+
+			.swiper
+
+				&-button
+
+					&-prev
+						transform: rotateZ(90deg)
+
+					&-next
+						transform: rotateZ(-90deg)
+
+					&-prev, &-next
+						border-radius: 50%
+						background: var(--main-color)
+						size: 39px
+						position: static
+						margin-top: 0
+
+						&:not(:last-child)
+							margin-right: 20px
+
+						&:matches(:after, :before)
+							content: ""
+							position: absolute
+
+						&:after
+							top: calc(50% - 3px) 
+							right: calc(50% - 3px)
+							border-right: 1px solid #fff
+							border-bottom: 1px solid #fff
+							size: 5px
+							transform: rotateZ(45deg)
+							z-index: 1
+
 .hearth-btn, .pers-btn
 	border-radius: 50%
 	display: inline-block
-	size: 133px
+	size: 85px
+	position: relative
+	background-color: var(--main-color) !important
+	animation: pulse 3s ease infinite
+
+	&:after
+		content: ""
+		border-radius: inherit
+		position: absolute -19px -19px * *
+		size: 122px
+		border: 1px solid lighten(#282828, .5)
 
 .hearth-btn
-	background: url("../img/ico-favorite.svg") center no-repeat, var(--second-color)
+	background: url("../img/ico-hearth-white.svg") center no-repeat
 
 .pers-btn
-	background: url("../img/ico-lc.svg") center no-repeat, var(--thrid-color)
+	background: url("../img/ico-lc-white.svg") center no-repeat
 
 .mission-list
 
@@ -163,16 +211,18 @@
 		display: flex
 
 .time-line
-	position: relative
 	display: flex
 	flex: 1 1 auto
 	width: var(--base-width)
+	position: relative
 
 	&:before
 		content: ""
-		position: absolute 0 0 *
+		position: absolute 0 * * 50%
+		transform: translateX(-50%)
+		width: 100vw
 		height: 1px
-		background: linear-gradient(to right, var(--main-color), rgba(255,255,255, .0001))
+		background: linear-gradient(to right, rgba(255,255,255, .0001), var(--main-color), rgba(255,255,255, .0001))
 
 	.swiper
 
@@ -564,3 +614,10 @@
 
 	.timeline
 		padding: 20px 0
+
+
+@keyframes pulse
+	0%, 100%
+		transform: none
+	50%
+		transform: scale3d(1.1,1.1,1.1)

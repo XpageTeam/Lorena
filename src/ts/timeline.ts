@@ -1,7 +1,7 @@
-import {Swiper, Keyboard} from 'swiper/dist/js/swiper.esm.js'
+import {Swiper, Keyboard, Navigation} from 'swiper/dist/js/swiper.esm.js'
 import {App} from "./app"
 
-Swiper.use([Keyboard])
+Swiper.use([Keyboard, Navigation])
 
 App.domReady(() => {
 	;(function(){
@@ -14,6 +14,11 @@ App.domReady(() => {
 	new Swiper(".time-line", {
 		slidesPerView: 4,
 		// freeMode: true,
+		loop: true,
+		navigation: {
+			prevEl: ".mission-desc__title-arrows .swiper-button-prev",
+			nextEl: ".mission-desc__title-arrows .swiper-button-next"
+		},
 		keyboard: {
 			enabled: true,
 			onlyInViewport: true,

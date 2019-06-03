@@ -37,6 +37,16 @@
 		background: var(--thrid-color)
 		padding: 80px 20px 85px
 
+	.constructor-btn
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute -8px -8px * *
+			size: calc(100% + 16px)
+			border-radius: inherit
+			border: 1px solid var(--main-color)
+
 .tovar-arrows
 	display: flex
 

@@ -62,10 +62,35 @@ App.domReady(() => {
 // 	new Element(".f-menu__item--title:first-child:last-child").closest(".f-menu").prev(".f-menu")
 // })
 
-// App.domReady(() => {
-// 	;(function(){
-// 		const scrollTopBtn = document.createElement("div");
+App.domReady(() => {
+	;(function(){
+		const scrollTopBtn = document.createElement("div");
 
-// 		scrollTopBtn.
-// 	})()
-// })
+		scrollTopBtn.innerText = "вверх"
+
+		scrollTopBtn.classList.add("to-top-btn")
+
+		new EventListener(scrollTopBtn).add("click", (el: HTMLElement) => {
+			window.animateScroll(0)
+		})
+
+		document.body.appendChild(scrollTopBtn)
+	})()
+
+	setToTopVisibility()
+
+	window.addEventListener("resize", setToTopVisibility)
+	window.addEventListener("scroll", setToTopVisibility)
+})
+
+const setToTopVisibility = (): void => {
+	const scrollBtn = document.querySelector(".to-top-btn");
+
+	if (!scrollBtn)
+		return
+
+	if (window.scrollY >= 600)
+		scrollBtn.classList.add("js__visible")
+	else
+		scrollBtn.classList.remove("js__visible")
+}

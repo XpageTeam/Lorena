@@ -64,6 +64,25 @@
 	margin: 10vh 0
 	font-size: 20px
 
+.to-top-btn
+	text-transform: uppercase
+	color: #fff
+	border-radius: 100px
+	font-size: 10px
+	position: fixed * 100px 50px *
+	z-index: 2
+	padding: 13px 43px 12px 23px
+	pointer-events: none
+	background: url("../img/ico-to-top-arrow.svg") center right 25px no-repeat, var(--main-color)
+	transition: opacity .3s ease
+	opacity: 0
+
+	&.js__visible
+		cursor: pointer
+		opacity: 1
+		pointer-events: all
+
+
 @media (max-width: 1500px) and (min-width: 1200px)
 	.inner-content
 

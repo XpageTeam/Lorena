@@ -1,5 +1,6 @@
 import {App, Element, EventListener} from "./app"
 import {Swiper, Lazy, EffectFade} from "swiper/dist/js/swiper.esm"
+import {TweenLite} from "gsap"
 
 Swiper.use([Lazy, EffectFade])
 
@@ -52,4 +53,24 @@ const initiallizeVariantsSlider = (slider: HTMLElement) => {
 			loadPrevNextAmount: 1
 		},
 	})
-}
+};
+
+App.domReady(() => {
+	App.each(".adr-counter__number", (el: HTMLElement) => {
+		let counter = {count: 0};
+
+		el.style.width = getComputedStyle(el).width
+
+		TweenLite.to(el, 2, {
+			opacity: 1
+		})		
+
+		TweenLite.to(counter, 10, {
+			count: `+=${el.innerText}`,
+			onUpdate(){
+				el.innerText = Math.ceil(counter.count).toString()
+			}
+		})
+	})
+
+})
