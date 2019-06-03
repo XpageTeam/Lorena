@@ -61,3 +61,11 @@ App.domReady(() => {
 // App.domReady(() => {
 // 	new Element(".f-menu__item--title:first-child:last-child").closest(".f-menu").prev(".f-menu")
 // })
+
+// App.domReady(() => {
+// 	;(function(){
+// 		const scrollTopBtn = document.createElement("div");
+
+// 		scrollTopBtn.
+// 	})()
+// })

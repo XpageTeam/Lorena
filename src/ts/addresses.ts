@@ -4,7 +4,7 @@ import {Swiper, Lazy, EffectFade} from "swiper/dist/js/swiper.esm"
 Swiper.use([Lazy, EffectFade])
 
 App.domReady(() => {
-	new EventListener(".address__top-btn .gray-arrow-btn").add("click", (el: HTMLElement) => {
+	new EventListener(".address__top").add("click", (el: HTMLElement) => {
 
 		const $this = new Element(el).closest(".address");
 

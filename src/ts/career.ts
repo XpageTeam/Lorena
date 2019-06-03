@@ -3,6 +3,10 @@ import {Swiper, Lazy, Keyboard, Navigation} from "swiper/dist/js/swiper.esm"
 
 Swiper.use([Lazy, Keyboard, Navigation])
 
+declare global {
+    interface Window {moveCareerForm: Function; }
+}
+
 App.domReady(() => {
 	new Swiper(".career-slider", {
 		slidesPerView: 3,
@@ -44,6 +48,24 @@ App.domReady(() => {
 		}else{
 			new Element(".vacancy.js__opened").removeClass("js__opened")
 			$this.addClass("js__opened")
+
+			window.moveCareerForm($this.find(".vacancy-form").get(0).els[0])
+
+			new EventListener($this.find(".vacancy-form").get(0).els[0].querySelector(".default-input__input--file")).add("change", (el: HTMLInputElement) => {
+				const parent = el.closest(".default-input--file"),
+					fileNameField = parent.querySelector(".default-input__label--file");
+
+				if (el.files.length){
+					let names = [];
+
+					for (let i = 0; i < el.files.length; i++)
+						names.push(el.files[i].name)
+
+					fileNameField.setAttribute("data-text", names.join(", "))
+				}else{
+					fileNameField.setAttribute("data-text", "Файл не выбран")
+				}
+			})
 		}
 	})
 

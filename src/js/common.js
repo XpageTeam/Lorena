@@ -12,6 +12,26 @@ $(function(){
 			scrollTop: offset
 		})
 	}
+
+	window.moveCareerForm = function(appendTo){
+		$("#form-about-career select").select2('destroy');
+
+		const $cloneForm = $("#form-about-career").clone();
+
+		$("#form-about-career").remove();
+
+		$(appendTo).append($cloneForm)
+
+		$("#form-about-career select").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: Infinity,
+				placeholder: $(this).data("placeholder"),
+				templateResult: selectionTemplate,
+				templateSelection: selectionTemplate
+			})
+		})
+	}
+
 })
 
 ;(function() {
@@ -51,19 +71,13 @@ $(function(){
 try{
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
-		let isFancyboxCssRequired = false;
+		require("../css/jquery.fancybox.css")
 
 		$(".fancybox").fancybox({
 			trapFocus: false,
 			touch: false,
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close", "thumbs"],
-			beforeShow(){
-				if (!isFancyboxCssRequired){
-					require("../css/jquery.fancybox.css")
-					isFancyboxCssRequired = true
-				}
-			},
 			image: {
 				preload: true,
 			},
@@ -90,12 +104,6 @@ try{
 			touch: false,
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close"],
-			beforeShow(){
-				if (!isFancyboxCssRequired){
-					require("../css/jquery.fancybox.css")
-					isFancyboxCssRequired = true
-				}
-			},
 			beforeClose(instance, slide){
 				const slider = document.querySelector(".address.active .address-slider");
 
@@ -114,12 +122,6 @@ try{
 			touch: false,
 			loop: true,
 			buttons: ["fullscreen", "slideShow", "close"],
-			beforeShow(){
-				if (!isFancyboxCssRequired){
-					require("../css/jquery.fancybox.css")
-					isFancyboxCssRequired = true
-				}
-			},
 			beforeClose(instance, slide){
 				
 			},

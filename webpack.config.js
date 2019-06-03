@@ -95,6 +95,6 @@ module.exports = (env, argv) => {
 		        }
 	    	}
 		},
-		plugins: [].concat(argv.mode == "development" ? new BundleAnalyzerPlugin() : [])
+		// plugins: [].concat(argv.mode == "development" ? new BundleAnalyzerPlugin() : [])
 	}
 }

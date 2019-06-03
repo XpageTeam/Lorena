@@ -1,0 +1,34 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Партнёры
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.partners
+						.partners-list
+							.partners-list__item.partners-list__item--text
+								.partners-text
+									.partners-text__category Партнёры
+									.partners-text__title Сегодня мы хотим рассказать о важности доверия и партнерских отношениях
+									.partners-text__text
+										.text-page
+											p Компания LORENA кухни, работая под девизом «Качество в деталях», производит кухни, которые служат годами. Мы дорожим своей репутацией и поэтому придирчиво отбираем партнеров. Здесь мы знакомим вас с теми, кому доверяем сами
+							- for (let j = 0; j < 5; j++)
+								- for (let i = 0; i < 6; i++)
+									.partners-list__item
+										.partner
+											figure.partner__img
+												img(src="img/photos/partner-"+i+".svg")
+											.partner__desc
+												.partner__title KUPPERSBUSC
+												.partner__text Философия немецкой компании KUPPERSBUSCH - «Делать лучшее еще лучше». Развитие дизайна, инновационной концепции встраиваемой техники для кухни, эргономичности, функциональности и бережное обращение с природными ресурсами – являются ключевыми элементами ее деятельности.
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 
