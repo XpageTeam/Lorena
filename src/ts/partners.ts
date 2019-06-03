@@ -6,8 +6,9 @@ Swiper.use([Lazy, Keyboard, Scrollbar])
 App.domReady(() => {
 	const partnersSlider = new Swiper(".partners-slider", {
 		slidesPerColumn: getSlidesPerColumn(),
-		slidesPerView: 3,
+		slidesPerView: "auto",
 		freeMode: true,
+		roundLengths: true,
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 1000 //слайдер криво подгружает
@@ -22,7 +23,7 @@ App.domReady(() => {
 		},
 		breakpoints: {
 			5000: {
-				slidesPerView: 12
+				slidesPerView: 6
 			},
 			4000: {
 				slidesPerView: 10
@@ -60,9 +61,11 @@ App.domReady(() => {
 		}
 	})
 
-	// window.addEventListener("resize", function(){
-	// 	partnersSlider
-	// })
+	setSlidesHeight(document.querySelectorAll(".partner"))
+
+	window.addEventListener("resize", function(){
+		setSlidesHeight(document.querySelectorAll(".partner"))
+	})
 })
 
 const getSlidesPerColumn = (): number => {
@@ -70,11 +73,16 @@ const getSlidesPerColumn = (): number => {
 		screenWidth = window.innerWidth;
 
 	if (screenHeight >= 1200)
-		return 3
+		return 2
 	else if (screenWidth < 660)
 		return 1
 	else if (screenHeight >= 650)
 		return 2
 	else 
 		return 1
+},
+setSlidesHeight = (slides: NodeList): void => {
+	App.each(slides, (el: HTMLElement) => {
+		el.style.height = getComputedStyle(el).width
+	})
 }

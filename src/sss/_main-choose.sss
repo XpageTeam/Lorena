@@ -73,9 +73,14 @@
 			margin: 0 0 40px 36px
 
 	&__bot
+		display: flex
+		align-items: center
+		flex-direction: row-reverse
+		justify-content: flex-end
 
-		&-submit
+		&-submit, .dealer-form__bot-req
 			margin-left: 36px
+			font-size: 14px
 
 @media (max-width: 1400px)
 	.main-choose
@@ -164,10 +169,14 @@
 
 		&__bot
 			margin: 25px 0 0
+			flex-direction: column-reverse
+			align-items: stretch
 
 			&-submit
 				margin: 0
 
+			.dealer-form__bot-req
+				margin-left: 0
 
 @media (max-width: 370px)
 

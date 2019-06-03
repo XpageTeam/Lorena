@@ -22,14 +22,17 @@ input, a, button, textarea, select
 
 .swiper-button
 
-	&-prev, &-next
-
-		&::selection
-			background: transparent !important
-
 	&-disabled
-		opacity: .5
+		opacity: .9 !important
 		pointer-events: none
+		background-color: var(--second-color) !important
+		border: 1px solid var(--border-color)
+
+	&-next, &-prev
+		transition: background-color .3s ease
+
+		&:hover, &:focus
+			background-color: var(--thrid-color) !important
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
 	-webkit-appearance: none
@@ -73,6 +76,10 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"], input[
 // 			color: #fff
 // 			opacity: 1
 
+*
+	-webkit-tap-highlight-color: transparent
+	tap-highlight-color: transparent
+
 *, *:after, *:before
 	box-sizing: border-box
 
@@ -102,6 +109,17 @@ body
 	min-height: 100vh
 	overflow-y: scroll
 	overflow-x: hidden
+
+	&[class*="partners"],
+	&[class*="about"]
+
+		.head
+			border-bottom: 1px solid var(--thrid-color)
+
+	&[class*="partners"]
+
+		.inner-content__title
+			display: none
 
 select
 	-webkit-appearance: none
@@ -200,7 +218,7 @@ li
 		transition: background-color .3s ease
 
 		&:hover, &:focus
-			background-color: lighten(#f60, .1)
+			background-color: var(--thrid-color)
 
 		&:not(:last-child)
 			margin-right: 17px
@@ -297,7 +315,7 @@ li
 		flex: none
 		border-radius: 50%
 		background: var(--main-color)
-		size: 39px
+		size: 40px
 		position: relative
 
 		&:not(:last-child)
@@ -309,7 +327,7 @@ li
 
 		&:after
 			top: calc(50% - 3px) 
-			right: calc(50% - 2px)
+			right: calc(50% - 3px)
 			border-right: 1px solid #fff
 			border-bottom: 1px solid #fff
 			size: 5px

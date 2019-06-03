@@ -2,7 +2,6 @@ import $ from "jquery"
 // import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 import "./select2.js"
-import is from "is_js"
 
 window.$ = $;
 window.jQuery = $;
@@ -153,16 +152,19 @@ try{
 	})
 
 	/** Перенос одиночного пунку меню футера в предыдущий столбец */
-	$(".f-menu__item--title:first-child:last-child").each(function(){
+	$(".f-menu__item--title:first-child:last-child").each(function(i){
+		if (i > 0)
+			return
+
 		const $cloned = $(this).clone();
 
-		$(this).closest(".f-menu").prev(".f-menu").append($cloned)
+		$(this).closest(".f-menu").next(".f-menu").append($cloned)
 
 		$(this).closest(".f-menu").remove()
 	})
 
 	/** Сраный IE */
-	if (is.ie())
+	if (document.querySelector("html").classList.contains("bx-ie"))
 		$("picture").each(function(){
 			const $this = $(this);
 
