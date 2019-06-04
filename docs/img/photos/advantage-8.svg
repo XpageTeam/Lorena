@@ -1,6 +1,19 @@
-<svg width="63" height="64" viewBox="0 0 63 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M36.4139 52.4C50.6076 52.4 62.1139 40.8937 62.1139 26.7C62.1139 12.5063 50.6076 1 36.4139 1C22.2201 1 10.7139 12.5063 10.7139 26.7C10.7139 40.8937 22.2201 52.4 36.4139 52.4Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M29.8145 9C32.1145 8 34.7145 7.5 37.4145 7.5C48.0145 7.5 56.6145 16.1 56.6145 26.7C56.6145 27.9 56.5145 29 56.3145 30.1" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M17.1138 43.5999L1.31384 58.4998C0.913839 58.8998 0.913848 59.5998 1.21385 59.9998L3.81384 62.7999C4.21384 63.2999 5.01385 63.2999 5.41385 62.7999L20.2138 46.5999" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M26.5138 38.1H46.5138C49.7138 38.4 49.4138 33.7 46.5138 33.1L39.0138 30.8001V28.5001C40.9138 27.4001 41.5138 25.7001 41.5138 23.7001V18.8001C41.2138 13.4001 31.9138 13.6001 31.2138 18.8001V23.9001C31.3138 26.4001 32.5138 28.1001 34.0138 28.5001V30.9001L26.5138 33.1C23.8138 33.9 23.6138 37.9 26.5138 38.1Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<svg width="163" height="164" viewBox="0 0 163 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d)">
+<path d="M86.4139 102.4C100.608 102.4 112.114 90.8937 112.114 76.7C112.114 62.5063 100.608 51 86.4139 51C72.2201 51 60.7139 62.5063 60.7139 76.7C60.7139 90.8937 72.2201 102.4 86.4139 102.4Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M79.8145 59C82.1145 58 84.7145 57.5 87.4145 57.5C98.0145 57.5 106.614 66.1 106.614 76.7C106.614 77.9 106.514 79 106.314 80.1" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M67.1138 93.5999L51.3138 108.5C50.9138 108.9 50.9138 109.6 51.2138 110L53.8138 112.8C54.2138 113.3 55.0138 113.3 55.4138 112.8L70.2138 96.5999" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M76.5138 88.1H96.5138C99.7138 88.4 99.4138 83.7 96.5138 83.1L89.0138 80.8001V78.5001C90.9138 77.4001 91.5138 75.7001 91.5138 73.7001V68.8001C91.2138 63.4001 81.9138 63.6001 81.2138 68.8001V73.9001C81.3138 76.4001 82.5138 78.1001 84.0138 78.5001V80.9001L76.5138 83.1C73.8138 83.9 73.6138 87.9 76.5138 88.1Z" stroke="#FF6600" stroke-miterlimit="10"/>
+</g>
+<defs>
+<filter id="filter0_d" x="0.5" y="0.5" width="162.114" height="163.175" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="25"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.4 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
 </svg>

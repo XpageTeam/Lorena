@@ -1,3 +1,45 @@
+.catalog
+
+	&__text
+		margin: 90px 0 0
+
+.cat-text
+	display: flex
+	justify-content: space-between
+
+	&__left
+		width: 400px
+		display: flex
+		flex-direction: column
+
+		&-title
+			font-size: 24px
+			line-height: calc(35 / 24)
+			margin-bottom: auto
+
+		&-subtext
+			margin: 25px 0 0
+
+	&__right
+		width: 500px
+		font-size: 14px
+
+.subtext
+
+	&__title
+		line-height: 23px
+
+		&:not(:last-child)
+			margin-bottom: 13px
+	
+	&__ast
+		color: rgba(255,255,255, .3)
+		font-size: 14px
+		line-height: calc(27 / 14)
+
+.ast
+	color: var(--main-color)
+
 .cat-list
 	padding: 105px 100px 85px
 	display: grid

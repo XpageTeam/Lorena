@@ -90,3 +90,37 @@ App.domReady(() => {
 
 	})
 })
+
+
+/** Создание селекта с городами в адаптиве */
+App.domReady(() => {
+	const select = document.createElement("select"),
+		areaForSelect = document.querySelector(".c-vacancy__cities");
+
+	if (!areaForSelect)
+		return
+
+	select.classList.add("city-select")
+
+	App.each(".city", (el: HTMLElement) => {
+		const option = document.createElement("option");
+
+		option.setAttribute("value", el.getAttribute("data-id"))
+		option.innerText = el.innerText
+
+		if (el.classList.contains("active"))
+			select.value = el.getAttribute("data-id")
+
+		select.appendChild(option)
+	})
+
+	new EventListener(select).add("change", (el: HTMLSelectElement) => {
+		const index = el.value;
+
+		new Element(".cities-list .city.active, .vacancy-list.active").addElement(".cities-list__item.active").removeClass("active")
+
+		new Element(`.vacancy-list[data-id='${index}'], .city[data-id='${index}']`).addElement(new Element(`.city[data-id='${index}']`).closest(".cities-list__item")).addClass("active")
+	})
+
+	areaForSelect.appendChild(select)
+})

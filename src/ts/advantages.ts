@@ -10,6 +10,7 @@ App.domReady(() => {
 		// fadeEffect: {
 		// 	crossFade: true
 		// },
+		slidesPerGroup: 3,
 		slidesPerView: 3,
 		spaceBetween: 70,
 		direction: "vertical",
@@ -40,12 +41,14 @@ App.domReady(() => {
 			1200: {
 				direction: "horizontal",
 				slidesPerColumn: 2,
+				slidesPerGroup: 1,
 				loop: false,
 				spaceBetween: 20
 			},
 			1000: {
 				direction: "horizontal",
 				slidesPerColumn: 2,
+				slidesPerGroup: 1,
 				loop: false,
 				slidesPerView: 2,
 				spaceBetween: 20
@@ -53,6 +56,7 @@ App.domReady(() => {
 			660: {
 				direction: "horizontal",
 				slidesPerColumn: 1,
+				slidesPerGroup: 1,
 				loop: false,
 				slidesPerView: 1,
 				spaceBetween: 20

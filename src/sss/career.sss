@@ -1,3 +1,7 @@
+@media (min-width: 660px)
+	.city-select
+		display: none
+
 .career
 
 	> div
@@ -469,21 +473,115 @@
 		overflow: hidden
 
 @media (max-width: 660px)
+	.career__chief
+		display: block
+
+	.career__advantages
+		padding: 0
+
+	.career
+
+		&__history
+			padding: 35px 0 22px
+
+		&__slider
+			padding: 75px 17px 70px
+
+			.wrapper
+				overflow: hidden
+
+		&__vacancy
+			padding: 40px 0 
+
+	.advantage-text
+
+		&__question
+			max-width: 250px
+			font-size: 18px
+			line-height: calc(26 / 18)
+			padding: 0 28px
+
+	.c-advantages
+		padding: 55px 0 80px
+
+		.advantages-list
+			display: block
+
+			&__item
+				display: block
+
+				&:not(:first-child)
+					margin: 52px 0 0 !important
+
+				&--text
+					margin-bottom: 50px
+					float: none
+
+	.c-why
+		padding: 55px 0 80px
+
+		&__title
+			font-size: 18px
+			line-height: calc(26 / 18)
+			max-width: 250px
+			margin-bottom: 50px
+			padding: 0 28px
+
+		&__list
+			display: block
+			margin: 0
+
+			&-item
+				margin: 0
+				width: auto !important
+
+				&:not(:first-child)
+					margin: 52px 0 0
+
+	.cw-item, .c-advantages .advantage
+		display: flex
+		align-items: center
+		flex-direction: row
+		padding: 0 !important
+
+		&__img
+			margin-right: 40px
+			flex: none
+			width: 73px
+			padding-left: 28px
+			margin-bottom: 0 !important
+
 	.c-chief
+		padding: 80px 30px 90px
+		background: url("../img/adaptive-ivlev.png") right -10px bottom -20px no-repeat, var(--thrid-color)
+
+		.wrapper
+			position: static
+			display: block
 
 		&__text
+			max-width: none
+			display: flex
+			flex-direction: column
+
+			&-subtitle, &-title
+				max-width: 185px
 
 			&-subtitle
-				font-size: 18px
+				font-size: 14px
+				margin: 12px 0 0
+				color: rgba(255,255,255, .5)
 
 			&-title
-				font-size: 26px
-				max-width: 205px
+				font-size: 22px
+				line-height: calc(28 / 22)
+				order: -1
 
 			&-btn
 				margin: 25px 0 0
 
 		&__bg
+			display: none
 
 			img
 				height: 240px
@@ -504,22 +602,46 @@
 			&__text
 				font-size: 14px
 
+	.c-history
+
+		&__title
+			font-size: 18px
+			padding: 0 28px
+
 	.history
+		padding: 45px 40px
 
 		&__user
 			width: 100%
 
-
 	.his-user
+		display: block
+
+		&:after
+			clear: both
+			content: ""
+			display: table
 
 		&__img
 			margin-right: 20px
+			float: left
+
+		&__about
+			padding: 15px 0 0
+
+		&__name
+			font-size: 18px
+			line-height: calc(23 / 18)
+			max-width: 220px
+
+		&__city
+			margin: 32px 0 0
 
 	.c-vacancy
 
 		&__cities
 			position: relative
-			height: 35px
+			height: 39px
 
 			&:after
 				content: ""
@@ -540,6 +662,17 @@
 				.cities-list
 					overflow: hidden
 
+			&.js__opened
+				background: var(--thrid-color)
+
+	.city-select
+		size: 100% 39px
+		border: none
+		border-radius: 100px
+		font-size: 10px
+		padding: 13px 23px
+		color: #fff var(--thrid-color)
+
 	.cities-list
 		display: flex
 		flex-direction: column
@@ -548,6 +681,9 @@
 		-webkit-overflow-scrolling: touch
 		max-height: 30vh
 		overflow-y: auto
+
+		&:not(:last-child)
+			display: none
 
 		&::-webkit-scrollbar
 			width: 9px
@@ -571,17 +707,28 @@
 	.city
 		display: block
 		border-radius: 0
+		padding: 13px 23px
+
+		&.active
+			background: var(--thrid-color)
+			border-radius: 100px
 
 	.vacancy
 
 		&__title
-			font-size: 16px
+			font-size: 18px
+			padding: 28px 65px 30px 25px
 
 			&:after
 				right: 20px
 
-		&__title, &__text, &__form
-			padding: 15px
+		&__text
+			border: none
+			padding: 35px 0
+			line-height: calc(23 / 14)
+
+		&__form
+			padding: 37px 30px
 
 	.vacancy-form 
 	
@@ -590,5 +737,11 @@
 
 		.default-input
 
-			&:not(:first-child)
-				margin: 15px 0 0
+			&--file
+				order: 1
+
+			&--submit
+				order: 2
+
+		// 	&:not(:first-child)
+		// 		margin: 15px 0 0
