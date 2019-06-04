@@ -1,5 +1,5 @@
 import {App, Element, EventListener} from "./app"
-import {Swiper, Lazy, EffectFade} from "swiper/dist/js/swiper.esm"
+import {Swiper, Lazy, EffectFade, Navigation} from "swiper/dist/js/swiper.esm"
 import {TweenLite} from "gsap"
 
 Swiper.use([Lazy, EffectFade])
@@ -43,8 +43,16 @@ const initiallizeVariantsSlider = (slider: HTMLElement) => {
 	if (!slider)
 		return
 
+	const prev: HTMLElement = slider.querySelector(".swiper-button-prev"),
+		next: HTMLElement = slider.querySelector(".swiper-button-next");
+
 	new Swiper(slider, {
 		effect: "fade",
+		loop: true,
+		navigation: {
+			prevEl: prev,
+			nextEl: next,
+		},
 		cubeEffect: {
 		    slideShadows: false,
 		},

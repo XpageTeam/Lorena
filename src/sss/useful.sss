@@ -24,6 +24,16 @@
 		line-height: calc(29 / 24)
 		cursor: pointer
 
+		span
+			position: relative
+			padding-left: 65px
+
+			&:before
+				content: ""
+				position: absolute calc(50% - 12px) * * 0
+				size: 23px
+				background: url("../img/ico-question.svg") no-repeat
+
 		&-btn
 			flex: none
 			margin-left: 20px
@@ -84,12 +94,13 @@
 			padding: 20px
 
 		&__title
-			font-size: 18px
+			font-size: 17px
 			display: block
 			padding-bottom: 0
 
 			span
-				width: 100%
+				display: block
+				padding-left: 35px
 
 			&-btn
 				transform: none !important

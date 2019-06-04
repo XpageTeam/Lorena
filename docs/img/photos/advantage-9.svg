@@ -1,25 +1,12 @@
-<svg width="166" height="165" viewBox="0 0 166 165" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d)">
-<path d="M58.5 114.4V107.5H79.1V114.4" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M51 69.9999V85.9999L65 107.4H75.3V93.2998L64.3 81.2998L64.1 89.9999L68.8 94.7998L57 82.7998V73.4999C56.8 69.4999 53.6 68.7999 51 69.9999Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M57.0004 75.3999C59.7004 73.4999 64.3004 75.7999 64.3004 81.2999L64.1004 89.9999L56.9004 82.7999V75.3999H57.0004Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M107.401 114.4V107.5H86.8008V114.4" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M114.901 69.9999V85.9999L100.901 107.4H90.6006V93.2998L101.601 81.2998L101.801 89.9999L97.1006 94.7998L108.901 82.7998V73.4999C109.101 69.4999 112.201 68.7999 114.901 69.9999Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M108.901 75.3999C106.201 73.4999 101.601 75.7999 101.601 81.2999L101.801 89.9999L109.001 82.7999L108.901 75.3999Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M82.6006 90V51" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M82.6004 51C67.0004 56.8 66.0004 79.6 82.6004 85C99.3004 79.6 98.3004 56.8 82.6004 51Z" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M73.5 58.3999L82.6 66.7999L92.2 59.0999" stroke="#FF6600" stroke-miterlimit="10"/>
-<path d="M70.5 66.7998L82.6 77.8998L94.7 68.0998" stroke="#FF6600" stroke-miterlimit="10"/>
-</g>
-<defs>
-<filter id="filter0_d" x="0.5" y="0.466797" width="164.901" height="163.933" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="25"/>
-<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.4 0 0 0 0 0 0 0 0 1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-</filter>
-</defs>
+<svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 64.4V57.5H29.1V64.4" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M1 19.9999V35.9999L15 57.3998H25.3V43.2998L14.3 31.2998L14.1 39.9999L18.8 44.7998L7 32.7998V23.4999C6.8 19.4999 3.6 18.7999 1 19.9999Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M7.0004 25.3999C9.7004 23.4999 14.3004 25.7999 14.3004 31.2999L14.1004 39.9999L6.90039 32.7999V25.3999H7.0004Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M57.4008 64.4V57.5H36.8008V64.4" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M64.9006 19.9999V35.9999L50.9006 57.3998H40.6006V43.2998L51.6006 31.2998L51.8006 39.9999L47.1006 44.7998L58.9006 32.7998V23.4999C59.1006 19.4999 62.2006 18.7999 64.9006 19.9999Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M58.9006 25.3999C56.2006 23.4999 51.6006 25.7999 51.6006 31.2999L51.8006 39.9999L59.0006 32.7999L58.9006 25.3999Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M32.6006 40V1" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M32.6004 1C17.0004 6.8 16.0004 29.6 32.6004 35C49.3004 29.6 48.3004 6.8 32.6004 1Z" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M23.5 8.3999L32.6 16.7999L42.2 9.0999" stroke="#FF6600" stroke-miterlimit="10"/>
+<path d="M20.5 16.7998L32.6 27.8998L44.7 18.0998" stroke="#FF6600" stroke-miterlimit="10"/>
 </svg>
