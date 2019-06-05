@@ -70,6 +70,9 @@ App.domReady(() => {
 
 		scrollTopBtn.classList.add("to-top-btn")
 
+		if (document.querySelector(".tovar-arrows"))
+			scrollTopBtn.classList.add("js__tovar-btns-cutch")
+
 		new EventListener(scrollTopBtn).add("click", (el: HTMLElement) => {
 			window.animateScroll(0)
 		})

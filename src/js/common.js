@@ -1,5 +1,5 @@
 import $ from "jquery"
-// import is from "is_js"
+import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 import "./select2.js"
 
@@ -9,12 +9,15 @@ window.jQuery = $;
 $(function(){
 	window.animateScroll = function(offset = 20){
 		$("html, body").animate({
-			scrollTop: offset
+			scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
+				(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : 0) 
+			: offset - parseInt(getComputedStyle(document.querySelector(".head")).height)
 		})
 	}
 
 	window.moveCareerForm = function(appendTo){
-		$("#form-about-career select").select2('destroy');
+		if ($("#form-about-career select")[0].select2)
+			$("#form-about-career select").select2('destroy');
 
 		const $cloneForm = $("#form-about-career").clone();
 
@@ -23,12 +26,15 @@ $(function(){
 		$(appendTo).append($cloneForm)
 
 		$("#form-about-career select").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: Infinity,
-				placeholder: $(this).data("placeholder"),
-				templateResult: selectionTemplate,
-				templateSelection: selectionTemplate
-			})
+			if (!is.touchDevice())
+				$(this).select2({
+					minimumResultsForSearch: Infinity,
+					placeholder: $(this).data("placeholder"),
+					templateResult: selectionTemplate,
+					templateSelection: selectionTemplate
+				})
+			else
+				$(this).addClass("selectized")
 		})
 	}
 
@@ -91,12 +97,15 @@ try{
 		});
 
 		$("select:not(.no-selectize)").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: Infinity,
-				placeholder: $(this).data("placeholder"),
-				templateResult: selectionTemplate,
-				templateSelection: selectionTemplate
-			})
+			if (!is.touchDevice())
+				$(this).select2({
+					minimumResultsForSearch: Infinity,
+					placeholder: $(this).data("placeholder"),
+					templateResult: selectionTemplate,
+					templateSelection: selectionTemplate
+				})
+			else
+				$(this).addClass("selectized")
 		})
 
 		$(".address-slider__slide").fancybox({
@@ -171,7 +180,7 @@ try{
 	})
 
 	/** Сраный IE */
-	if (document.querySelector("html").classList.contains("bx-ie"))
+	if (is.ie())
 		$("picture").each(function(){
 			const $this = $(this);
 

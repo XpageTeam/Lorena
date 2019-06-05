@@ -1,7 +1,7 @@
 .catalog
 
 	&__text
-		margin: 90px 0 0
+		margin: 0 0 40px
 
 .cat-text
 	display: flex
@@ -41,7 +41,7 @@
 	color: var(--main-color)
 
 .cat-list
-	padding: 105px 100px 85px
+	padding: 7px 100px 85px
 	display: grid
 	grid-gap: 50px 28px
 	grid-template-columns: repeat(4, 1fr)
@@ -168,7 +168,7 @@
 
 @media (max-width: 1500px)
 	.cat-list
-		padding: 50px 20px
+		padding: 7px 20px 50px
 		grid-gap: 30px
 
 	.cat-item
@@ -182,12 +182,36 @@
 	.title-block
 		padding: 0 !important
 
+@media (max-width: 1000px) and (min-width: 660px)
+	.catalog
+
+		&__text
+			margin: 50px 0 0
+
 @media (max-width: 660px)
 	.catalog
 
 		&__filter
 			background: none
 
+			.filter
+				padding-top: 0 !important
+
+		&__text
+			margin: 0 0 30px
+
 	.cat-list
 		padding: 0 20px 35px
 		grid-template-columns: 1fr
+
+	.cat-text
+		display: block
+
+		&__left, &__right
+			width: auto
+
+			&:not(:first-child)
+				margin: 30px 0 0
+
+		&__right
+			line-height: 1.92857

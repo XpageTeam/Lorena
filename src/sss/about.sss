@@ -190,7 +190,7 @@
 .timeline
 	position: relative
 	z-index: 1
-	padding: 190px 0 205px
+	padding: 100px 0
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
@@ -283,7 +283,8 @@
 			margin-bottom: 25px
 
 		&-title
-			font-size: 18px
+			font-size: 16px
+			font-weight: 300
 			line-height: calc(26 / 18)
 			max-width: 198px
 
@@ -490,19 +491,34 @@
 				margin: 20px 0 0
 
 	.timeline
-		padding: 20px
+		padding: 20px 0
+		position: relative
+
+		.mission-desc
+
+			&__title
+
+				&-arrows
+					margin: 0
+					position: absolute * 0 20px
 
 		&__text
 			padding: 30px 0 0
 
 		&__line
 			margin: 50px 0 0
+			width: 100%
 
 	.time-line
+		width: 100%
+		padding: 0 0 50px
 
 		&__item
 			width: auto
 			padding: 50px 0 0
+
+			&-title
+				max-width: calc(100% - 15px)
 
 @media (max-width: 1000px) and (min-width: 660px)
 	.about-img
@@ -536,6 +552,9 @@
 			&:not(:last-child):not(:nth-last-child(2))
 				margin-bottom: 25px
 
+	.mission
+		padding: 45px 0 43px
+
 	.dealer__list
 		margin: 0 0 30px
 
@@ -559,6 +578,9 @@
 
 		.tovar__reviews
 			overflow: hidden
+
+		&__text
+			margin: 45px 0 0
 
 	.dealer__form
 		margin-bottom: 30px
@@ -595,13 +617,15 @@
 
 	.about-img
 
-		picture, &:after
-			display: none
+		picture, img
+			height: calc(100vh - 320px)
+
+		img
+			object-fit: cover
+			object-position: center
 
 		&__text
-			position: static
-			background: none
-			padding: 55px 0 0
+			padding: 20px 
 
 			&-title
 				font-size: 20px
@@ -612,8 +636,46 @@
 	.hearth-btn, .pers-btn
 		size: 50px
 
+		&:after
+			size: 90px
+
 	.timeline
-		padding: 20px 0
+		padding: 45px 0 43px
+
+		.mission-desc
+
+			&__title
+
+				&-arrows
+					bottom: 45px
+
+	.about-text__advantages
+
+		.cw-item__img
+			padding-left: 0
+
+	.time-line
+		padding: 0 30px
+		position: relative
+
+		&:before
+			background: linear-gradient(90deg,var(--main-color),hsla(0,0%,100%,.0001))
+			left: 30px
+			right: 30px
+			width: auto
+			transform: none
+
+		.time-line__item
+
+			&-year, &-title
+				transform: translateX(-30px)
+
+	body
+
+		&[class*="about "]
+
+			.main-choose
+				padding: 42px 0
 
 
 @keyframes pulse

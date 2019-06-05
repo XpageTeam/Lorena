@@ -22,6 +22,28 @@ App.domReady(() => {
 		keyboard: {
 			enabled: true,
 			onlyInViewport: true,
+		},
+		breakpoints: {
+			1000: {
+				slidesPerView: 2
+			},
+			660: {
+				slidesPerView: 1
+			}
 		}
 	})
 })
+
+// const setOpacity = () => {
+// 	const mainSlide = document.querySelector(".time-line .swiper-slide-active");
+
+// 	// App.each
+
+// 	const slides = [mainSlide];
+
+// 	for (let i = 0; i < 4; i++)
+// 		slides.push(slides[i].previousElementSibling)
+
+// 	for (let i = slides.length - 1; i > 0; i--)
+
+// };

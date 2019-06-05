@@ -65,10 +65,10 @@ App.domReady(() => {
 		}
 	})
 
-	setSlidesHeight(document.querySelectorAll(".partner"))
+	// setSlidesHeight(document.querySelectorAll(".partner"))
 
 	window.addEventListener("resize", function(){
-		setSlidesHeight(document.querySelectorAll(".partner"))
+		// setSlidesHeight(document.querySelectorAll(".partner"))
 	})
 })
 

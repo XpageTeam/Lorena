@@ -15,6 +15,8 @@ App.domReady(() => {
 			new Element(".address.active").removeClass("active")
 			$this.addClass("active")
 			initiallizeVariantsSlider(el.closest(".address").querySelector(".active .address-slider:not(.swiper-container-initialized)"))
+
+			window.animateScroll($this.els[0].offsetTop-15)
 		}
 
 	})
@@ -36,6 +38,9 @@ App.domReady(() => {
 		$tab.addElement($tab.closest(".address__content").find(`.address-desc[data-id="${index}"]`)).addClass("active")
 
 		initiallizeVariantsSlider(document.querySelector(".address.active .active .address-slider:not(.swiper-container-initialized)"))
+
+		if (window.matchMedia("(max-width: 1200px)").matches)
+			window.animateScroll($tab.closest(".address__content").find(`.address-desc[data-id="${index}"]`).els[0].offsetTop - 20)
 	})
 })
 

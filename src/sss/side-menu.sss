@@ -54,7 +54,10 @@
 			padding: 15px 25px 15px 40px
 			width: 100%
 			text-align: left
-			color: #fff var(--main-color)
+			color: rgba(255,255,255, .8) var(--second-color)
+			display: block
+			font-size: 16px
+			text-transform: uppercase
 
 			&:after
 				content: ""
@@ -73,7 +76,10 @@
 			font-weight: 500
 			transition: background .3s ease
 
-			&:active, &.active, &:hover, &:focus
+			&:hover, &:focus
+				background: var(--second-color)
+
+			&:active, &.active
 				background: var(--main-color)
 
 	.h-phone
@@ -103,9 +109,6 @@
 							border-right: 1px solid #fff
 							transform: rotateZ(45deg)
 
-		li
-			border-bottom: 1px solid var(--second-color)
-
 
 
 
@@ -119,8 +122,7 @@
 			background: #fff
 
 	.side-menu
-		top: 76px
-		border-top: 1px solid var(--thrid-color)
+		top: 75px
 
 @media (max-width: 660px)
 	.side-menu

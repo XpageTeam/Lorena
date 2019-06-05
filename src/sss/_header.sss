@@ -2,17 +2,6 @@
 	.head__burger
 		display: none
 
-@media (min-width: 1000px)
-	body[class*="sale"],
-	body[class*="useful"],
-	body[class*="7steps"],
-	body[class*="address"],
-	body[class*="stores"],
-	body[class*="news"]
-
-		.head
-			background: var(--thrid-color) !important
-
 
 .main, .tovar
 
@@ -24,15 +13,18 @@
 
 			&:hover, &:focus
 
-				.h-menu:befire
+				.h-menu:before
 					opacity: 1
 
 .inner:not(.tovar)
 
 	.head
 		position: sticky 0 * * *
-		background: var(--second-color)
-		border-bottom: 1px solid var(--thrid-color)
+		// background: var(--second-color)
+		background: var(--thrid-color)
+
+		.h-submenu:before
+			background: var(--thrid-color)
 
 .head
 	z-index: 3
@@ -261,13 +253,27 @@
 		&__burger
 			margin-left: 30px
 
+			&.js__active
+
+				.burger
+
+					&:before, &:after
+						opacity: 0
+
+					span
+
+						&:before, &:after
+							opacity: 1
+
 	.burger
 		display: flex
 		flex-direction: column
 		justify-content: flex-end
 		align-items: flex-end
-		size: 37px 20px
+		size: 37px 10px
 		cursor: pointer
+		user-select: none
+		position: relative
 
 		&:after, &:before
 			content: ""
@@ -282,6 +288,26 @@
 		&:before
 			width: calc(100% - 13px)
 
+		span
+			size: 18px 14px
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			position: absolute calc(50% - 7px) * * calc(50% - 9px)
+
+			&:before, &:after
+				content: ""
+				size: 100% 2px
+				background: #fff
+				transition: opacity .3s ease
+				opacity: 0
+
+			&:before
+				transform: translate3d(2px,6px,0) rotate(45deg)
+
+			&:after
+				transform: translate3d(2px,-6px,0) rotate(-45deg)
+
 @media (max-width: 1000px)
 	body
 		overflow-x: visible
@@ -289,6 +315,9 @@
 		background: var(--main-color) !important
 		position: sticky 0 * * !important
 		padding: 10px 20px 10px 0
+
+		&__burger
+			padding: 18px 0
 
 	.constructor-link
 

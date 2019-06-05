@@ -1,5 +1,5 @@
 .addresses
-	margin: 0 0 110px
+	margin: 80px 0 110px
 
 	&__list
 
@@ -8,11 +8,6 @@
 
 	&__search
 		margin: 100px 0 0
-
-	&__desc
-
-		.address-desc
-			display: flex !important
 
 .address-list
 
@@ -199,6 +194,9 @@
 .adr-map
 	position: relative
 
+	&__img
+		padding: 30px 0 0
+
 	&__desc
 		position: absolute 0 * * 0
 
@@ -304,6 +302,9 @@
 	&__btn
 		margin: 25px 0 0
 
+@media (min-width: 1000px)
+	.addresses__desc .address-desc
+		display: flex !important
 
 @media (max-width: 1200px)
 	.addresses
@@ -346,18 +347,20 @@
 			margin: 0 0 30px 30px
 
 @media (max-width: 1000px)
-	.address-desc
-		display: block
+	.addresses__desc
+	
+		.address-desc
+			display: block !important
 
-		&:not(:first-child)
-			margin: 25px 0 0
+			&:not(:first-child)
+				margin: 25px 0 0
 
-		&__text
-			margin-right: 0
+			&__text
+				margin-right: 0
 
-		&__map
-			margin: 30px 0 0
-			width: auto
+			&__map
+				margin: 30px 0 0
+				width: auto
 
 	.address-detail
 		padding: 20px
@@ -421,6 +424,23 @@
 		&__list, &__search
 			margin: 25px 0 0 !important
 
+	.address-contacts
+		display: block
+
+		&__item
+
+			&:not(:first-child)
+				margin: 25px 0 0
+
+	.address-desc
+		display: block
+
+	.address-slider
+
+		&__arrows
+			right: 15px
+			bottom: 15px
+
 	.address-tabs
 		margin: 0 0 -20px -20px
 
@@ -462,14 +482,23 @@
 
 		&__top
 			padding: 20px
-			flex-direction: column
-			align-items: flex-start
 
-			&-address, &-btn
+			&-address
 				margin: 15px 0 0
 
 			&-address
 				margin-left: 25px
+
+			&-btn
+
+				.gray-arrow-btn
+					text-indent: -9999px
+					overflow: hidden
+					size: 30px
+					padding: 0
+
+					&:after
+						right: calc(50% - 2px)
 
 		&.active
 

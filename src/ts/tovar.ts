@@ -108,6 +108,8 @@ const initiallizeVariantsSlider = (slider: HTMLElement) => {
 	if (!plates.length)
 		return
 
+	plates.get(0).addClass("active")
+
 	new EventListener(plates).add("click", (el: HTMLElement, event: any, i: number) => {
 		plates.removeClass("active")
 		el.classList.add("active")

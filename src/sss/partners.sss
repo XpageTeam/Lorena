@@ -322,6 +322,9 @@
 							transform: rotateZ(45deg)
 							z-index: 1
 
+@media (max-width: 1920px)
+	.partners-text
+		padding: 40px vw(200)
 
 .partner
 	position: relative
@@ -332,15 +335,15 @@
 	border-bottom: 1px solid var(--thrid-color)
 	display: flex
 	flex-direction: column
+	perspective: 400px
 
 
 	&__img
-		flex: 1 1 auto
 		display: flex
 		justify-content: center
 		align-items: center
-		position: relative
 		padding: 20px
+		position: absolute 0
 
 	&__img, &__desc
 		backface-visibility: hidden
@@ -349,10 +352,11 @@
 		transition: transform .3s ease
 
 	&__desc
-		position: absolute 0
+		position: relative
 		transform: rotateY(180deg)
 		background: var(--thrid-color)
 		padding: 36px 38px 30px
+		flex: 1 1 auto
 
 	&__title
 		text-transform: uppercase
@@ -390,3 +394,74 @@
 			&--text
 				grid-row: 1 / 3
 				grid-column: 1 / 4
+
+@media (max-width: 1700px)
+	.partners-text
+		padding: 40px vw(140)
+
+	.partner
+
+		&__desc
+			padding: 25px 23px 20px
+
+		&__title
+			margin-bottom: 10px
+
+@media (max-width: 1500px)
+	.partners-list
+		grid-template-columns: repeat(5, 1fr)
+
+	.partners-text
+		padding: 0 vw(90) 40px
+
+	.partners
+		padding: 50px
+
+@media (max-width: 1300px) and (min-width: 1200px)
+	.partners-list
+		grid-template-columns: repeat(4, 1fr)
+
+@media (max-width: 1200px)
+	.partners-list
+		grid-template-columns: repeat(3, 1fr)
+
+	.partners-list__item--text:before
+		border-right: 1px solid var(--second-color)
+		width: calc(100% + 2px)
+
+@media (max-width: 900px)
+
+	.partners-list
+		grid-template-columns: repeat(2, 1fr)
+
+		&__item
+
+			&--text
+				grid-column: 1 / 3
+
+	.partners
+		padding: 30px 20px
+
+	.partners-text
+		padding-left: 0
+		padding-right: 0
+
+@media (max-width: 660px)
+	.partners-list
+		grid-template-columns: 1fr
+
+		&__item
+
+			&--text
+				grid-column: 1
+
+	.advantage-list
+		height: auto !important
+
+	.advantages-slider
+		padding: 35px 20px 0
+
+		&__nav
+			padding: 35px 20px 0
+			margin: 35px -20px 0
+			background: var(--second-color)

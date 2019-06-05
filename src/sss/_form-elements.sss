@@ -160,7 +160,7 @@
 			margin-left: 44px
 
 	&__subtext
-		font-size: 14px
+		font-size: 12px
 		position: absolute calc(100% + 5px) 0 *
 
 		span
@@ -245,8 +245,9 @@
 				opacity: 0 !important
 
 		&--select
-			padding: 0 30px 0 25px
-			// background: url("../img/ico-select-arrow-black.png") right 18px center no-repeat, #f8f8f8
+			padding: 0 30px 0 0
+			background: 
+			background: url("../img/ico-select-arrow.svg") right 18px center no-repeat, transparent
 
 			&.selectize-control
 				padding: 0
@@ -496,7 +497,7 @@
 				margin: 0
 				width: 100% !important
 
-				&:not(:first-child)
+				&:not(:first-of-type)
 					margin: 30px 0 0
 
 				&__label

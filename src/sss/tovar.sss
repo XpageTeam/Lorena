@@ -52,6 +52,7 @@
 
 	&__arrow
 		pointer-events: all
+		background: var(--second-color)
 
 		&--prev
 			margin-right: auto
@@ -373,16 +374,20 @@
 		&-wrapper
 			flex: 1 1 auto
 
+		&-slide, &-wrapper
+			height: 100% !important
+
 	&__slide
 		display: flex
 		flex-direction: column
 		align-items: center
 		justify-content: center
 		max-height: vh(700)
+		height: 100%
 		position: relative
 		flex: 1 1 auto
 
-		img:not(.blured-bg)
+		img
 			max-height: 100%
 			position: relative
 			z-index: 1
@@ -516,6 +521,9 @@
 		&__desc
 			margin: 33px 0 0
 
+	.tovar-sliders__big:before
+		display: none
+
 	.tovar-sliders
 
 		&__thumbs
@@ -526,6 +534,19 @@
 		&__arrow
 			width: 50%
 			border-radius: 0
+			background: var(--thrid-color)
+			padding: 20px 22px 20px 14px
+			border: none
+			display: flex
+			flex-direction: column
+			justify-content: center
+
+			&:last-child
+				border-left: 1px solid var(--second-color)
+				text-align: right
+
+			&:after
+				right: 10px
 
 	.thumbs-slider
 		justify-content: center
