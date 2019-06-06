@@ -6,68 +6,65 @@ import "./select2.js"
 window.$ = $;
 window.jQuery = $;
 
-$(function(){
-	window.animateScroll = function(offset = 20){
-		$("html, body").animate({
-			scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
-				(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : 0) 
-			: offset - parseInt(getComputedStyle(document.querySelector(".head")).height)
-		})
-	}
+window.animateScroll = function(offset = 20){
+	$("html, body").animate({
+		scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
+			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : 0) 
+		: offset - parseInt(getComputedStyle(document.querySelector(".head")).height)
+	})
+}
 
-	window.moveCareerForm = function(appendTo){
-		$("#form-about-career select.select2-hidden-accessible").select2('destroy');
+window.moveCareerForm = function(appendTo){
+	$("#form-about-career select.select2-hidden-accessible").select2('destroy');
 
-		const $cloneForm = $("#form-about-career").clone();
+	const $cloneForm = $("#form-about-career").clone();
 
-		$("#form-about-career").remove();
+	$("#form-about-career").remove();
 
-		$(appendTo).append($cloneForm)
+	$(appendTo).append($cloneForm)
 
-		$("#form-about-career select").each(function(){
-			if (!is.touchDevice()){
-				$(this).removeClass("select2-hidden-accessible")
-				$(this).select2({
-					minimumResultsForSearch: Infinity,
-					placeholder: $(this).data("placeholder"),
-					templateResult: selectionTemplate,
-					templateSelection: selectionTemplate
+	$("#form-about-career select").each(function(){
+		if (!is.touchDevice()){
+			$(this).removeClass("select2-hidden-accessible")
+			$(this).select2({
+				minimumResultsForSearch: Infinity,
+				placeholder: $(this).data("placeholder"),
+				templateResult: selectionTemplate,
+				templateSelection: selectionTemplate
+			})
+			// $(this).on("select2:select", function(e){
+			// 	const parentFormVue = e.currentTarget.__vue__ || false;
+
+			// 	if (!parentFormVue)
+			// 		return
+
+			// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
+			// })
+		}else
+			$(this).addClass("selectized")
+	})
+}
+
+window.reinitSelect2 = function(formId, vue = false){
+	$(`${formId} .select2-container`).remove()
+	$(`${formId} select`).each(function(){
+		if (!is.touchDevice()){
+			$(this).removeClass("select2-hidden-accessible")
+			$(this).select2({
+				minimumResultsForSearch: Infinity,
+				placeholder: $(this).data("placeholder"),
+				templateResult: selectionTemplate,
+				templateSelection: selectionTemplate
+			})
+
+			if (vue)
+				$(this).on("select2:select", function(e){
+					vue[e.currentTarget.getAttribute("data-v-model")] = e.currentTarget.value
 				})
-				// $(this).on("select2:select", function(e){
-				// 	const parentFormVue = e.currentTarget.__vue__ || false;
-
-				// 	if (!parentFormVue)
-				// 		return
-
-				// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
-				// })
-			}else
-				$(this).addClass("selectized")
-		})
-	}
-
-	window.reinitSelect2 = function(formId, vue = false){
-		$(`${formId} .select2-container`).remove()
-		$(`${formId} select`).each(function(){
-			if (!is.touchDevice()){
-				$(this).removeClass("select2-hidden-accessible")
-				$(this).select2({
-					minimumResultsForSearch: Infinity,
-					placeholder: $(this).data("placeholder"),
-					templateResult: selectionTemplate,
-					templateSelection: selectionTemplate
-				})
-
-				if (vue)
-					$(this).on("select2:select", function(e){
-						vue[e.currentTarget.getAttribute("data-v-model")] = e.currentTarget.value
-					})
-			}else
-				$(this).addClass("selectized")
-		})
-	}
-
-})
+		}else
+			$(this).addClass("selectized")
+	})
+}
 
 ;(function() {
 
