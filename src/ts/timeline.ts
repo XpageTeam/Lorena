@@ -40,6 +40,10 @@ App.domReady(() => {
 })
 
 const setOpacity = () => {
+
+	if (!document.querySelector(".time-line"))
+		return
+	
 	const mainSlide: HTMLElement = document.querySelector(".time-line .swiper-slide-next");
 	let stopEach = false;
 
