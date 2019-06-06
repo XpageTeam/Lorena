@@ -15,34 +15,38 @@ window.animateScroll = function(offset = 20){
 }
 
 window.moveCareerForm = function(appendTo){
-	$("#form-about-career select.select2-hidden-accessible").select2('destroy');
+	// $("#form-about-career select.select2-hidden-accessible").select2('destroy');
 
-	const $cloneForm = $("#form-about-career").clone();
+	// const $cloneForm = $("#form-about-career").clone();
 
-	$("#form-about-career").remove();
+	// $("#form-about-career").remove();
 
-	$(appendTo).append($cloneForm)
+	// $(appendTo).append($cloneForm)
 
-	$("#form-about-career select").each(function(){
-		if (!is.touchDevice()){
-			$(this).removeClass("select2-hidden-accessible")
-			$(this).select2({
-				minimumResultsForSearch: Infinity,
-				placeholder: $(this).data("placeholder"),
-				templateResult: selectionTemplate,
-				templateSelection: selectionTemplate
-			})
-			// $(this).on("select2:select", function(e){
-			// 	const parentFormVue = e.currentTarget.__vue__ || false;
+	// $("#form-about-career select").each(function(){
+	// 	if (!is.touchDevice()){
+	// 		$(this).removeClass("select2-hidden-accessible")
+	// 		$(this).select2({
+	// 			minimumResultsForSearch: Infinity,
+	// 			placeholder: $(this).data("placeholder"),
+	// 			templateResult: selectionTemplate,
+	// 			templateSelection: selectionTemplate
+	// 		})
+	// 		// $(this).on("select2:select", function(e){
+	// 		// 	const parentFormVue = e.currentTarget.__vue__ || false;
 
-			// 	if (!parentFormVue)
-			// 		return
+	// 		// 	if (!parentFormVue)
+	// 		// 		return
 
-			// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
-			// })
-		}else
-			$(this).addClass("selectized")
-	})
+	// 		// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
+	// 		// })
+	// 	}else
+	// 		$(this).addClass("selectized")
+	// })
+	
+	appendTo.appendChild(document.createElement("div"));
+
+	$(appendTo).find("div").replaceWith($("#form-about-career"))
 }
 
 window.reinitSelect2 = function(formId, vue = false){
@@ -50,11 +54,19 @@ window.reinitSelect2 = function(formId, vue = false){
 	$(`${formId} select`).each(function(){
 		if (!is.touchDevice()){
 			$(this).removeClass("select2-hidden-accessible")
+
+			const self = this;
+
 			$(this).select2({
 				minimumResultsForSearch: Infinity,
 				placeholder: $(this).data("placeholder"),
 				templateResult: selectionTemplate,
-				templateSelection: selectionTemplate
+				templateSelection: selectionTemplate,
+				language: {
+					noResults(){
+						return $(self).attr("data-v-model") == 'selectShop' ? "Сначала выберите город" : "Нет информации для отображения"
+					}
+				}
 			})
 
 			if (vue)
@@ -124,11 +136,17 @@ try{
 
 		$("select:not(.no-selectize)").each(function(){
 			if (!is.touchDevice()){
+				const self = this;
 				$(this).select2({
 					minimumResultsForSearch: Infinity,
 					placeholder: $(this).data("placeholder"),
 					templateResult: selectionTemplate,
-					templateSelection: selectionTemplate
+					templateSelection: selectionTemplate,
+					language: {
+						noResults(){
+							return $(self).attr("data-v-model") == 'selectShop' ? "Сначала выберите город" : "Нет информации для отображения"
+						}
+					}
 				})
 				// $(this).on("select2:select", function(e){
 				// 	const parentFormVue = e.currentTarget.__vue__ || false;
