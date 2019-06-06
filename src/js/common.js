@@ -25,14 +25,44 @@ $(function(){
 		$(appendTo).append($cloneForm)
 
 		$("#form-about-career select").each(function(){
-			if (!is.touchDevice())
+			if (!is.touchDevice()){
+				$(this).removeClass("select2-hidden-accessible")
 				$(this).select2({
 					minimumResultsForSearch: Infinity,
 					placeholder: $(this).data("placeholder"),
 					templateResult: selectionTemplate,
 					templateSelection: selectionTemplate
 				})
-			else
+				// $(this).on("select2:select", function(e){
+				// 	const parentFormVue = e.currentTarget.__vue__ || false;
+
+				// 	if (!parentFormVue)
+				// 		return
+
+				// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
+				// })
+			}else
+				$(this).addClass("selectized")
+		})
+	}
+
+	window.reinitSelect2 = function(formId, vue = false){
+		$(`${formId} .select2-container`).remove()
+		$(`${formId} select`).each(function(){
+			if (!is.touchDevice()){
+				$(this).removeClass("select2-hidden-accessible")
+				$(this).select2({
+					minimumResultsForSearch: Infinity,
+					placeholder: $(this).data("placeholder"),
+					templateResult: selectionTemplate,
+					templateSelection: selectionTemplate
+				})
+
+				if (vue)
+					$(this).on("select2:select", function(e){
+						vue[e.currentTarget.getAttribute("data-v-model")] = e.currentTarget.value
+					})
+			}else
 				$(this).addClass("selectized")
 		})
 	}
@@ -96,14 +126,22 @@ try{
 		});
 
 		$("select:not(.no-selectize)").each(function(){
-			if (!is.touchDevice())
+			if (!is.touchDevice()){
 				$(this).select2({
 					minimumResultsForSearch: Infinity,
 					placeholder: $(this).data("placeholder"),
 					templateResult: selectionTemplate,
 					templateSelection: selectionTemplate
 				})
-			else
+				// $(this).on("select2:select", function(e){
+				// 	const parentFormVue = e.currentTarget.__vue__ || false;
+
+				// 	if (!parentFormVue)
+				// 		return
+
+				// 	parentVue['set '+e.currentTarget.getAttribute("data-v-model")](e.currentTarget.value)
+				// })
+			}else
 				$(this).addClass("selectized")
 		})
 
