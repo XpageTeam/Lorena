@@ -231,16 +231,16 @@
 			&-next
 
 				+ .swiper-slide
-					opacity: .8
+					opacity: .8 !important
 
 					+ .swiper-slide
-						opacity: .6
+						opacity: .6 !important
 
 						+ .swiper-slide
-							opacity: .4
+							opacity: .4 !important
 
 							~ .swiper-slide
-								opacity: .2
+								opacity: .2 !important
 	
 	&__item
 		width: 300px
@@ -539,6 +539,9 @@
 
 			&-item
 				width: 50%
+
+	.time-line .swiper-slide
+		opacity: 1 !important
 
 	.dealler-list
 		padding: 30px 20px

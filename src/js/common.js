@@ -16,8 +16,7 @@ $(function(){
 	}
 
 	window.moveCareerForm = function(appendTo){
-		if ($("#form-about-career select")[0].select2)
-			$("#form-about-career select").select2('destroy');
+		$("#form-about-career select.select2-hidden-accessible").select2('destroy');
 
 		const $cloneForm = $("#form-about-career").clone();
 

@@ -23,6 +23,9 @@ App.domReady(() => {
 			enabled: true,
 			onlyInViewport: true,
 		},
+		on: {
+			transitionStart: setOpacity
+		},
 		breakpoints: {
 			1000: {
 				slidesPerView: 2
@@ -32,18 +35,33 @@ App.domReady(() => {
 			}
 		}
 	})
+
+	setOpacity()
 })
 
-// const setOpacity = () => {
-// 	const mainSlide = document.querySelector(".time-line .swiper-slide-active");
+const setOpacity = () => {
+	const mainSlide: HTMLElement = document.querySelector(".time-line .swiper-slide-next");
+	let stopEach = false;
 
-// 	// App.each
+	App.each(".time-line .swiper-slide", (el: HTMLDivElement) => {
+		if (stopEach)
+			return
 
-// 	const slides = [mainSlide];
+		el.style.opacity = "1"
 
-// 	for (let i = 0; i < 4; i++)
-// 		slides.push(slides[i].previousElementSibling)
+		if (el.classList.contains("swiper-slide-next"))
+			stopEach = true
+	})
 
-// 	for (let i = slides.length - 1; i > 0; i--)
+	const slides: any[] = [mainSlide];
 
-// };
+	for (let i = 0; i < 4; i++)
+		slides.push(slides[i].previousElementSibling)
+
+	slides.reverse()
+
+	for (let i = slides.length - 1; i >= 0; i--){
+		slides[i].style.opacity = (!(slides.length - 1 == i) ? i / slides.length : 1).toString()
+	}
+
+};
