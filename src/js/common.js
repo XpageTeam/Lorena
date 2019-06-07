@@ -127,6 +127,18 @@ try{
 			},
 			transitionEffect: "slide",
 		})
+
+		$(".fancybox-map").fancybox({
+			trapFocus: false,
+			touch: false,
+			buttons: ["fullscreen", "close"],
+			beforeShow(){
+				$("body").addClass("js__fancybox-map")
+			},
+			afterClose(){
+				$("body").removeClass("js__fancybox-map")
+			}
+		})
 		
 		$(".main-slide__title-title").each((i, el) => {
 			new stringEffect({
