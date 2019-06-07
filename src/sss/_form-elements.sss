@@ -179,6 +179,11 @@
 		&--error:not(:valid), &.error:not(:valid), &.forms__input_error:not(:valid)
 			border-color: red
 
+			+ .select2
+
+				.select2-selection
+					border-color: red !important
+
 			~ .forms__error-message
 				opacity: 1
 
@@ -345,61 +350,68 @@
 	&__error
 
 		&-message
-			border: 1px solid #d4d4d4
-			background: #fff
+			// border: 1px solid #d4d4d4
+			// background: #fff
 			color: #000
-			padding: 7px 10px
-			border-radius: 7px
+			// border-radius: 7px
+			color: #fff
 			position: absolute
-			bottom: 45px
-			right: -6px
+			bottom: 12px
+			right: 2px
 			box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.1)
 			transition: opacity .3s ease
 			user-select: none
 			font-size: 12px
+			padding-right: 35px
 
 			opacity: 0
 			pointer-events: none
 
 			&:after
 				content: ""
-				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAIBAMAAADU/bjBAAAAGFBMVEX////V1dXV1dXY2Nji4uL9/f3+/v7///88REMWAAAAA3RSTlMAipDLFSdbAAAAM0lEQVQI12NwKweBMgcGlXQQI0WBgQkkVObEwAAWAgowgITAAiAhsABQyBUiwMAgLAAkAJ+wDc+KWF7qAAAAAElFTkSuQmCC)
+				// background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAIBAMAAADU/bjBAAAAGFBMVEX////V1dXV1dXY2Nji4uL9/f3+/v7///88REMWAAAAA3RSTlMAipDLFSdbAAAAM0lEQVQI12NwKweBMgcGlXQQI0WBgQkkVObEwAAWAgowgITAAiAhsABQyBUiwMAgLAAkAJ+wDc+KWF7qAAAAAElFTkSuQmCC)
+				background: url("../img/ico-error.svg") no-repeat
 				position: absolute
-				top: calc(100% - 0px)
-				right: 19px
-				height: 8px
-				width: 15px
+				top: calc(50% - 10px)
+				right: 2px
+				size: 22px 20px
 
-			&-icon
-				display: block
-				border-radius: 50%
-				position: absolute
-				border: 1px solid #ff0024
-				height: 19px
-				width: 19px
-				background: #fff
-				bottom: -32px
-				right: 16px
+			// &-icon
+			// 	display: block
+			// 	border-radius: 50%
+			// 	position: absolute
+			// 	border: 1px solid #ff0024
+			// 	height: 19px
+			// 	width: 19px
+			// 	background: #fff
+			// 	bottom: -32px
+			// 	right: 16px
 
-				&:before, &:after
-					content: ""
-					position: absolute
-					width: 1px
-					background: #ff0024
-					left: calc(50% - 1px)
+			// 	&:before, &:after
+			// 		content: ""
+			// 		position: absolute
+			// 		width: 1px
+			// 		background: #ff0024
+			// 		left: calc(50% - 1px)
 
-				&:before
-					top: 4px
-					height: 8px
+			// 	&:before
+			// 		top: 4px
+			// 		height: 8px
 
-				&:after
-					bottom: 4px
-					height: 2px
+			// 	&:after
+			// 		bottom: 4px
+			// 		height: 2px
 
 .select2-container--default 
 	.select2-selection--single 
-		.select2-selection__arrow
-			display: none
+		.select2-selection
+
+			&__placeholder, &__rendered
+				display: block
+				padding-bottom: 5px !important
+
+			&__arrow
+				display: none
 
 	.select2-results
 
