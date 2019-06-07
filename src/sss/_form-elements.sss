@@ -33,21 +33,6 @@
 	
 	.forms
 
-		&__error
-
-			&-message
-				top: calc(100% + 1px)
-				left: 0
-				right: 0
-				box-shadow: none
-				border: none
-				background: none
-				padding: 0 0 2px
-				color: var(--mainColor)
-
-				&:after
-					display: none
-
 		&__input
 
 			&:focus
@@ -363,6 +348,7 @@
 			user-select: none
 			font-size: 12px
 			padding-right: 35px
+			z-index: 99994
 
 			opacity: 0
 			pointer-events: none
@@ -419,6 +405,9 @@
 
 			&[aria-selected=true]
 				background: var(--thrid-color) !important
+
+.select2-container
+	z-index: 99993
 
 .select2-selection__choice__remove:first-child:last-child
 	margin-left: 10px
