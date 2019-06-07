@@ -222,6 +222,9 @@ try{
 	document.addEventListener("DOMContentLoaded", e => {
 		const body = document.body;
 
+		if ($(".bx-yandex-map").length)
+			$("html").addClass("js__iframe-map")
+
 		$(window).on("load scroll touchmove resize", function(){
 			if (body.scrollHeight > 2000 && !document.querySelector(".scroller")){
 				$("body").append('<div class="scroller"><div class="scroller__progress"></div></div>')
