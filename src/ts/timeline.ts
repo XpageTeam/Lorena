@@ -15,6 +15,7 @@ App.domReady(() => {
 		slidesPerView: 4,
 		// freeMode: true,
 		loop: true,
+		loopedSlides: 4,
 		navigation: {
 			prevEl: ".mission-desc__title-arrows .swiper-button-prev",
 			nextEl: ".mission-desc__title-arrows .swiper-button-next"

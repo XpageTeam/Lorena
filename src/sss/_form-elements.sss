@@ -89,6 +89,9 @@
 			transition: opacity .1s ease
 			opacity: 0
 
+textarea.default-input__input
+	padding-top: 13px
+
 .popup-form__inputs
 	display: flex
 	flex-wrap: wrap
@@ -277,11 +280,13 @@
 
 		&:required ~ label
 
-			&:after
-				content: "*"
-				display: inline-block
-				margin-left: 5px
-				color: var(--main-color)
+			&:not([class*="--file"])
+
+				&:after
+					content: "*"
+					display: inline-block
+					margin-left: 5px
+					color: var(--main-color)
 
 		&--textarea
 			max-width: 100%
@@ -295,6 +300,9 @@
 
 			~ .default-input__input
 				width: calc(100% - 147px)
+
+			~ .forms__error-message
+				bottom: 35px
 
 	&__label
 		margin-bottom: 10px
@@ -336,18 +344,18 @@
 
 		&-message
 			// border: 1px solid #d4d4d4
-			// background: #fff
+			background: var(--thrid-color)
 			color: #000
 			// border-radius: 7px
 			color: #fff
 			position: absolute
 			bottom: 12px
 			right: 2px
-			box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.1)
+			// box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.1)
 			transition: opacity .3s ease
 			user-select: none
 			font-size: 12px
-			padding-right: 35px
+			padding: 4px 35px 4px 4px
 			z-index: 99994
 
 			opacity: 0
@@ -522,3 +530,14 @@
 				&:after
 					margin: 10px 0 0 !important
 					width: 100%
+
+	select[id*="CITY"]
+
+		&:nth-last-child(4)
+			margin-bottom: 20px
+
+			+ label + .default-input__subtext
+				top: calc(100% - 10px)
+
+				+ .forms__error-message
+					bottom: 33px

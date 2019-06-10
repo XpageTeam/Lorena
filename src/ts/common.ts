@@ -51,10 +51,12 @@ App.domReady(() => {
 		event.preventDefault()
 	})
 
-	new EventListener(".main-slide__title-btn").add("click", (el: HTMLElement) => {
+	new EventListener(".main-slide__title-btn").add("click", (el: HTMLElement, e: Event) => {
 		const target: HTMLElement = document.querySelector(".main-about__cont");
 
-		window.animateScroll(target.offsetTop + 100)
+		window.animateScroll(target.offsetTop - 100)
+
+		e.preventDefault()
 	})
 })
 

@@ -99,13 +99,27 @@
 
 @media (max-width: 660px)
 	.to-top-btn
-		right: 20px
+		right: auto
+		left: 20px
 
 		&:not(.js__tovar-btns-cutch)
 			bottom: 30px
 
 		&.js__tovar-btns-cutch
 			bottom: 73px
+
+	/** Для живосайта */
+	jdiv.button_1O
+		margin-bottom: 55px !important
+
+	body[class*="favorites "]
+		.title-block
+
+			&:first-child:last-child
+				padding: 40px 0 0 !important
+
+			&__title
+				margin-bottom: 0 !important
 
 // @media (max-width: 1500px) and (min-width: 1200px)
 // 	.inner-content

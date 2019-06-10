@@ -7,9 +7,12 @@ window.$ = $;
 window.jQuery = $;
 
 window.animateScroll = function(offset = 20){
+	console.log((document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
+			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : offset) 
+		: offset - parseInt(getComputedStyle(document.querySelector(".head")).height))
 	$("html, body").animate({
 		scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
-			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : 0) 
+			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : offset) 
 		: offset - parseInt(getComputedStyle(document.querySelector(".head")).height)
 	})
 }
