@@ -58,12 +58,12 @@ gulp.task("postcss", _ =>
 		.pipe(sourcemaps.init())
 		.pipe($.postcss([
 			require("postcss-import"),
+			require("postcss-assets"),
 			require('postcss-functions')({
 				functions: require("./config/functions.js")
 			}),
 			require("postcss-short"),
 			require("postcss-preset-env"),
-			require("postcss-assets"),
 			require("autoprefixer"),
 			require("postcss-flexbugs-fixes"),
 			require("postcss-nesting"),

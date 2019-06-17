@@ -32,7 +32,7 @@ module.exports = {
 	},
 
 	persent(value, base = 1920){
-		return (value / base * 100).toFixed(2) + "%"
+		return (parseInt(value) / base * 100).toFixed(2) + "%"
 	},
 	vw(value, base = 1903){
 		return (parseInt(value) / base * 100).toFixed(2) + "vw"

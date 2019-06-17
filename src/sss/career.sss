@@ -2,6 +2,13 @@
 	.city-select
 		display: none
 
+body
+
+	&[class*="career"]
+
+		.inner-content__title, .title-menu .gray-btn
+			background: var(--thrid-color)
+
 .career
 
 	> div
@@ -120,15 +127,18 @@
 		&:not(:first-child)
 			margin: 30px 0 0
 
+		&:not(:last-child)
+			border-bottom: 1px solid var(--thrid-color)
+
 .history
 	display: flex
-	background: var(--thrid-color)
-	padding: 55px 100px 55px 60px
+	// background: var(--thrid-color)
+	padding: 55px 0 55px
 
 	&__user
 		width: 435px
 		flex: none
-		margin-right: repsent(120)
+		margin-right: persent(120)
 
 	&__text
 		flex: 1 1 auto
@@ -140,17 +150,28 @@
 
 	&__img
 		flex: none
-		size: 75px
+		size: 121px
 		display: flex
 		justify-content: center
 		align-items: center
-		overflow: hidden
 		border-radius: 50%
-		margin-right: 40px
+		margin-right: 85px
+		border: 3px solid var(--main-color)
+		position: relative
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 92px) calc(50% - 92px) * *
+			pointer-events: none
+			border: 1px solid var(--thrid-color)
+			size: 183px
+			border-radius: 50%
 
 		img
 			border-radius: 50%
-			max-width: none
+			size: 100%
+			object-fit: cover
+			object-position: center
 
 	&__name
 		font-size: 18px
@@ -472,6 +493,15 @@
 	.career__slider
 		overflow: hidden
 
+	.his-user
+
+		&__img
+			size: 90px
+			overflow: hidden
+
+			&:after
+				display: none
+
 @media (max-width: 660px)
 	.career__chief
 		display: block
@@ -609,10 +639,17 @@
 			padding: 0 28px
 
 	.history
-		padding: 45px 40px
+		padding: 30px 0
 
 		&__user
 			width: 100%
+
+	.history-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 0
 
 	.his-user
 		display: block
@@ -627,7 +664,7 @@
 			float: left
 
 		&__about
-			padding: 15px 0 0
+			padding: 10px 0 0
 
 		&__name
 			font-size: 18px
@@ -635,7 +672,7 @@
 			max-width: 220px
 
 		&__city
-			margin: 32px 0 0
+			margin: 10px 0 0
 
 	.c-vacancy
 

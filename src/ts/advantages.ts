@@ -1,8 +1,8 @@
 import {App} from "./app"
 // import "./swiper.d"
-import {Swiper, Pagination, Navigation, Keyboard} from 'swiper/dist/js/swiper.esm.js'
+import {Swiper, Pagination, Navigation, Keyboard, Mousewheel} from 'swiper/dist/js/swiper.esm.js'
 
-Swiper.use([Pagination, Navigation, Keyboard])
+Swiper.use([Pagination, Navigation, Keyboard, Mousewheel])
 
 App.domReady(() => {
 	new Swiper(".n-advantages .advantage-list", {
@@ -10,6 +10,7 @@ App.domReady(() => {
 		// fadeEffect: {
 		// 	crossFade: true
 		// },
+		mousewheel: true,
 		slidesPerGroup: 3,
 		slidesPerView: 3,
 		spaceBetween: 70,

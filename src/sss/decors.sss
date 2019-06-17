@@ -1,0 +1,230 @@
+body
+
+	&[class*="benefits"]
+
+		#content
+			position: relative
+
+		.advantages
+
+			&:after, &:before
+				content: ""
+				z-index: 10
+				pointer-events: none
+				background-size: contain !important
+
+			&:after
+				position: absolute 50px 0 * *
+				background: url("../img/advantages-decor-top-right.png") top right no-repeat
+				size: width("../img/advantages-decor-top-right.png") height("../img/advantages-decor-top-right.png")
+			
+			&:before
+				background: url("../img/advantages-decor-bot.png") left bottom no-repeat
+				position: absolute * * 0 0
+				size: width("../img/advantages-decor-bot.png") height("../img/advantages-decor-bot.png")
+	
+	&[class*="7steps"]
+
+		.inner-content__content
+			position: relative
+
+			&:before
+				content: ""
+				z-index: 10
+				background-size: contain !important
+				position: absolute 50px 0 * *
+				background: url("../img/advantages-decor-top-right.png") top right no-repeat
+				size: width("../img/advantages-decor-top-right.png") height("../img/advantages-decor-top-right.png")
+
+		.steps
+
+			&:before, &:after
+				content: ""
+				background-size: contain !important
+				z-index: 10
+
+			&:after
+				position: absolute * 0 0 *
+				background: url("../img/advantages-decor-bot.png") right bottom no-repeat
+				size: width("../img/advantages-decor-bot.png") height("../img/advantages-decor-bot.png")
+				transform: rotateY(180deg)
+			
+			&:before
+				position: absolute calc(50% - height("../img/steps-decor-center.png") / 2) * * 0
+				background: url("../img/steps-decor-center.png") left center no-repeat
+				size: width("../img/steps-decor-center.png") height("../img/steps-decor-center.png")
+
+	&[class*="career"]
+
+		.career
+
+			&__chief
+				position: relative
+
+				&:after, &:before
+					content: ""
+					pointer-events: none
+
+				&:after
+					background: url("../img/about-img-decor-right.png") left center no-repeat
+					background-size: cover !important
+					size: width("../img/about-img-decor-right.png") auto
+					position: absolute -126px 0 0 *
+
+				&:before
+					position: absolute 0 * 0 0
+					background-size: contain !important
+					background: url("../img/career-decor-top-left.png") left bottom no-repeat
+					width: width("../img/career-decor-top-left.png")
+
+			&__advantages
+				position: relative
+
+				&:before, &:after
+					content: ""
+					position: absolute
+					background-size: contain !important
+
+				&:after
+					top: 50px
+					right: 0
+					background: url("../img/advantages-decor-top-right.png") top right no-repeat
+					size: width("../img/advantages-decor-top-right.png") height("../img/advantages-decor-top-right.png")
+					
+				&:before
+					left: 0
+					bottom: 0
+					background: url("../img/advantages-decor-bot.png") left bottom no-repeat
+					size: width("../img/advantages-decor-bot.png") height("../img/advantages-decor-bot.png")
+
+		.c-chief
+
+			&__bg
+				opacity: 0
+
+
+
+	&[class*="dealers"]
+
+		#content
+			position: relative
+
+			&:before, &:after
+				content: ""
+				background-size: contain !important
+
+			&:before
+				position: absolute calc(50% - height("../img/dealers-decor-left-center.png") / 2) * * 0
+				background: url("../img/dealers-decor-left-center.png") left center no-repeat
+				size: width("../img/dealers-decor-left-center.png") height("../img/dealers-decor-left-center.png")
+
+			&:after
+				position: absolute * 0 0 *
+				background: url("../img/dealers-decor-bottom-right.png") right bottom no-repeat
+				size: width("../img/dealers-decor-bottom-right.png") height("../img/dealers-decor-bottom-right.png")
+
+		.about
+
+			&__text
+				position: relative
+
+				&:before
+					content: ""
+					position: absolute vh(321) 0 * *
+					background-size: contain !important
+					background: url("../img/dealers-decor-top-right.png") right center no-repeat
+					size: width("../img/dealers-decor-top-right.png") height("../img/dealers-decor-top-right.png")
+
+	&[class*="news "]
+
+		.main-choose
+
+			&__img
+				opacity: 0
+
+			&__cont
+				position: relative
+
+				&:before, &:after
+					content: ""
+					pointer-events: none
+					position: absolute
+
+				&:before
+					background: url("../img/dealers-decor-bottom-right.png") right bottom no-repeat
+					background-size: contain !important
+					left: 0
+					bottom: 0
+					size: width("../img/dealers-decor-bottom-right.png") height("../img/dealers-decor-bottom-right.png")
+					transform: rotateY(-180deg)
+
+@media (max-width: 1730px)
+	body
+
+		&[class*="benefits"]
+
+			.advantages
+
+
+				&:after
+					width: persent(width("../img/advantages-decor-top-right.png"), 1730)
+
+				&:before
+					width: persent(width("../img/advantages-decor-bot.png"), 1730)
+
+@media (max-width: 1600px)
+	body
+
+		&[class*="benefits"]
+
+			.advantages
+
+
+				&:after
+					display: none
+
+@media (max-width: 1560px)
+	body
+
+		&[class*="7steps"]
+
+			.inner-content__content
+
+				&:before
+					width: persent(width("../img/advantages-decor-top-right.png"), 1560)
+
+			.steps
+
+				&:after
+					width: persent(width("../img/advantages-decor-bot.png"), 1560)
+				
+				&:before
+					width: persent(width("../img/steps-decor-center.png"), 1560)
+
+
+@media (max-width: 1300px)
+	body
+
+		&[class*="career"]
+
+			.career
+
+				&__chief
+
+					&:before
+						width: persent(width("../img/career-decor-top-left.png"), 1300)
+						display: none
+
+					&:after
+						width: 142%
+
+				&__advantages
+
+					&:after
+						width: persent(width("../img/advantages-decor-top-right.png"), 1300)
+						display: none
+
+					&:before
+						width: persent(width("../img/advantages-decor-bot.png"), 1300)
+						display: none
+
