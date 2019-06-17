@@ -158,6 +158,13 @@ body
 					size: width("../img/dealers-decor-bottom-right.png") height("../img/dealers-decor-bottom-right.png")
 					transform: rotateY(-180deg)
 
+				&:after
+					background: url("../img/bot-form-decor.png") left center no-repeat
+					background-size: cover !important
+					size: width("../img/bot-form-decor.png") 100%
+					right: 0
+					bottom: 0
+
 @media (max-width: 1730px)
 	body
 
@@ -201,6 +208,22 @@ body
 				&:before
 					width: persent(width("../img/steps-decor-center.png"), 1560)
 
+		&[class*="news "]
+
+			.main-choose__cont
+
+				&:after
+					width: 99%
+
+@media (max-width: 1500px)
+	body
+
+		&[class*="news "]
+
+			.main-choose__cont
+
+				&:before
+					display: none
 
 @media (max-width: 1300px)
 	body
