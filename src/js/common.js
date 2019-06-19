@@ -14,9 +14,9 @@ window.animateScroll = function(offset = 20){
 	})
 }
 
-function isScrolledIntoView(elem){
+window.isScrolledIntoView = (elem) =>{
     var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+    var docViewBottom = docViewTop + window.innerHeight;
 
     var elemTop = $(elem).offset().top;
     var elemBottom = elemTop + 10;
@@ -122,15 +122,22 @@ window.reinitSelect2 = function(formId, vue = false){
 
 })();
 
+const checScrollIntoView = () => {
+	$(".about-text__desc:not(.js__show), .cw-item:not(.js__show), \
+		.mission:not(.js__show), .timeline:not(.js__show)").each(function(){
+		if (isScrolledIntoView(this))
+			$(this).addClass("js__show")
+	})
+};
+
 try{
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
 		require("../css/jquery.fancybox.css")
 
-		$(window).scroll("load scroll resize", e => {
-			if (isScrolledIntoView($(".about-text")))
-				$(".about-text").addClass("js__show")
-		})
+		checScrollIntoView()
+
+		$(window).scroll("scroll resize", checScrollIntoView)
 
 		$(".fancybox").fancybox({
 			trapFocus: false,
@@ -157,7 +164,8 @@ try{
 		
 		$(".main-slide__title-title, \
 			.for-about .about-img__text-title,\
-			.for-about .adr-text__title").each((i, el) => {
+			.for-about .adr-text__title,\
+			.for-about .mission-desc__title-title").each((i, el) => {
 			new stringEffect({
 				selector: el,
 			});

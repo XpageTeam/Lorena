@@ -14,10 +14,71 @@
 
 	.adr-text
 
-		&__title
+		&__title, &__text
 			opacity: 0
 			transform: translate3d(0,-50px,0)
 			transition: transform .7s ease, opacity .7s ease
+
+		&__text
+			transition-delay: .5s
+
+	.cw-item
+
+		&__text
+			opacity: 0
+
+		&__text
+			transition: opacity .3s ease
+
+		&__img
+
+			path
+				opacity: 0
+
+	.mission-desc
+
+		&__title
+
+			&-name, &-title
+				opacity: 0
+				transition: transform .7s ease, opacity .7s ease
+
+			&-name
+				transform: translate3d(0,-50px,0)
+
+		&__btn
+			opacity: 0
+			transition: opacity .3s ease
+			transition-delay: .6s
+
+	.mission__right
+		opacity: 0
+		transition: opacity .3s ease
+		transition-delay: .8s
+
+	.mission-list
+
+		&__item
+			opacity: 0
+			transform: translate3d(0,-50px,0)
+			transition: transform .7s ease, opacity .7s ease
+
+			&:first-child
+				transition-delay: .5s
+
+			&:nth-child(2)
+				transition-delay: .65s
+
+			&:nth-child(3)
+				transition-delay: .8s
+
+			&:nth-child(4)
+				transition-delay: .95s
+
+	.mission-text
+		opacity: 0
+		transition: opacity .3s ease
+		transition-delay: .8s
 
 .loaded
 	
@@ -39,6 +100,26 @@
 
 .js__show
 
+	.mission-desc
+
+		&__title
+
+			&-name, &-title, &-title .string
+				opacity: 1
+				transform: translate3d(0,0,0) !important
+
+		&__btn
+			opacity: 1
+
+	.mission__right, .mission-text
+		opacity: 1
+
+	.mission-list
+
+		&__item
+			opacity: 1
+			transform: none
+
 	.adr-text
 
 		&__title
@@ -48,3 +129,22 @@
 			.string
 				transform: none !important
 				opacity: 1
+
+		&__text
+			opacity: 1
+			transform:  none
+
+	&.cw-item
+		opacity: 1
+
+		.cw-item
+
+			&__text
+				opacity: 1
+
+			&__img
+				
+				path
+					transition: stroke-dashoffset 1.5s ease
+					opacity: 1
+					stroke-dashoffset: 0 !important

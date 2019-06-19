@@ -14,6 +14,11 @@ App.domReady(() => {
 	})
 
 	mapPulse(circles)
+
+	App.each('.cw-item__img path', (el: SVGPathElement) => {
+		el.style.strokeDasharray = el.getTotalLength()+', '+ el.getTotalLength()
+		el.style.strokeDashoffset = el.getTotalLength().toString()
+	})
 })
 
 const mapPulse = (circles: NodeList): void => {
