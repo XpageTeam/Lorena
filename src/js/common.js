@@ -7,14 +7,21 @@ window.$ = $;
 window.jQuery = $;
 
 window.animateScroll = function(offset = 20){
-	console.log((document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
-			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : offset) 
-		: offset - parseInt(getComputedStyle(document.querySelector(".head")).height))
 	$("html, body").animate({
 		scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 
 			(window.matchMedia("(max-width: 1200px)").matches ? offset - parseInt(getComputedStyle(document.querySelector(".head")).height) - 40 : offset) 
 		: offset - parseInt(getComputedStyle(document.querySelector(".head")).height)
 	})
+}
+
+function isScrolledIntoView(elem){
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + 10;
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
 window.moveCareerForm = function(appendTo){
@@ -120,6 +127,11 @@ try{
 		require("./jquery.fancybox.js")
 		require("../css/jquery.fancybox.css")
 
+		$(window).scroll("load scroll resize", e => {
+			if (isScrolledIntoView($(".about-text")))
+				$(".about-text").addClass("js__show")
+		})
+
 		$(".fancybox").fancybox({
 			trapFocus: false,
 			touch: false,
@@ -143,7 +155,9 @@ try{
 			}
 		})
 		
-		$(".main-slide__title-title").each((i, el) => {
+		$(".main-slide__title-title, \
+			.for-about .about-img__text-title,\
+			.for-about .adr-text__title").each((i, el) => {
 			new stringEffect({
 				selector: el,
 			});
@@ -274,3 +288,7 @@ const selectionTemplate = state => {
 	else
 		return state.text
 }
+
+document.addEventListener("DOMContentLoaded", e => {
+	$("body").removeClass("loading").addClass("loaded")
+})

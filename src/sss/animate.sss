@@ -1,0 +1,50 @@
+.for-about
+
+	.about-img
+
+		&__text
+
+			&-this, &-btn, &-title
+				opacity: 0
+				transform: translate3d(0,-50px,0)
+				transition: transform .7s ease, opacity .7s ease
+
+			&-btn
+				transition-delay: .6s
+
+	.adr-text
+
+		&__title
+			opacity: 0
+			transform: translate3d(0,-50px,0)
+			transition: transform .7s ease, opacity .7s ease
+
+.loaded
+	
+	&.for-about
+
+		.about-img
+
+			&__text
+
+				&-this, &-btn, &-title
+					opacity: 1
+					transform: translate3d(0,0,0)
+
+				&-title
+
+					.string
+						transform: none !important
+						opacity: 1
+
+.js__show
+
+	.adr-text
+
+		&__title
+			opacity: 1
+			transform: translate3d(0,0,0)
+
+			.string
+				transform: none !important
+				opacity: 1

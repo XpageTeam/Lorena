@@ -1,5 +1,28 @@
 body
 
+	&[class*="partners"]
+		
+		#content
+			position: relative
+
+		.partners
+
+			&:after, &:before
+				content: ""
+				z-index: 10
+				pointer-events: none
+				background-size: contain !important
+
+			&:after
+				position: absolute 50px 0 * *
+				background: url("../img/advantages-decor-top-right.png") top right no-repeat
+				size: width("../img/advantages-decor-top-right.png") height("../img/advantages-decor-top-right.png")
+			
+			&:before
+				background: url("../img/advantages-decor-bot.png") left bottom no-repeat
+				position: absolute * * 0 0
+				size: width("../img/advantages-decor-bot.png") height("../img/advantages-decor-bot.png")
+
 	&[class*="benefits"]
 
 		#content
@@ -179,6 +202,17 @@ body
 				&:before
 					width: persent(width("../img/advantages-decor-bot.png"), 1730)
 
+@media (max-width: 2000px) 
+	
+	body
+
+		&[class*="partners"]
+
+			.partners
+
+				&:after
+					display: none
+
 @media (max-width: 1600px)
 	body
 
@@ -188,6 +222,13 @@ body
 
 
 				&:after
+					display: none
+
+		&[class*="partners"]
+
+			.partners
+
+				&:before
 					display: none
 
 @media (max-width: 1560px)
