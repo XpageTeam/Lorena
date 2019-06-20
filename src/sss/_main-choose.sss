@@ -13,8 +13,13 @@
 		margin-right: 20px
 		padding: 0 0 36px
 
+
 	&__form
 		margin-right: 100px
+		padding: 40px 0 60px
+
+		.forms-recaptcha
+			display: none
 
 		+ .main-choose__img
 			margin-right: -260px
@@ -87,7 +92,7 @@
 	.main-choose
 
 		&__form
-			padding: 0
+			// padding: 0
 
 			+ .main-choose__img
 				max-width: 500px
@@ -110,6 +115,8 @@
 			margin-right: 40px
 
 @media (max-width: 1000px)
+	.choose-form
+		max-width: none
 	.main-choose
 		padding: 30px 0
 		display: block
@@ -117,6 +124,7 @@
 		&__form
 			margin-right: 0
 			width: 100%
+			padding: 0
 
 			+ .main-choose__img
 				display: none

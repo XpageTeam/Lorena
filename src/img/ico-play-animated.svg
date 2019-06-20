@@ -1,0 +1,22 @@
+<svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29.3466 36.0688C28.0194 36.9788 26.2156 36.0285 26.2156 34.4193L26.2156 30.4314L26.2156 26.4434C26.2156 24.8342 28.0194 23.8839 29.3466 24.7939L35.1629 28.7819C36.3216 29.5763 36.3216 31.2864 35.1629 32.0809L29.3466 36.0688Z" fill="#FF6800"/>
+<circle cx="30.5" cy="30.5" r="20" stroke="#FF6600"/>
+<circle cx="30.5" cy="30.5" r="30" stroke="#FF6600" stroke-opacity="0.3"/>
+<defs>
+	<style>
+		@keyframes pulse{
+			0%, 100%{
+				transform: scale(.85)
+			}
+			50%{
+				transform: scale(1)
+			}
+		}
+
+		circle{
+			animation: pulse 2s ease infinite;
+			transform-origin: center
+		}
+	</style>
+</defs>
+</svg>

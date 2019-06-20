@@ -12,6 +12,9 @@
 			&-btn
 				transition-delay: .6s
 
+	.play-btn__btn
+		background: url("../img/ico-play-animated.svg") 50% no-repeat
+
 	.adr-text
 
 		&__title, &__text
@@ -51,16 +54,11 @@
 			transition: opacity .3s ease
 			transition-delay: .6s
 
-	.mission__right
-		opacity: 0
-		transition: opacity .3s ease
-		transition-delay: .8s
-
 	.mission-list
 
 		&__item
 			opacity: 0
-			transform: translate3d(0,-50px,0)
+			transform: translate3d(0,50px,0)
 			transition: transform .7s ease, opacity .7s ease
 
 			&:first-child
@@ -77,7 +75,8 @@
 
 	.mission-text
 		opacity: 0
-		transition: opacity .3s ease
+		transform: translate3d(40px,0,0)
+		transition: opacity .9s ease, transform .9s ease
 		transition-delay: .8s
 
 .loaded
@@ -113,6 +112,7 @@
 
 	.mission__right, .mission-text
 		opacity: 1
+		transform: translate3d(0,0,0)
 
 	.mission-list
 
