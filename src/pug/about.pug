@@ -4,7 +4,7 @@ html(lang="ru")
 		title Компания
 		include inc/head.pug
 		include inc/css.pug
-	body.inner.tovar.loading
+	body.inner.loading
 		include inc/header.pug
 		main#content
 			.inner-content
@@ -12,18 +12,19 @@ html(lang="ru")
 					.about
 						.about__img
 							.about-img
-								picture
-									source(media="(min-width: 660px)" srcset="img/photos/about-img.jpg")
-									source(media="(max-width: 660px)" srcset="img/photos/about-img.jpg")
-									img
-								.about-img__text
-									.about-img__text-title Оправдываем доверие покупателей
-										br
-										| на протяжении 30 лет!
-									.about-img__text-btn
-										a.play-btn.fancybox(href="https://www.youtube.com/embed/PLLcZF0fF7U")
-											span.play-btn__btn
-											span.play-btn__text Смотреть видеоролик
+								//- picture
+								//- 	source(media="(min-width: 660px)" srcset="img/photos/about-img.jpg")
+								//- 	source(media="(max-width: 660px)" srcset="img/photos/about-img.jpg")
+								//- 	img
+								.wrapper
+									.about-img__text
+										.about-img__text-title Оправдываем доверие покупателей
+											br
+											| на протяжении 30 лет!
+										.about-img__text-btn
+											a.play-btn.fancybox(href="https://www.youtube.com/embed/PLLcZF0fF7U")
+												span.play-btn__btn
+												span.play-btn__text Смотреть видеоролик
 						.about__text
 							.wrapper
 								.about-text
