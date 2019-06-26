@@ -15,7 +15,10 @@ import {App, Element, MobileMenu, EventListener} from "./app"
 const adaptiveMedia = "(max-width: 1200px)";
 
 declare global {
-    interface Window {animateScroll: Function; }
+    interface Window {
+    	animateScroll: Function; 
+    	isScrolledIntoView: Function; 
+    }
 }
 
 App.domReady(() => {

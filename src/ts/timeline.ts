@@ -1,5 +1,6 @@
 import {Swiper, Keyboard, Navigation} from 'swiper/dist/js/swiper.esm.js'
 import {App} from "./app"
+import {TweenLite} from "gsap"
 
 Swiper.use([Keyboard, Navigation])
 
@@ -38,8 +39,53 @@ App.domReady(() => {
 	})
 
 	setOpacity()
+
+
+	;(function(){
+		const timelineSlides = document.querySelectorAll(".time-line .time-line__item");
+
+		if (!timelineSlides.length)
+			return
+
+		App.each(timelineSlides, (el: HTMLElement) => {
+			TweenLite.set(el, {
+				opacity: 0
+			})
+		})
+
+		const timeline = document.querySelector(".time-line");
+		timeline.classList.add("js__ready-for-animate")
+
+		const showSlides = () => {
+			timeline.classList.add("js__animating")
+
+			App.each(timelineSlides, (el: HTMLElement, i: number) => {
+				TweenLite.to(el, .3, {
+					opacity: 1,
+					delay: !i ? i : i / 3
+				})
+			})
+		};
+
+
+
+		if (window.isScrolledIntoView(timeline))
+			showSlides()
+
+		window.addEventListener("scroll", () => {
+			if (window.isScrolledIntoView(timeline))
+				showSlides()
+		})
+
+		window.addEventListener("resize", () => {
+			if (window.isScrolledIntoView(timeline))
+				showSlides()
+		})
+	})()
 })
 
+
+/** Тут задаётся прозрачность слайдам */
 const setOpacity = () => {
 
 	if (!document.querySelector(".time-line"))

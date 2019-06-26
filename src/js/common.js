@@ -14,7 +14,7 @@ window.animateScroll = function(offset = 20){
 	})
 }
 
-window.isScrolledIntoView = (elem) =>{
+window.isScrolledIntoView = elem =>{
     var docViewTop = $(window).scrollTop();
     var docViewBottom = docViewTop + window.innerHeight;
 

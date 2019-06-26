@@ -259,12 +259,22 @@
 	width: var(--base-width)
 	position: relative
 
+	&:not(.js__ready-for-animate)
+		opacity: 0
+
+	&.js__animating
+
+		&:before
+			width: 100vw
+
 	&:before
 		content: ""
 		position: absolute 0 * * 50%
 		transform: translateX(-50%)
-		width: 100vw
+		width: 0
 		height: 1px
+		transform-origin: left
+		transition: width 1s ease
 		background: linear-gradient(to right, rgba(255,255,255, .0001), var(--main-color), rgba(255,255,255, .0001))
 
 	.swiper
@@ -417,6 +427,9 @@
 
 			&:not(:last-child)
 				margin-right: 25px
+
+#russia-map
+	opacity: 0
 
 @media (max-width: 1600px) and (min-width: 1300px)
 	.about-img

@@ -35,6 +35,59 @@ const mapPulse = (circles: NodeList): void => {
 	})
 }
 
+/** Анимированое появление карты */
+App.domReady(() => {
+	const map = document.querySelector("#russia-map");
+
+	if (!map)
+		return
+
+	TweenLite.set(map, {
+		transformOrigin: "center",
+		scale: .1,
+		opacity: 0
+	})
+
+	const mapPoints = map.querySelectorAll("ellipse, circle");
+
+	if (!mapPoints.length)
+		return
+
+	const showMap = () => {
+		TweenLite.to(map, .7, {
+			scale: 1,
+			opacity: 1,
+			onComplete(){
+				App.each(mapPoints, (el: SVGElement, i: number) => {
+					TweenLite.to(el, .2, {
+						opacity: 1,
+						delay: !i ? i : parseFloat(`.${i}`)
+					})
+				})
+			}
+		})
+	};
+
+	App.each(mapPoints, (el: SVGElement) => {
+		TweenLite.set(el, {
+			opacity: 0
+		})
+	})
+
+	if (window.isScrolledIntoView(map))
+		showMap()
+
+	window.addEventListener("scroll", () => {
+		if (window.isScrolledIntoView(map))
+			showMap()
+	})
+
+	window.addEventListener("resize", () => {
+		if (window.isScrolledIntoView(map))
+			showMap()
+	})
+})
+
 /** !Конец кругов под картой */
 
 // /** Ховер точек городов на карте */
