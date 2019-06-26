@@ -34,6 +34,7 @@ const mapPulse = (circles: NodeList): void => {
 		}
 	})
 }
+/** !Конец кругов под картой */
 
 /** Анимированое появление карты */
 App.domReady(() => {
@@ -88,7 +89,57 @@ App.domReady(() => {
 	})
 })
 
-/** !Конец кругов под картой */
+/** Параллакс боковых элементов на странице */
+
+App.domReady(() => {
+	const leftDecor = document.querySelector(".about__decors-left"),
+		rightDecor = document.querySelector(".about__decors-right");
+
+	if (!leftDecor || !rightDecor)
+		return
+
+	const imgBlock = document.querySelector(".about__img");
+
+	const animateElements = () => {
+
+		if (!imgBlock)
+			return
+
+		
+
+		if (window.scrollY >= parseInt(getComputedStyle(imgBlock).height) / 1.9){
+			TweenLite.to(leftDecor, .2, {
+				opacity: 1
+			})
+
+			TweenLite.to(rightDecor, .2, {
+				opacity: 1
+			})
+		}else{
+			TweenLite.to(leftDecor, .2, {
+				opacity: 0
+			})
+
+			TweenLite.to(rightDecor, .2, {
+				opacity: 0
+			})
+		}
+
+		TweenLite.to(leftDecor, 1, {
+			y: -(window.scrollY / window.innerHeight * 100) + "px"
+		})
+
+		TweenLite.to(rightDecor, 1.5, {
+			y: -(window.scrollY / window.innerHeight * 30) + "px"
+		})
+	};
+
+	animateElements()
+
+	window.addEventListener("resize", animateElements)
+	window.addEventListener("scroll", animateElements)
+})
+
 
 // /** Ховер точек городов на карте */
 // App.domReady(() => {

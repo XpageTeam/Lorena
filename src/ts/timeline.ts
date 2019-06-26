@@ -1,22 +1,19 @@
-import {Swiper, Keyboard, Navigation} from 'swiper/dist/js/swiper.esm.js'
+import {Swiper, Keyboard, Navigation, Autoplay} from 'swiper/dist/js/swiper.esm.js'
 import {App} from "./app"
 import {TweenLite} from "gsap"
 
-Swiper.use([Keyboard, Navigation])
+Swiper.use([Keyboard, Navigation, Autoplay])
 
 App.domReady(() => {
-	;(function(){
-		App.each(".time-line__item", (el: HTMLElement, i: number) => {
-			if (i > 1)
-				el.style.opacity = (1 / i).toString()
-		})
-	})//()
-
 	new Swiper(".time-line", {
 		slidesPerView: 4,
 		// freeMode: true,
 		loop: true,
 		loopedSlides: 4,
+		speed: 600,
+		autoplay: {
+			delay: 4000,
+		},
 		navigation: {
 			prevEl: ".mission-desc__title-arrows .swiper-button-prev",
 			nextEl: ".mission-desc__title-arrows .swiper-button-next"

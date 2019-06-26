@@ -1,26 +1,31 @@
 .about
+	position: relative
 
-	&__mission
-		background: var(--thrid-color)
-		position: relative
+	&__decors
+		pointer-events: none
 
-		&:before, &:after
-			content: ""
+		&-left, &-right
 			background-size: contain !important
-			position: absolute
+			position: fixed
 			pointer-events: none
+			z-index: 2
+			opacity: 0
 
-		&:after
+		&-right
 			background: url("../img/dealers-decor-top-right.png") right center no-repeat
 			size: width("../img/dealers-decor-top-right.png") height("../img/dealers-decor-top-right.png")
 			right: 0
-			top: 110px
+			bottom: -300px
 
-		&:before
+		&-left
 			background: url("../img/dealers-decor-left-center.png") left center no-repeat
 			size: width("../img/dealers-decor-left-center.png") height("../img/dealers-decor-left-center.png")
 			left: 0
-			top: calc(50% - height("../img/dealers-decor-left-center.png") / 2)
+			bottom: -20px
+
+
+	&__mission
+		background: var(--thrid-color)
 
 	&__timeline
 		background: url("../img/timeline-bg.jpg") center no-repeat
