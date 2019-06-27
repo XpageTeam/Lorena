@@ -46,12 +46,17 @@ App.domReady(() => {
 
 		App.each(timelineSlides, (el: HTMLElement) => {
 			TweenLite.set(el, {
-				opacity: 0
+				opacity: window.matchMedia("(min-width: 1000px)").matches ? 0 : 1 
 			})
 		})
 
 		const timeline = document.querySelector(".time-line");
 		timeline.classList.add("js__ready-for-animate")
+
+		if (!window.matchMedia("(min-width: 1000px)").matches){
+			timeline.classList.add("js__animating")
+			return
+		}
 
 		const showSlides = () => {
 			timeline.classList.add("js__animating")

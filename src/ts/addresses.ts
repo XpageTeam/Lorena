@@ -69,21 +69,25 @@ const initiallizeVariantsSlider = (slider: HTMLElement) => {
 };
 
 App.domReady(() => {
-	App.each(".adr-counter__number", (el: HTMLElement) => {
-		let counter = {count: 0};
+	if (window.matchMedia("(min-width: 1000px)").matches)
+		App.each(".adr-counter__number", (el: HTMLElement) => {
+			let counter = {count: 0};
 
-		el.style.width = getComputedStyle(el).width
+			el.style.width = getComputedStyle(el).width
 
-		TweenLite.to(el, 2, {
-			opacity: 1
-		})		
+			TweenLite.to(el, 2, {
+				opacity: 1
+			})		
 
-		TweenLite.to(counter, 10, {
-			count: `+=${el.innerText}`,
-			onUpdate(){
-				el.innerText = Math.ceil(counter.count).toString()
-			}
+			TweenLite.to(counter, 10, {
+				count: `+=${el.innerText}`,
+				onUpdate(){
+					el.innerText = Math.ceil(counter.count).toString()
+				}
+			})
 		})
-	})
-
+	else
+		TweenLite.set(".adr-counter__number", {
+			opacity: 1
+		})
 })

@@ -87,7 +87,7 @@
 		&:not(:last-child)
 			margin-bottom: 37px
 
-		> img
+		img
 			width: 100%
 			display: block
 
@@ -181,6 +181,9 @@
 @media (max-width: 1000px)
 	.title-block
 		padding: 0 !important
+
+	.cat-list
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))
 
 @media (max-width: 1000px) and (min-width: 660px)
 	.catalog

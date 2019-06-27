@@ -92,7 +92,7 @@ body
 					background: url("../img/about-img-decor-right.png") left center no-repeat
 					background-size: cover !important
 					size: width("../img/about-img-decor-right.png") auto
-					position: absolute -126px 0 0 *
+					position: absolute -156px 0 0 *
 
 				&:before
 					position: absolute 0 * 0 0
@@ -254,7 +254,7 @@ body
 			.main-choose__cont
 
 				&:after
-					width: 99%
+					width: 111%
 
 @media (max-width: 1500px)
 	body
@@ -292,3 +292,22 @@ body
 						width: persent(width("../img/advantages-decor-bot.png"), 1300)
 						display: none
 
+		&[class*="news "]
+
+			.main-choose__cont
+
+				&:after
+					width: 122%
+
+@media (max-width: 1100px)
+	body
+
+		&[class*="news "]
+
+			.main-choose__cont
+
+				&:after
+					display: none
+
+			.main-choose__img
+				opacity: 1
