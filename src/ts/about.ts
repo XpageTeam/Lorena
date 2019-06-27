@@ -141,6 +141,38 @@ App.domReady(() => {
 })
 
 
+/** Параллакс картинок в верхнем блоке */
+
+App.domReady(() => {
+  let parallaxBlocksX = document.querySelectorAll(".bottom-decor"),
+  	  parallaxBlocksXY = document.querySelectorAll(".top-decor, .left-decor"),
+      topBlock = document.querySelector(".about-img");
+
+  if (!parallaxBlocksX.length || !topBlock)
+    return
+
+  topBlock.addEventListener("mousemove", (e: MouseEvent) => {
+    let pos = {
+      x: 0,
+      y: 0,
+    };
+
+    pos.x = (e.pageX - topBlock.clientWidth / 2) * -1 / 55;
+    pos.y = (e.pageY - topBlock.clientHeight / 2) * -1 / 55;
+
+    TweenLite.to(parallaxBlocksX, 2, {
+    	x: pos.x,
+    })
+
+    TweenLite.to(parallaxBlocksXY, 2, {
+    	x: pos.x,
+    	y: pos.y
+    })
+
+    // parallax.style.backgroundPosition = pos.x+"px "+pos.y+"px"
+  });
+})
+
 // /** Ховер точек городов на карте */
 // App.domReady(() => {
 // 	const mapCities = document.querySelectorAll('circle[fill="#FF6600"], ellipse[fill="#FF6600"]');

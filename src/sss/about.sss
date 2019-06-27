@@ -42,24 +42,63 @@
 	position: relative
 	background: var(--thrid-color)
 
-	&:before, &:after
-		content: ""
-		position: absolute
-		pointer-events: none
+	&--decorated
+		overflow: hidden
 
-	&:before
-		background-size: contain !important
-		background: url("../img/about-img-decor-left.png") left bottom no-repeat
-		bottom: 0
-		left: 0
-		size: width("../img/about-img-decor-left.png") height("../img/about-img-decor-left.png")
+		.wrapper
+			position: absolute 0
+			display: flex
+			flex-direction: column
+			justify-content: center
 
-	&:after
-		background-size: cover !important
-		background: url("../img/about-img-decor-right.png") left center no-repeat
-		top: 0
-		right: 0
-		size: width("../img/about-img-decor-right.png") 100%
+		.about-img
+
+			&__decors
+				pointer-events: none
+
+				img
+					display: block
+
+				.left, .top, .bottom
+
+					&-decor
+						position: absolute 0
+
+				.right-decor
+
+					img
+						width: 100%
+
+				.left-decor
+					display: flex
+					flex-direction: column
+					justify-content: flex-end
+					align-items: flex-start
+
+					img
+						width: auto
+						transform: translate3d(-50px, 50px, 0)
+
+	&:not(&--decorated)
+
+		&:before, &:after
+			content: ""
+			position: absolute
+			pointer-events: none
+
+		&:before
+			background-size: contain !important
+			background: url("../img/about-img-decor-left.png") left bottom no-repeat
+			bottom: 0
+			left: 0
+			size: width("../img/about-img-decor-left.png") height("../img/about-img-decor-left.png")
+
+		&:after
+			background-size: cover !important
+			background: url("../img/about-img-decor-right.png") left center no-repeat
+			top: 0
+			right: 0
+			size: width("../img/about-img-decor-right.png") 100%
 
 	picture, img
 		display: block
@@ -489,6 +528,9 @@
 		&:before
 			display: none
 
+	.about-img--decorated .about-img__decors .left-decor
+		display: none
+
 	.about
 
 		&__mission
@@ -643,6 +685,9 @@
 
 			&-item
 				width: 50%
+
+	.about-img--decorated .about-img__decors
+		display: none
 
 	.about-img
 
