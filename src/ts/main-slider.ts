@@ -7,14 +7,14 @@ Swiper.use([Lazy, EffectFade])
 
 App.domReady(() => {
 	;(function(){
-		// let flag: boolean = false;
+		const slidesCount = document.querySelectorAll(".main-slide").length;
 
 		const mainSlider: Swiper = new Swiper(".main-slider", {
-			loop: true,
+			loop: slidesCount <= 1 ? false : true,
 			effect: "fade",
 			speed: 600,
-			// followFinger: false,
-			// allowTouchMove: false,
+			followFinger: slidesCount <= 1 ? false : true,
+			allowTouchMove: slidesCount <= 1 ? false : true,
 			lazy: {
 				loadPrevNext: true,
 			},
