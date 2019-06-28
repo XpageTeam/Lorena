@@ -25,6 +25,30 @@ module.exports = {
 					}
 				}
 			}
+		},
+		"als_rublregular": {
+			variants: {
+				normal: {
+					300: {
+						url: {
+							woff: "../fonts/rouble-webfont.woff",
+							woff: "../fonts/rouble-webfont.woff2"
+						}
+					},
+					400: {
+						url: {
+							woff: "../fonts/rouble-webfont.woff",
+							woff: "../fonts/rouble-webfont.woff2"
+						}
+					},
+					700: {
+						url: {
+							woff: "../fonts/rouble-webfont.woff",
+							woff: "../fonts/rouble-webfont.woff2"
+						}
+					}
+				}
+			}
 		}
 	}
 }
