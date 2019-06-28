@@ -126,11 +126,11 @@ App.domReady(() => {
 		}
 
 		TweenLite.to(leftDecor, 1, {
-			y: -(window.scrollY / window.innerHeight * 100) + "px"
+			y: -(window.scrollY / window.innerHeight * 190) + "px"
 		})
 
 		TweenLite.to(rightDecor, 1.5, {
-			y: -(window.scrollY / window.innerHeight * 30) + "px"
+			y: -(window.scrollY / window.innerHeight * 160) + "px"
 		})
 	};
 
