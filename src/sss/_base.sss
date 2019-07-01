@@ -414,13 +414,13 @@ li
 	border: 1px solid #454545
 	background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--second-color)
 
-	&:hover, &:focus, &.active
+	&:hover, &.added
 		background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--main-color)
 
 @media (max-width: 660px)
 	.favorite-btn
 
-		&:not(:hover, :focus, .active)
+		&:not(:hover, .added)
 			background-image: url("../img/ico-hearth-gray.svg")
 
 .constructor-btn
