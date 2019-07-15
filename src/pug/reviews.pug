@@ -71,7 +71,7 @@ html(lang="ru")
 									.rev-desc__btn
 										a.default-btn.fancybox(href="#") Оставить отзыв
 							.reviews__list
-								.rev-list
+								.rev-list.load--more_list
 									each rev, i in [{name: "Наташа Александрова", text: ""}, {name: "Надежда", text: ""}, {name: "Алексей", text: ""}, {name: "Елена Волошина", text: ""},  ]
 										.rev-list__item
 											.review
@@ -92,6 +92,8 @@ html(lang="ru")
 														.rev-text__title
 															.rev-text__title-name=rev.name
 															.rev-text__title-city Магнитогорск&nbsp;&nbsp;/&nbsp;&nbsp;Viva
+															.rev-text__title-about
+																.rev-about Городска классика / Элегант
 														.rev-text__text.rev-text__text--annons
 															.text-page
 																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
@@ -102,6 +104,13 @@ html(lang="ru")
 																p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
 													.rev-more
 														a(href="#") Читать весь отзыв
+											.rev-list__item-answer
+												.rev-answer
+													.rev-answer__title
+														span Команда Lorena кухни
+													.rev-answer__text
+														.text-page
+															p Здравствуйте! Хочу выразить огромную благодарность всем сотрудникам мебельной фабрики LORENA за качественное обслуживание, внимательность по всем вопросам, касающимся выполнения нашего заказа. Такой подход к выполнению работы говорит о высоком уровне профессионализма! 
 			.main-choose__cont.main-choose__cont--no-bg
 				.wrapper
 					.main-choose

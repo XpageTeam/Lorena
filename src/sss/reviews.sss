@@ -42,6 +42,31 @@
 		flex: none
 		margin: 0 0 8px 60px
 
+.rev-answer
+	border-top: 1px solid var(--second-color)
+	background: #282828
+	padding: 70px 79px
+
+	&__title
+		margin: 0 0 30px
+
+		span
+			font-weight: 500
+			font-size: 20px
+			position: relative
+			padding-right: 44px
+
+			&:after
+				content: ""
+				position: absolute calc(50% - 8px) 0 * *
+				size: 21px 16px
+				background: url("../img/ico-message.svg") no-repeat
+
+	&__text
+		font-size: 14px
+		line-height: calc(26 / 14)
+		max-width: 850px
+	
 @supports(display: grid)
 	.rev-filter
 		display: grid
@@ -51,6 +76,26 @@
 		&__submit
 			margin: 0
 			padding: 0 0 8px 33px
+
+	.review__img + .review__text
+
+		.rev-text__title
+			display: grid
+			grid-template-columns: 1fr auto
+			grid-template-areas: "name about" "city about"
+
+			&-name
+				grid-area: name
+
+			&-about
+				grid-area: about
+				display: flex
+				flex-direction: column-reverse
+				margin: 0
+
+			&-city
+				grid-area: city
+
 
 .rev-desc
 	display: flex
@@ -115,6 +160,7 @@
 
 	&__date
 		padding: 67px 64px
+		padding-left: 0 !important
 
 		+ .review__text
 
@@ -149,6 +195,10 @@
 			color: rgba(255, 255, 255, .5)
 			font-size: 12px
 
+		&-about
+			padding-left: 20px
+			margin-left: auto
+
 	&__text
 		margin: 30px 0 0
 		font-size: 14px
@@ -156,6 +206,14 @@
 
 		&--full
 			display: none
+
+.rev-about
+	color: rgba(255, 255, 255, 0.5) #333333
+	font-size: 12px
+	white-space: nowrap
+	line-height: 1
+	padding: 10px 15px
+
 
 .review-date
 	color: #fff var(--main-color)
@@ -192,7 +250,7 @@
 			&:not(:first-child)
 				margin: 30px 0 0
 
-	.rev-desc
+	.rev-desc, .rev-answer
 		padding: 30px
 
 	.review
@@ -237,6 +295,11 @@
 		&__title
 			display: block !important
 
+			&-about
+				margin: 20px 0 0 !important
+				display: inline-block !important
+				padding: 0
+
 		&__text
 			margin: 20px 0 0
 
@@ -249,8 +312,10 @@
 			&:not(:first-child)
 				margin: 20px 0 0 !important
 
-	.rev-desc
+	.rev-desc, .rev-answer
 		padding: 20px
+
+	.rev-desc
 		display: block
 
 		&__btn
