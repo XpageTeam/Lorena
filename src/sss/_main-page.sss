@@ -5,6 +5,8 @@
 	.swiper
 
 		&-slide
+			display: flex
+			flex-direction: column
 
 			&-active.js__lazy-ready
 
@@ -22,6 +24,13 @@
 
 .main-slide
 	position: relative
+	flex: 1 1 auto
+
+	video
+		position: absolute 0 0 * *
+		size: 100%
+		object-fit: cover
+		object-position: center
 
 	&__svg
 		position: absolute 0 0 * *

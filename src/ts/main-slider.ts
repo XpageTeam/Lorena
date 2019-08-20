@@ -8,13 +8,16 @@ Swiper.use([Lazy, EffectFade])
 App.domReady(() => {
 	;(function(){
 		const slidesCount = document.querySelectorAll(".main-slide").length;
+		let mainSlider: Swiper;
 
-		const mainSlider: Swiper = new Swiper(".main-slider", {
+		mainSlider = new Swiper(".main-slider", {
 			loop: slidesCount <= 1 ? false : true,
 			effect: "fade",
+			simulateTouch: false,
+			followFinger: false,
 			speed: 600,
-			followFinger: slidesCount <= 1 ? false : true,
-			allowTouchMove: slidesCount <= 1 ? false : true,
+			// followFinger: slidesCount <= 1 ? false : true,
+			// allowTouchMove: slidesCount <= 1 ? false : true,
 			lazy: {
 				loadPrevNext: true,
 			},
@@ -28,9 +31,24 @@ App.domReady(() => {
 					// flag = true;
 
 					slideEl.classList.add("js__lazy-ready")
+				},
+				init(){
+					if (window.get$(document.querySelector(".main-slider")).find(".swiper-slide-active video")[0])
+						startMainSliderVideo(window.get$(document.querySelector(".main-slider")).find(".swiper-slide-active video")[0], window.get$(document.querySelector(".main-slider")))
+					else
+						setTimeout(function(){
+							console.log(document.querySelector(".main-slider").swiper)
+							document.querySelector(".main-slider").swiper.slideNext()
+						}, 4000)
 				}
 			}
 		});
+
+		mainSlider.on("slideChangeTransitionEnd", function(){
+			startMainSliderVideo(window.get$(mainSlider.el).find(".swiper-slide-active video")[0], window.get$(mainSlider.el))
+		})
+
+		swapVideosInMainSlider(window.get$(mainSlider.el));
 	})()
 
 
@@ -187,3 +205,50 @@ App.domReady(() => {
 		}
 	})()
 })
+
+
+
+const swapVideosInMainSlider = ($slider: any) => {
+	if (window.matchMedia("(min-width: 660px)").matches)
+		$slider.find("video[data-desktop-src]").each(function(){
+			const $this = window.get$(this);
+
+			if ($this.attr("src") == $this.attr("data-desktop-src"))
+				return
+
+			$this.attr("autoplay", true)
+			$this.attr("src", $this.attr("data-desktop-src"))
+			$this.attr("poster", $this.attr("data-desktop-poster"))
+		})
+	else
+		$slider.find("video[data-mobile-src]").each(function(){
+			const $this = window.get$(this);
+
+			if ($this.attr("src") == $this.attr("data-mobile-src"))
+				return
+
+			$this.attr("autoplay", true)
+			$this.attr("src", $this.attr("data-mobile-src"))
+			$this.attr("poster", $this.attr("data-mobile-poster"))
+		})
+},
+startMainSliderVideo = (video: HTMLVideoElement, $slider: any) => {
+	$slider.find("video").each(function(){
+		this.pause()
+	})
+
+	if (!video){
+		setTimeout(function(){
+			$slider[0].swiper.slideNext()
+		}, 2000)
+
+		return
+	}
+
+
+	video.addEventListener("ended", function(){
+		$slider[0].swiper.slideNext()
+	})
+
+	video.play()
+}

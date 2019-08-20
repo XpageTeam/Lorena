@@ -6,6 +6,10 @@ import "./select2.js"
 window.$ = $;
 window.jQuery = $;
 
+window.get$ = function(el){
+	return $(el)
+}
+
 window.animateScroll = function(offset = 20){
 	$("html, body").animate({
 		scrollTop: (document.body.classList.contains("main") || document.body.classList.contains("tovar")) ? 

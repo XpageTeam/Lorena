@@ -18,6 +18,7 @@ declare global {
     interface Window {
     	animateScroll: Function; 
     	isScrolledIntoView: Function; 
+    	get$: Function;
     }
 }
 
@@ -102,3 +103,5 @@ const setToTopVisibility = (): void => {
 	else
 		scrollBtn.classList.remove("js__visible")
 }
+
+
