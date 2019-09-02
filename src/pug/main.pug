@@ -31,16 +31,16 @@ html(lang="ru")
 											| что рассказать
 					.swiper-slide
 						.main-slide
-							//- picture.main-slide__img
-							//- 	<!-- Десктоп -->
-							//- 	source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slide-img-1.jpg")
-							//- 	<!-- Адаптив -->
-							//- 	source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slide-mobile-img-0.jpg")
-							//- 	img
-							//- .swiper-lazy-preloader
-							//- .main-slide__svg
-							//- 	include ../img/scene.svg
-							video(data-desktop-src="video/video.mp4" playsinline data-mobile-src="video/video.mp4" data-desktop-poster="img/video-poster.jpg" data-mobile-poster="img/video-poster.jpg" muted="" preload="metadata")
+							picture.main-slide__img
+								<!-- Десктоп -->
+								source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-slide-img-1.jpg")
+								<!-- Адаптив -->
+								source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-slide-mobile-img-0.jpg")
+								img
+							.swiper-lazy-preloader
+							.main-slide__svg
+								include ../img/scene.svg
+							//video(data-desktop-src="video/video.mp4" playsinline data-mobile-src="video/video.mp4" data-desktop-poster="img/video-poster.jpg" data-mobile-poster="img/video-poster.jpg" muted="" preload="metadata")
 			.main-about__cont
 				.wrapper
 					.main-about

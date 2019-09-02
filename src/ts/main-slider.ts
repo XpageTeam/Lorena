@@ -5,6 +5,12 @@ import {TweenLite} from "gsap"
 
 Swiper.use([Lazy, EffectFade])
 
+declare global {
+	interface Element {
+		swiper: Swiper
+	}
+}
+
 App.domReady(() => {
 	;(function(){
 		const slidesCount = document.querySelectorAll(".main-slide").length;
@@ -37,7 +43,7 @@ App.domReady(() => {
 						startMainSliderVideo(window.get$(document.querySelector(".main-slider")).find(".swiper-slide-active video")[0], window.get$(document.querySelector(".main-slider")))
 					else
 						setTimeout(function(){
-							console.log(document.querySelector(".main-slider").swiper)
+							// console.log(document.querySelector(".main-slider").swiper)
 							document.querySelector(".main-slider").swiper.slideNext()
 						}, 4000)
 				}
@@ -238,9 +244,9 @@ startMainSliderVideo = (video: HTMLVideoElement, $slider: any) => {
 	})
 
 	if (!video){
-		setTimeout(function(){
-			$slider[0].swiper.slideNext()
-		}, 2000)
+		// setTimeout(function(){
+		// 	$slider[0].swiper.slideNext()
+		// }, 2000)
 
 		return
 	}
