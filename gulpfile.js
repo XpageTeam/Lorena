@@ -47,6 +47,7 @@ gulp.task('browser-sync', () =>  {
 		"docs/css/*.css",
 		"docs/js/*.js",
 		"docs/*.html",
+		"src/img/scene.svg",
 	]).on("change", browserSync.reload);
 });
 
@@ -144,6 +145,7 @@ const local = _ => {
 	var WP = process.exec("npm run watch");
 	gulp.watch(["src/sss/*.sss"], gulp.series("postcss"));
 	gulp.watch('src/pug/**/*', gulp.series("pug"));
+	gulp.watch('src/img/scene.svg', gulp.series("pug"));
 	// gulp.watch("src/js/*.js", gulp.series("babel"));
 	gulp.watch("src/img/**/*", gulp.series("imagemin"));
 },

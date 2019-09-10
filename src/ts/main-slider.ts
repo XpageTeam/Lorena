@@ -45,7 +45,7 @@ App.domReady(() => {
 						setTimeout(function(){
 							// console.log(document.querySelector(".main-slider").swiper)
 							document.querySelector(".main-slider").swiper.slideNext()
-						}, 4000)
+						}, 100)
 				}
 			}
 		});
@@ -142,77 +142,85 @@ App.domReady(() => {
 			return
 
 		for (var circle of baseCircles){
-			TweenLite.set(circle, {
-				transformOrigin: "center"
-			})
-
-			const highlight = circle.querySelector(".highlight");
-
-			circle.addEventListener("mouseenter", (e: any) => {
-				TweenLite.to(highlight, 1, {
-					autoAlpha: 1
-				})
-			})
-
-			circle.addEventListener("mouseleave", (e: any) => {
-				TweenLite.to(highlight, 1, {
-					autoAlpha: 0
-				})
-			})
-
-			circle.addEventListener("click", (e: any) => {
-				const dot = circle.closest(".scene-dot"),
-					activeCircle = dot.querySelector(".active-circle");
-
-				if (dot.classList.contains("js__showed"))
-					return
-
-				const waves = dot.querySelectorAll(".waves circle");
-
-				TweenLite.to(circle, .5, {
-					autoAlpha: 0,
-					scale: 0
-				})
-
-				TweenLite.to(activeCircle, .5, {
-					scale: 1,
-					autoAlpha: 1,
-					onComplete(){
-						TweenLite.to(dot.querySelector("path"), .3, {
-							strokeDashoffset: 0,
-							onComplete(){
-								const textArea = dot.querySelector(".text");
-
-								TweenLite.to(textArea, .5, {
-									autoAlpha: 1
-								})
-							}
-						})
-					}
-				})
-
-				let i = 0;
-				for (var wave of waves){
-					TweenLite.set(wave, {
-						autoAlpha: 1
-					})
-
-					TweenLite.to(wave, .7, {
-						delay: .12 * i,
-						scale: 2.1,
-						autoAlpha: 0,
-						onComplete(){
-							dot.classList.add("js__showed")
-						}
-					})
-					i++
-				}
-			})
+			bindEventsOnSceneDot(circle)
 		}
 	})()
 })
 
+const bindEventsOnSceneDot = (circle: any) => {
+	TweenLite.set(circle, {
+		transformOrigin: "center"
+	})
 
+	const highlight = circle.querySelector(".highlight");
+
+	circle.addEventListener("mouseenter", (e: any) => {
+		TweenLite.to(highlight, 1, {
+			autoAlpha: 1
+		})
+	})
+
+	circle.addEventListener("mouseleave", (e: any) => {
+		TweenLite.to(highlight, 1, {
+			autoAlpha: 0
+		})
+	})
+
+	circle.addEventListener("click", (e: any) => {
+		const dot = circle.closest(".scene-dot"),
+			activeCircle = dot.querySelector(".active-circle");
+
+		if (dot.classList.contains("js__showed"))
+			return
+
+		const waves = dot.querySelectorAll(".waves circle"),
+			icon = dot.querySelector(".icon");
+
+		TweenLite.to(circle, .5, {
+			autoAlpha: 0,
+			scale: 0
+		})
+
+
+		TweenLite.to(activeCircle, .5, {
+			scale: 1,
+			autoAlpha: 1,
+			onComplete(){
+				TweenLite.to(icon, .3, {
+					opacity: 1
+				})
+
+				TweenLite.to(dot.querySelector("path"), .3, {
+					strokeDashoffset: 0,
+					onComplete(){
+						const textArea = dot.querySelector(".text");
+
+						TweenLite.to(textArea, .5, {
+							autoAlpha: 1
+						})
+					}
+				})
+			}
+		})
+
+		let i = 0;
+		for (var wave of waves){
+			TweenLite.set(wave, {
+				autoAlpha: 1
+			})
+
+			TweenLite.to(wave, .7, {
+				delay: .12 * i,
+				scale: 2.1,
+				autoAlpha: 0,
+				onComplete(){
+					dot.classList.add("js__showed")
+				}
+			})
+			i++
+		}
+	})
+}
 
 const swapVideosInMainSlider = ($slider: any) => {
 	if (window.matchMedia("(min-width: 660px)").matches)

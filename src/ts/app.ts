@@ -127,8 +127,8 @@ class Element {
 			this.els = selector
 		else if (selector instanceof Element)
 			this.els = selector.els
-		else
-			throw Error(`Invalid selector: ${selector}`)
+		// else
+		// 	throw Error(`Invalid selector: ${selector}`)
 	}
 
 	/**

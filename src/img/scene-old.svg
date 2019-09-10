@@ -1,0 +1,43 @@
+<svg width="1903" height="960" viewBox="0 0 1903 960" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="netural" class="scene-dot" transform="translate(80, -30)">
+		<path d="M677.5 634L766 694.5H866" stroke="#FF6600"/>
+
+		<g class="waves">
+			<circle cx="677.5" cy="633.5" r="24" stroke="#FF6600"/>
+			<circle cx="677.5" cy="633.5" r="24" stroke="#FF6600"/>
+			<circle cx="677.5" cy="633.5" r="24" stroke="#FF6600"/>
+		</g>
+
+		<g class="active-circle">
+			<circle cx="677.5" cy="633.5" r="29.5" fill="#FF6600"/>
+		</g>
+
+		<g class="icon">
+			<foreignObject x="653" y="609" width="49" height="49">
+				<div>
+					<img src="img/ico-scene-icon.svg">
+				</div>
+			</foreignObject>
+		</g>
+
+		<g class="base-circle">
+			<foreignObject x="653" y="610" width="31" height="18" class="highlight">
+				<div></div>
+			</foreignObject>
+			<circle cx="677.5" cy="633.5" r="24.5" fill="white" fill-opacity="0.1"/>
+			<circle cx="677.5" cy="633.5" r="24" stroke="white" stroke-opacity="0.6"/>
+
+			<rect x="675" y="630" width="6" height="6" fill="white"/>
+
+			
+		</g>
+		<foreignObject class="text" width="200" height="200" x="775" y="720">
+			<div class="text__title">
+				Aqualine
+			</div>
+			<div class="text__text">
+				Столешница Aqualine
+			</div>
+		</foreignObject>
+	</g>
+</svg>
