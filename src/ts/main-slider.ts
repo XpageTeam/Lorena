@@ -59,7 +59,7 @@ App.domReady(() => {
 
 
 	;(function(){
-		const wavesGroup : any = document.querySelectorAll(".waves circle");
+		const wavesGroup : any = document.querySelectorAll(".waves .circle");
 
 		if (!wavesGroup.length)
 			return
@@ -97,7 +97,7 @@ App.domReady(() => {
 	})()
 
 	;(function(){
-		const dots: any = document.querySelectorAll(".base-circle rect");
+		const dots: any = document.querySelectorAll(".base-circle .rect");
 
 		if (!dots.length)
 			return
@@ -142,12 +142,23 @@ App.domReady(() => {
 			return
 
 		for (var circle of baseCircles){
-			bindEventsOnSceneDot(circle)
+			bindOpenEventsOnSceneDot(circle)
+		}
+	})()
+
+	;(function(){
+		const baseCircles: any = document.querySelectorAll(".active-circle");
+
+		if (!baseCircles.length)
+			return
+
+		for (var circle of baseCircles){
+			bindCloseEventsOnSceneDot(circle)
 		}
 	})()
 })
 
-const bindEventsOnSceneDot = (circle: any) => {
+const bindOpenEventsOnSceneDot = (circle: any) => {
 	TweenLite.set(circle, {
 		transformOrigin: "center"
 	})
@@ -170,17 +181,13 @@ const bindEventsOnSceneDot = (circle: any) => {
 		const dot = circle.closest(".scene-dot"),
 			activeCircle = dot.querySelector(".active-circle");
 
-		if (dot.classList.contains("js__showed"))
-			return
-
-		const waves = dot.querySelectorAll(".waves circle"),
+		const waves = dot.querySelectorAll(".waves .circle"),
 			icon = dot.querySelector(".icon");
 
 		TweenLite.to(circle, .5, {
 			autoAlpha: 0,
 			scale: 0
 		})
-
 
 		TweenLite.to(activeCircle, .5, {
 			scale: 1,
@@ -204,7 +211,7 @@ const bindEventsOnSceneDot = (circle: any) => {
 		})
 
 		let i = 0;
-		for (var wave of waves){
+		for (var wave of waves) {
 			TweenLite.set(wave, {
 				autoAlpha: 1
 			})
@@ -213,12 +220,68 @@ const bindEventsOnSceneDot = (circle: any) => {
 				delay: .12 * i,
 				scale: 2.1,
 				autoAlpha: 0,
-				onComplete(){
+				onComplete() {
 					dot.classList.add("js__showed")
 				}
 			})
 			i++
 		}
+	})
+}, bindCloseEventsOnSceneDot = (circle: any) => {
+	circle.addEventListener("click", (e: any) => {
+		const dot = circle.closest(".scene-dot"),
+			activeCircle = dot.querySelector(".active-circle");
+
+		const waves = dot.querySelectorAll(".waves .circle"),
+			icon = dot.querySelector(".icon");
+
+		const textArea = dot.querySelector(".text");
+
+		TweenLite.to(textArea, .5, {
+			autoAlpha: 0,
+			onComplete(){
+				TweenLite.to(dot.querySelector("path"), .3, {
+					strokeDashoffset: dot.querySelector("path").getTotalLength(),
+					onComplete() {
+						let i = 0;
+						for (var wave of waves) {
+							TweenLite.set(wave, {
+								autoAlpha: 1
+							})
+
+							TweenLite.to(wave, .7, {
+								delay: .12 * i,
+								scale: 1,
+								autoAlpha: 0,
+								onComplete() {
+									dot.classList.remove("js__showed")
+								}
+							})
+							i++
+						}
+
+						TweenLite.to(activeCircle, .5, {
+							scale: 0,
+							autoAlpha: 0,
+							onComplete() {
+								TweenLite.to(icon, .3, {
+									opacity: 0
+								})
+
+								TweenLite.to(dot.querySelector(".base-circle"), .5, {
+									autoAlpha: 1,
+									scale: 1
+								})
+							}
+						})
+					}
+				})
+			}
+		})
+
+
+
+
 	})
 }
 
