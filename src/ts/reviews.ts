@@ -1,20 +1,30 @@
-import {App, Element, EventListener} from "./app"
+import {App, Element, EventListener} from "./app";
+
+const moreRevLinkSelector = ".rev-more a";
 
 App.domReady(() => {
 	if (!document.querySelector(".rev-list.load--more_list"))
 		return
 
-	makeEvent()
+	const moreRevLinks = App.transformNodeListToArray(
+		document.querySelectorAll(moreRevLinkSelector)
+	);
+
+	for (const moreLink of moreRevLinks)
+		makeEvent(moreLink);
  
 	// создаём экземпляр MutationObserver
 	const observer = new MutationObserver(function(mutations) {
 	  mutations.forEach(function(mutation) {
-	    makeEvent()
+		  const addedNodes = App.transformNodeListToArray(mutation.addedNodes);
+
+		  for (const node of addedNodes)
+		  	makeEvent(node.querySelector(moreRevLinkSelector));
 	  })
 	});
 	 
 	// конфигурация нашего observer:
-	const config = { attributes: false, childList: true, characterData: false };
+	const config = { childList: true };
 	 
 	// передаём в качестве аргументов целевой элемент и его конфигурацию
 	observer.observe(document.querySelector(".rev-list.load--more_list"), config)
@@ -23,8 +33,8 @@ App.domReady(() => {
 	// observer.disconnect()
 })
 
-const makeEvent = () => {
-	new EventListener(".rev-more a").add("click", (el: HTMLElement, e: Event) => {
+const makeEvent = (selector: HTMLElement) => {
+	new EventListener(selector).add("click", (el: HTMLElement, e: Event) => {
 		const $this = new Element(el).closest(".review");
 
 		e.preventDefault()
