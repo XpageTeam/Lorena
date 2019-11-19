@@ -67,15 +67,17 @@ App.domReady(() => {
 	});
 
 
-	let stockSwiper = new Swiper('.main-stock__slider', {
-		spaceBetween: 26,
-		navigation: {
-	        nextEl: '.main-stock .swiper-button-next',
-	        prevEl: '.main-stock .swiper-button-prev',
-	    },
+	if(document.querySelectorAll('.main-stock__slider').length){
+		let stockSwiper = new Swiper('.main-stock__slider', {
+			spaceBetween: 26,
+			navigation: {
+		        nextEl: '.main-stock .swiper-button-next',
+		        prevEl: '.main-stock .swiper-button-prev',
+		    },
 
 
-	});
+		});
+	}
 
 
 })
