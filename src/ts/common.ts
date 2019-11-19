@@ -11,6 +11,9 @@ import "./advantages"
 import "./nav-scrolling"
 import "./about"
 import {App, Element, MobileMenu, EventListener} from "./app"
+import {Swiper, Navigation, EffectFade, Pagination} from "swiper/dist/js/swiper.esm.js";
+
+// Swiper.use([Navigation, Pagination, Scrollbar]);
 
 const adaptiveMedia = "(max-width: 1200px)";
 
@@ -61,7 +64,20 @@ App.domReady(() => {
 		window.animateScroll(target.offsetTop - 100)
 
 		e.preventDefault()
-	})
+	});
+
+
+	let stockSwiper = new Swiper('.main-stock__slider', {
+		spaceBetween: 26,
+		navigation: {
+	        nextEl: '.main-stock .swiper-button-next',
+	        prevEl: '.main-stock .swiper-button-prev',
+	    },
+
+
+	});
+
+
 })
 
 // App.domReady(() => {

@@ -1,0 +1,126 @@
+.main-stock
+	position: relative
+
+	&__cont
+		padding: 150px 0
+		background-color: var(--thrid-color)
+
+	.swiper
+
+		&-button
+			position: absolute
+			top: calc(50% - 20px)
+			margin: 0
+
+			&-prev
+				transform: rotateZ(90deg)
+				right: calc(100% + 65px)
+				left: auto
+
+			&-next
+				transform: rotateZ(-90deg)
+				left: calc(100% + 65px)
+
+			&-prev, &-next
+				border-radius: 50%
+				background: var(--main-color)
+				size: 39px
+
+				&:matches(:after, :before)
+					content: ""
+					position: absolute
+
+				&:after
+					top: calc(50% - 3px) 
+					right: calc(50% - 3px)
+					border-right: 1px solid #fff
+					border-bottom: 1px solid #fff
+					size: 5px
+					transform: rotateZ(45deg)
+					z-index: 1
+
+
+	&__slider
+		overflow: hidden
+
+	&__slide
+		display: flex
+		background-color: var(--second-color)
+
+		&-img
+			flex: none
+
+			img
+				display: block
+
+		&-info
+			padding: 55px 20px 50px 65px
+
+		&-title
+			font-weight: bold
+			font-size: rem(18)
+			text-transform: uppercase
+
+		&-text
+			margin-top: 30px
+			font-size: rem(14)
+			line-height: 26px
+
+		&-btn
+			margin-top: 35px
+
+@media (max-width: 1500px)
+	
+	.main-stock__cont
+		padding: 70px 0
+
+
+@media (max-width: 1300px)
+	
+	.main-stock
+
+		.swiper
+
+			&-button
+
+				&-prev
+					right: calc(100% -15px)
+
+				&-next
+					left: calc(100% -15px)
+
+@media (max-width: 1300px)
+	
+	.main-stock
+		overflow: visible
+
+
+@media (max-width: 1000px)
+
+	.main-stock__cont
+		padding: 50px 0
+
+	.main-stock__slide
+		flex-direction: column
+
+	.main-stock__slide-info
+		padding: 20px
+
+	.main-stock__slide-img
+
+		img
+			width: 100%
+
+@media (max-width: 667px)
+	
+	.main-stock__cont
+		.swiper
+
+			&-button
+				top: 100px
+
+				&-prev
+					right: calc(100% - 40px)
+
+				&-next
+					left: calc(100% - 40px)

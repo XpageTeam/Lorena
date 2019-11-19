@@ -87,6 +87,27 @@ html(lang="ru")
 									a.orange-arrow(href="#") 
 										span.orange-arrow__arrow
 										span.orange-arrow__text Смотреть коллецию
+			.main-stock__cont
+				.wrapper
+					.main-stock
+						.swiper-button.swiper-button-prev
+						.swiper-button.swiper-button-next
+						.main-stock__slider
+							.swiper-wrapper
+								-for (let j = 0; j < 3; j++)
+									.swiper-slide
+										.main-stock__slide
+											.main-stock__slide-img
+												img(src="img/photos/main-stock-1.jpg", alt="")
+											.main-stock__slide-info
+												.main-stock__slide-title Спеши заказать кухню с массивной скидкой!
+												.main-stock__slide-text Эксклюзивное предложение на российском рынке. Совместная работа с итальянской фабрикой, мастера, которой специализируются только на массиве и ориентируются на дорогой сегмент в европейских странах.
+												.main-stock__slide-btn
+													a(href="#").arrow-btn Подробнее
+
+
+
+
 			.main-reviews__cont
 				.wrapper
 					.main-reviews
