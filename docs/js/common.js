@@ -600,6 +600,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         if (document.querySelectorAll('.main-stock__slider').length) {
             var stockSwiper = new swiper_esm_js_1.Swiper('.main-stock__slider', {
                 spaceBetween: 26,
+                loop: true,
                 navigation: {
                     nextEl: '.main-stock .swiper-button-next',
                     prevEl: '.main-stock .swiper-button-prev',
