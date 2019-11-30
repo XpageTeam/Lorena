@@ -40,6 +40,10 @@
 		svg
 			size: inherit
 
+		img
+			max-height: 100%
+			max-width: 100%
+
 	&__img
 		position: relative
 		display: block
@@ -71,7 +75,7 @@
 		padding: 0 20px
 		max-width: var(--base-width)
 		box-sizing: content-box
-
+		
 		&-subtitle
 			text-transform: uppercase
 			font-weight: 500
@@ -166,6 +170,34 @@
 
 				&:not(:last-child)
 					margin: 0 0 60px
+
+@media (min-width: 1279px)
+	.main-slide
+
+		&--svg
+
+			.main-slide
+
+				&__title
+					pointer-events: none
+					top: auto
+					padding-bottom: 30px
+					align-items: center
+
+					&-title, &-subtitle
+						display: none
+
+					&-btn
+						pointer-events: auto
+
+						br
+							display: none
+
+@media (max-width: 1280px)
+	.main-slide
+
+		&__svg
+			display: none
 
 @media (max-width: 1000px) and (min-width: 660px)
 	.main-slide

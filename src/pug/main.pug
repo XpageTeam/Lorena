@@ -9,7 +9,7 @@ html(lang="ru")
 		main#content
 			.main-slider
 				.swiper-wrapper
-					.swiper-slide
+					//- .swiper-slide
 						.main-slide
 							picture.main-slide__img
 								<!-- Десктоп -->
@@ -30,13 +30,28 @@ html(lang="ru")
 											br
 											| что рассказать
 					.swiper-slide
-						.main-slide
-							figure.main-slide__img
-								img.swiper-lazy(data-src="img/photos/main-slider-img-2.jpg")
+						.main-slide.main-slide--svg
+							picture.main-slide__img
+								<!-- Десктоп -->
+								source.swiper-lazy(media="(min-width: 660px)" data-srcset="img/photos/main-svg-bg.jpg")
+								<!-- Адаптив -->
+								source.swiper-lazy(media="(max-width: 660px)" data-srcset="img/photos/main-svg-bg-mobile.jpg")
+								img
 							.swiper-lazy-preloader
 							.main-slide__svg
 								include ../img/scene.svg
 							//video(data-desktop-src="video/video.mp4" playsinline data-mobile-src="video/video.mp4" data-desktop-poster="img/video-poster.jpg" data-mobile-poster="img/video-poster.jpg" muted="" preload="metadata")
+							.main-slide__title
+								.main-slide__title-subtitle Lorena кухни
+								.main-slide__title-title Качество
+									br
+									| в деталях
+								.main-slide__title-btn
+									a.orange-arrow.orange-arrow--highlighted(href="#")
+										span.orange-arrow__arrow
+										span.orange-arrow__text Нам есть 
+											br
+											| что рассказать
 			.main-about__cont
 				.wrapper
 					.main-about

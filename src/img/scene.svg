@@ -1,5 +1,5 @@
 <svg width="1903" height="960" viewBox="0 0 1903 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g class="scene-dot" id="netural">
+    <g class="scene-dot" transform="translate(-45, 84)" id="netural">
         <path d="M757 604L668.735 665H569" stroke="#FF6600"/>
 
         <g class="waves">
@@ -11,9 +11,9 @@
             <path d="M757.5 633C773.792 633 787 619.792 787 603.5C787 587.208 773.792 574 757.5 574C741.208 574 728 587.208 728 603.5C728 619.792 741.208 633 757.5 633Z" fill="#FF6600"/>
         </g>
         <g class="icon">
-            <foreignObject x="733" y="580" width="49" height="49">
+            <foreignObject x="742" y="591" width="30" height="24">
                 <div>
-                    <img src="img/ico-aqualine.svg">
+                    <img src="img/ico-aqualine-new.svg">
                 </div>
             </foreignObject>
         </g>
@@ -29,15 +29,15 @@
         </g>
         <foreignObject class="text" width="200" height="80" x="570" y="680">
             <div class="text__title">
-                Aqualine
+                Столешница AQUALINE
             </div>
             <div class="text__text">
-                Столешница Aqualine
+                без вздутий, трещин и бактерий
             </div>
         </foreignObject>
     </g>
 
-    <g class="scene-dot" id="key">
+    <g class="scene-dot" transform="translate(-110, -335)" id="key">
         <path d="M1298 571L1386.27 511H1486" stroke="#FF6600"/>
 
         <g class="waves">
@@ -51,9 +51,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="1273" y="546" width="49" height="49">
+            <foreignObject x="1284" y="557" width="25" height="25">
                 <div>
-                    <img src="img/ico-key.svg">
+                    <img src="img/ico-key-new.svg">
                 </div>
             </foreignObject>
         </g>
@@ -73,12 +73,12 @@
                 Кухня "под ключ"
             </div>
             <div class="text__text">
-                без хлопот
+                бытовая техника + обеденная зона в едином стиле
             </div>
         </foreignObject>
     </g>
 
-    <g class="scene-dot" id="assembly">
+    <g class="scene-dot" transform="translate(-640, -283)" id="provans">
         <path d="M1483 689L1562.34 629H1652" stroke="#FF6600"/>
 
         <g class="waves">
@@ -92,9 +92,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="1458" y="665" width="49" height="49">
+            <foreignObject x="1468" y="670" width="26" height="37">
                 <div>
-                    <img src="img/ico-assembly.svg">
+                    <img src="img/ico-provans.svg">
                 </div>
             </foreignObject>
         </g>
@@ -111,15 +111,97 @@
 
         <foreignObject class="text" width="200" height="80" x="1562" y="645">
             <div class="text__title">
-                Шкантоклеевая
+                100% Прованс
             </div>
             <div class="text__text">
-                сборка моделей
+                стиль в каждой детали – гравировка, ручки-кнопки, открытые полки
             </div>
         </foreignObject>
     </g>
 
-    <g class="scene-dot" id="plinth">
+    <g class="scene-dot" transform="translate(-20, -245)" id="wall-panel">
+        <path d="M1483 689L1562.34 629H1652" stroke="#FF6600"/>
+
+        <g class="waves">
+            <path class="circle" d="M1482.5 712.5C1495.75 712.5 1506.5 701.755 1506.5 688.5C1506.5 675.245 1495.75 664.5 1482.5 664.5C1469.25 664.5 1458.5 675.245 1458.5 688.5C1458.5 701.755 1469.25 712.5 1482.5 712.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1482.5 712.5C1495.75 712.5 1506.5 701.755 1506.5 688.5C1506.5 675.245 1495.75 664.5 1482.5 664.5C1469.25 664.5 1458.5 675.245 1458.5 688.5C1458.5 701.755 1469.25 712.5 1482.5 712.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1482.5 712.5C1495.75 712.5 1506.5 701.755 1506.5 688.5C1506.5 675.245 1495.75 664.5 1482.5 664.5C1469.25 664.5 1458.5 675.245 1458.5 688.5C1458.5 701.755 1469.25 712.5 1482.5 712.5Z" stroke="#FF6600"/>
+        </g>
+
+        <g class="active-circle">
+            <path d="M1482.5 718C1498.79 718 1512 704.792 1512 688.5C1512 672.208 1498.79 659 1482.5 659C1466.21 659 1453 672.208 1453 688.5C1453 704.792 1466.21 718 1482.5 718Z" fill="#FF6600"/>
+        </g>
+
+        <g class="icon">
+            <foreignObject x="1468" y="670" width="30" height="32">
+                <div>
+                    <img src="img/ico-wall-panel.svg">
+                </div>
+            </foreignObject>
+        </g>
+
+        <g class="base-circle">
+            <foreignObject x="1467" y="680" width="31" height="18" class="highlight">
+                <div></div>
+            </foreignObject>
+
+            <path d="M1482.5 713C1496.03 713 1507 702.031 1507 688.5C1507 674.969 1496.03 664 1482.5 664C1468.97 664 1458 674.969 1458 688.5C1458 702.031 1468.97 713 1482.5 713Z" fill="white" fill-opacity="0.1"/>
+            <path d="M1482.5 712.5C1495.75 712.5 1506.5 701.755 1506.5 688.5C1506.5 675.245 1495.75 664.5 1482.5 664.5C1469.25 664.5 1458.5 675.245 1458.5 688.5C1458.5 701.755 1469.25 712.5 1482.5 712.5Z" stroke="white" stroke-opacity="0.6"/>
+            <path class="rect" d="M1486 685H1480V691H1486V685Z" fill="white"/>
+        </g>
+
+        <foreignObject class="text" width="200" height="80" x="1562" y="645">
+            <div class="text__title">
+                Стеновая панель Буазери
+            </div>
+            <div class="text__text">
+                в едином цвете с фасадами кухни
+            </div>
+        </foreignObject>
+    </g>
+
+    <g class="scene-dot" transform="translate(-440, -135)" id="profline">
+        <path d="M1223 924L1311.27 864H1411" stroke="#FF6600"/>
+
+        <g class="waves">
+            <path class="circle" d="M1222.5 947.5C1235.75 947.5 1246.5 936.755 1246.5 923.5C1246.5 910.245 1235.75 899.5 1222.5 899.5C1209.25 899.5 1198.5 910.245 1198.5 923.5C1198.5 936.755 1209.25 947.5 1222.5 947.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1222.5 947.5C1235.75 947.5 1246.5 936.755 1246.5 923.5C1246.5 910.245 1235.75 899.5 1222.5 899.5C1209.25 899.5 1198.5 910.245 1198.5 923.5C1198.5 936.755 1209.25 947.5 1222.5 947.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1222.5 947.5C1235.75 947.5 1246.5 936.755 1246.5 923.5C1246.5 910.245 1235.75 899.5 1222.5 899.5C1209.25 899.5 1198.5 910.245 1198.5 923.5C1198.5 936.755 1209.25 947.5 1222.5 947.5Z" stroke="#FF6600"/>
+        </g>
+
+        <g class="active-circle">
+            <path d="M1222.5 953C1238.79 953 1252 939.792 1252 923.5C1252 907.208 1238.79 894 1222.5 894C1206.21 894 1193 907.208 1193 923.5C1193 939.792 1206.21 953 1222.5 953Z" fill="#FF6600"/>
+        </g>
+
+        <g class="icon">
+            <foreignObject x="1198" y="898" width="49" height="49">
+                <div>
+                    <img src="img/ico-scene-icon.svg">
+                </div>
+            </foreignObject>
+        </g>
+
+        <g class="base-circle">
+            <foreignObject x="1207" y="914" width="31" height="18" class="highlight">
+                <div></div>
+            </foreignObject>
+
+            <path d="M1222.5 948C1236.03 948 1247 937.031 1247 923.5C1247 909.969 1236.03 899 1222.5 899C1208.97 899 1198 909.969 1198 923.5C1198 937.031 1208.97 948 1222.5 948Z" fill="white" fill-opacity="0.1"/>
+            <path d="M1222.5 947.5C1235.75 947.5 1246.5 936.755 1246.5 923.5C1246.5 910.245 1235.75 899.5 1222.5 899.5C1209.25 899.5 1198.5 910.245 1198.5 923.5C1198.5 936.755 1209.25 947.5 1222.5 947.5Z" stroke="white" stroke-opacity="0.6"/>
+            <path class="rect" d="M1226 920H1220V926H1226V920Z" fill="white"/>
+        </g>
+
+        <foreignObject class="text" width="200" height="80" x="1312" y="880">
+            <div class="text__title">
+                Технология PROFF-LINE
+            </div>
+            <div class="text__text">
+                100% аналог массива – дешевле и практичнее дерева
+            </div>
+        </foreignObject>
+    </g>
+
+    <g class="scene-dot" transform="translate(-195, -420)" id="plinth">
         <path d="M1223 924L1311.27 864H1411" stroke="#FF6600"/>
 
         <g class="waves">
@@ -152,15 +234,15 @@
 
         <foreignObject class="text" width="200" height="80" x="1312" y="880">
             <div class="text__title">
-                Цоколь
+                Продуманные сочетания
             </div>
             <div class="text__text">
-                В цвет декора кухни
+                стеновая панель в цвет столешницы
             </div>
         </foreignObject>
     </g>
 
-    <g class="scene-dot" id="analog">
+    <!-- <g class="scene-dot" transform="translate(-545, 70)" id="geometry">
         <path d="M962.5 720L1051 780.5H1151" stroke="#FF6600"/>
 
         <g class="waves">
@@ -174,9 +256,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="938" y="694" width="49" height="49">
+            <foreignObject x="947" y="704" width="30" height="30">
                 <div>
-                    <img src="img/ico-scene-icon.svg">
+                    <img src="img/ico-geometry.svg">
                 </div>
             </foreignObject>
         </g>
@@ -193,15 +275,15 @@
 
         <foreignObject class="text" width="200" height="80" x="1062" y="795">
             <div class="text__title">
-                100%
+                Идеальная геометрия
             </div>
             <div class="text__text">
-                Аналог массива
+                автоматизированная сборка модулей – залог долгой жизни кухни
             </div>
         </foreignObject>
-    </g>
+    </g> -->
 
-    <g class="scene-dot" id="mechanism">
+    <g class="scene-dot" transform="translate(-935, -270)" id="brightness">
         <path d="M1576.5 752L1665 812.5H1765" stroke="#FF6600"/>
 
         <g class="waves">
@@ -215,9 +297,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="1553" y="726" width="49" height="49">
+            <foreignObject x="1563" y="734" width="28" height="34">
                 <div>
-                    <img src="img/ico-mechanism.svg">
+                    <img src="img/ico-brightness.svg">
                 </div>
             </foreignObject>
         </g>
@@ -234,16 +316,16 @@
 
         <foreignObject class="text" width="200" height="80" x="1667" y="825">
             <div class="text__title">
-                Выдвижные механизмы
+                Подсветка рабочей зоны
             </div>
             <div class="text__text">
-                С доводчиками
+                ваши здоровье и комфорт – превыше всего
             </div>
         </foreignObject>
     </g>
 
 
-    <g class="scene-dot" id="boxes">
+    <g class="scene-dot" transform="translate(-380, -95)" id="boxes">
         <path d="M940 410L851.735 471H752" stroke="#FF6600"/>
 
         <g class="waves">
@@ -257,9 +339,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="915" y="384" width="49" height="49">
+            <foreignObject x="924" y="394" width="30" height="30">
                 <div>
-                    <img src="img/ico-boxes.svg">
+                    <img src="img/ico-fasady.svg">
                 </div>
             </foreignObject>
         </g>
@@ -276,15 +358,15 @@
 
         <foreignObject class="text" width="200" height="80" x="752" y="488">
             <div class="text__title">
-                Ящики для специй
+                Фасады «Корзинка»
             </div>
             <div class="text__text">
-                Уникальные, с гравировкой
+                естественная вентиляция в модулях для сушки
             </div>
         </foreignObject>
     </g>
 
-    <g class="scene-dot" id="frez">
+    <g class="scene-dot" transform="translate(315, 60)" id="time">
         <path d="M1175 630L1086.73 570H987" stroke="#FF6600"/>
 
         <g class="waves">
@@ -298,9 +380,9 @@
         </g>
 
         <g class="icon">
-            <foreignObject x="1150" y="605" width="49" height="49">
+            <foreignObject x="1160" y="613" width="28" height="32">
                 <div>
-                    <img src="img/ico-frez.svg">
+                    <img src="img/ico-10-years.svg">
                 </div>
             </foreignObject>
         </g>
@@ -315,12 +397,54 @@
             <path class="rect" d="M1178 626H1172V632H1178V626Z" fill="white"/>
         </g>
 
-        <foreignObject class="text" width="200" height="50" x="992" y="509">
+        <foreignObject class="text" width="200" height="70" x="992" y="489">
             <div class="text__title">
-                Фрезеровка
+                10 лет
             </div>
             <div class="text__text">
-                Простая и лакончиная
+                средний срок службы кухни LORENA
+            </div>
+        </foreignObject>
+    </g>
+
+
+    <g class="scene-dot" transform="translate(-755, 175)" id="geometry">
+        <path d="M1175 630L1086.73 570H987" stroke="#FF6600"/>
+
+        <g class="waves">
+            <path class="circle" d="M1174.5 653.5C1187.75 653.5 1198.5 642.755 1198.5 629.5C1198.5 616.245 1187.75 605.5 1174.5 605.5C1161.25 605.5 1150.5 616.245 1150.5 629.5C1150.5 642.755 1161.25 653.5 1174.5 653.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1174.5 653.5C1187.75 653.5 1198.5 642.755 1198.5 629.5C1198.5 616.245 1187.75 605.5 1174.5 605.5C1161.25 605.5 1150.5 616.245 1150.5 629.5C1150.5 642.755 1161.25 653.5 1174.5 653.5Z" stroke="#FF6600"/>
+            <path class="circle" d="M1174.5 653.5C1187.75 653.5 1198.5 642.755 1198.5 629.5C1198.5 616.245 1187.75 605.5 1174.5 605.5C1161.25 605.5 1150.5 616.245 1150.5 629.5C1150.5 642.755 1161.25 653.5 1174.5 653.5Z" stroke="#FF6600"/>
+        </g>
+
+        <g class="active-circle">
+            <path d="M1174.5 659C1190.79 659 1204 645.792 1204 629.5C1204 613.208 1190.79 600 1174.5 600C1158.21 600 1145 613.208 1145 629.5C1145 645.792 1158.21 659 1174.5 659Z" fill="#FF6600"/>
+        </g>
+
+        <g class="icon">
+            <foreignObject x="1161" y="613" width="28" height="32">
+                <div>
+                    <img src="img/ico-geometry.svg">
+                </div>
+            </foreignObject>
+        </g>
+
+        <g class="base-circle">
+            <foreignObject x="1158" y="621" width="31" height="18" class="highlight">
+                <div></div>
+            </foreignObject>
+
+            <path d="M1174.5 654C1188.03 654 1199 643.031 1199 629.5C1199 615.969 1188.03 605 1174.5 605C1160.97 605 1150 615.969 1150 629.5C1150 643.031 1160.97 654 1174.5 654Z" fill="white" fill-opacity="0.1"/>
+            <path d="M1174.5 653.5C1187.75 653.5 1198.5 642.755 1198.5 629.5C1198.5 616.245 1187.75 605.5 1174.5 605.5C1161.25 605.5 1150.5 616.245 1150.5 629.5C1150.5 642.755 1161.25 653.5 1174.5 653.5Z" stroke="white" stroke-opacity="0.6"/>
+            <path class="rect" d="M1178 626H1172V632H1178V626Z" fill="white"/>
+        </g>
+
+        <foreignObject class="text" width="200" height="82" x="992" y="477">
+            <div class="text__title">
+                Идеальная геометрия
+            </div>
+            <div class="text__text">
+                автоматизированная сборка модулей – залог долгой жизни кухни
             </div>
         </foreignObject>
     </g>
