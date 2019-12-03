@@ -404,7 +404,7 @@ class EventListener extends Element{
 		App.each(this.els, function(el: HTMLElement){
 			let evt: Event = document.createEvent("HTMLEvents");
 
-			evt.initEvent(event, false, true)
+			evt.initEvent(event, true, false)
 			el.dispatchEvent(evt)
 		})
 

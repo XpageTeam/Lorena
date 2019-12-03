@@ -1,6 +1,6 @@
 import {Swiper, Lazy, EffectFade} from 'swiper/dist/js/swiper.esm.js'
 
-import {App} from "./app"
+import {App, EventListener} from "./app"
 import {TweenLite} from "gsap"
 
 Swiper.use([Lazy, EffectFade])
@@ -143,6 +143,13 @@ App.domReady(() => {
 
 		for (var circle of baseCircles){
 			bindOpenEventsOnSceneDot(circle)
+
+			if (circle.closest(".scene-dot").getAttribute("id") == "time"){
+				let evt: Event = document.createEvent("HTMLEvents");
+
+				evt.initEvent("click", true, true)
+				circle.dispatchEvent(evt)
+			}
 		}
 	})()
 
@@ -153,7 +160,7 @@ App.domReady(() => {
 			return
 
 		for (var circle of baseCircles){
-			bindCloseEventsOnSceneDot(circle)
+			bindCloseEventsOnSceneDot(circle);
 		}
 	})()
 })
