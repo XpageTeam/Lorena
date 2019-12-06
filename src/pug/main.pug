@@ -4,7 +4,33 @@ html(lang="ru")
 		title Главная
 		include inc/head.pug
 		include inc/css.pug
-	body.main.loading.new-year
+	body.main.loading.-new-year
+		.fake-design
+			.fake-design__item.fake-design__item--left
+				.fdi
+					.fdi__title Pantone #FF6F61
+					.fdi__year 2019
+			.fake-design__item.fake-design__item--right
+				.fdi
+					.fdi__title Pantone #EF6052
+					.fdi__year 2020
+			.fake-design__text
+				.fdt
+					.fdt__title Запустили редизайн.
+						br
+						| Ждите обновленную Lorena!
+					.fdt__btn
+						.arrow-btn Применить дизайн
+					.fdt__link Перейти на сайт
+		.angry-ivlev
+			figure.angry-ivlev__img
+				img(src="img/angry-ivlev.png")
+				figcaption.angry-ivlev__img-text
+					.ait
+						.ait__title я против, верните оранжевый!
+						.ait__link 
+							span перейти на сайт
+		.fake-design__line
 		include inc/header.pug
 		main#content
 			.main-slider
@@ -119,10 +145,6 @@ html(lang="ru")
 												.main-stock__slide-text Эксклюзивное предложение на российском рынке. Совместная работа с итальянской фабрикой, мастера, которой специализируются только на массиве и ориентируются на дорогой сегмент в европейских странах.
 												.main-stock__slide-btn
 													a(href="#").arrow-btn Подробнее
-
-
-
-
 			.main-reviews__cont
 				.wrapper
 					.main-reviews

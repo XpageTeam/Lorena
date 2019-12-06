@@ -2,9 +2,11 @@ import $ from "jquery"
 import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 import "./select2.js"
+import Cookies from "js-cookie";
 
 window.$ = $;
 window.jQuery = $;
+window.Cookies = Cookies;
 
 window.get$ = function(el){
 	return $(el)

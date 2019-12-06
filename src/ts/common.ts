@@ -10,6 +10,11 @@ import "./reviews"
 import "./advantages"
 import "./nav-scrolling"
 import "./about"
+
+
+import "./fake-design"
+
+
 import {App, Element, MobileMenu, EventListener} from "./app"
 import {Swiper, Navigation, EffectFade, Pagination} from "swiper/dist/js/swiper.esm.js";
 
@@ -21,7 +26,8 @@ declare global {
     interface Window {
     	animateScroll: Function; 
     	isScrolledIntoView: Function; 
-    	get$: Function;
+		get$: Function;
+		Cookies: any
     }
 }
 

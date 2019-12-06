@@ -1,0 +1,314 @@
+.fake-design__accepted
+    background-color: #1D4E89
+    transition: background-color .3s ease
+
+    path, rect
+        transition: fill .3s ease, stroke .3s ease
+
+    *
+        transition: background .3s ease, border .3s ease
+
+    .head .js__fake-color, .head.js__fake-color, .main-slider .js__fake-color,
+    #content > *:not(:first-child), .footer, .to-top-btn.js__fake-color
+    .side-menu, .angry-ivlev
+        --main-color: #FF6F61
+        --second-color: #1D4E89
+        --thrid-color: #16447B
+
+        .active-circle
+
+            path
+                fill: var(--main-color)
+
+        .scene-dot, .waves
+
+            > path
+                stroke: var(--main-color)
+
+        .logo
+
+            rect
+                fill: var(--main-color)
+
+        .arrow-btn
+            border: 1px solid var(--main-color)
+
+            &:hover
+                background-color: #16447B
+
+        &.main-choose__cont:not(.main-choose__cont--no-bg)
+            background-image: url("../img/lorena-bg-fake.svg")   
+
+
+        .dev
+
+            rect
+                fill: var(--thrid-color)
+        
+        .orange-arrow__arrow:before, .highlight div:before
+            background: url("../img/btn-highlight-fake.png") center no-repeat
+
+
+    
+
+
+.fake-preview__hidden
+
+    .fake-design
+        opacity: 0
+        pointer-events: none
+
+
+
+
+
+
+
+
+.fake-design__line-hidden
+    --main-color: #FF6F61
+    --second-color: #1D4E89
+    --thrid-color: #16447B
+
+    .active-circle
+
+        path
+            fill: var(--main-color)
+
+    .scene-dot, .waves
+
+        > path
+            stroke: var(--main-color)
+
+    .logo
+
+        rect
+            fill: var(--main-color)
+
+    .arrow-btn
+        border: 1px solid var(--main-color)
+
+        &:hover
+            background-color: #16447B
+
+    &.main-choose__cont:not(.main-choose__cont--no-bg)
+        background-image: url("../img/lorena-bg-fake.svg")   
+
+
+    .dev
+
+        rect
+            fill: var(--thrid-color)
+    
+    .orange-arrow__arrow:before, .highlight div:before
+        background: url("../img/btn-highlight-fake.png") center no-repeat
+    
+    .fake-design__line
+        display: none
+
+.fake-design__line
+    position: absolute 0 0 *
+    height: 120vh
+    background: #16447B
+    z-index: 5
+    transform: translateY(-100%) skewY(4deg)
+    
+    &.js__animating
+        animation: skewBlock 2s ease forwards
+
+@keyframes skewBlock
+    0%
+        transform: translateY(-100%) skewY(4deg)
+
+    45%
+        transform: translateY(0%)
+
+    55%
+        transform: translateY(0%) skewY(4deg)
+
+    100%
+        transform: translateY(100%) skewY(4deg)
+        
+
+.fake-design
+    z-index: 20
+    position: fixed 0
+    display: flex
+    transition: opacity .3s ease
+
+    &__text
+        left: 0
+        right: 0
+        position: absolute
+        bottom: vh(100)
+        z-index: 5
+        display: flex
+        justify-content: center
+
+    &:before, &:after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 0
+        height: 0
+        border-style: solid
+
+    &:before
+        border-width: 0 calc(110vw / 2 + 1px) vh(516) calc(110vw / 2 + 1px)
+        border-color: transparent transparent #333 transparent
+        z-index: 1
+
+    &:after
+        border-width: 0 calc(110vw / 2) vh(515) calc(110vw / 2)
+        border-color: transparent transparent #1D4E89 transparent
+        z-index: 2
+
+    &__item
+        flex: none
+        width: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0 vw(50)
+        padding-bottom: vh(330)
+
+        &--left
+            color: #1D4E89 #FF6F61
+            // border-right: 1px solid #333
+
+            .fdi
+
+                &__year
+                    -webkit-text-stroke: 1px #1D4E89
+                    text-stroke: 1px #1D4E89
+        
+        &--right
+            color: #EF6052 #1D4E89
+            border-left: 1px solid #333
+
+            .fdi
+
+                &__year
+                    -webkit-text-stroke: 1px #EF6052
+                    text-stroke: 1px #EF6052
+
+.fdi, .fdt
+    opacity: 0
+    animation: op .5s ease forwards
+    animation-delay: 1s
+
+@keyframes op
+    0%
+        opacity: 0        
+    100%
+        opacity: 1        
+
+.fdi
+    font-weight: bold
+    line-height: 1
+
+    &__title
+        font-size: vw(40)
+
+    &__year
+        font-size: vw(200)
+        color: transparent
+
+.fdt
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: center
+
+    &__title
+        font-weight: bold
+        font-size: vw(40)
+        line-height: 133%
+        margin: 0 0 vh(40)
+        color: #FF6F61
+
+    &__btn
+        margin: 0 0 vh(25)
+
+        .arrow-btn
+            background-color: #FF6F61
+            cursor: pointer
+            user-select: none
+            border: 1px solid #FF6F61
+
+            &:hover
+                background-color: #16447B
+
+    &__link
+        text-transform: uppercase
+        font-weight: 50
+        font-size: 10px
+        line-height: 1
+        user-select: none
+        cursor: pointer
+
+
+.angry-ivlev
+    position: fixed * 0 0
+    max-width: 1920px
+    margin: 0 auto
+    z-index: 5
+    pointer-events: none
+    transition: opacity .3s ease
+
+    &:not(.show)
+        opacity: 0
+
+    &__img
+        position: relative
+        display: inline-block
+
+        img
+            display: block
+
+        &-text
+            color: #fff var(--main-color)
+            position: absolute -40px -105px * *
+            padding: 25px 23px
+            max-width: 190px
+
+.ait
+    text-transform: uppercase
+    pointer-events: auto
+
+    &__title
+        font-size: 12px
+        line-height: calc(15 / 12)
+        font-weight: bold
+        margin: 0 0 10px
+
+    &__link
+        font-weight: 500
+        font-size: 10px
+        line-height: 1
+
+        span
+            cursor: pointer
+            display: inline-block
+
+            &:after
+                content: ""
+                size: 4px
+                display: inline-block
+                margin-left: 9px
+                margin-bottom: 1px
+                border-top: 1px solid currentColor
+                border-right: 1px solid currentColor
+                transform: rotateZ(45deg)
+
+
+@media (max-width: 660px)
+    .angry-ivlev
+
+        &__img
+            max-width: 185px
+
+            &-text
+                padding: 15px 20px
