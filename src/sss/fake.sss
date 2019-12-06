@@ -1,3 +1,6 @@
+jdiv
+    display: none !important
+
 .fake-design__accepted
     background-color: #1D4E89
     transition: background-color .3s ease
@@ -112,22 +115,39 @@
     background: #16447B
     z-index: 5
     transform: translateY(-100%) skewY(4deg)
+    will-change: transform
+
+
     
     &.js__animating
         animation: skewBlock 2s ease forwards
 
+
 @keyframes skewBlock
     0%
-        transform: translateY(-100%) skewY(4deg)
+        transform: translateY(-110%) skewY(4deg)
 
-    45%
-        transform: translateY(0%)
+    // 45%
+    //     transform: translateY(0%) skewY(4deg)
 
     55%
         transform: translateY(0%) skewY(4deg)
 
     100%
         transform: translateY(100%) skewY(4deg)
+//         
+// @keyframes skewBlock
+//     0%
+//         transform: translateY(-100%) skewY(4deg)
+
+//     45%
+//         transform: translateY(0%)
+
+//     55%
+//         transform: translateY(0%) skewY(4deg)
+
+//     100%
+//         transform: translateY(100%) skewY(4deg)
         
 
 .fake-design

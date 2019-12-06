@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     if (window.Cookies.get("fakeDesignState") == "accepted"){
         showIvlev();
+        setTimeout(function(){
+            document.body.classList.add("fake-design__accepted");
+        }, 2300);
 
-        document.body.classList.add("fake-design__accepted");
         document.body.classList.add("fake-preview__hidden");
         
 
@@ -33,11 +35,14 @@ document.addEventListener("DOMContentLoaded", function(){
         return;
 
     confirmBtn.addEventListener("click", function(){
-        document.body.classList.add("fake-design__accepted");
+        setTimeout(function(){
+            document.body.classList.add("fake-design__accepted");
+        }, 2300)
         document.body.classList.add("fake-preview__hidden");
 
         window.Cookies.set("fakeDesignState", "accepted");
 
+       
         showNewColor();
 
         showIvlev();
@@ -47,7 +52,9 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function cancelFakeDesign(){
-    document.body.classList.remove("fake-design__accepted");
+    setTimeout(function(){
+        document.body.classList.remove("fake-design__accepted");
+    }, 2300)
     document.body.classList.add("fake-preview__hidden");
 
     window.Cookies.set("fakeDesignState", "canceled");
