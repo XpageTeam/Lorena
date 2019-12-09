@@ -5,14 +5,8 @@ jdiv
     background-color: #1D4E89
     transition: background-color .3s ease
 
-    path, rect
-        transition: fill .3s ease, stroke .3s ease
-
-    *
-        transition: background .3s ease, border .3s ease
-
     .head .js__fake-color, .head.js__fake-color, .main-slider .js__fake-color,
-    #content > *:not(:first-child), .footer, .to-top-btn.js__fake-color
+    #content > *:not(:first-child), .footer, .to-top-btn
     .side-menu, .angry-ivlev
         --main-color: #FF6F61
         --second-color: #1D4E89
@@ -114,7 +108,7 @@ jdiv
     height: 120vh
     background: #16447B
     z-index: 5
-    transform: translateY(-100%) skewY(4deg)
+    transform: translate3d(0, -100%, 0) skewY(4deg)
     will-change: transform
 
 
@@ -125,16 +119,16 @@ jdiv
 
 @keyframes skewBlock
     0%
-        transform: translateY(-110%) skewY(4deg)
+        transform: translate3d(0, -110%, 0) skewY(4deg)
 
     // 45%
     //     transform: translateY(0%) skewY(4deg)
 
     55%
-        transform: translateY(0%) skewY(4deg)
+        transform: translate3d(0, 0%, 0) skewY(4deg)
 
     100%
-        transform: translateY(100%) skewY(4deg)
+        transform: translate3d(0, 100%, 0) skewY(4deg)
 //         
 // @keyframes skewBlock
 //     0%

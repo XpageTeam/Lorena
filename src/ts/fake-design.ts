@@ -57,7 +57,10 @@ function cancelFakeDesign(){
     }, 2300)
     document.body.classList.add("fake-preview__hidden");
 
-    window.Cookies.set("fakeDesignState", "canceled");
+    window.Cookies.set(
+        "fakeDesignState", 
+        "canceled",
+        );
 
     const ivlev = document.querySelector(".angry-ivlev");
 
@@ -93,18 +96,18 @@ function showNewColor(){
         return;
 
     const counter = {
-        count: -window.innerHeight - window.innerHeight * .2
+        count: -window.innerHeight - window.innerHeight * .1
     };
 
     TweenLite.to(counter, 3, {
-        count: window.innerHeight + window.innerHeight * .2,
+        count: window.innerHeight + window.innerHeight * .1,
         onStart(){
             fdLine.classList.add("js__animating");
         },
         onUpdate(){
             const fdlTop = window.get$(fdLine).position().top;
 
-            App.each("body *:not(.js__fake-color):not(#content)", function(el: HTMLElement){
+            App.each(".head > *, .main-slider > *", function(el: HTMLElement){
                 const elementTop = window.get$(el).position().top + window.get$(el).height() * .1;
 
                 if (fdlTop >= elementTop)
