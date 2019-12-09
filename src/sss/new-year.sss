@@ -1,106 +1,120 @@
-.new-year
+@media (min-width: 1199px)
+    .new-year
 
-    .main-slider
-        position: relative
-        overflow: visible
-
-        &:before, &:after
-            content: ""
-            position: absolute
-            pointer-events: none
-            z-index: 2
-            background-size: contain !important
-
-        &:before
-            top: 0
-            left: 0
-            background: url("../img/new-year/main-slider-top-left.png") no-repeat
-            size: width("../img/new-year/main-slider-top-left.png") height("../img/new-year/main-slider-top-left.png")
-
-        &:after
-            top: calc(100% - height("../img/new-year/main-slider-bottom-right.png") / 2)
-            right: 0
-            background: url("../img/new-year/main-slider-bottom-right.png") no-repeat
-            size: width("../img/new-year/main-slider-bottom-right.png") height("../img/new-year/main-slider-bottom-right.png")
-    
-    .main-about
-
-        &__cont
+        .main-slider
             position: relative
-
-            &:after
-                content: ""
-                pointer-events: none
-                position: absolute 120px vw(160) * *
-                background: url("../img/new-year/main-about-decor.png") no-repeat
-                size: width("../img/new-year/main-about-decor.png") height("../img/new-year/main-about-decor.png")
-
-    .main-catalog
-        position: relative
-
-        &:before
-            content: ""
-            pointer-events: none
-            z-index: 1
-            position: absolute calc(100% - height("../img/new-year/main-catalog-bottom-left.png") / 2) * * 0
-            background: url("../img/new-year/main-catalog-bottom-left.png") no-repeat
-            size: width("../img/new-year/main-catalog-bottom-left.png") height("../img/new-year/main-catalog-bottom-left.png")
-    
-    .main-reviews
-
-        &__cont
-            position: relative
+            overflow: visible
 
             &:before, &:after
                 content: ""
                 position: absolute
                 pointer-events: none
+                z-index: 2
+                background-size: contain !important
 
             &:before
-                background: url("../img/new-year/reviews-top-left.png") no-repeat
-                top: 100px
-                left: vw(100)
-                size: width("../img/new-year/reviews-top-left.png") height("../img/new-year/reviews-top-left.png")
+                top: 0
+                left: 0
+                background: url("../img/new-year/main-slider-top-left.png") no-repeat
+                size: width("../img/new-year/main-slider-top-left.png") height("../img/new-year/main-slider-top-left.png")
 
             &:after
-                background: url("../img/new-year/reviews-bottom-right.png") no-repeat
-                right: vw(45)
-                bottom: -150px
-                size: width("../img/new-year/reviews-bottom-right.png") height("../img/new-year/reviews-bottom-right.png")
-    
-    .footer
+                top: calc(100% - height("../img/new-year/main-slider-bottom-right.png") / 2)
+                right: 0
+                background: url("../img/new-year/main-slider-bottom-right.png") no-repeat
+                size: width("../img/new-year/main-slider-bottom-right.png") height("../img/new-year/main-slider-bottom-right.png")
+        
+        .main-about
 
-        &__wrap
+            &__cont
+                position: relative
+
+                &:after
+                    content: ""
+                    pointer-events: none
+                    position: absolute 120px vw(160) * *
+                    background: url("../img/new-year/main-about-decor.png") no-repeat
+                    size: width("../img/new-year/main-about-decor.png") height("../img/new-year/main-about-decor.png")
+
+        .main-catalog
             position: relative
 
             &:before
                 content: ""
-                z-index: 2
                 pointer-events: none
-                position: absolute * * calc(100% - 15px) vw(165)
-                background: url("../img/new-year/footer-decor.png") no-repeat
-                size: width("../img/new-year/footer-decor.png") height("../img/new-year/footer-decor.png")
-
-@media (max-width: 1500px)
-    .new-year
-
-        .main-slider
-
-            &:before
-                size: 410px
-
-            &:after
-                size: 130px 300px
-                top: calc(100% - 150px)
-
-        .main-about
+                z-index: 1
+                position: absolute calc(100% - height("../img/new-year/main-catalog-bottom-left.png") / 2) * * 0
+                background: url("../img/new-year/main-catalog-bottom-left.png") no-repeat
+                size: width("../img/new-year/main-catalog-bottom-left.png") height("../img/new-year/main-catalog-bottom-left.png")
+        
+        .main-reviews
 
             &__cont
+                position: relative
+
+                &:before, &:after
+                    content: ""
+                    position: absolute
+                    pointer-events: none
+
+                &:before
+                    background: url("../img/new-year/reviews-top-left.png") no-repeat
+                    top: 100px
+                    left: vw(100)
+                    size: width("../img/new-year/reviews-top-left.png") height("../img/new-year/reviews-top-left.png")
 
                 &:after
-                    right: 1.4vw
+                    background: url("../img/new-year/reviews-bottom-right.png") no-repeat
+                    right: vw(45)
+                    bottom: -150px
+                    size: width("../img/new-year/reviews-bottom-right.png") height("../img/new-year/reviews-bottom-right.png")
+        
+        .footer
 
-        .main-catalog:before
-            background-size: contain
-            background-position: left center
-            width: 100px
+            &__wrap
+                position: relative
+
+                &:before
+                    content: ""
+                    z-index: 2
+                    pointer-events: none
+                    position: absolute * * calc(100% - 15px) vw(165)
+                    background: url("../img/new-year/footer-decor.png") no-repeat
+                    size: width("../img/new-year/footer-decor.png") height("../img/new-year/footer-decor.png")
+
+    @media (max-width: 1500px)
+        .new-year
+
+            .main-slider
+
+                &:before
+                    size: 410px
+
+                &:after
+                    size: 130px 300px
+                    top: calc(100% - 150px)
+
+            .main-about
+
+                &__cont
+
+                    &:after
+                        right: 1.4vw
+
+            .main-catalog:before
+                background-size: contain
+                background-position: left center
+                width: 100px
+
+            .main-reviews__cont:after
+                background-size: contain
+                width: 245px
+                background-position: right center
+
+            .footer__wrap
+
+                &::before
+                    background-size: contain
+                    width: 120px
+                    background-position: center
+                    bottom: calc(100% - 44px)
