@@ -12,7 +12,7 @@ import "./nav-scrolling"
 import "./about"
 
 
-import "./fake-design"
+// import "./fake-design"
 
 
 import {App, Element, MobileMenu, EventListener} from "./app"
