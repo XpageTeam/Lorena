@@ -185,7 +185,8 @@ enum msgDirection{
 
 interface msgVideo{
 	direction: msgDirection,
-	src: string
+	src: string,
+	poster: string
 }
 
 interface msg{
@@ -219,7 +220,8 @@ App.domReady(() => {
 	});
 	chatMessages.push({
 		direction: msgDirection.fromMe,
-		src: "/video/video.mp4"
+		src: "/video/video.mp4",
+		poster: "/img/photos/chat-video-poster.jpg"
 	});
 
 	if (!fakeCursor)
