@@ -1,5 +1,6 @@
 import {App, EventListener} from "./app"
 import {TweenLite} from "gsap"
+import {Power4} from "gsap";
 
 /** Пульсирование кругов под свг - картой */
 
@@ -173,38 +174,79 @@ App.domReady(() => {
   });
 })
 
-// /** Ховер точек городов на карте */
-// App.domReady(() => {
-// 	const mapCities = document.querySelectorAll('circle[fill="#FF6600"], ellipse[fill="#FF6600"]');
+/**
+ * ! пользовательский чат в отзывах
+ */
 
-// 	if (!mapCities.length)
-// 		return
+enum msgDirection{
+	toMe,
+	fromMe
+};
 
-// 	App.each(mapCities, (el: HTMLElement) => {
-// 		const transform = el.getAttribute("transform");
+interface msgVideo{
+	direction: msgDirection,
+	src: string
+}
 
+interface msg{
+	direction: msgDirection,
+	text: string
+}
 
-// 		if (!transform)
-// 			TweenLite.set(el, {
-// 				transformOrigin: "center"
-// 			})
-// 		else{
-// 			let transformArray = transform.replace("rotate(", "").replace(")", "").split(" ");
+App.domReady(() => {
+	const msgPosition = {
+		top: window.get$(".a-messages").offset().top + window.get$(".message").height() / 2,
+		left: window.get$(".a-messages").offset().left + window.get$(".message").width() / 2
+	},
+		fakeCursor = document.querySelector(".about-img__messages-cursor"),
+		chatMessages: Array<msg | msgVideo> = [];
 
-// 			TweenLite.set(el, {
-// 				transformOrigin: `123px 123px`
-// 			})
-// 		}
-// 	})
+	chatMessages.push({
+		direction: msgDirection.toMe,
+		text: "Дорогая, ты что-то купила?",
+	});
+	chatMessages.push({
+		direction: msgDirection.fromMe,
+		text: "Да дорогой, я купила кухню в Lorena кухни",
+	});
+	chatMessages.push({
+		direction: msgDirection.toMe,
+		text: "Почему именно Lorena кухни?",
+	});
+	chatMessages.push({
+		direction: msgDirection.fromMe,
+		text: "Я посмотрела отзыв - это любовь!",
+	});
+	chatMessages.push({
+		direction: msgDirection.fromMe,
+		src: "/video/video.mp4"
+	});
 
-// 	new EventListener(mapCities).add("mouseover", (el: HTMLElement) => {
-// 		TweenLite.to(el, .3, {
-// 			scale: 1.1
-// 		})
-// 	})
-// 	new EventListener(mapCities).add("mouseout", (el: HTMLElement) => {
-// 		TweenLite.to(el, .3, {
-// 			scale: 1
-// 		})
-// 	})
-// })
+	if (!fakeCursor)
+		return;
+
+	TweenLite.to(fakeCursor, 3, {
+		top: msgPosition.top,
+		left: msgPosition.left,
+		ease: Power4.easeInOut,
+		delay: 1.5,
+		onStart(){
+			document.body.classList.add("js__hide-cursor");
+		},
+		onComplete(){
+			TweenLite.to(fakeCursor, .1, {
+				scale: .6,
+				onComplete(){
+					TweenLite.to(fakeCursor, .1, {
+						scale: 1,
+						onComplete(){
+							document.body.classList.remove("js__hide-cursor");
+						}
+					});
+				}
+			});
+		}
+	});
+});
+
+ /* конец кода чата в отзывах */

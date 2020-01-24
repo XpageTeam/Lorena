@@ -1,3 +1,5 @@
+@import "push-message.sss"
+
 .about
 	position: relative
 
@@ -81,24 +83,29 @@
 
 	&:not(&--decorated)
 
-		&:before, &:after
-			content: ""
-			position: absolute
-			pointer-events: none
-
 		&:before
-			background-size: contain !important
-			background: url("../img/about-img-decor-left.png") left bottom no-repeat
-			bottom: 0
-			left: 0
-			size: width("../img/about-img-decor-left.png") height("../img/about-img-decor-left.png")
+			content: ""
+			position: absolute 0
+			background: linear-gradient(to bottom, rgba(0,0,0, .4) 10%, rgba(0,0,0, .00001) 50%)
 
-		&:after
-			background-size: cover !important
-			background: url("../img/about-img-decor-right.png") left center no-repeat
-			top: 0
-			right: 0
-			size: width("../img/about-img-decor-right.png") 100%
+	// 	&:before, &:after
+	// 		content: ""
+	// 		position: absolute
+	// 		pointer-events: none
+
+	// 	&:before
+	// 		background-size: contain !important
+	// 		background: url("../img/about-img-decor-left.png") left bottom no-repeat
+	// 		bottom: 0
+	// 		left: 0
+	// 		size: width("../img/about-img-decor-left.png") height("../img/about-img-decor-left.png")
+
+	// 	&:after
+	// 		background-size: cover !important
+	// 		background: url("../img/about-img-decor-right.png") left center no-repeat
+	// 		top: 0
+	// 		right: 0
+	// 		size: width("../img/about-img-decor-right.png") 100%
 
 	picture, img
 		display: block

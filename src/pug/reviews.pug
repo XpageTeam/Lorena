@@ -4,7 +4,7 @@ html(lang="ru")
 		title Отзывы
 		include inc/head.pug
 		include inc/css.pug
-	body.inner.tovar.loading
+	body.inner.loading.tovar
 		include inc/header.pug
 		main#content
 			.inner-content
@@ -13,16 +13,59 @@ html(lang="ru")
 						.reviews__img
 							.about-img
 								picture
-									source(media="(min-width: 660px)" srcset="img/photos/reviews-top-img.jpg")
-									source(media="(max-width: 660px)" srcset="img/photos/reviews-top-img.jpg")
+									source(media="(min-width: 660px)" srcset="img/photos/new-reviews-top-img.jpg")
+									source(media="(max-width: 660px)" srcset="img/photos/new-reviews-top-img.jpg")
 									img
-								.about-img__text
-									.about-img__text-subtitle Счастливые владельцы кухни lorena
-									.about-img__text-title Более 170 000 довольных семей
-										br
-										| по всей России
-									.about-img__text-btn
-										a.default-btn(href="#") оставить отзыв
+								//- .wrapper
+								//- 	.about-img__text
+								//- 		.about-img__text-subtitle Счастливые владельцы кухни lorena
+								//- 		.about-img__text-title Более 170 000 довольных семей
+								//- 			br
+								//- 			| по всей России
+								//- 		.about-img__text-btn
+								//- 			a.default-btn(href="#") оставить отзыв
+								.about-img__messages
+									.a-messages
+										.a-messages__top
+											.a-messages__top-text У вас новое уведомление
+											.a-messages__top-close
+										.a-messages__message
+											.message
+												header.message__head
+													.msg-head
+														figure.msg-head__title
+															img.msg-head__title-img(src="img/ico-msg.svg")
+															figcaption.msg-head__title-text messages
+														.msg-head__time Сейчас
+												main.message__body
+													.msg-body
+														.msg-body__title sberbank
+														.msg-body__text С вашего счёта списано *** 000 руб.
+												footer.message__footer ещё 4 уведомления
+									.about-img__messages-cursor
+								.about-img__chat
+									.wrapper
+										.about-chat
+											.about-chat__list
+												.about-chat__list-item.about-chat__list-item--to
+													.chat-msg
+														.chat-msg__text Дорогая, ты что-то купила?
+												.about-chat__list-item.about-chat__list-item--from
+													.chat-msg
+														.chat-msg__text Да дорогой, я купила кухню в Lorena кухни
+												.about-chat__list-item.about-chat__list-item--to
+													.chat-msg
+														.chat-msg__text Почему именно Lorena кухни?
+												.about-chat__list-item.about-chat__list-item--from
+													.chat-msg
+														.chat-msg__text Я посмотрела отзыв - это любовь!
+												.about-chat__list-item.about-chat__list-item--from
+													.chat-msg
+														.chat-msg__dost 
+															.msg-dot
+															.msg-dot
+															.msg-dot
+
 						.wrapper
 							.title-block
 								.title-block__title

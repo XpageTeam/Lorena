@@ -1,0 +1,203 @@
+.about-img
+
+	&__messages
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute 0
+
+		&-cursor
+			background: var(--second-color)
+			size: 40px
+			border: 5px solid rgba(255,255,255, 1)
+			opacity: 0.3
+			border-radius: 50%
+			position: absolute calc(50% + 100px)
+			left: 80%
+
+	&__chat
+		position: absolute 0
+		padding: 165px 0 50px
+		background: var(--thrid-color)
+		z-index: 10
+		display: flex
+		flex-direction: column-reverse
+
+		.wrapper
+			max-width: 675px
+			width: 100%
+
+
+@keyframes msgOpacity
+	0%
+		opacity: 0		
+	100%
+		opacity: 1
+
+@keyframes msgTransform
+	0%
+		transform: translate3d(0, -120%, 0)
+		
+	100%
+		transform: translate3d(0, 0, 0)
+
+.a-messages
+	font-size: 14px
+
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 0 0 10px
+		position: relative
+		z-index: 1
+		opacity: 0
+		animation: msgOpacity .3s ease forwards
+		animation-delay: .3s
+
+		&-close
+			background: url("../img/ico-msg-close.svg") center no-repeat, rgba(255,255,255, .5)
+			size: 37px
+			border-radius: 50%
+			opacity: 0
+			animation: msgOpacity .3s ease forwards
+			animation-delay: .8s
+
+	&__message
+		position: relative
+		overflow: hidden
+		margin: -20px
+		padding: 20px
+
+		&:after, &:before
+			content: ""
+			box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25)
+			border-radius: 0 0 10px 10px
+			size: calc(100% - 40px) 10px
+			position: absolute
+			background: rgba(255,255,255, .5)
+			opacity: 0
+			animation: msgOpacity .2s ease forwards
+
+		&:before
+			bottom: 30px
+			transform: scaleX(calc(328 / 351))
+			z-index: 2
+			animation-delay: .8s
+
+		&:after
+			bottom: 20px
+			z-index: 1
+			transform: scaleX(calc(299 / 351))
+			animation-delay: 1s
+
+.message
+	border-radius: 10px
+	color: rgba(0,0,0, .5) rgba(255,255,255, .5)
+	padding: 14px 15px 16px
+	width: 351px
+	max-width: 100%
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25)
+	z-index: 4
+	margin: 0 0 20px
+	transform: translate3d(0, -120%, 0)
+	animation: msgTransform .3s ease forwards
+	animation-delay: .5s
+
+	&__head, &__body
+		margin: 0 0 15px
+
+.msg-head
+	display: flex
+	align-items: center
+	justify-content: space-between
+	
+	&__title
+		display: flex
+		align-items: center
+
+		&-img
+			margin-right: 10px
+
+			img
+				width: auto
+				display: block
+
+		&-text
+			text-transform: uppercase
+
+.msg-body
+	color: #000
+
+	&__title
+		font-weight: bold
+		margin: 0 0 7px
+
+
+body.js__hide-cursor
+	cursor: none
+
+
+.about-chat
+
+	&__list
+		display: flex
+		flex-direction: column
+
+		&-item
+			background: var(--second-color)
+			border-radius: 10px
+			padding: 25px 35px 30px
+			position: relative
+			max-width: 520px
+
+			&:before
+				content: ""
+				position: absolute 0 * *
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 19px 18px 0 18px
+				border-color: var(--second-color) transparent transparent transparent
+
+			&--to
+				align-self: flex-start
+				margin-left: 17px
+
+				&:before
+					right: calc(100% - 18px)
+
+			&--from
+				align-self: flex-end
+				margin-right: 17px
+
+				&:before
+					left: calc(100% - 18px)
+
+			&:not(:first-child)
+				margin-top: 17px
+
+.chat-msg
+
+	&__dost
+		display: flex
+
+	&__text
+		font-size: 20px
+
+.msg-dot
+	border-radius: 50%
+	background: var(--main-color)
+	size: 10px
+	flex: none
+	opacity: 0
+	animation: msgOpacity .8s ease infinite
+
+	&:nth-child(2)
+		animation-delay: .4s
+
+	&:nth-child(3)
+		animation-delay: .6s
+
+	&:not(:last-child)
+		margin-right: 15px
