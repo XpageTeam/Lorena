@@ -316,7 +316,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         });
         chatMessages.push({
             direction: msgDirection.fromMe,
-            src: "/video/video.mp4"
+            src: "/video/video.mp4",
+            poster: "/img/photos/chat-video-poster.jpg"
         });
         if (!fakeCursor)
             return;
@@ -336,6 +337,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
                             scale: 1,
                             onComplete: function () {
                                 document.body.classList.remove("js__hide-cursor");
+                                document.body.classList.add("js__show-chat");
+                                startChat(chatMessages);
                             }
                         });
                     }
@@ -343,6 +346,35 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
             }
         });
     });
+    function startChat(messagesArray) {
+        showChatDots(messagesArray[0].direction);
+    }
+    function showChatDots(direction) {
+        var dostMessage = getMsgContainer(direction);
+        dostMessage.innerHTML = '<div class="chat-msg">'
+            + '<div class="chat-msg__dost">'
+            + '<div class="msg-dot"></div>'
+            + '<div class="msg-dot"></div>'
+            + '<div class="msg-dot"></div>'
+            + '</div>'
+            + '</div>';
+        instertMessage(dostMessage);
+    }
+    function instertMessage(messageEl) {
+        var chatContainer = document.querySelector(".about-chat__list");
+        if (!chatContainer)
+            return;
+        chatContainer.appendChild(messageEl);
+    }
+    function getMsgContainer(direction) {
+        var dostMessage = document.createElement("div");
+        dostMessage.classList.add("about-chat__list-item");
+        dostMessage.classList.add("about-chat__list-item--" +
+            (direction == msgDirection.fromMe
+                ? "from"
+                : "to"));
+        return dostMessage;
+    }
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 

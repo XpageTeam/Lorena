@@ -243,6 +243,9 @@ App.domReady(() => {
 						scale: 1,
 						onComplete(){
 							document.body.classList.remove("js__hide-cursor");
+							document.body.classList.add("js__show-chat");
+
+							startChat(chatMessages);
 						}
 					});
 				}
@@ -250,5 +253,43 @@ App.domReady(() => {
 		}
 	});
 });
+
+function startChat(messagesArray:  Array<msg | msgVideo>){
+	showChatDots(messagesArray[0].direction);
+}
+
+function showChatDots(direction: msgDirection){
+	const dostMessage = getMsgContainer(direction);
+
+	dostMessage.innerHTML = '<div class="chat-msg">'
+                            +'<div class="chat-msg__dost">'
+                              +'<div class="msg-dot"></div>'
+                              +'<div class="msg-dot"></div>'
+                              +'<div class="msg-dot"></div>'
+                            +'</div>'
+						  +'</div>';
+
+	instertMessage(dostMessage);
+}
+
+function instertMessage(messageEl: HTMLDivElement){
+	const chatContainer = document.querySelector(".about-chat__list") as HTMLDivElement;
+
+	if (!chatContainer) return;
+
+	chatContainer.appendChild(messageEl);
+}
+
+function getMsgContainer(direction: msgDirection): HTMLDivElement{
+	const dostMessage = document.createElement("div");
+
+	dostMessage.classList.add("about-chat__list-item");
+	dostMessage.classList.add("about-chat__list-item--"+
+		(direction == msgDirection.fromMe 
+		? "from"
+		: "to"));
+
+	return dostMessage
+}
 
  /* конец кода чата в отзывах */
