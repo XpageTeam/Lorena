@@ -316,8 +316,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         });
         chatMessages.push({
             direction: msgDirection.fromMe,
-            src: "/video/video.mp4",
-            poster: "/img/photos/chat-video-poster.jpg"
+            src: "video/video.mp4",
+            poster: "img/photos/chat-video-poster.jpg"
         });
         if (!fakeCursor)
             return;
@@ -347,18 +347,61 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         });
     });
     function startChat(messagesArray) {
-        showChatDots(messagesArray[0].direction);
+        var chatInterval, msgCounter = 0, chatMesage;
+        chatMesage = function () {
+            if (messagesArray.length == msgCounter) {
+                clearInterval(chatInterval);
+                setTimeout(function () {
+                    if (window.is.desktop())
+                        window.get$(".chat-msg__video").trigger("click");
+                }, 3000);
+            }
+            else {
+                showChatDots(messagesArray[msgCounter].direction);
+                chatInterval = setTimeout(function () {
+                    hideDots();
+                    if (messagesArray[msgCounter].text)
+                        showMessage(messagesArray[msgCounter].direction, messagesArray[msgCounter].text);
+                    else {
+                        showVideo(messagesArray[msgCounter]);
+                    }
+                    msgCounter++;
+                    chatMesage();
+                }, 2000);
+            }
+        };
+        chatMesage();
+    }
+    function showVideo(video) {
+        var msgContainer = getMsgContainer(video.direction);
+        msgContainer.innerHTML = "<div class=\"chat-msg\">\n\t\t\t\t\t\t\t\t<a href=\"" + video.src + "\" class=\"chat-msg__video\" data-fancybox>\n\t\t\t\t\t\t\t\t\t<img class=\"chat-msg__video-img\" src=\"" + video.poster + "\" />\n\t\t\t\t\t\t\t\t\t<div class=\"chat-msg__video-btn\">\n\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"115\" height=\"115\" viewBox=\"0 0 115 115\" fill=\"none\">\n\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"57.6103\" cy=\"57.6101\" r=\"55.5\" transform=\"rotate(-90 57.6103 57.6101)\" stroke=\"#272727\" stroke-width=\"3\"/>\n\t\t\t\t\t\t\t\t\t\t\t<path d=\"M113.5 58C113.5 88.6395 88.4403 113.5 57.5 113.5C26.5597 113.5 1.5 88.6395 1.5 58C1.5 27.3605 26.5597 2.5 57.5 2.5C88.4403 2.5 113.5 27.3605 113.5 58Z\" stroke=\"#FF6600\" stroke-width=\"3\"/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>";
+        instertMessage(msgContainer);
+        var line = document.querySelector(".chat-msg__video-btn path");
     }
     function showChatDots(direction) {
         var dostMessage = getMsgContainer(direction);
         dostMessage.innerHTML = '<div class="chat-msg">'
-            + '<div class="chat-msg__dost">'
+            + '<div class="chat-msg__dots">'
             + '<div class="msg-dot"></div>'
             + '<div class="msg-dot"></div>'
             + '<div class="msg-dot"></div>'
             + '</div>'
             + '</div>';
         instertMessage(dostMessage);
+    }
+    function hideDots() {
+        var chatContainer = document.querySelector(".about-chat__list");
+        if (!chatContainer)
+            return;
+        var dotsContainer = window.get$(".chat-msg__dots");
+        if (!dotsContainer)
+            return;
+        dotsContainer.closest(".about-chat__list-item").remove();
+    }
+    function showMessage(direction, text) {
+        var msgContainer = getMsgContainer(direction);
+        msgContainer.innerHTML = "<div class=\"chat-msg\">\n\t\t\t\t\t\t\t\t<div class=\"chat-msg__text\">" + text + "</div>\n\t\t\t\t\t\t\t</div>";
+        instertMessage(msgContainer);
     }
     function instertMessage(messageEl) {
         var chatContainer = document.querySelector(".about-chat__list");

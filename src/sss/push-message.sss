@@ -20,14 +20,26 @@
 		padding: 165px 0 50px
 		background: var(--thrid-color)
 		z-index: 10
-		display: flex
-		flex-direction: column-reverse
 		clip-path: circle(0%)
 		transition: clip-path .8s ease
 
 		.wrapper
 			max-width: 675px
-			width: 100%
+			// width: 100%
+			position: absolute 165px 0 50px
+			overflow-y: auto
+			display: flex
+			flex-direction: column-reverse
+
+			&::-webkit-scrollbar
+				width: 5px
+				border-left: 25px solid var(--thrid-color)
+
+				&-thumb
+					background: var(--main-color)
+
+				&-track
+					background: var(--second-color)
 
 body.js__show-chat
 
@@ -148,6 +160,10 @@ body.js__hide-cursor
 
 
 .about-chat
+	position: relative
+
+	&:before
+		content: ""
 
 	&__list
 		display: flex
@@ -156,7 +172,6 @@ body.js__hide-cursor
 		&-item
 			background: var(--second-color)
 			border-radius: 10px
-			padding: 25px 35px 30px
 			position: relative
 			max-width: 520px
 
@@ -188,11 +203,46 @@ body.js__hide-cursor
 
 .chat-msg
 
-	&__dost
+	&__dots
 		display: flex
+		padding: 35px
 
 	&__text
 		font-size: 20px
+		padding: 25px 35px 30px
+
+	&__video
+		position: relative
+		display: 
+		padding: 20px
+
+		&-img
+			display: block
+			width: 100%
+
+		&-btn
+			position: absolute calc(50% - 57px) calc(50% - 57px) * *
+			size: 115px
+			background: url("../img/ico-video-play.svg") center no-repeat
+
+			svg
+				fill: transparent
+				display: block
+				transform: rotateZ(-90deg)
+
+			path
+				stroke-dashoffset: 350.3385925292969
+				stroke-dasharray: 350.3385925292969
+				animation: loading 3s ease forwards
+
+@keyframes loading
+	0%
+		stroke-dashoffset: 350.3385925292969
+		// stroke-dasharray: 350.3385925292969
+		
+	100%
+		stroke-dashoffset: 0
+		// stroke-dasharray: 0
 
 .msg-dot
 	border-radius: 50%
@@ -210,3 +260,54 @@ body.js__hide-cursor
 
 	&:not(:last-child)
 		margin-right: 15px
+
+
+
+
+@media (max-width: 1500px) and (min-width: 1000px)
+	.about-img
+		
+		&__chat
+			padding: 130px 0 30px
+
+			.wrapper
+				top: 130px
+				bottom: 30px
+
+		&--chat
+
+			picture img
+				min-height: 500px
+				object-fit: cover
+				object-position: center
+
+@media (max-width: 1000px)
+	.about-img
+		
+		&__chat
+			padding: 0
+			
+			.wrapper
+				top: 20px
+				bottom: 20px
+
+		&--chat
+
+			picture img, picture
+				min-height: 60vh
+				object-fit: cover
+				object-position: center
+
+@media (max-width: 660px)
+	.chat-msg__text
+		padding: 15px
+		font-size: 14px
+
+	.chat-msg__video
+		padding: 12px
+
+		&-btn
+			transform: scale(.7)
+
+	.chat-msg__dots
+		padding: 15px

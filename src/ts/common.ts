@@ -27,7 +27,8 @@ declare global {
     	animateScroll: Function; 
     	isScrolledIntoView: Function; 
 		get$: Function;
-		Cookies: any
+		Cookies: any,
+		is: any,
     }
 }
 

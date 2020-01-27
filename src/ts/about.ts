@@ -186,7 +186,8 @@ enum msgDirection{
 interface msgVideo{
 	direction: msgDirection,
 	src: string,
-	poster: string
+	poster: string,
+	text? : string
 }
 
 interface msg{
@@ -220,8 +221,8 @@ App.domReady(() => {
 	});
 	chatMessages.push({
 		direction: msgDirection.fromMe,
-		src: "/video/video.mp4",
-		poster: "/img/photos/chat-video-poster.jpg"
+		src: "video/video.mp4",
+		poster: "img/photos/chat-video-poster.jpg"
 	});
 
 	if (!fakeCursor)
@@ -255,14 +256,69 @@ App.domReady(() => {
 });
 
 function startChat(messagesArray:  Array<msg | msgVideo>){
-	showChatDots(messagesArray[0].direction);
+	let chatInterval: NodeJS.Timeout,
+		msgCounter = 0,
+		chatMesage: Function;	
+
+	chatMesage = function(){
+		if (messagesArray.length == msgCounter){
+			clearInterval(chatInterval);
+
+			setTimeout(function(){
+				if (window.is.desktop())
+					window.get$(".chat-msg__video").trigger("click");
+			}, 3000)			
+		}else{
+			showChatDots(messagesArray[msgCounter].direction);
+			chatInterval = setTimeout(function(){
+				hideDots();
+
+				if (messagesArray[msgCounter].text)
+					showMessage(
+						messagesArray[msgCounter].direction, 
+						messagesArray[msgCounter].text
+					);
+				else{
+					showVideo(
+						messagesArray[msgCounter] as msgVideo
+					);
+				}
+
+				msgCounter++;
+
+				chatMesage();
+			}, 2000)
+		}
+	}
+
+	chatMesage();
+}
+
+function showVideo(video: msgVideo){
+	const msgContainer = getMsgContainer(video.direction);	
+
+	msgContainer.innerHTML = `<div class="chat-msg">
+								<a href="${video.src}" class="chat-msg__video" data-fancybox>
+									<img class="chat-msg__video-img" src="${video.poster}" />
+									<div class="chat-msg__video-btn">
+										<svg xmlns="http://www.w3.org/2000/svg" width="115" height="115" viewBox="0 0 115 115" fill="none">
+											<circle cx="57.6103" cy="57.6101" r="55.5" transform="rotate(-90 57.6103 57.6101)" stroke="#272727" stroke-width="3"/>
+											<path d="M113.5 58C113.5 88.6395 88.4403 113.5 57.5 113.5C26.5597 113.5 1.5 88.6395 1.5 58C1.5 27.3605 26.5597 2.5 57.5 2.5C88.4403 2.5 113.5 27.3605 113.5 58Z" stroke="#FF6600" stroke-width="3"/>
+										</svg>
+									</div>
+								</a>
+							</div>`;
+
+	instertMessage(msgContainer);
+
+	const line = document.querySelector(".chat-msg__video-btn path") as SVGPathElement;
 }
 
 function showChatDots(direction: msgDirection){
 	const dostMessage = getMsgContainer(direction);
 
 	dostMessage.innerHTML = '<div class="chat-msg">'
-                            +'<div class="chat-msg__dost">'
+                            +'<div class="chat-msg__dots">'
                               +'<div class="msg-dot"></div>'
                               +'<div class="msg-dot"></div>'
                               +'<div class="msg-dot"></div>'
@@ -270,6 +326,28 @@ function showChatDots(direction: msgDirection){
 						  +'</div>';
 
 	instertMessage(dostMessage);
+}
+
+function hideDots(){
+	const chatContainer = document.querySelector(".about-chat__list") as HTMLDivElement;
+
+	if (!chatContainer) return;
+
+	const dotsContainer = window.get$(".chat-msg__dots");
+
+	if (!dotsContainer) return;
+
+	dotsContainer.closest(".about-chat__list-item").remove();
+}
+
+function showMessage(direction: msgDirection, text: string){
+	const msgContainer = getMsgContainer(direction);
+
+	msgContainer.innerHTML = `<div class="chat-msg">
+								<div class="chat-msg__text">${text}</div>
+							</div>`;
+	
+	instertMessage(msgContainer);
 }
 
 function instertMessage(messageEl: HTMLDivElement){

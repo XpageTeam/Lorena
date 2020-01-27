@@ -180,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 window.Cookies = js_cookie__WEBPACK_IMPORTED_MODULE_4___default.a;
+window.is = is_js__WEBPACK_IMPORTED_MODULE_1___default.a;
 
 window.get$ = function (el) {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default()(el);

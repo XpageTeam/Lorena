@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 window.$ = $;
 window.jQuery = $;
 window.Cookies = Cookies;
+window.is = is;
 
 window.get$ = function(el){
 	return $(el)
