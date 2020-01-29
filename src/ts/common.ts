@@ -12,6 +12,9 @@ import "./nav-scrolling"
 import "./about"
 
 
+import "./eco-maniya"
+
+
 // import "./fake-design"
 
 

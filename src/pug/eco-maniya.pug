@@ -1,0 +1,110 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Эко мания
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.eco-maniya
+						.eco-maniya__banner
+							.eco-top-img
+								.eco-top-img__img
+									img(src="img/photos/eco-top-img.jpg")
+								.eco-top-img__text
+									.wrapper
+										.eti-text
+											.eti-text__title ЭКОЛОГИКА LORENA
+											figure.eti-text__img
+												img(src="img/photos/eco-top-img-eco.jpg")
+												figcaption МАНИЯ
+											.eti-text__subtitle Экология - это очень важно 
+												br
+												| (Спасибо, Грета)
+											.eti-text__link
+						.eco-maniya__steps
+							.wrapper
+								.eco-steps
+									.eco-steps__title
+										.eco-title
+											b Eco
+											| шаги LORENA
+									.eco-steps__ivlev
+										.es-ivlev
+											figure.es-ivlev__img
+												img(src="img/photos/ivlev-notice.png")
+											figcaption.es-ivlev__text Кухня тоже может и должна
+												br
+												| быть экологичной. 
+												br
+												| (LORENA и ШЕФ)
+									.eco-steps__slider
+										.es-slider
+											.es-slider__arrows
+												.swiper-button-prev
+												.swiper-button-next
+											.swiper-wrapper
+												each slide, i in ["Промышленные отходы измельчаем и утилизируем", "Сокращаем потребление бумаги: минус 22 тонны в год за счет отказа от полиграфии", "Запустили программу утилизации старой мебели, в том числе и мебели LORENA ", "Используем энергоэффективные технологии в производстве", "Благодаря фильтрам для очистки воздуха сократили количество вредных выбросов в атмосферу", "Мы используем только экологичные и нетоксичные  материалы", ]
+													.swiper-slide
+														.es-slider__slide
+															figure.es-slider__slide-img
+																img(src="img/photos/es-slider-img-"+i+".png")
+															figcaption.es-slider__slide-text=slide
+					.eco-maniya__level
+						.wrapper
+							.eco-level
+								.eco-level__title-top ТВОЙ УРОВЕНЬ
+								.eco-level__title
+									.eco-title 
+										b ECO
+										| ЧАЙНИК
+								.eco-level__text
+									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
+								figure.eco-level__decor
+									img(src="img/eco-level-decor.png")
+			.main-choose__cont.main-choose__cont--no-bg
+				.wrapper
+					.main-choose
+						.main-choose__form
+							.main-choose__text-title Заполни заявку
+							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
+								br
+								| и получи рецепт в подарок!
+							.choose-form 
+								form(action="#")
+									.choose-form__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input.default-input--select
+											select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+												option(value="Выберите город" disabled="")
+												option(value="1" selected="") Челябинск
+												option(value="2") Челябинск
+												option(value="3") Челябинск
+												option(value="4") Челябинск
+												option(value="5") Челябинск
+											label.default-input__label Город
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.choose-form__bot
+											.choose-form__bot-submit
+												input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+						figure.main-choose__img
+							img(src="img/photos/eco-ivlev.png")
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

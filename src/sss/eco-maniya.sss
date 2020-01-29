@@ -1,0 +1,179 @@
+.eco-maniya
+
+	&__steps
+		color: var(--thrid-color) #ace46b
+
+	&__level
+		background: #247300
+
+.eco-title
+	text-align: center
+	font-size: 87px
+	font-weight: 400
+	text-transform: uppercase
+
+
+.eco-top-img
+	position: relative
+
+	&__img
+
+		img
+			display: block
+			width: 100%
+	
+	&__text
+		position: absolute 0
+		padding: 83px 0
+		height: 100%
+
+		.wrapper
+			height: 100%
+
+.eti-text
+	color: var(--thrid-color)
+
+	&__title
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 14px
+
+	&__img
+
+		img
+			margin: 12px 0 0 -32px
+			display: block
+
+		figcaption
+			text-transform: uppercase
+			font-weight: bold
+			font-size: 138px
+			line-height: 1
+			margin: 30px 0 0
+	
+	&__subtitle
+		font-size: 30px
+		font-weight: bold
+
+.eco-steps
+	padding: 100px 0 90px
+
+	&__title
+		margin: 0 0 60px
+
+	&__ivlev
+
+		&:not(:last-child)
+			margin: 0 0 85px
+
+.es-ivlev
+	position: relative
+	display: flex
+	align-items: center
+
+	&:before, &:after
+		content: ""
+		position: absolute
+
+	&:before
+		background: url("../img/eco-ivlev-top-dorc.png") no-repeat
+		size: width("../img/eco-ivlev-top-dorc.png") height("../img/eco-ivlev-top-dorc.png")
+		top: 0
+		right: 0
+
+	&:after
+		background: url("../img/eco-ivlev-bot-dorc.png") no-repeat
+		size: width("../img/eco-ivlev-bot-dorc.png") height("../img/eco-ivlev-bot-dorc.png")
+		right: 67px
+		bottom: 65px
+
+	&__img
+		flex: none
+		margin-right: 55px
+
+		img
+			display: block
+
+	&__text
+		max-width: 800px
+		font-size: 30px
+		font-weight: bold
+
+.es-slider
+	overflow: hidden
+
+	&__arrows
+		display: flex
+		margin: 0 0 35px
+		
+		.swiper
+
+			&-button
+
+				&-prev
+					transform: rotateZ(90deg)
+
+				&-next
+					transform: rotateZ(-90deg)
+
+				&-prev, &-next
+					border-radius: 50%
+					background: var(--main-color)
+					size: 39px
+					position: static
+					margin: 0
+
+					&:not(:last-child)
+						margin-right: 20px
+
+					&:matches(:after, :before)
+						content: ""
+						position: absolute
+
+					&:after
+						top: calc(50% - 3px) 
+						right: calc(50% - 3px)
+						border-right: 1px solid #fff
+						border-bottom: 1px solid #fff
+						size: 5px
+						transform: rotateZ(45deg)
+						z-index: 1
+
+	.swiper
+
+		&-slide
+			size: auto
+			flex: none
+
+	&__slide
+
+		&-img
+			margin: 0 0 20px
+
+			img
+				display: block
+
+		&-text
+			font-size: 18px
+
+.eco-level
+	padding: 90px 0 95px
+	text-align: center
+
+	&__title
+		text-transform: uppercase
+		color: var(--main-color)
+
+		&-top
+			text-transform: uppercase
+			font-size: 30px
+			margin: 0 0 10px
+
+	&__text
+		max-width: 920px
+		margin: 45px 0 0
+		display: inline-block
+		line-height: 1.6
+
+	&__decor
+		margin: 50px 0 0

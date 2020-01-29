@@ -694,7 +694,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! ./app */ "./src/ts/app.ts"), __webpack_require__(/*! swiper/dist/js/swiper.esm.js */ "./node_modules/swiper/dist/js/swiper.esm.js"), __webpack_require__(/*! ./tovar */ "./src/ts/tovar.ts"), __webpack_require__(/*! ./timeline */ "./src/ts/timeline.ts"), __webpack_require__(/*! ./standart-page */ "./src/ts/standart-page.ts"), __webpack_require__(/*! ./addresses */ "./src/ts/addresses.ts"), __webpack_require__(/*! ./partners */ "./src/ts/partners.ts"), __webpack_require__(/*! ./career */ "./src/ts/career.ts"), __webpack_require__(/*! ./forms */ "./src/ts/forms.ts"), __webpack_require__(/*! ./reviews */ "./src/ts/reviews.ts"), __webpack_require__(/*! ./advantages */ "./src/ts/advantages.ts"), __webpack_require__(/*! ./nav-scrolling */ "./src/ts/nav-scrolling.ts"), __webpack_require__(/*! ./about */ "./src/ts/about.ts")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, app_1, swiper_esm_js_1) {
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! ./app */ "./src/ts/app.ts"), __webpack_require__(/*! swiper/dist/js/swiper.esm.js */ "./node_modules/swiper/dist/js/swiper.esm.js"), __webpack_require__(/*! ./tovar */ "./src/ts/tovar.ts"), __webpack_require__(/*! ./timeline */ "./src/ts/timeline.ts"), __webpack_require__(/*! ./standart-page */ "./src/ts/standart-page.ts"), __webpack_require__(/*! ./addresses */ "./src/ts/addresses.ts"), __webpack_require__(/*! ./partners */ "./src/ts/partners.ts"), __webpack_require__(/*! ./career */ "./src/ts/career.ts"), __webpack_require__(/*! ./forms */ "./src/ts/forms.ts"), __webpack_require__(/*! ./reviews */ "./src/ts/reviews.ts"), __webpack_require__(/*! ./advantages */ "./src/ts/advantages.ts"), __webpack_require__(/*! ./nav-scrolling */ "./src/ts/nav-scrolling.ts"), __webpack_require__(/*! ./about */ "./src/ts/about.ts"), __webpack_require__(/*! ./eco-maniya */ "./src/ts/eco-maniya.ts")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, app_1, swiper_esm_js_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var adaptiveMedia = "(max-width: 1200px)";
@@ -765,6 +765,41 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         else
             scrollBtn.classList.remove("js__visible");
     };
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+
+/***/ "./src/ts/eco-maniya.ts":
+/*!******************************!*\
+  !*** ./src/ts/eco-maniya.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! ./app */ "./src/ts/app.ts"), __webpack_require__(/*! swiper/dist/js/swiper.esm.js */ "./node_modules/swiper/dist/js/swiper.esm.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, app_1, swiper_esm_js_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    swiper_esm_js_1.Swiper.use([swiper_esm_js_1.Navigation, swiper_esm_js_1.Autoplay, swiper_esm_js_1.Keyboard]);
+    app_1.App.domReady(function () {
+        var ecoSlider = document.querySelector(".es-slider");
+        if (!ecoSlider)
+            return;
+        new swiper_esm_js_1.Swiper(ecoSlider, {
+            slidesPerView: 4,
+            spaceBetween: 45,
+            loop: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true
+            },
+            navigation: {
+                prevEl: ecoSlider.querySelector(".swiper-button-prev"),
+                nextEl: ecoSlider.querySelector(".swiper-button-next")
+            }
+        });
+    });
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
