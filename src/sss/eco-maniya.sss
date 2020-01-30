@@ -1,3 +1,14 @@
+:root
+	--eco-font: "Intro", Arial, sans-serif
+
+body.ecomaniya
+
+	.main-choose
+		padding-top: 90px
+
+		&__img
+			margin: 0 0 0 -160px
+
 .eco-maniya
 
 	&__steps
@@ -5,12 +16,21 @@
 
 	&__level
 		background: #247300
+		display: none
+
+	&__turn-on
+		background: url("../img/eco-turn-bg.jpg") center no-repeat
+		background-size: cover
 
 .eco-title
 	text-align: center
 	font-size: 87px
+	font-family: var(--eco-font)
 	font-weight: 400
 	text-transform: uppercase
+
+	b
+		font-weight: 900
 
 
 .eco-top-img
@@ -29,6 +49,26 @@
 
 		.wrapper
 			height: 100%
+			position: relative
+
+		&-decor
+			position: absolute * 0 40px *
+
+			img
+				size: 221px
+				display: block
+
+				&:first-child
+					position: absolute 0
+					animation: textRotate 10s linear infinite
+
+@keyframes textRotate
+	0%
+		transform: rotateZ(0deg)
+		
+	100%
+		transform: rotateZ(-360deg)
+		
 
 .eti-text
 	color: var(--thrid-color)
@@ -177,3 +217,301 @@
 
 	&__decor
 		margin: 50px 0 0
+
+
+.turn-on
+	padding: 80px 0 64px
+
+	&__title
+		color: var(--thrid-color)
+		margin: 0 0 90px
+
+		&-top
+			text-align: center
+			color: var(--thrid-color)
+			font-size: 64px
+			font-family: var(--eco-font)
+	
+	&__slider
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		&-slider
+			width: persent(865, 1133)
+
+	&__button
+		margin: 135px 0 0
+		text-align: center
+
+		.default-btn
+			transition: opacity .3s ease
+
+			&:not(.js__visible)
+				pointer-events: none
+				opacity: 0
+
+.to-sliders
+	display: flex
+	margin: 0 0 0 -21px
+
+	&__item
+		width: calc((100% - 21px * 3) / 3)
+		margin: 0 0 0 21px
+		display: flex
+		flex-direction: column
+		position: relative
+
+		&-answers
+			position: absolute calc(100% + 26px) 0 *
+
+
+.to-answers
+	display: flex
+	justify-content: center
+
+	&__btn
+
+		&:not(:last-child)
+			margin-right: 37px
+
+.to-slider
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	overflow: hidden
+	background: #ace46b
+	border-radius: 20px
+	box-shadow: -5px 8px 24px 0px rgba(78, 9, 9, 0.06)
+	height: 455px
+
+	.swiper-wrapper
+		// transition-timing-function: cubic-bezier(1,.87,.5,1.54)
+		transition-timing-function: cubic-bezier(1,.87,.44,1)
+
+	.swiper-slide
+		height: 455px
+		display: flex
+		flex-direction: column
+		flex: none
+		align-items: center
+		text-align: center
+		padding: 70px 20px 0
+
+.to-slide
+	display: inline-flex
+	border-radius: 50%
+	align-items: center
+	justify-content: center
+	background: var(--main-color)
+	size: 170px
+	position: relative
+
+	&:before, &:after
+		position: absolute 0
+		content: ""
+		border-radius: inherit
+		border: 1px solid var(--main-color)
+
+	&:before
+		transform: scale(1.17)
+
+	&:after
+		transform: scale(1.085)
+		border-width: 2px
+
+	&__text
+		font-size: 24px
+		color: var(--thrid-color)
+		margin: 70px 0 0
+
+
+.tos-starter
+	
+	&__img
+		position: relative
+		cursor: pointer
+		transform-style: preserve-3d
+		perspective: 900
+
+		&:after
+			content: ""
+			position: absolute * calc(50% - width("../img/starter-hndle.png") / 2) 50%
+			background: url("../img/starter-hndle.png") no-repeat
+			size: width("../img/starter-hndle.png") height("../img/starter-hndle.png")
+			transform-origin: bottom
+			transition: transform .4s linear
+
+		&:before
+			content: ""
+			position: absolute calc(50% - 10px) * * calc(50% - 27px)
+			background: var(--main-color)
+			size: 55px 40px
+			animation: pulse 2s linear infinite
+
+		&.js__active
+
+			&:after
+				transform: rotateX(-179deg)
+
+		&-img
+			display: block
+
+@keyframes pulse
+	0%, 100%
+		background: var(--main-color)
+		
+	50%
+		background: lighten(#f60, .5)
+
+.answer-btn
+	border-radius: 5px
+	color: #fff
+	font-weight: bold
+	border: none
+	padding: 10px
+
+	&.selected
+		box-shadow: inset 0px 0 10px 2px rgba(0,0,0,.4)
+
+	&--yes
+		background-color: var(--main-color)
+
+	&--no
+		background-color: #336600
+
+
+@media (max-width: 1500px)
+	.eco-steps, .turn-on
+		padding: 40px 0
+
+		&__title
+			margin: 0 0 30px
+
+	.eco-level
+		padding: 40px 0
+
+	.eco-title
+		font-size: 60px
+
+	.turn-on__title-top
+		font-size: 40px
+
+	@media (min-width: 1000px)
+		body.ecomaniya 
+			
+			.main-choose
+				padding-top: 0
+
+@media (max-width: 1400px)
+	.eco-top-img__text-decor
+		transform: scale(.7)
+
+
+@media (max-width: 1200px)
+	.eco-top-img__img
+
+		img
+			height: 540px
+			object-fit: cover
+			object-position: center
+
+
+
+@media (max-width: 1000px)
+	.eco-title
+		font-size: 36px
+
+	.eco-steps
+		
+		&__ivlev
+			
+			&:not(:last-child)
+				margin: 0 0 20px
+
+	.es-slider__arrows
+		margin: 0 0 10px
+
+	.es-ivlev
+
+		&__img
+			width: 200px
+			margin-right: 30px
+
+		&__text
+			font-size: 26px
+
+		&:before, &:after
+			display: none
+
+	.eco-steps, .turn-on
+		padding: 30px 0
+
+	.to-slider 
+		height: 275px
+		
+		.swiper-slide
+			padding: 30px 20px
+
+	.to-slide
+		size: 100px
+
+		img
+			transform: scale(.5)
+
+		&__text
+			margin: 30px 0 0
+			font-size: 18px
+
+	.turn-on
+		
+		&__slider
+			flex-direction: column-reverse
+			
+			&-slider
+				width: 100%
+				// margin: 30px 0 0
+
+			&-starter
+				transform: rotateZ(-90deg)
+
+@media (max-width: 660px)
+	.eco-top-img__img
+
+		img
+			height: 40vh
+
+	.eco-top-img__text
+		display: none
+
+	.es-ivlev
+		flex-direction: column
+
+		&__text
+			margin: 20px 0 0
+			text-align: center
+
+		&__img
+			margin-right: 0
+			max-width: 100%
+	
+	.turn-on__title
+		margin: 0
+
+	.tos-starter
+		transform: scale(.5)
+		margin: -60px 0
+
+	.to-sliders
+		display: block
+		margin: 0
+
+		&__item
+			width: auto
+			margin: 0
+
+			&:not(:first-child)
+				margin: 100px 0 0
+
+	.to-slider
+		height: 220px

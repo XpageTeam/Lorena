@@ -4,7 +4,7 @@ html(lang="ru")
 		title Эко мания
 		include inc/head.pug
 		include inc/css.pug
-	body.inner.loading
+	body.inner.loading.ecomaniya
 		include inc/header.pug
 		main#content
 			.inner-content
@@ -16,15 +16,18 @@ html(lang="ru")
 									img(src="img/photos/eco-top-img.jpg")
 								.eco-top-img__text
 									.wrapper
-										.eti-text
-											.eti-text__title ЭКОЛОГИКА LORENA
-											figure.eti-text__img
-												img(src="img/photos/eco-top-img-eco.jpg")
-												figcaption МАНИЯ
-											.eti-text__subtitle Экология - это очень важно 
-												br
-												| (Спасибо, Грета)
-											.eti-text__link
+										//- .eti-text
+										//- 	.eti-text__title ЭКОЛОГИКА LORENA
+										//- 	figure.eti-text__img
+										//- 		img(src="img/photos/eco-top-img-eco.jpg")
+										//- 		figcaption МАНИЯ
+										//- 	.eti-text__subtitle Экология - это очень важно 
+										//- 		br
+										//- 		| (Спасибо, Грета)
+										//- 	.eti-text__link
+										.eco-top-img__text-decor
+											img(src="img/!-text.svg")
+											img(src="img/!.svg")
 						.eco-maniya__steps
 							.wrapper
 								.eco-steps
@@ -53,9 +56,99 @@ html(lang="ru")
 															figure.es-slider__slide-img
 																img(src="img/photos/es-slider-img-"+i+".png")
 															figcaption.es-slider__slide-text=slide
+					.eco-maniya__turn-on
+						.wrapper
+							.turn-on
+								.turn-on__title-top Начни с себя!
+								.turn-on__title
+									.eco-title Вруби 
+										b eco
+										| Манию!
+								.turn-on__slider
+									.turn-on__slider-slider
+										- var variants = ["Мусор сортируешь?", "У тебя есть пакет с пакетами?", "Отходы измельчаешь?", "Воду экономишь?", "Дерево посадил?", "Бумагу экономишь?", "Пользуешься многоразовой посудой?", "У тебя экокухня от LORENA?"]
+										.to-sliders
+											.to-sliders__item
+												.to-slider
+													.swiper-wrapper
+														each text, i in variants
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+i+".png")
+																figcaption.to-slide__text=text
+												.to-sliders__item-answers
+													.to-answers
+														.to-answers__btn
+															button.answer-btn.answer-btn--yes Да
+														.to-answers__btn
+															button.answer-btn.answer-btn--no Нет
+											.to-sliders__item
+												.to-slider
+													.swiper-wrapper
+														each text, i in variants
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+i+".png")
+																figcaption.to-slide__text=text
+												.to-sliders__item-answers
+													.to-answers
+														.to-answers__btn
+															button.answer-btn.answer-btn--yes Да
+														.to-answers__btn
+															button.answer-btn.answer-btn--no Нет
+											.to-sliders__item
+												.to-slider
+													.swiper-wrapper
+														each text, i in variants
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+i+".png")
+																figcaption.to-slide__text=text
+												.to-sliders__item-answers
+													.to-answers
+														.to-answers__btn
+															button.answer-btn.answer-btn--yes Да
+														.to-answers__btn
+															button.answer-btn.answer-btn--no Нет
+									.turn-on__slider-starter
+										.tos-starter
+											figure.tos-starter__img
+												img.tos-starter__img-img(src="img/starter.jpg")
+								.turn-on__button
+									button.default-btn Отправить ответы
 					.eco-maniya__level
 						.wrapper
-							.eco-level
+							.eco-level(data-level="0")
+								.eco-level__title-top ТВОЙ УРОВЕНЬ
+								.eco-level__title
+									.eco-title 
+										b ECO
+										| дегенерат
+								.eco-level__text
+									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
+								figure.eco-level__decor
+									img(src="img/eco-level-decor.png")
+							.eco-level(data-level="1")
+								.eco-level__title-top ТВОЙ УРОВЕНЬ
+								.eco-level__title
+									.eco-title 
+										b ECO
+										| дурак
+								.eco-level__text
+									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
+								figure.eco-level__decor
+									img(src="img/eco-level-decor.png")
+							.eco-level(data-level="2")
+								.eco-level__title-top ТВОЙ УРОВЕНЬ
+								.eco-level__title
+									.eco-title 
+										b ECO
+										| тупой
+								.eco-level__text
+									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
+								figure.eco-level__decor
+									img(src="img/eco-level-decor.png")
+							.eco-level(data-level="3")
 								.eco-level__title-top ТВОЙ УРОВЕНЬ
 								.eco-level__title
 									.eco-title 
@@ -69,10 +162,8 @@ html(lang="ru")
 				.wrapper
 					.main-choose
 						.main-choose__form
-							.main-choose__text-title Заполни заявку
-							.main-choose__text-subtitle на бесплатный дизайн-проект своей кухни
-								br
-								| и получи рецепт в подарок!
+							.main-choose__text-title Закажи экокухню LORENA прямо сейчас!
+							.main-choose__text-subtitle и зарази ЭКОМАНИЕЙ 2-х человек
 							.choose-form 
 								form(action="#")
 									.choose-form__inputs
