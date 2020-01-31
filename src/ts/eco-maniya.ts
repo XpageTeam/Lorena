@@ -35,6 +35,10 @@ App.domReady(() => {
 	});
 });
 
+window.addEventListener("load", function(){
+	this.document.body.classList.add("eco-loaded");
+});
+
 App.domReady(() => {
 	const toSliders = App.transformNodeListToArray(document.querySelectorAll(".to-slider")),
 		sliderArray: Array<Swiper> = [],
@@ -43,81 +47,109 @@ App.domReady(() => {
 
 	if (!toSliders.length) return;
 
-	const slidesCount = toSliders[0].querySelectorAll(".swiper-slide").length;
-
-	let counter = 0;
+	// const slidesCount = toSliders[0].querySelectorAll(".swiper-slide").length;
 
 	for (const slider of toSliders){		
 		sliderArray.push(new Swiper(slider, {
 			slidesPerView: 1,
-			initialSlide: counter,
 			direction: "vertical",
 			noSwiping: true,
 			allowTouchMove: false,
 			simulateTouch: false,
-			loop: true,
 			speed: 1000,
 		}));
-
-		counter++;
 	}
 
 	if (!starter) return;
 
-	let targetSlidesArray: Array<number> = [],
-		selectedAnswers = 0,
-		yesAnswers = 0;
+	let selectedAnswers = 0,
+		yesAnswers = 0,
+		canTurnStarter = false;
 
-	const toLevelBtn = document.querySelector(".turn-on__button .default-btn") as HTMLElement;
+	const toLevelBtn = document.querySelector(".turn-on__button .default-btn") as HTMLElement,
+		curCounter = document.querySelector(".to-counter__current") as HTMLElement;
 
+	let stupidCounter = 0;
 	starter.addEventListener("click", async function(){
+		if (selectedAnswers == 9){
+			toLevelBtn.click();
+
+			return;
+		}
+
+		if (!canTurnStarter){
+			stupidCounter++;
+
+			if (stupidCounter >= 3){
+				window.get$(".turn-on__notice").stop().fadeIn(300);
+
+				setTimeout(function(){
+					window.get$(".turn-on__notice").fadeOut(300);
+				}, 1500)
+			}
+
+			window.get$(".to-sliders").removeClass("js__highlighting");
+
+			setTimeout(function(){
+				window.get$(".to-sliders").addClass("js__highlighting")
+			},100)
+
+			return;
+		}
+
+		canTurnStarter = false;
+		
+		window.get$(".turn-on__notice").fadeOut(300);
+		stupidCounter = 0;
+		
+		if (sliderArray[0].isEnd)
+			return;
+
+		// starterTurnCounter++;
+
 		this.classList.add("js__active");
 
 		for (const btn of sliderBtns)
 			btn.classList.remove("selected");
 
-		selectedAnswers = 0;
-		yesAnswers = 0;
+		// curCounter.innerText = (starterTurnCounter * 3).toString();
+
+		// selectedAnswers = 0;
 		toLevelBtn.classList.remove("js__visible");
 		window.get$(".eco-maniya__level").fadeOut(100);
 
-		let i = 0;
-		for await (const slider of sliderArray){
-			const promise = new Promise((resolve, reject) => {
+		// let i = 0;
+		// for await (const slider of sliderArray){
+		// 	const promise = new Promise((resolve, reject) => {
 
-				setTimeout(() => {
-					function setRandomInt(){
-						const randomNumber = randomInt(0, slidesCount);
+		// 		setTimeout(() => {
+		// 			function setRandomInt(){
+		// 				const randomNumber = randomInt(0, slidesCount);
 
-						if (!targetSlidesArray.includes(randomNumber) && slider.activeIndex != randomNumber){
-							targetSlidesArray[i] = randomNumber;
-							i++;
-						}else
-							setRandomInt()
-					}
+		// 				if (!targetSlidesArray.includes(randomNumber) && slider.activeIndex != randomNumber){
+		// 					targetSlidesArray[i] = randomNumber;
+		// 					i++;
+		// 				}else
+		// 					setRandomInt()
+		// 			}
 
-					setRandomInt();
+		// 			setRandomInt();
 
-					resolve();
-				}, 50);
-			});
+		// 			resolve();
+		// 		}, 50);
+		// 	});
 
-			await promise;
-		}
+		// 	await promise;
+		// }
 
 		setTimeout(async () => {
 			this.classList.remove("js__active");
 			
-			let i = 0;
-			for await (const targetSlideNumber of targetSlidesArray){
+			for await (const slider of sliderArray){
 				const promise = new Promise((resolve, reject) => {
 
 					setTimeout(() => {
-						const slider = sliderArray[i];
-
-						slider.slideToLoop(targetSlidesArray[i]);
-
-						i++;
+						slider.slideNext();
 
 						resolve();
 					}, 200)
@@ -154,10 +186,19 @@ App.domReady(() => {
 
 			this.classList.add("selected")
 			
-			if (selectedAnswers == 3)
+			// if (selectedAnswers == 3)
+			// 	toLevelBtn.classList.add("js__visible");
+			// else
+			// 	toLevelBtn.classList.remove("js__visible");
+
+			curCounter.innerText = selectedAnswers.toString();
+
+			if (selectedAnswers
+				== parseInt((document.querySelector(".to-counter__total") as HTMLElement).innerText.split(" ")[2]))
 				toLevelBtn.classList.add("js__visible");
-			else
-				toLevelBtn.classList.remove("js__visible");
+
+			if (selectedAnswers % 3 == 0)
+				canTurnStarter = true;
 		});
 
 	toLevelBtn.addEventListener("click", function(){
@@ -168,8 +209,19 @@ App.domReady(() => {
 				 - window.get$("header").height()
 		}, 300)
 
-		window.get$(`.eco-level:not([data-level='${yesAnswers}'])`).hide();
+		const levelBlocks = App.transformNodeListToArray(document.querySelectorAll(".eco-level"));
 
-		window.get$(`.eco-level[data-level='${yesAnswers}']`).show();
+		for (const level of levelBlocks){
+			// console.log(parseInt(level.getAttribute("data-min")), yesAnswers, parseInt(level.getAttribute("data-max")));
+			
+			if (parseInt(level.getAttribute("data-min")) <= yesAnswers && parseInt(level.getAttribute("data-max")) >= yesAnswers){
+				window.get$(level).show();
+				break;
+			}
+		}
+
+		// window.get$(`.eco-level:not([data-level='${yesAnswers}'])`).hide();
+
+		// window.get$(`.eco-level[data-level='${yesAnswers}']`).show();
 	})
 });

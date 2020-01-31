@@ -10,6 +10,15 @@ html(lang="ru")
 			.inner-content
 				.inner-content__content
 					.eco-maniya
+						.eco-maniya__loader
+							.eco-loader
+								figure.eco-loader__recycle
+									include ../img/recycle.svg
+								figure.eco-loader__shadow-evlev
+									img(src="img/shadow-evlev.png")
+								figure.eco-loader__light-evlev
+									img(src="img/light-evlev.png")
+								.eco-loader__text МУСОР СОРТИРУЕШЬ?
 						.eco-maniya__banner
 							.eco-top-img
 								.eco-top-img__img
@@ -64,14 +73,21 @@ html(lang="ru")
 									.eco-title Вруби 
 										b eco
 										| Манию!
+									.turn-on__title-text
+										p Отвечай на вопросы, жми на рубильник, узнай насколько ты 
+											b ECO
 								.turn-on__slider
 									.turn-on__slider-slider
-										- var variants = ["Мусор сортируешь?", "У тебя есть пакет с пакетами?", "Отходы измельчаешь?", "Воду экономишь?", "Дерево посадил?", "Бумагу экономишь?", "Пользуешься многоразовой посудой?", "У тебя экокухня от LORENA?"]
+										- var variants = [["Мусор сортируешь?", "У тебя есть пакет с пакетами?", "Отходы измельчаешь?"], ["Воду экономишь?", "Дерево посадил?", "Бумагу экономишь?"], ["Пользуешься многоразовой посудой?", "У тебя экокухня от LORENA?", "У тебя экокухня от LORENA?"]]
 										.to-sliders
+											.to-sliders__counters
+												.to-counter
+													span.to-counter__current 0 
+													span.to-counter__total  / 9
 											.to-sliders__item
 												.to-slider
 													.swiper-wrapper
-														each text, i in variants
+														each text, i in variants[0]
 															.swiper-slide
 																figure.to-slide
 																	img(src="img/photos/eco-turn-img-"+i+".png")
@@ -85,10 +101,10 @@ html(lang="ru")
 											.to-sliders__item
 												.to-slider
 													.swiper-wrapper
-														each text, i in variants
+														each text, i in variants[1]
 															.swiper-slide
 																figure.to-slide
-																	img(src="img/photos/eco-turn-img-"+i+".png")
+																	img(src="img/photos/eco-turn-img-"+(i+3)+".png")
 																figcaption.to-slide__text=text
 												.to-sliders__item-answers
 													.to-answers
@@ -99,10 +115,10 @@ html(lang="ru")
 											.to-sliders__item
 												.to-slider
 													.swiper-wrapper
-														each text, i in variants
+														each text, i in variants[2]
 															.swiper-slide
 																figure.to-slide
-																	img(src="img/photos/eco-turn-img-"+i+".png")
+																	img(src="img/photos/eco-turn-img-"+(i+5)+".png")
 																figcaption.to-slide__text=text
 												.to-sliders__item-answers
 													.to-answers
@@ -115,45 +131,46 @@ html(lang="ru")
 											figure.tos-starter__img
 												img.tos-starter__img-img(src="img/starter.jpg")
 								.turn-on__button
-									button.default-btn Отправить ответы
+									button.default-btn Посмотреть результат
+								.turn-on__notice Сначала вам нужно ответить на вопросы
 					.eco-maniya__level
 						.wrapper
-							.eco-level(data-level="0")
+							.eco-level(data-min="0" data-max="2")
 								.eco-level__title-top ТВОЙ УРОВЕНЬ
 								.eco-level__title
 									.eco-title 
 										b ECO
-										| дегенерат
+										| чайник
 								.eco-level__text
 									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
 								figure.eco-level__decor
 									img(src="img/eco-level-decor.png")
-							.eco-level(data-level="1")
+							.eco-level(data-min="3" data-max="5")
 								.eco-level__title-top ТВОЙ УРОВЕНЬ
 								.eco-level__title
 									.eco-title 
 										b ECO
-										| дурак
+										| молодец
 								.eco-level__text
 									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
 								figure.eco-level__decor
 									img(src="img/eco-level-decor.png")
-							.eco-level(data-level="2")
+							.eco-level(data-min="6" data-max="7")
 								.eco-level__title-top ТВОЙ УРОВЕНЬ
 								.eco-level__title
 									.eco-title 
 										b ECO
-										| тупой
+										| молодец
 								.eco-level__text
 									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
 								figure.eco-level__decor
 									img(src="img/eco-level-decor.png")
-							.eco-level(data-level="3")
+							.eco-level(data-min="8" data-max="9")
 								.eco-level__title-top ТВОЙ УРОВЕНЬ
 								.eco-level__title
 									.eco-title 
 										b ECO
-										| ЧАЙНИК
+										| гуру
 								.eco-level__text
 									p Ого, а ты на верном пути! Ведь ты уже понимаешь, что просто «свистеть» об экологии – это совсем не вариант, а пора, наконец, что-то сделать. Начни с эко-кухни от LORENA, или установи измельчитель в свою кухню, а еще не забывай зарядные устройства в розетках и смело выходи с друзьями на субботник в своем дворе. Даже маленький эко-шаг, сделает планету чище, а тебя и твоих близких счастливее!  
 								figure.eco-level__decor
