@@ -69,10 +69,12 @@ App.domReady(() => {
 	const toLevelBtn = document.querySelector(".turn-on__button .default-btn") as HTMLElement,
 		curCounter = document.querySelector(".to-counter__current") as HTMLElement;
 
-	let stupidCounter = 0;
+	let stupidCounter = 0
 	starter.addEventListener("click", async function(){
 		if (selectedAnswers == 9){
-			toLevelBtn.click();
+
+			if (!document.querySelector(".eco-level[style*='block']"))
+				toLevelBtn.click();
 
 			return;
 		}
