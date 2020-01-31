@@ -28,7 +28,7 @@ App.domReady(() => {
 				spaceBetween: 20
 			},
 			660: {
-				slidesPerView: 2,
+				slidesPerView: 1,
 				spaceBetween: 20
 			}
 		}
