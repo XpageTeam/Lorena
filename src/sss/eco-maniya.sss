@@ -14,31 +14,7 @@ body.ecomaniya
 	#content
 		z-index: auto
 
-body.eco-loaded
 
-	.eco-maniya__loader
-		opacity: 0
-		pointer-events: none
-
-	.eco-loader
-		
-		&__recycle
-
-			path
-				stroke-dashoffset: 0 !important
-
-		&__shadow-evlev, &__light-evlev
-			animation: loaderOpacity 1s ease forwards
-
-		&__text
-			filter: blur(0)
-
-@keyframes loaderOpacity
-	0%
-		opacity: 0
-		
-	100%
-		opacity: 1
 
 
 .eco-loader
@@ -65,9 +41,9 @@ body.eco-loaded
 		font-size: 96px
 		font-weight: bold
 		letter-spacing: 0.02em
-		filter: blur(100px)
+		filter: blur(50px) !important
 		transition: filter 1s ease
-		transition-delay: 3.1s
+		transition-delay: 3.1s !important
 
 	&__shadow-evlev
 		animation-delay: 2s !important
@@ -91,6 +67,32 @@ body.eco-loaded
 			// stroke-dashoffset: 0 !important
 			transition: stroke-dashoffset 1s ease !important
 			transition-delay: 1s !important
+
+body.eco-loaded
+
+	.eco-maniya__loader
+		opacity: 0
+		pointer-events: none
+
+	.eco-loader
+		
+		&__recycle
+
+			path
+				stroke-dashoffset: 0 !important
+
+		&__shadow-evlev, &__light-evlev
+			animation: loaderOpacity 1s ease forwards
+
+		&__text
+			filter: blur(0) !important
+
+@keyframes loaderOpacity
+	0%
+		opacity: 0
+		
+	100%
+		opacity: 1
 
 .eco-maniya
 
@@ -511,6 +513,7 @@ body.eco-loaded
 	font-weight: bold
 	border: none
 	padding: 10px
+	font-weight: 400
 
 	&.selected
 		box-shadow: inset 0px 0 10px 2px rgba(0,0,0,.4)
@@ -519,9 +522,10 @@ body.eco-loaded
 		background-color: var(--main-color)
 
 	&--no
-		background-color: #336600
+		background-color: #360
 
-
+		&.selected
+			color: #000 #ace46b
 
 @media (max-width: 1700px)
 	.eco-top-img__text
@@ -703,3 +707,14 @@ body.eco-loaded
 
 	.es-slider__slide-text
 		font-size: 16px
+
+	.turn-on
+		
+		&__slider
+
+			&-starter
+				transform: rotateZ(-90deg)
+				margin: 55px 0 0
+
+		&__button
+			display: none
