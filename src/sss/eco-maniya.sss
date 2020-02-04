@@ -15,7 +15,27 @@ body.ecomaniya
 		z-index: auto
 
 
+.el-loader
+	text-align: center
 
+	&__loader
+		display: inline-block
+		size: 289px 16px
+		border: 1px solid #fff
+		border-radius: 30px
+		position: relative
+		margin: 0 0 12px
+		overflow: hidden
+		
+		&-progress
+			position: absolute -1px
+			background: #89D457
+			// border-radius: inherit
+			transform: scaleX(0)
+			transform-origin: left
+
+	&__text
+		font-size: 14px
 
 .eco-loader
 	position: absolute 0
@@ -37,13 +57,17 @@ body.ecomaniya
 		display: flex
 		text-align: center
 		justify-content: center
+		flex-direction: column
 		align-items: center
-		font-size: 96px
-		font-weight: bold
-		letter-spacing: 0.02em
-		filter: blur(50px) !important
-		transition: filter 1s ease
-		transition-delay: 3.1s !important
+
+		&-text
+			margin: 0 0 7vh
+			font-size: 96px
+			font-weight: bold
+			letter-spacing: 0.02em
+			filter: blur(50px) !important
+			transition: filter 1s ease
+			transition-delay: 3.1s !important
 
 	&__shadow-evlev
 		animation-delay: 2s !important
@@ -69,7 +93,7 @@ body.ecomaniya
 			transition-delay: 1s !important
 
 body.eco-loaded
-
+	
 	.eco-maniya__loader
 		opacity: 0
 		pointer-events: none
@@ -84,7 +108,7 @@ body.eco-loaded
 		&__shadow-evlev, &__light-evlev
 			animation: loaderOpacity 1s ease forwards
 
-		&__text
+		&__text-text
 			filter: blur(0) !important
 
 @keyframes loaderOpacity
@@ -93,6 +117,14 @@ body.eco-loaded
 		
 	100%
 		opacity: 1
+
+@keyframes loaderLoading
+	0%
+		transform: rotateZ(0deg)
+		
+	100%
+		transform: rotateZ(360deg)
+		
 
 .eco-maniya
 
@@ -328,6 +360,7 @@ body.eco-loaded
 		font-size: 18px
 		letter-spacing: 0.02em
 		display: none
+		z-index: 20
 
 	&__title
 		color: var(--thrid-color)
@@ -361,7 +394,7 @@ body.eco-loaded
 			width: persent(865, 1133)
 
 	&__button
-		margin: 135px 0 0
+		margin: 30px 0 0
 		text-align: center
 
 		.default-btn
@@ -407,6 +440,9 @@ body.eco-loaded
 		&-answers
 			position: absolute calc(100% + 26px) 0 *
 
+		&--mobile
+			display: none
+
 
 .to-answers
 	display: flex
@@ -426,6 +462,22 @@ body.eco-loaded
 	border-radius: 20px
 	box-shadow: -5px 8px 24px 0px rgba(78, 9, 9, 0.06)
 	height: 455px
+
+	&.js__ended
+
+		+ .to-sliders__item-answers
+			display: none
+
+		.to-slide
+
+			img
+				background: url("../img/ico-complete.svg") center no-repeat
+				object-fit: cover
+				object-position: 320px
+				size: 100%
+
+			&__text
+				opacity: 0
 
 	.swiper-wrapper
 		// transition-timing-function: cubic-bezier(1,.87,.5,1.54)
@@ -447,6 +499,7 @@ body.eco-loaded
 	justify-content: center
 	background: var(--main-color)
 	size: 170px
+	flex: none
 	position: relative
 
 	&:before, &:after
@@ -467,15 +520,39 @@ body.eco-loaded
 		color: var(--thrid-color)
 		margin: 70px 0 0
 
+@keyframes highlighting
+	0%
+		opacity: 0
+		
+	100%
+		opacity: 1
+		
 
 .tos-starter
 	user-select: none
+	position: relative
+
+	&.js__highlight &__img:after
+		background: url("../img/starter-hndle-ready.png") no-repeat
+
+	&.js__highlight
+
+		&:after
+			animation: highlighting 1s ease forwards
+
+	&:after
+		content: ""
+		position: fixed 0
+		background: rgba(0,0,0, .3)
+		opacity: 0
+		pointer-events: none
 	
 	&__img
 		position: relative
 		cursor: pointer
 		transform-style: preserve-3d
 		perspective: 900
+		z-index: 1
 
 		&:after
 			content: ""
@@ -515,16 +592,22 @@ body.eco-loaded
 	padding: 10px
 	font-weight: 400
 
-	&.selected
-		box-shadow: inset 0px 0 10px 2px rgba(0,0,0,.4)
+	// &.selected
+	&:active
+		box-shadow: 0px 0 10px 2px rgba(0,0,0,.4)
 
 	&--yes
 		background-color: var(--main-color)
 
+		// &.selected
+		&:active
+			color: #fff lighten(#f60, .3)
+
 	&--no
 		background-color: #360
 
-		&.selected
+		// &.selected
+		&:active
 			color: #000 #ace46b
 
 @media (max-width: 1700px)
@@ -568,11 +651,11 @@ body.eco-loaded
 		img
 			size: 140px
 
-	.eco-loader__text
+	.eco-loader__text-text
 		font-size: 76px
 
 @media (max-width: 1300px)
-	.eco-loader__text
+	.eco-loader__text-text
 		font-size: 60px
 
 @media (max-width: 1200px)
@@ -636,19 +719,24 @@ body.eco-loaded
 	.turn-on
 		
 		&__slider
-			flex-direction: column-reverse
+			flex-direction: column
 			
 			&-slider
 				width: 100%
-				// margin: 30px 0 0
+				margin: 130px 0 0
 
 			&-starter
-				transform: rotateZ(-90deg)
+				margin: 60px 0 0
+
+	.tos-starter
+
+		&__img
+			transform: rotateZ(-90deg)
 
 	.turn-on__title
 		margin: 0 0 -15px
 
-	.eco-loader__text
+	.eco-loader__text-text
 		font-size: 60px
 
 @media (max-width: 660px)
@@ -662,7 +750,7 @@ body.eco-loaded
 
 	.eco-loader
 		
-		&__text
+		&__text-text
 			font-size: 30px
 
 	.eco-loader__light-evlev img, 
@@ -688,8 +776,11 @@ body.eco-loaded
 		margin: 0
 
 	.tos-starter
-		transform: scale(.5)
 		margin: -60px 0
+
+		&__img
+			transform: scale(.5) rotateZ(-90deg)
+			margin-top: -140px
 
 	.to-sliders
 		display: block
@@ -700,7 +791,7 @@ body.eco-loaded
 			margin: 0
 
 			&:not(:first-child)
-				margin: 100px 0 0
+				margin: 50px 0 0
 
 	.to-slider
 		height: 220px
@@ -713,8 +804,22 @@ body.eco-loaded
 		&__slider
 
 			&-starter
-				transform: rotateZ(-90deg)
-				margin: 55px 0 0
+				margin: 160px 0 0
 
 		&__button
 			display: none
+
+	.turn-on__slider-slider
+		margin: 30px 0 0
+		position: relative
+		z-index: 2
+
+	.to-sliders
+
+		&__item
+
+			&--mobile
+				display: block
+
+			&:not(&--mobile)
+				display: none

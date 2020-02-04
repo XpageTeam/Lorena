@@ -1,7 +1,7 @@
 import { App } from "./app";
 import {Swiper, Navigation, Autoplay, Keyboard} from 'swiper/dist/js/swiper.esm.js'
-import randomInt from "./functions/randomInt";
-import { promises } from "fs";
+// import randomInt from "./functions/randomInt";
+import "./loader";
 
 Swiper.use([Navigation, Autoplay, Keyboard]);
 
@@ -42,7 +42,7 @@ window.addEventListener("load", function(){
 App.domReady(() => {
 	const toSliders = App.transformNodeListToArray(document.querySelectorAll(".to-slider")),
 		sliderArray: Array<Swiper> = [],
-		starter = document.querySelector(".tos-starter__img") as HTMLElement,
+		starter = document.querySelector(".tos-starter") as HTMLElement,
 		sliderBtns = App.transformNodeListToArray(document.querySelectorAll(".answer-btn"));
 
 	if (!toSliders.length) return;
@@ -69,16 +69,27 @@ App.domReady(() => {
 	const toLevelBtn = document.querySelector(".turn-on__button .default-btn") as HTMLElement,
 		curCounter = document.querySelector(".to-counter__current") as HTMLElement;
 
+	
 	let stupidCounter = 0
 	starter.addEventListener("click", async function(){
 		if (selectedAnswers == 9){
 
-			if (!document.querySelector(".eco-level[style*='block']"))
+			// if (!document.querySelector(".eco-level[style*='block']"))
+			
+			this.querySelector(".tos-starter__img").classList.add("js__active");
+
+			starter.classList.remove("js__highlight");
+
+			setTimeout(() => {
+				this.querySelector(".tos-starter__img").classList.remove("js__active");
+
 				toLevelBtn.click();
+			}, 300)
 
 			return;
 		}
 
+		
 		if (!canTurnStarter){
 			stupidCounter++;
 
@@ -102,14 +113,15 @@ App.domReady(() => {
 		canTurnStarter = false;
 		
 		window.get$(".turn-on__notice").fadeOut(300);
+
+
+		/*
 		stupidCounter = 0;
 		
 		if (sliderArray[0].isEnd)
 			return;
 
 		// starterTurnCounter++;
-
-		this.classList.add("js__active");
 
 		for (const btn of sliderBtns)
 			btn.classList.remove("selected");
@@ -159,16 +171,17 @@ App.domReady(() => {
 
 				await promise;
 			}
-		}, 400);
+		}, 400);*/
 	});
 
-	for (const btn of sliderBtns)
+	
+	for (const btn of sliderBtns){
 		btn.addEventListener("click", function(){
-			if (this.classList.contains("selected")) return;
+			// if (this.classList.contains("selected")) return;
+
+			const targetSlider: Swiper = this.closest(".to-sliders__item").querySelector(".to-slider").swiper;
 
 			let anotherBtn;
-
-
 
 			if (this.classList.contains("answer-btn--yes")){
 				yesAnswers++;
@@ -180,13 +193,21 @@ App.domReady(() => {
 					yesAnswers--;
 			}
 
-			if (!anotherBtn.classList.contains("selected"))
+			if (!anotherBtn.classList.contains("selected") && !targetSlider.el.classList.contains("js__ended")){
 				selectedAnswers++;
-			else{
+				
+				if (targetSlider.isEnd) {	
+					targetSlider.el.classList.add("js__ended");
+
+					if (selectedAnswers == 9){
+						starter.classList.add("js__highlight")
+					}
+				}
+			}else{
 				anotherBtn.classList.remove("selected");
 			}
 
-			this.classList.add("selected")
+			// this.classList.add("selected")
 			
 			// if (selectedAnswers == 3)
 			// 	toLevelBtn.classList.add("js__visible");
@@ -195,13 +216,22 @@ App.domReady(() => {
 
 			curCounter.innerText = selectedAnswers.toString();
 
-			if (selectedAnswers
-				== parseInt((document.querySelector(".to-counter__total") as HTMLElement).innerText.split(" ")[2]))
-				toLevelBtn.classList.add("js__visible");
+			if (targetSlider.isEnd) {	
+				targetSlider.el.classList.add("js__ended");
+			}
 
-			if (selectedAnswers % 3 == 0)
-				canTurnStarter = true;
+			targetSlider.slideNext();
+
+			// if (selectedAnswers
+			// 	== parseInt((document.querySelector(".to-counter__total") as HTMLElement).innerText.split(" ")[2]))
+			// 	toLevelBtn.classList.add("js__visible");
+
+			// if (selectedAnswers % 3 == 0)
+			// 	canTurnStarter = true;
 		});
+
+		// btnCounter++;
+	}
 
 	toLevelBtn.addEventListener("click", function(){
 		window.get$(".eco-maniya__level").fadeIn(100);
@@ -215,6 +245,9 @@ App.domReady(() => {
 
 		for (const level of levelBlocks){
 			// console.log(parseInt(level.getAttribute("data-min")), yesAnswers, parseInt(level.getAttribute("data-max")));
+
+			console.log(parseInt(level.getAttribute("data-min")) , yesAnswers , parseInt(level.getAttribute("data-max")) , yesAnswers);
+			
 			
 			if (parseInt(level.getAttribute("data-min")) <= yesAnswers && parseInt(level.getAttribute("data-max")) >= yesAnswers){
 				window.get$(level).show();

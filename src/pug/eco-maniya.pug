@@ -18,7 +18,32 @@ html(lang="ru")
 									img(src="img/shadow-evlev.png")
 								figure.eco-loader__light-evlev
 									img(src="img/light-evlev.png")
-								.eco-loader__text МУСОР СОРТИРУЕШЬ?
+								.eco-loader__text 
+									.eco-loader__text-text МУСОР СОРТИРУЕШЬ?
+									.eco-loader__text-loader
+										.el-loader
+											.el-loader__loader 
+												.el-loader__loader-progress
+											.el-loader__text Загрузка
+									script(data-skip-moving="true")
+										| ;(function(){
+										| 	var progressBg = document.querySelector(".el-loader__loader-progress"),
+										| 		maxProgress = 21;
+										|
+										| 	var curStep = 0;
+										|
+										| 	var preloaderTimer = setInterval(function(){
+										|		if (curStep < maxProgress){
+										|			progressBg.setAttribute("data-counter", curStep)
+										|			progressBg.style.transform = "scaleX("+(curStep / 100)+")"
+										|			curStep++
+										|		}
+										|	}, 200)
+										|
+										| 	window.addEventListener("load", function() {
+										| 		clearInterval(preloaderTimer)
+										| 	})
+										| })()
 						.eco-maniya__banner
 							.eco-top-img
 								.eco-top-img__img
@@ -115,6 +140,30 @@ html(lang="ru")
 											.to-sliders__item
 												.to-slider
 													.swiper-wrapper
+														each text, i in variants[2]
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+(i+5)+".png")
+																figcaption.to-slide__text=text
+												.to-sliders__item-answers
+													.to-answers
+														.to-answers__btn
+															button.answer-btn.answer-btn--yes Да
+														.to-answers__btn
+															button.answer-btn.answer-btn--no Нет
+											.to-sliders__item.to-sliders__item--mobile
+												.to-slider
+													.swiper-wrapper
+														each text, i in variants[0]
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+(i+5)+".png")
+																figcaption.to-slide__text=text
+														each text, i in variants[1]
+															.swiper-slide
+																figure.to-slide
+																	img(src="img/photos/eco-turn-img-"+(i+5)+".png")
+																figcaption.to-slide__text=text
 														each text, i in variants[2]
 															.swiper-slide
 																figure.to-slide
