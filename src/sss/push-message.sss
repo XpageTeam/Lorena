@@ -17,8 +17,8 @@
 
 	&__chat
 		position: absolute 0
-		padding: 165px 0 50px
-		background: var(--thrid-color)
+		padding: 165px 0 0
+		background: rgba(40,40,40, .8)
 		z-index: 10
 		clip-path: circle(0%)
 		transition: clip-path .8s ease
@@ -26,20 +26,20 @@
 		.wrapper
 			max-width: 675px
 			// width: 100%
-			position: absolute 165px 0 50px
-			overflow-y: auto
+			position: absolute 165px 0 0
+			// overflow-y: auto
 			display: flex
 			flex-direction: column-reverse
 
-			&::-webkit-scrollbar
-				width: 5px
-				border-left: 25px solid var(--thrid-color)
+			// &::-webkit-scrollbar
+			// 	width: 5px
+			// 	border-left: 25px solid var(--thrid-color)
 
-				&-thumb
-					background: var(--main-color)
+			// 	&-thumb
+			// 		background: var(--main-color)
 
-				&-track
-					background: var(--second-color)
+			// 	&-track
+			// 		background: var(--second-color)
 
 body.js__show-chat
 
@@ -161,13 +161,23 @@ body.js__hide-cursor
 
 .about-chat
 	position: relative
+	height: 100%
 
-	&:before
+	&:after
+		position: absolute 0
+		background: url("../img/iphone-bg.png") no-repeat
+		background-size: contain
+
+	&:before, &:after
 		content: ""
 
 	&__list
 		display: flex
 		flex-direction: column
+		height: 100%
+		overflow-y: auto
+		z-index: 1
+		position: relative
 
 		&-item
 			background: var(--second-color)
