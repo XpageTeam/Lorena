@@ -344,6 +344,15 @@ body.eco-loaded
 		display: inline-block
 		line-height: 1.6
 
+	&__share
+		margin: 30px 0 0
+
+		&-title
+			font-size: 22px
+			text-transform: uppercase
+			font-weight: 500
+			margin: 0 0 20px
+
 	&__decor
 		margin: 50px 0 0
 
@@ -823,3 +832,26 @@ body.eco-loaded
 
 			&:not(&--mobile)
 				display: none
+
+.share-block
+
+	.ya-share2
+
+		&__badge
+			background: none !important
+		
+		&__icon
+			background-color: var(--main-color) !important
+			background-position: center !important
+			background-size: 24px !important
+			background-repeat: no-repeat !important
+			width: 42px !important
+			height: 42px !important
+			border-radius: 50% !important
+			transition: background-color .3s ease
+
+			&:hover
+				background-color: var(--thrid-color) !important
+	
+	.ya-share2__container_size_m .ya-share2__item
+		margin-right: 12px
