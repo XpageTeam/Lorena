@@ -205,24 +205,31 @@ App.domReady(() => {
 
 	chatMessages.push({
 		direction: msgDirection.toMe,
-		text: "Дорогая, ты что-то купила?",
+		text: "Вау! Крутая кухня! Где купила?",
 	});
 	chatMessages.push({
 		direction: msgDirection.fromMe,
-		text: "Да дорогой, я купила кухню в Lorena кухни",
+		text: "Делала на заказ в Lorena кухни!",
 	});
 	chatMessages.push({
 		direction: msgDirection.toMe,
-		text: "Почему именно Lorena кухни?",
+		text: "А покажи поближе?",
 	});
-	chatMessages.push({
-		direction: msgDirection.fromMe,
-		text: "Я посмотрела отзыв - это любовь!",
-	});
+	
 	chatMessages.push({
 		direction: msgDirection.fromMe,
 		src: "video/video.mp4",
 		poster: "img/photos/chat-video-poster.jpg"
+	});
+
+	chatMessages.push({
+		direction: msgDirection.fromMe,
+		text: "Кликни, посмотри 😉",
+	});
+
+	chatMessages.push({
+		direction: msgDirection.toMe,
+		text: "Хочу кухню как у тебя! 🙏",
 	});
 
 	if (!fakeCursor)
@@ -261,12 +268,68 @@ function startChat(messagesArray:  Array<msg | msgVideo>){
 		chatMesage: Function;	
 
 	chatMesage = function(){
-		if (messagesArray.length == msgCounter){
+		if (messagesArray.length - 2 == msgCounter){
 			clearInterval(chatInterval);
+			
+			showChatDots(messagesArray[msgCounter].direction);
+
+			chatInterval = setTimeout(function(){
+				hideDots();
+
+				showMessage(
+					messagesArray[msgCounter].direction, 
+					messagesArray[msgCounter].text
+				);
+
+				msgCounter++;
+			}, 1500)
+
+			// msgCounter++;
 
 			setTimeout(function(){
 				if (window.is.desktop())
-					window.get$(".chat-msg__video").trigger("click");
+					// window.get$(".chat-msg__video").trigger("click");
+					window.$.fancybox.open({
+						src: document.querySelector(".chat-msg__video").getAttribute("href"),
+						afterClose(){
+							document.querySelector(".chat-msg__video").classList.add("js__watched");
+							
+							showMessage(
+								messagesArray[msgCounter].direction, 
+								messagesArray[msgCounter].text
+							);
+						}
+					});
+				else{
+					let isMessageShowed = false,
+						nextMessageTimeout: NodeJS.Timeout;
+
+					document.querySelector(".chat-msg__video").addEventListener("click", function(){
+						window.$.fancybox.open({
+							src: document.querySelector(".chat-msg__video").getAttribute("href"),
+							afterClose(){
+								document.querySelector(".chat-msg__video").classList.add("js__watched");
+								
+								clearTimeout(nextMessageTimeout);
+
+								if (!isMessageShowed)
+									showMessage(
+										messagesArray[msgCounter].direction, 
+										messagesArray[msgCounter].text
+									);
+							}
+						});
+					});
+
+					nextMessageTimeout = setTimeout(function(){
+						isMessageShowed = true;
+
+						showMessage(
+							messagesArray[msgCounter].direction, 
+							messagesArray[msgCounter].text
+						);
+					}, 3000);
+				}
 			}, 3000)			
 		}else{
 			showChatDots(messagesArray[msgCounter].direction);
@@ -298,7 +361,7 @@ function showVideo(video: msgVideo){
 	const msgContainer = getMsgContainer(video.direction);	
 
 	msgContainer.innerHTML = `<div class="chat-msg">
-								<a href="${video.src}" class="chat-msg__video" data-fancybox>
+								<a href="${video.src}" class="chat-msg__video">
 									<img class="chat-msg__video-img" src="${video.poster}" />
 									<div class="chat-msg__video-btn">
 										<svg xmlns="http://www.w3.org/2000/svg" width="115" height="115" viewBox="0 0 115 115" fill="none">
@@ -356,6 +419,10 @@ function instertMessage(messageEl: HTMLDivElement){
 	if (!chatContainer) return;
 
 	chatContainer.appendChild(messageEl);
+
+	window.$(chatContainer).animate({
+		scrollTop: 10000
+	}, 1000)
 }
 
 function getMsgContainer(direction: msgDirection): HTMLDivElement{

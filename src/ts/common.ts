@@ -29,7 +29,8 @@ declare global {
     interface Window {
     	animateScroll: Function; 
     	isScrolledIntoView: Function; 
-		get$: Function;
+		get$: any;
+		$: any;
 		Cookies: any,
 		is: any,
     }

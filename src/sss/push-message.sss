@@ -24,7 +24,7 @@
 		transition: clip-path .8s ease
 
 		.wrapper
-			max-width: 675px
+			max-width: 471px
 			// width: 100%
 			position: absolute 165px 0 0
 			// overflow-y: auto
@@ -64,6 +64,7 @@ body.js__show-chat
 
 .a-messages
 	font-size: 14px
+	max-width: calc(100% - 40px)
 
 	&__top
 		display: flex
@@ -162,83 +163,122 @@ body.js__hide-cursor
 .about-chat
 	position: relative
 	height: 100%
+	padding: 118px 35px 0
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
 
 	&:after
-		position: absolute 0
-		background: url("../img/iphone-bg.png") no-repeat
-		background-size: contain
-
-	&:before, &:after
 		content: ""
+		position: absolute 0
+		background: url("../img/iphone-bg.png") center bottom no-repeat
+		background-size: contain
 
 	&__list
 		display: flex
 		flex-direction: column
+		// justify-content: flex-end
+		// align-items: flex-start
 		height: 100%
+		max-height: 421px
+		overflow-x: hidden
 		overflow-y: auto
 		z-index: 1
 		position: relative
+		background: #fff
+		padding: 12px 13px 18px 15px
+		-webkit-overflow-scrolling: touch
+		overflow-scrolling: touch
+
+		&::-webkit-scrollbar
+			width: 0
 
 		&-item
-			background: var(--second-color)
-			border-radius: 10px
 			position: relative
-			max-width: 520px
+			// flex: none
+			min-height: min-content
+			margin-top: auto
 
-			&:before
-				content: ""
-				position: absolute 0 * *
-				width: 0
-				height: 0
-				border-style: solid
-				border-width: 19px 18px 0 18px
-				border-color: var(--second-color) transparent transparent transparent
-
-			&--to
+			&--to 
 				align-self: flex-start
-				margin-left: 17px
+				display: flex
+				align-items: center
+				max-width: 330px
 
 				&:before
-					right: calc(100% - 18px)
+					content: "M"
+					flex: none
+					text-align: center
+					line-height: 28px
+					font-weight: 600
+					border-radius: 50%
+					font-size: 12px
+					size: 28px
+					margin-right: 11px
+					background: var(--thrid-color)
+
+				.chat-msg
+
+					&__text, &__video
+						color: #000 #EFEFEF
+						border-radius: 20px
 
 			&--from
 				align-self: flex-end
-				margin-right: 17px
+				max-width: 300px
 
-				&:before
-					left: calc(100% - 18px)
+				.chat-msg
+
+					&__text, &__video
+						color: #fff #767676
+						border-radius: 20px 20px 5px
 
 			&:not(:first-child)
-				margin-top: 17px
+				margin-top: 10px
 
 .chat-msg
 
 	&__dots
 		display: flex
-		padding: 35px
+		padding: 16px 16px 17px
+		background: #EFEFEF
+		border-radius: 20px
 
 	&__text
-		font-size: 20px
-		padding: 25px 35px 30px
+		font-size: 15px
+		font-weight: 500
+		padding: 15px 20px 
 
 	&__video
 		position: relative
-		display: 
-		padding: 20px
+		display: block
+		padding: 11px
+
+		&.js__watched
+
+			&::after
+				content: "Просмотрено"
+				color: #fff
+				font-size: 10px
+				position: absolute * 15px 15px *
 
 		&-img
 			display: block
 			width: 100%
+			overflow: hidden
+			border-radius: 5px
 
 		&-btn
-			position: absolute calc(50% - 57px) calc(50% - 57px) * *
-			size: 115px
+			position: absolute calc(50% - 24px) calc(50% - 24px) * *
+			size: 47px
 			background: url("../img/ico-video-play.svg") center no-repeat
+			background-size: 24px
 
 			svg
 				fill: transparent
 				display: block
 				transform: rotateZ(-90deg)
+				size: auto
 
 			path
 				stroke-dashoffset: 350.3385925292969
@@ -256,8 +296,8 @@ body.js__hide-cursor
 
 .msg-dot
 	border-radius: 50%
-	background: var(--main-color)
-	size: 10px
+	background: #767676
+	size: 7px
 	flex: none
 	opacity: 0
 	animation: msgOpacity .8s ease infinite
@@ -269,20 +309,27 @@ body.js__hide-cursor
 		animation-delay: .6s
 
 	&:not(:last-child)
-		margin-right: 15px
+		margin-right: 6px
 
 
+
+
+@media (max-width: 1918px)
+	.about-chat
+		
+		&:after
+			background-size: 100% auto
+			background-position: top center
 
 
 @media (max-width: 1500px) and (min-width: 1000px)
 	.about-img
 		
 		&__chat
-			padding: 130px 0 30px
+			padding: 130px 0 0
 
 			.wrapper
 				top: 130px
-				bottom: 30px
 
 		&--chat
 
@@ -299,7 +346,6 @@ body.js__hide-cursor
 			
 			.wrapper
 				top: 20px
-				bottom: 20px
 
 		&--chat
 
@@ -307,8 +353,26 @@ body.js__hide-cursor
 				min-height: 60vh
 				object-fit: cover
 				object-position: center
+	
+	.about-chat
+
+		&:after
+			background-position: center bottom
 
 @media (max-width: 660px)
+	.about-img
+
+		&__chat
+			
+			.wrapper
+				padding: 0 20px
+
+	.about-chat
+		padding: 12.6vh 6.6vw 0
+
+		&:after
+			background-position: center top
+
 	.chat-msg__text
 		padding: 15px
 		font-size: 14px
