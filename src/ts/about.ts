@@ -265,7 +265,13 @@ App.domReady(() => {
 function startChat(messagesArray:  Array<msg | msgVideo>){
 	let chatInterval: NodeJS.Timeout,
 		msgCounter = 0,
-		chatMesage: Function;	
+		chatMesage: Function;
+
+	showMessage(
+		messagesArray[msgCounter].direction, 
+		messagesArray[msgCounter].text
+	);
+	msgCounter++;
 
 	chatMesage = function(){
 		if (messagesArray.length - 2 == msgCounter){
@@ -287,49 +293,49 @@ function startChat(messagesArray:  Array<msg | msgVideo>){
 			// msgCounter++;
 
 			setTimeout(function(){
-				if (window.is.desktop())
-					// window.get$(".chat-msg__video").trigger("click");
-					window.$.fancybox.open({
-						src: document.querySelector(".chat-msg__video").getAttribute("href"),
-						afterClose(){
-							document.querySelector(".chat-msg__video").classList.add("js__watched");
-							
-							showMessage(
-								messagesArray[msgCounter].direction, 
-								messagesArray[msgCounter].text
-							);
-						}
-					});
-				else{
-					let isMessageShowed = false,
-						nextMessageTimeout: NodeJS.Timeout;
+				let isMessageShowed = false,
+					nextMessageTimeout: NodeJS.Timeout;
 
-					document.querySelector(".chat-msg__video").addEventListener("click", function(){
+				document.querySelector(".chat-msg__video")
+					.addEventListener("click", function(e: Event){
+						const self = this;
+						e.preventDefault();
+
 						window.$.fancybox.open({
-							src: document.querySelector(".chat-msg__video").getAttribute("href"),
+							src: self.getAttribute("href"),
 							afterClose(){
-								document.querySelector(".chat-msg__video").classList.add("js__watched");
+								self.classList.add("js__watched");
 								
 								clearTimeout(nextMessageTimeout);
 
-								if (!isMessageShowed)
-									showMessage(
-										messagesArray[msgCounter].direction, 
-										messagesArray[msgCounter].text
-									);
+								if (!isMessageShowed){
+									showChatDots(messagesArray[msgCounter].direction);
+
+									setTimeout(function(){
+										hideDots();
+										showMessage(
+											messagesArray[msgCounter].direction, 
+											messagesArray[msgCounter].text
+										);
+									}, 2000)
+								}
 							}
 						});
 					});
 
-					nextMessageTimeout = setTimeout(function(){
-						isMessageShowed = true;
+				nextMessageTimeout = setTimeout(function(){
+					isMessageShowed = true;
 
+					showChatDots(messagesArray[msgCounter].direction);
+
+					setTimeout(function(){
+						hideDots();
 						showMessage(
 							messagesArray[msgCounter].direction, 
 							messagesArray[msgCounter].text
 						);
-					}, 3000);
-				}
+					}, 2000)
+				}, 3000);
 			}, 3000)			
 		}else{
 			showChatDots(messagesArray[msgCounter].direction);
