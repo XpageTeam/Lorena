@@ -60,8 +60,8 @@
 .btn-fix
 	position: fixed
 	right: 100px
-	bottom: 120px
-	size: 40px
+	bottom: 50px
+	size: 42px
 	border-radius: 50%
 	background: url('../img/ico_btn_03.png') no-repeat center, var(--main-color)
 	background-size: 20px
@@ -116,11 +116,24 @@
 	transition: opacity .3s ease
 	opacity: 0
 
-	&.js__visible
-		cursor: pointer
-		opacity: 1
-		pointer-events: all
 
+
+
+@media screen and (max-width: 1500px)
+	
+	.btn-fix
+		right: 118px
+		bottom: 36px
+
+@media screen and (max-width: 1400px)
+	
+	.btn-fix
+		right: 80px
+@media screen and (max-width: 1400px)
+	
+	.btn-fix
+		right: 20px
+		bottom: 80px
 
 @media screen and (max-width: 1100px)
 	.wrapper
@@ -139,6 +152,9 @@
 @media (max-width: 667px)
 	.to-top-btn
 		display: none
+
+	.btn-fix
+		bottom: 20px
 
 @media (max-width: 660px)
 	.to-top-btn
