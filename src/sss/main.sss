@@ -56,6 +56,27 @@
  */
 @import "decors.sss" (min-width: 1000px)
 
+
+.btn-fix
+	position: fixed
+	right: 100px
+	bottom: 120px
+	size: 40px
+	border-radius: 50%
+	background: url('../img/ico_btn_03.png') no-repeat center, var(--main-color)
+	background-size: 20px
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	font-size: 0
+	// padding: 10px
+	z-index: 10
+	transition: background .3s ease
+
+	&:hover
+		background-color: var(--thrid-color)
+
 .inner-content
 	display: flex
 	flex-direction: column
