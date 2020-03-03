@@ -4,6 +4,9 @@ import stringEffect from "./stringAnimate.js"
 import "./select2.js"
 import Cookies from "js-cookie";
 
+
+import "./call-popup-showing.js";
+
 window.$ = $;
 window.jQuery = $;
 window.Cookies = Cookies;
