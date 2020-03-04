@@ -218,8 +218,8 @@ App.domReady(() => {
 	
 	chatMessages.push({
 		direction: msgDirection.fromMe,
-		src: "video/video.mp4",
-		poster: "img/photos/chat-video-poster.jpg"
+		src: "/local/templates/lorena/video/review/video-review.mp4",
+		poster: "/local/templates/lorena/video/review/poster.jpg"
 	});
 
 	chatMessages.push({
@@ -292,7 +292,7 @@ function startChat(messagesArray:  Array<msg | msgVideo>){
 
 			// msgCounter++;
 
-			setTimeout(function(){
+			// setTimeout(function(){
 				let isMessageShowed = false,
 					nextMessageTimeout: NodeJS.Timeout;
 
@@ -336,7 +336,7 @@ function startChat(messagesArray:  Array<msg | msgVideo>){
 						);
 					}, 2000)
 				}, 3000);
-			}, 3000)			
+			// }, 3000)			
 		}else{
 			showChatDots(messagesArray[msgCounter].direction);
 			chatInterval = setTimeout(function(){
