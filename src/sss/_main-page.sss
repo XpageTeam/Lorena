@@ -2,6 +2,7 @@
 	overflow: hidden
 	user-select: none
 
+
 	.swiper
 
 		&-slide
@@ -21,10 +22,67 @@
 				.string
 					transform: translate3d(0, 0, 0) !important
 					opacity: 1
+.main-slider
+	position: relative
+
+	&-ivlev
+		position: absolute
+		bottom: 0
+		right: 10%
+		z-index: 10
+		pointer-events: none
+
+.ivlev-info
+	position: absolute -50px * * calc(100% - 50px)
+	background-color: var(--main-color)
+	padding: 30px
+	color: #fff
+	min-width: 244px
+	pointer-events: auto
+
+	&:after
+		content: ''
+		position: absolute * * -20px 30px
+		size: 24px 20px
+		background: url('../img/ico-com.svg') no-repeat center
+
+	&__text
+		font-weight: bold
+		font-size: 12px
+		line-height: 15px
+		text-transform: uppercase
+
+	&__link
+		margin-top: 15px
+
+		a
+			position: relative
+			font-weight: 500
+			font-size: 10px
+			line-height: 12px
+
+
+
+			&:after
+				content: ''
+				display: inline-block
+				size: 6px
+				border-right: 1px solid #fff
+				border-top: 1px solid #fff
+				transform: rotate(45deg)
+				margin-left: 5px
+
+
+
+	a
+		color: inherit
+
 
 .main-slide
 	position: relative
 	flex: 1 1 auto
+
+
 
 	video
 		position: absolute 0 0 * *
@@ -160,6 +218,34 @@
 			content: ""
 			position: absolute
 
+@media (min-width: 1920px)
+	
+	.ivlev-info
+		position: absolute -50px * * calc(100% - 50px)
+		padding: 20px
+		min-width: 220px
+
+@media (max-width: 1600px)
+
+	.main-slider
+
+		&-ivlev
+			right: 7%
+
+	.ivlev-info
+		position: absolute -50px * * calc(100% - 90px)
+		padding: 15px
+		min-width: 190px
+
+@media (max-width: 1500px)
+	
+	.ivlev
+		&-info
+			position: absolute -120px * * calc(100% - 100px)
+		&-img
+			max-width: 170px
+
+
 @media (max-width: 1400px) and (min-width: 1000px)
 	.main-slide
 
@@ -199,6 +285,34 @@
 		&__svg
 			display: none
 
+	.main-slider
+
+		&-ivlev
+			right: 10%
+
+	.ivlev
+		&-info
+			position: absolute -120px * * calc(100% - 100px)
+			padding: 20px
+			min-width: 210px
+		&-img
+			max-width: 100%
+
+@media (max-width: 1199px)
+	.main-slider
+
+		&-ivlev
+			right: 15%
+
+	.ivlev
+		&-info
+			position: absolute -100px * * calc(100% - 70px)
+			padding: 20px
+			min-width: 210px
+
+		&-img
+			max-width: 170px
+
 @media (max-width: 1000px) and (min-width: 660px)
 	.main-slide
 
@@ -210,7 +324,38 @@
 				&:not(:last-child)
 					margin: 0 0 40px
 
+@media (max-width: 1000px)
+	
+	.main-slider
+
+		&-ivlev
+			right: 20%
+
+
 @media (max-width: 660px)
+
+	.main-slider
+
+		&-ivlev
+			right: 0
+
+	.ivlev
+		&-img
+			max-width: 135px
+
+		&-info
+			position: absolute -100px calc(100% - 30px) * 0
+			left: auto
+			padding: 15px
+			min-width: 190px
+
+			&:after
+				left: auto
+				right: 20px
+				transform: scaleX(-1)
+
+
+
 	.main-slide
 		display: flex
 		flex-direction: column
