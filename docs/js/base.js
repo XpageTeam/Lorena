@@ -461,6 +461,25 @@ var selectionTemplate = function selectionTemplate(state) {
 document.addEventListener("DOMContentLoaded", function (e) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("loading").addClass("loaded");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var mConfig = {
+    childList: true,
+    subtree: true
+  };
+  var obs = new MutationObserver(function (mutList) {
+    mutList.forEach(function (mutation) {
+      if (mutation.addedNodes) for (var i = 0; i < mutation.addedNodes.length; i++) {
+        if (mutation.addedNodes[i].classList) if (mutation.addedNodes[i].classList.contains("main-choose__text-success")) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(mutation.addedNodes[i]).closest(".popup-form").css({
+            maxWidth: 420
+          });
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(mutation.addedNodes[i]).closest(".popup-form").addClass('after-form');
+        }
+      }
+    });
+  });
+  obs.observe(document.body, mConfig);
+});
 
 /***/ }),
 

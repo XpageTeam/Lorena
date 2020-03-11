@@ -310,3 +310,28 @@ const selectionTemplate = state => {
 document.addEventListener("DOMContentLoaded", e => {
 	$("body").removeClass("loading").addClass("loaded")
 })
+
+
+document.addEventListener("DOMContentLoaded", function(){
+	var mConfig = {
+		childList: true,
+		subtree: true
+	};
+
+	var obs = new MutationObserver(function(mutList){
+		mutList.forEach(function(mutation){
+			if (mutation.addedNodes)
+				for (var i = 0; i < mutation.addedNodes.length; i++)
+					if (mutation.addedNodes[i].classList)
+						if (mutation.addedNodes[i].classList.contains("main-choose__text-success")) {
+							$(mutation.addedNodes[i]).closest(".popup-form").css({
+								maxWidth: 420
+							})
+							$(mutation.addedNodes[i]).closest(".popup-form").addClass('after-form')
+							
+						}
+		});
+	});
+
+	obs.observe(document.body, mConfig);
+});
