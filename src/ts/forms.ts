@@ -1,9 +1,40 @@
-import {App, Element, EventListener} from "./app"
+import {App, EventListener} from "./app"
+
+
 
 App.domReady(() => {
-	new EventListener(".default-input__input--file").add("change", (el: HTMLInputElement) => {
+	const curInputs = App.elementsGetter(".default-input__input--file");
+
+	console.log(curInputs)
+
+	for (const input of curInputs)
+		observerFileInput(input);
+
+	const obsConfig: MutationObserverInit = {
+		childList: true,
+		subtree: true
+	};
+
+	const callback = (mutationList: Array<MutationRecord>) => {
+		for (const mutation of mutationList)
+			mutation.addedNodes.forEach((node: HTMLElement) => {
+				if (node && node.classList && node.classList.contains("default-input__input--file"))
+					observerFileInput(node);
+			});
+	};
+
+	const observer = new MutationObserver(callback);
+
+	observer.observe(document.body, obsConfig);
+});
+
+function observerFileInput(input: HTMLElement): void{
+	new EventListener(input).add("change", (el: HTMLInputElement) => {
 		const parent = el.closest(".default-input--file"),
 			fileNameField = parent.querySelector(".default-input__label--file");
+
+		console.log(el);
+		
 
 		if (el.files.length){
 			let names = [];
@@ -16,4 +47,4 @@ App.domReady(() => {
 			fileNameField.setAttribute("data-text", "Файл не выбран")
 		}
 	})
-})
+}
