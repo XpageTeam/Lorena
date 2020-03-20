@@ -34,3 +34,10 @@ footer.footer
 				a.dev(href="#")
 					//- img(src="img/ico-developer.svg")
 					include ../../img/ico-developer.svg
+
+.popup-stocks#popup-stocks
+	a(href="#").popup-stocks__link
+		picture.popup-stocks__img
+			source(srcset="img/popups/desktop-popup-img.jpg" media="(min-width: 660px)")
+			source(srcset="img/popups/mobile-popup-img.jpg" media="(max-width: 660px)")
+			img

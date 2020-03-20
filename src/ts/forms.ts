@@ -5,8 +5,6 @@ import {App, EventListener} from "./app"
 App.domReady(() => {
 	const curInputs = App.elementsGetter(".default-input__input--file");
 
-	console.log(curInputs)
-
 	for (const input of curInputs)
 		observerFileInput(input);
 
