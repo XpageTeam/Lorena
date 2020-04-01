@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 
 import "./stock-popup-showing.js";
 import "./call-popup-showing.js";
+import "./upload.js";
 
 window.$ = $;
 window.jQuery = $;
@@ -171,6 +172,12 @@ try{
 				$("body").removeClass("js__fancybox-map")
 			}
 		})
+
+
+	
+		
+
+
 		
 		$(".main-slide__title-title, \
 			.for-about .about-img__text-title,\
@@ -308,7 +315,28 @@ const selectionTemplate = state => {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-	$("body").removeClass("loading").addClass("loaded")
+
+
+	$("body").removeClass("loading").addClass("loaded");
+
+	if($('.sk-img-cont').length) {
+
+		var $heightHead = $('.head').innerHeight();
+
+		$("body").on('click', '#kitchen-frame .letter > g', function(){
+			
+			var id =  $(this).attr("data-id");
+			
+			console.log(id);
+			$("body").find(".default-input[data-id='"+id+"']").addClass("active");
+			
+			$('html,body').animate({scrollTop: $(".default-input[data-id='"+id+"']").offset().top - $heightHead - 50}, 1000);
+		});
+		
+		$('body').on('click', '#tooltip, .sk-input__inform', function(){
+			$(this).addClass('js__hidden');
+		})
+	}
 })
 
 

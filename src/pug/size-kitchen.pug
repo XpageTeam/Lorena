@@ -1,0 +1,103 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Определи размеры своей кухни 
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading.kitchen_by_size
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							.title-block__title
+								h1 Определи размеры своей кухни
+						
+				.inner-content__content
+					form(action="")
+						.wrapper
+							.size-kitchen-cont
+								.size-kitchen
+									.sk-top
+										//- .sk-title Определи размеры своей кухни
+										.sk-img-cont
+											.wrapper
+												.sk-img
+													include ../img/photos/size-kitchen-img.svg
+									.sk-bot
+										.sk-form__title Ориентируясь на схему выше заполни поля
+										.sk-form__text 
+											| (для замера можно воспользоваться лазерной или обычной рулеткой)
+										.sk-form__list
+											each letters, i in [{dataid: "b", letter: "Б", label: "Расстояние от ближайшего угла до газовой трубы"}, {dataid: "v", letter: "В", label: "Расстояние от угла до подоконника либо длина стены от угла до угла"}, {dataid: "g", letter: "Г", label: "Расстояние от пола до вентиляционной решетки"}, {dataid: "d", letter: "Д", label: "Расстояние от угла до вентиляционной решетки"}, {dataid: "e", letter: "Е", label: "Длина вентиляционной решетки"}, {dataid: "j", letter: "Ж", label: "Высота вентиляционной решетки"}, {dataid: "i", letter: "И", label: "Расстояние от пола до подоконника"}, {dataid: "k", letter: "К", label: "Глубина подоконника"}, {dataid: "l", letter: "Л", label: "Высота от пола до потолка"}, {dataid: "n", letter: "Н", label: "Расстояние от угла до обналички двери либо длина стены от угла до угла"}, {dataid: "p", letter: "П", label: "Расстояние от угла до внешней стороны водопроводных труб"}, {dataid: "r", letter: "Р", label: "Расстояние от пола до верха водопроводных труб"}, {dataid: "s",letter: "С", label: "Расстояние от пола до низа трубы слива"}]
+												if(i == 0)
+													.default-input(data-id="a")
+														.sk-input__inform
+															.sk-input__inform-text Нажмите на поле<br> и введите данные
+															.sk-input__inform-btn Понятно
+														.sk-form__letter A
+														input.default-input__input(type="text" placeholder="ММ" required="required")
+														label.default-input__label Расстояние между стенами, где будет располагаться кухонный гарнитур, на высоте 850 мм от пола
+														.forms__error-message
+
+
+												.default-input(data-id=letters.dataid)
+													.sk-form__letter=letters.letter
+													input.default-input__input(type="text" placeholder="ММ" required="required")
+													label.default-input__label=letters.label
+													.forms__error-message
+										.sk-form__req * Поля, обязательные для заполнения. Чем больше размеров вы укажите, тем точнее будет подготовлен проект.
+										.sk-form__info Загрузи фотографии для уточнения некоторых особенностей помещения  (батареи, розетки, выступы и т. д.), а также предполагаемых мест установки бытовой техники 
+									.upload
+										.upload-title Загрузить фото
+										.upload-gallery
+											.upload__item-el--photo
+												.forms__input-cont--multiple
+													.forms__input-cont.forms-input-cont--file(data-el-id="1")
+														input(type="file" id="1111" accept="image" name="images_foto2[]" ).forms__input.forms__input--file.imagesFoto
+														input(readonly="" type="text").forms__input.forms__input--file-support.default-input__img
+														label(for="1111").forms__label--file.default-input__label-img Выбрать изображение
+											.upload-load-photo
+						.main-choose__cont.main-choose__cont--no-bg
+							.wrapper
+								.main-choose
+									.main-choose__form
+										.main-choose__text-title Закажи дизайн-проект кухни прямо сейчас!
+										.main-choose__text-subtitle Отправь замеры и фото помещения дизайнеру-консультанту
+										.choose-form 
+											form(action="#")
+												.choose-form__inputs
+													.default-input
+														input.default-input__input(type="text" placeholder="Иван" required)
+														label.default-input__label Ваше имя
+														.forms__error-message
+													.default-input.default-input--select
+														select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+															option(value="Выберите город" disabled="")
+															option(value="1" selected="") Челябинск
+															option(value="2") Челябинск
+															option(value="3") Челябинск
+															option(value="4") Челябинск
+															option(value="5") Челябинск
+														label.default-input__label Город
+														.forms__error-message
+													.default-input
+														input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+														label.default-input__label Телефон
+														.forms__error-message
+													.default-input
+														input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+														label.default-input__label E-mail
+														.forms__error-message
+													.choose-form__bot
+														.choose-form__bot-submit
+															input.arrow-btn.choose-form__submit(type="submit" value="Отправить")
+									figure.main-choose__img
+										img(src="img/photos/another-ivlev.png")
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 
