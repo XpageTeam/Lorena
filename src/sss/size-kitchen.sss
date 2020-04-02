@@ -1,7 +1,15 @@
-.kitchen_by_size
+.information_useful_108128
 	.main-choose__cont--no-bg, .default-input__input
 		background-color: #333333
+
+	.footer--form, .standart-page
+		display: none
+	
 .sk
+	&-img
+		svg 
+			height: 700px
+
 	&-title
 		font-size: rem(60)
 		font-weight: 700
@@ -12,18 +20,18 @@
 
 	&-form
 		&__title
-			font-size: rem(40)
+			font-size: rem(25)
 			font-weight: bold
 			text-align: center
 
 		&__text
-			font-size: rem(22)
+			font-size: rem(18)
 			color: #8d8d8d
 			font-weight: 500
 			text-align: center
 
 		&__letter
-			size: 63px
+			size: 40px
 			border: 2px solid #fff
 			border-radius: 50%
 			position: absolute 8px * * 8px
@@ -31,7 +39,7 @@
 			justify-content: center
 			align-items: center
 			font-weight: 700
-			font-size: 25px
+			font-size: 22px
 			
 
 		&__list
@@ -52,15 +60,16 @@
 
 				&__input
 					border: 2px solid #fff
-					height: 80px
+					height: 55px
 					border-radius: 50px
-					padding-left: 85px
+					padding-left: 60px
 
 				&__label
 					position: static
-					margin-top: 30px
-					font-size: rem(18)
-					font-weight: 500	
+					margin-top: 20px
+					font-size: rem(16)
+					font-weight: 500
+					margin-bottom: 0	
 
 					&::after
 						position: absolute
@@ -145,7 +154,8 @@ g
 	&[data-id="a"],
 	&[data-id="p"],
 	&[data-id="s"],
-	&[data-id="r"]
+	&[data-id="r"],
+	&[data-id="l"]
 		transition: .3s ease
 
 		&:hover
@@ -173,15 +183,24 @@ g
 		display: none
 
 .forms__label--file
-	padding: 25px 50px
+	padding: 20px 30px 18px
 	text-align: center
 	text-transform: uppercase
 	background-color: var(--main-color)
 	display: inline-block
 	border-radius: 40px
 	cursor: pointer
-	font-size: rem(26)
+	font-size: rem(18)
 	line-height: 1
+
+
+	text-transform: uppercase
+	font-size: 10px
+	border-radius: 100px
+	border: none
+	display: inline-block
+	padding: 16px 22px 14px 22px
+	transition: background-color .3s ease
 
 .forms__input-cont--multiple
 	display: flex
@@ -229,7 +248,7 @@ g
 	margin: 50px 0
 
 	&-title
-		font-size: rem(40)
+		font-size: rem(30)
 		font-weight: 700
 		text-align: center
 		margin-bottom: 20px

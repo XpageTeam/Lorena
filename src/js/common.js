@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import "./stock-popup-showing.js";
 import "./call-popup-showing.js";
 import "./upload.js";
+import "./size-popup-showing.js";
 
 window.$ = $;
 window.jQuery = $;
@@ -326,12 +327,15 @@ document.addEventListener("DOMContentLoaded", e => {
 		$("body").on('click', '#kitchen-frame .letter > g', function(){
 			
 			var id =  $(this).attr("data-id");
-			
-			console.log(id);
 			$("body").find(".default-input[data-id='"+id+"']").addClass("active");
 			
-			$('html,body').animate({scrollTop: $(".default-input[data-id='"+id+"']").offset().top - $heightHead - 50}, 1000);
+			$('html,body').animate({
+				scrollTop: $(".default-input[data-id='"+id+"']").offset().top - $heightHead - 50}, 1000);
+
+			$("body").find(".default-input[data-id='"+id+"']").find("input").focus();
 		});
+
+
 		
 		$('body').on('click', '#tooltip, .sk-input__inform', function(){
 			$(this).addClass('js__hidden');

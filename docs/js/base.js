@@ -215,6 +215,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stock_popup_showing_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./stock-popup-showing.js */ "./src/js/stock-popup-showing.js");
 /* harmony import */ var _call_popup_showing_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./call-popup-showing.js */ "./src/js/call-popup-showing.js");
 /* harmony import */ var _upload_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./upload.js */ "./src/js/upload.js");
+/* harmony import */ var _size_popup_showing_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./size-popup-showing.js */ "./src/js/size-popup-showing.js");
+
 
 
 
@@ -469,11 +471,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
     var $heightHead = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.head').innerHeight();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").on('click', '#kitchen-frame .letter > g', function () {
       var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("data-id");
-      console.log(id);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").find(".default-input[data-id='" + id + "']").addClass("active");
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('html,body').animate({
         scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(".default-input[data-id='" + id + "']").offset().top - $heightHead - 50
       }, 1000);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").find(".default-input[data-id='" + id + "']").find("input").focus();
     });
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').on('click', '#tooltip, .sk-input__inform', function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('js__hidden');
@@ -5552,6 +5554,42 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   jQuery.fn.select2.amd = S2; // Return the Select2 instance for anyone who is importing it.
 
   return select2;
+});
+
+/***/ }),
+
+/***/ "./src/js/size-popup-showing.js":
+/*!**************************************!*\
+  !*** ./src/js/size-popup-showing.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (!js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.get("home-popup-visible") && document.querySelector("#popup-size")) setTimeout(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default.a.fancybox.open({
+      src: "#popup-size",
+      afterShow: function afterShow() {
+        js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.set("home-popup-visible", "true");
+      }
+    }); // const popupLink = document.querySelector(".popup-size a");
+    // const fancyboxClose = document.querySelector(".fancybox-close-small");
+    // popupLink.addEventListener("click", () => {
+    // 	console.log(1)
+    // 	Cookies.set("home-popup-visible", "true");
+    // });
+    // fancyboxClose.addEventListener("click", () => {
+    // 	Cookies.set("home-popup-visible", "true");
+    // })
+  }, 300);
 });
 
 /***/ }),

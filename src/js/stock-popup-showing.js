@@ -26,4 +26,5 @@ document.addEventListener("DOMContentLoaded", function(){
 				Cookies.set("home-popup-showed", "true");
 			});
 		}, 300)
+
 });
