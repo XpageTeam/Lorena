@@ -1,0 +1,72 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Конструктор
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.constructor.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.constructor-cont
+						.constructor-banner
+							.constructor-banner__img
+								picture
+									source(srcset="img/photos/constructor.jpg" media="(min-width: 660px)")
+									source(srcset="img/photos/constructor.jpg" media="(max-width: 660px)")
+									img
+							.cb-info-cont 
+								.wrapper
+									.cb-info
+										.cb-info__text Проект идеальной кухни за 15 минут
+										.cb-info__title Создайте кухню своей мечты
+										a(href="").btn Создать проект
+						.wrapper
+							.constructor
+								.constructor-about
+									.constructor-about__info
+										.constructor-about__title Добро пожаловать в конструктор кухни от LORENA!
+										.constructor-about__text Тут вы сможете самостоятельно создать проект своей идеальной кухни. Учтите все свои желания и привычки, особенности помещения и стиль интерьера. Всего 5 шагов и кухня мечты - у вас дома!
+									.constructor-consultant
+										.constructor-consultant__text на любом этапе проектирования вы можете нажать на эту иконку и получить помощь дизайнера
+										.constructor-consultant__ico
+											img(src="img/constr-const.svg", alt="")
+											span.arrow
+												include ../img/const-arrow.svg
+								.constructor-advantages
+									.ca__title 100 семей уже<br> сконструировали свою<br> идеальную кухню,<br> потому что это:
+									.ca__list
+										.ca__item
+											.ca__item-title Индивидуально
+											.ca__item-text Можно выбрать всё, начиная от цвета стен и заканчивая фурнитурой
+										.ca__item
+											.ca__item-title Наглядно
+											.ca__item-text Готовая 3D модель вашей идеальной кухни
+										.ca__item
+											.ca__item-title Быстро
+											.ca__item-text 15 минут, и макет кухни готов 
+								.constructor-stage
+									.cs__list
+										
+										each stageText, i in ["Выберите модель кухни", "Определитесь с материалами", "Введите размеры помещения", "Добавьте бытовую технику", "Получите 3D проект кухни ", "Закажите свою идеальную кухню"]
+											.cs__item
+												.cs__item-num=+i+1
+												.cs__item-text=stageText
+									.cs-slider
+										.swiper-list
+											.swiper-wrapper
+												- for (let i = 1; i < 7; i++)
+													.swiper-slide
+														.cs__slide
+															img(data-src="img/photos/stage-1.png").swiper-lazy
+															.cs__slide-text На любом этапе проектирования вы можете нажать на эту иконку и получить помощь дизайнера
+
+
+			
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

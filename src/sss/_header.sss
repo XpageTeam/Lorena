@@ -3,7 +3,7 @@
 		display: none
 
 
-.main, .tovar
+.main, .tovar, .constructor
 
 	.head
 		position: absolute 0 * * 0
@@ -16,15 +16,16 @@
 				.h-menu:before
 					opacity: 1
 
-.inner:not(.tovar)
+.inner
+	&:not(.tovar):not(.constructor)
 
-	.head
-		position: sticky 0 * * *
-		// background: var(--second-color)
-		background: var(--thrid-color)
-
-		.h-submenu:before
+		.head
+			position: sticky 0 * * *
+			// background: var(--second-color)
 			background: var(--thrid-color)
+
+			.h-submenu:before
+				background: var(--thrid-color)
 
 @media (min-width: 1000px)
 	body
