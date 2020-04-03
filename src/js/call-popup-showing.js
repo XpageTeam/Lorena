@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (!targetBtn || !document.querySelector(formId)) return;
 
-		const callPopupShowingTimeout = setInterval(() => {
+		const callPopupShowingTimeout = setTimeout(() => {
 			$.fancybox.open({
 				src: formId,
 				afterClose(){

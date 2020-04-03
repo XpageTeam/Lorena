@@ -9,6 +9,8 @@ import "./call-popup-showing.js";
 import "./upload.js";
 import "./size-popup-showing.js";
 
+import {Swiper, Navigation} from 'swiper/dist/js/swiper.esm.js'
+
 window.$ = $;
 window.jQuery = $;
 window.Cookies = Cookies;
@@ -315,33 +317,85 @@ const selectionTemplate = state => {
 		return state.text
 }
 
-document.addEventListener("DOMContentLoaded", e => {
+try {
 
-
-	$("body").removeClass("loading").addClass("loaded");
-
-	if($('.sk-img-cont').length) {
-
-		var $heightHead = $('.head').innerHeight();
-
-		$("body").on('click', '#kitchen-frame .letter > g', function(){
+	document.addEventListener("DOMContentLoaded", e => {
+	
+		$("body").removeClass("loading").addClass("loaded");
+	
+		if($('.sk-img-cont').length) {
+	
+			var $heightHead = $('.head').innerHeight();
+	
+			$("body").on('click', '#kitchen-frame .letter > g', function(){
+				
+				var id =  $(this).attr("data-id");
+				$("body").find(".default-input[data-id='"+id+"']").addClass("active");
+				
+				$('html,body').animate({
+					scrollTop: $(".default-input[data-id='"+id+"']").offset().top - $heightHead - 50}, 1000);
+	
+				$("body").find(".default-input[data-id='"+id+"']").find("input").focus();
+			});
+	
+	
 			
-			var id =  $(this).attr("data-id");
-			$("body").find(".default-input[data-id='"+id+"']").addClass("active");
-			
-			$('html,body').animate({
-				scrollTop: $(".default-input[data-id='"+id+"']").offset().top - $heightHead - 50}, 1000);
+			$('body').on('click', '#tooltip, .sk-input__inform', function(){
+				$(this).addClass('js__hidden');
+			})
+		}
+	})
+}catch(e) {
+	console.log('Ошибочка вышла!')
+}
 
-			$("body").find(".default-input[data-id='"+id+"']").find("input").focus();
+try {
+	
+	document.addEventListener("DOMContentLoaded", function(){
+		let clickedElementIndex = 0;
+
+		$('.cs__item:first-child').addClass('active');
+
+		$('.cs__item').click(function(){
+			let $this = $(this),
+				itemId = $(this).index();
+			stageSlider.slideTo(itemId);
+
+			$('.cs__item').each(function(i,el){
+				let $this = $(el);
+				$this.removeClass('active');
+			})
+
+			$this.addClass('active');
+
+			$('.cs__list').find('.cs__item')
+
+		})
+
+
+
+		var stageSlider = new Swiper('.cs-slider .swiper-list', {
+			slidesPerView: 1,
+			centeredSlides: true,
+			on: {
+				transitionEnd() {
+					let indexSlide = stageSlider.realIndex;
+					$('.cs__item').removeClass('active')
+					$('.cs__item:eq('+indexSlide+')').addClass('active');
+
+					console.log(indexSlide);
+				}
+			},
 		});
 
 
 		
-		$('body').on('click', '#tooltip, .sk-input__inform', function(){
-			$(this).addClass('js__hidden');
-		})
-	}
-})
+	})
+}catch(e) {
+	console.log(e)
+}
+
+
 
 
 document.addEventListener("DOMContentLoaded", function(){

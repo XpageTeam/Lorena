@@ -59,8 +59,12 @@ html(lang="ru")
 												- for (let i = 1; i < 7; i++)
 													.swiper-slide
 														.cs__slide
-															img(data-src="img/photos/stage-1.png").swiper-lazy
+															img(src="img/photos/stage-1.png")
 															.cs__slide-text На любом этапе проектирования вы можете нажать на эту иконку и получить помощь дизайнера
+																span.cs__slide-arrow
+																	include ../img/photos/ico-arrow-const-slider.svg
+															.cs__slide-num=i
+
 
 
 			
