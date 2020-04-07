@@ -4,7 +4,7 @@ import $ from "jquery";
 document.addEventListener("DOMContentLoaded", function(){
 
 	if (
-		!Cookies.get("home-popup-visible")
+		!Cookies.get("home-popup-visible-new")
 		&& document.querySelector("#popup-size")
 	)
 
@@ -13,23 +13,18 @@ document.addEventListener("DOMContentLoaded", function(){
 			$.fancybox.open({
 				src: "#popup-size",
 				afterShow(){
-					Cookies.set("home-popup-visible", "true");
-				},
-				// afterClose(){
-				// 	Cookies.set("home-popup-visible", "true");
-				// }
+					Cookies.set("home-popup-visible-new", "1");
+				}
 			});
+		}, 300);
+	else{
+		let visibleCounter = parseInt(Cookies.get("home-popup-visible-new"));
 
-			// const popupLink = document.querySelector(".popup-size a");
-			// const fancyboxClose = document.querySelector(".fancybox-close-small");
+		Cookies.remove("home-popup-visible-new", {path: ""});
 
-			// popupLink.addEventListener("click", () => {
-			// 	console.log(1)
-			// 	Cookies.set("home-popup-visible", "true");
-			// });
-
-			// fancyboxClose.addEventListener("click", () => {
-			// 	Cookies.set("home-popup-visible", "true");
-			// })
-		}, 300)
+		if (visibleCounter < 4){
+			visibleCounter++;
+			Cookies.set("home-popup-visible-new", visibleCounter);
+		}
+	}
 });
