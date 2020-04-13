@@ -5,3 +5,4 @@ dist/
 *.zip
 *.rar
 /docs/
+package-lock.json
