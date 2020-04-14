@@ -290,20 +290,20 @@
 	.swiper-slide
 		display: flex
 		justify-content: center
-		transition: transform .3s ease-in-out, opacity .3s ease-in-out
-		transition: all .3s ease-in-out
+		// transition: transform .3s ease-in-out, opacity .3s ease-in-out
+		transition: all 1s ease
 		will-change: transform
 		
 
 
-		img
-			transition: transform .3s ease-in-out, opacity .3s ease-in-out
+		// img
+		// 	transition: transform .3s ease-in-out, opacity .3s ease-in-out
 
 		&:not(.swiper-slide-active)
 			opacity: 0.3
 
-			img
-				transform: scale(.8)
+			// img
+			// 	transform: scale(.8)
 
 			.cs__slide
 				&-text, &-num
@@ -312,19 +312,23 @@
 
 		&-active
 			z-index: 1
-			transition: transform .5s ease-in-out
+			transform: scale(1) translate3d(0, 0, 0) !important
+			// transition: transform .5s ease-in-out
 
 			.cs__slide
 				path
 					stroke-dashoffset: 100px
 
 		&-prev
-			.cs__slide
-				transform: translate3d(30%,0,0)
+			transform: matrix(0.8, 0, 0, 0.8, 260, 0)
+
+			// .cs__slide
+			// 	transform: translate3d(30%,0,0)
 
 		&-next
-			.cs__slide
-				transform: translate3d(-30%,0,0)
+			transform: matrix(0.8, 0, 0, 0.8, -260, 0)
+			// .cs__slide
+			// 	transform: translate3d(-30%,0,0)
 
 			
 
