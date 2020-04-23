@@ -4,7 +4,7 @@ import stringEffect from "./stringAnimate.js"
 import "./select2.js"
 import Cookies from "js-cookie";
 
-// import "./stock-popup-showing.js";
+import "./stock-popup-showing.js";
 import "./call-popup-showing.js";
 import "./upload.js";
 import "./size-popup-showing.js";

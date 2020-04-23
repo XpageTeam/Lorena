@@ -3,7 +3,7 @@ import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function(){
 	if (
-		!Cookies.get("home-popup-showed")
+		!Cookies.get("stay-home-popup-showed")
 		&& document.querySelector("#popup-stocks")
 	)
 		setTimeout(() => {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
 				},
 				afterClose(){
 					document.body.classList.remove("js__stock-popup_showed");
-					Cookies.set("home-popup-showed", "true");
+					Cookies.set("stay-home-popup-showed", "true");
 				}
 			});
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			if (!popupLink) return;
 			
 			popupLink.addEventListener("click", () => {
-				Cookies.set("home-popup-showed", "true");
+				Cookies.set("stay-home-popup-showed", "true");
 			});
 		}, 300)
 
