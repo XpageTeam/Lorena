@@ -1,0 +1,544 @@
+.sh-banner
+	position: relative
+
+	img
+		width: 100%
+
+	&__info
+		display: flex
+		flex-direction: column
+		padding-bottom: 75px
+		
+		&-cont
+			position: absolute 0 0 0 0
+			display: flex
+			align-items: flex-end
+			z-index: 0
+
+			&::before
+				content: ''
+				display: block
+				position: absolute 0 0 0 0
+				// background: linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, rgba(51, 51, 51, 0) 100%)
+				pointer-events: none
+
+			.wrapper
+				width: 100%
+		
+	&__text
+		font-weight: 500
+		font-size: rem(20)
+
+	&__title
+		font-weight: bold
+		font-size: rem(40)
+		line-height: 49px
+	
+	&__stages
+		background: rgba(51, 51, 51, 0.6)
+		border-radius: 10px
+		display: flex
+		display: flex
+		margin: 55px 0 0 0
+		counter-reset: i
+		padding: 50px 70px 40px
+
+
+		&-item
+			position: relative
+			width: calc((100% - 20px * 5) / 5)
+			margin: 0 0 0 20px
+			display: flex
+			flex-direction: column
+			align-items: center
+			cursor: pointer
+
+			&:last-child
+				&::after
+					display: none
+
+			&::after
+				content: ''
+				display: block
+				size: 8px
+				border-top: 1px solid #fff
+				border-right: 1px solid #fff
+				transform: rotate(45deg)
+				position: absolute 50px -15px * *
+
+			&.active
+				.cs__item-num
+					background-color: var(--main-color) !important
+					color: #fff
+
+			&:last-child
+				.sh-banner__stages-num
+
+					&::after, &:before
+						display: none
+
+			
+
+		&-num
+			position: relative
+			size: 84px
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			border: 1px solid var(--main-color)
+			font-weight: bold
+			font-size: 22px
+			box-shadow: 1px 0px 0px 10px rgba(0, 0, 0, 0.25)
+			color: var(--main-color)
+			background-color: #333333
+			z-index: 2
+			transition: background .3s ease-in-out
+			
+
+			&::after
+				content: ''
+				display: block
+				size: 115px 26px
+				background: url('../img/ico-stage-dash-w.svg') no-repeat center
+				position: absolute calc(50% - 19px) * * 100%
+				z-index: 1
+
+			&::before
+				content: ''
+				display: block
+				size: 7px
+				border-radius: 50%
+				background-color: #fff
+				position: absolute calc(50% - 3px) -4 * *
+
+
+
+
+		&-text
+			font-size: 14px
+			line-height: 27px
+			text-align: center
+			margin-top: 20px
+
+
+.sh-stages
+	&__list
+		counter-reset: i
+
+	&__item
+		position: relative
+		padding: 100px 0
+		counter-increment: i
+
+		&:nth-child(even)
+			> *
+				z-index: 1
+				position: relative
+				
+			&::before
+				content: ''
+				display: block
+				position: absolute 0 * 0 50%
+				transform: translate3d(-50%,0,0)
+				background: #282828
+				width: 100vw
+				z-index: 0
+
+		&--instruction
+			display: flex
+
+			.sh-stages__item
+				&-info
+					max-width: 580px
+					margin-left: 90px
+
+				&-btn
+					margin-top: 30px
+
+		&--construction
+			.sh-stages
+				&__item
+					&-text
+						max-width: 620px
+
+					&-title
+						margin-bottom: 20px
+
+				&__crazy-macbook
+					position: absolute 50% 0 * *
+					transform: translate3d(50%, -50%,0)
+
+			.sh-stages-form
+				max-width: 660px
+				margin-top: 55px
+
+			.sh-stages__inputs
+				display: flex
+				flex-wrap: wrap
+				margin: 0 0 -35px -35px
+
+			.sh-stages-form__bot
+				display: flex
+				flex-direction: row-reverse
+				margin-top: 70px
+
+				&-submit
+					margin-right: 30px
+
+				&-text
+					font-size: rem(14)
+					color: rgba(255, 255, 255, 0.3)
+
+
+			.default-input
+				width: calc((100% - 35px * 2) / 2)
+				margin: 0 0 35px 35px
+
+				.select2
+					max-width: 100%
+					width: 100% !important
+
+
+
+		&-title
+			position: relative
+			font-weight: bold
+			font-size: rem(24)
+			line-height: 35px
+			padding-left: 45px
+
+			&:before
+				content: counter(i) ""
+				margin: 0 
+				size: 30px
+				flex: none
+				display: flex
+				justify-content: center
+				align-items: center
+				border-radius: 50%
+				background: var(--main-color)
+				position: absolute 0 * * 0
+				font-size: rem(16)
+
+		
+
+		&-text
+			font-size: rem(14)
+			line-height: 195.04%
+
+			a
+				color: var(--main-color)
+
+		
+
+		&-bot
+			display: flex
+			justify-content: space-between
+
+		&--delivery, &--installation
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			.sh-stages__item
+				&-info
+					max-width: 470px
+
+				&-title
+					margin-bottom: 10px
+
+				&-btn
+					margin-top: 40px
+
+
+		&-img
+			flex: none
+
+		&--contract
+			padding-bottom: 35px
+
+	&-finish
+		position: relative
+		font-weight: bold
+		font-size: rem(24)
+		line-height: 146.28%
+		text-align: center
+		padding: 30px 0
+
+		span
+			position: relative
+			z-index: 1
+
+		&::before
+			content: ''
+			display: block
+			position: absolute 0 * 0 50%
+			transform: translate3d(-50%,0,0)
+			background: var(--main-color)
+			width: 100vw
+			z-index: 0
+
+.sh-contract
+	
+	&-cont
+		margin-top: 45px
+		background: #282828
+		padding: 60px 50px
+
+	&__top
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -30px -30px
+
+		.default-input
+			width: calc((100% - 30px * 4) / 4)
+			margin: 0 0 30px 30px
+
+	&__conditions
+		margin-top: 70px
+
+		.checkbox
+
+			&:not(:last-child)
+				margin-bottom: 25px
+
+			&__label
+				font-size: rem(12)
+				line-height: 195.04%
+				padding-left: 50px
+
+				&::before
+					background: url('../img/ico-chek.svg')
+					size: 25px
+					border: 0
+					top: 0
+					margin: 0 25px 0 0
+					border-radius: 0
+					position: absolute 5px * * 0
+
+			&__input
+				&:checked
+					+ .checkbox__label
+						&::before
+							background: url('../img/ico-checked.svg')
+
+	&__bot
+		margin-top: 65px
+		display: flex
+		flex-direction: row-reverse
+		justify-content: flex-end
+
+		&-text
+			margin-left: 30px
+			font-size: rem(14)
+			line-height: 20px
+
+			color: rgba(255, 255, 255, 0.3)
+
+	
+
+
+.sh-info
+
+	&--zamer
+		padding: 65px 0 65px 110px
+		background: url('../img/ico-zamer.svg') no-repeat left 0 center
+	
+	&--dopplata
+		background: url('../img/ico-card.svg') no-repeat left 0 center
+		padding: 90px 0 90px 110px
+
+
+	&__title
+		font-weight: bold
+		font-size: rem(24)
+		line-height: 35px
+		margin-bottom: 5px
+
+	&__text
+		font-size: rem(14)
+		line-height: 195.04%
+
+
+@media (max-width: 1600px)
+
+	.sh-stages__item--construction .sh-stages__crazy-macbook
+		transform: translate3d(30%,-50%,0)
+
+	.sh-banner__title
+		font-size: 2rem
+		line-height: 37px
+
+	.sh-banner__stages
+		margin: 30px 0 0 0
+		padding: 40px 60px 30px
+
+	.sh-banner__info
+		padding-bottom: 40px
+
+@media (max-width: 1500px)
+
+	.sh-banner__stages
+		padding: 30px 55px 20px
+
+	.sh-stages__item
+		padding: 70px 0
+
+	.sh-info--zamer
+		padding: 35px 0 35px 110px
+
+	.sh-stages__item--construction .sh-stages__crazy-macbook
+		transform: translate3d(21%,-50%,0)
+
+@media (max-width: 1300px)
+
+	.sh-banner__title
+		font-size: 1.7rem
+		line-height: 33px
+	
+	.sh-banner__info
+		padding-bottom: 20px
+
+	.sh-stages__item--construction .sh-stages__crazy-macbook
+		transform: translate3d(16%,-50%,0) scale(.7)
+
+
+@media (max-width: 1199px)
+
+	.sh-banner__stages-num
+		width: 50px
+		height: 50px
+		font-size: 16px
+
+	.sh-banner__stages-text
+		font-size: 12px
+		line-height: 20px
+		margin-top: 14px
+
+	.sh-banner__stages-item:after
+		top: 24px
+
+	.sh-banner__title
+		font-size: 1.6rem
+		line-height: 30px
+
+	.sh-banner__stages
+		margin: 20px 0 0
+
+	.sh-stages__crazy-macbook
+		display: none
+
+@media (max-width: 1000px)
+
+	.sh-banner__img
+		img
+			min-height: 50vh
+			object-fit: cover
+
+	.sh-stages__item-title
+		margin-bottom: 20px
+		br
+			display: none
+
+	.sh-stages__item--instruction
+		flex-direction: column
+
+
+
+		.sh-stages__item-info
+			margin-left: 0
+
+	.sh-contract-cont 
+		margin-top: 35px
+		padding: 20px
+
+	.sh-stages__item--delivery, .sh-stages__item--installation
+		flex-direction: column
+		align-items: flex-start
+
+	.sh-stages__item--delivery .sh-stages__item-info, .sh-stages__item--installation .sh-stages__item-info
+		max-width: 100%
+
+	.sh-stages__item-img
+		margin-top: 30px
+
+	.sh-info--dopplata
+		padding: 40px 0 40px 85px
+
+	.sh-info--zamer
+		padding: 35px 0 5px 85px
+
+@media (max-width: 667px)
+
+	.sh-banner__info-cont
+		position: static
+		margin-top: 30px
+
+	.sh-banner__info-cont .wrapper
+		box-sizing: border-box
+
+	.sh-banner__stages
+		padding: 0
+		margin-top: 30px
+
+		flex-direction: column
+
+	.sh-banner__stages-item
+		flex-direction: row
+		align-items: center
+		margin: 0 0 20px 0
+		width: 100%
+
+		&::after
+			display: none
+
+	.sh-banner__stages-num
+		size: auto
+		border: 0
+		box-shadow: none
+		margin-right: 20px
+
+		&:before, &::after
+			display: none
+
+	.sh-banner__stages-text
+		margin: 0
+
+	.sh-stages__item
+		padding: 30px 0
+
+	.sh-stages__item--construction .default-input
+		width: 100%
+
+	.sh-stages__item--construction
+		.sh-stages-form__bot
+			flex-direction: column
+			margin-top: 30px
+
+	.sh-contract__bot
+		flex-direction: column
+		margin-top: 30px
+
+		.sh-contract__bot-text
+			margin: 0 0 20px 0
+
+	.sh-stages-form__bot-submit
+		margin: 20px 0 0 0
+
+	.sh-contract__top .default-input
+		width: 100%
+
+	.sh-contract__conditions .checkbox__label
+		padding-left: 40px
+
+	.sh-contract__conditions
+		margin-top: 40px
+
+	.sh-info--dopplata, .sh-info--zamer
+		padding: 80px 0 40px 0
+		background-position: top 0 left 0
+		margin-top: 30px
+
+	.sh-banner__text
+		margin-bottom: 10px

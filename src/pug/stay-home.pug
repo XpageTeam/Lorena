@@ -1,0 +1,163 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Оставайтесь дома!
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.tovar.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.stay-home-cont
+						.sh-banner
+							.sh-banner__img
+								picture
+									source(srcset="img/photos/banner-stay-home.jpg" media="(min-width: 660px)")
+									source(srcset="img/photos/banner-stay-home.jpg" media="(max-width: 660px)")
+									img
+							.sh-banner__info-cont 
+								.wrapper
+									.sh-banner__info
+										.sh-banner__text Оставайтесь дома!
+										.sh-banner__title Мы позаботились о<br> Вашей безопасности и<br> от кухни мечты отделяет<br> всего несколько кликов!
+										.sh-banner__stages
+											each stageText, i in ["Онлайн-замер", "Дизайн-проект онлайн", "Оформление договора и предоплата", "Производство кухни", "Безопасная установка"]
+												.sh-banner__stages-item
+													.sh-banner__stages-num=+i+1
+													.sh-banner__stages-text=stageText
+
+						.wrapper
+							.sh-stages
+								.sh-stages__list
+									.sh-stages__item.sh-stages__item--instruction
+										.sh-stages__item-title Инструкция для<br> самостоятельного<br> замера
+										.sh-stages__item-info
+											.sh-stages__item-text 
+												p Для Вашего удобства мы совместно с нашими ведущими дизайнерами подготовили инструкцию по 
+													<a href="">самостоятельному замеру</a>. Она позволит нам подготовить расчеты и приблизит Вас к кухне мечты     
+											.sh-stages__item-btn
+												a(href="#").btn Ознакомиться с инструкцией
+									.sh-stages__item.sh-stages__item--construction
+										.sh-stages__item-title Онлайн конструктор
+										.sh-stages__item-text 
+											p Онлайн конструктор – это отличный помощник в проектировании пространства. Мы собрали последние коллекции фасадов и столешниц. А также Вас ждет подборка настенных покрытий и огромный выбор кухонной мебели. Еще никогда кухня не была так близко<br>
+											a(href="") Подробнее о конструкторе
+										.sh-stages-form 
+											form(action="#")
+												.sh-stages__inputs
+													.default-input
+														input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+														label.default-input__label E-mail
+														.forms__error-message
+													.default-input.default-input--select
+														select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+															option(value="Выберите город" disabled="")
+															option(value="1" selected="") Челябинск
+															option(value="2") Челябинск
+															option(value="3") Челябинск
+															option(value="4") Челябинск
+															option(value="5") Челябинск
+														label.default-input__label Город
+														.forms__error-message
+													.default-input
+														input.default-input__input(type="text" placeholder="Иван" required)
+														label.default-input__label Ваше имя
+														.forms__error-message
+													.default-input
+														input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+														label.default-input__label Телефон
+														.forms__error-message
+												.sh-stages-form__bot
+													.sh-stages-form__bot-text Нажимая на кнопку отправки сообщения, я соглашаюсь на обработку моих 
+														<a href="">персональных данных</a>
+													.sh-stages-form__bot-submit
+														input.btn.choose-form__submit(type="submit" value="заказать консультацию")
+										.sh-stages__crazy-macbook
+											img(src="img/photos/macbook.jpg")
+
+									.sh-stages__item.sh-stages__item--contract
+										.sh-stages__item-title Оформление договора онлайн
+										.sh-stages__item-bot
+											.sh-stages__item-text
+												p Для оформления заказа, заполните форму внизу.<br> Необходимо внести не менее 15% предоплаты от суммы заказа
+											.sh-stages__item-btn
+												a(href="" download).btn Скачать договор оферты
+										.sh-contract-cont
+											form(action="")
+												.sh-contract
+													.sh-contract__top
+														.default-input
+															input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+															label.default-input__label E-mail
+															.forms__error-message
+														.default-input.default-input--select
+															select.default-input__input.default-input__input--select(type="text" data-placeholder="Выберите город" required)
+																option(value="Выберите город" disabled="")
+																option(value="1" selected="") Челябинск
+																option(value="2") Челябинск
+																option(value="3") Челябинск
+																option(value="4") Челябинск
+																option(value="5") Челябинск
+															label.default-input__label Город
+															.forms__error-message
+														.default-input
+															input.default-input__input(type="text" placeholder="Иван" required)
+															label.default-input__label Ваше имя
+															.forms__error-message
+														.default-input
+															input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+															label.default-input__label Телефон
+															.forms__error-message
+
+													.sh-contract__conditions
+														.checkbox
+															input(type="checkbox" id="1").checkbox__input
+															label(for="1").checkbox__label С публичной офертой ознакомлен и согласен. Оплата аванса за Товар Покупателем подтверждает заключение Договора купли-продажи на условиях, изложенных в оферте
+														.checkbox
+															input(type="checkbox" id="2").checkbox__input
+															label(for="2").checkbox__label Эскиз, спецификацию и Руководство по эксплуатации кухонного гарнитура на русском языке в электронном виде получил, с содержанием указанных документов ознакомлен и согласен; предоставленная мне информация о приобретаемом товаре, в том числе сведения об основных потребительских свойствах товара, и о правилах и условиях эффективного и безопасного использования товаров, мне понятна, с содержанием ТУ, указанных в п. 5.1 публичной оферты, ознакомлен и согласен, цифробуквенные обозначения в спецификации и эскизе мне объяснены, мною приобретен товар, который я имел намерение приобрести 
+														.checkbox
+															input(type="checkbox" id="3").checkbox__input
+															label(for="3").checkbox__label Условия договора о том, что Покупатель своими силами и за свой счет осуществляет подъем крупногабаритных элементов товара (столешниц длиной более 2,5 метров, пеналов, крупногабаритных угловых модулей и т.д.) до помещения, указанного в пункте 7.3.1 публичной оферты, мне разъяснены и понятны. 
+														.checkbox
+															input(type="checkbox" id="4").checkbox__input
+															label(for="4").checkbox__label В соответствии с п. 1 ст. 152.2 Гражданского кодекса Российской Федерации я, заявляю о согласии на сбор, хранение, распространение и использование информации о своей частной жизни, в частности, информации о наборе изделий мебели, приобретаемом по заказу № номер от дата; в том числе о согласии на осуществление Продавцом фотосьемки, видеозаписи Товара, его отдельных элементов, работ по установке и демонтажу Товара, помещения покупателя, предназначенного для установки Товара, работы (функционирования) отдельных элементов товара, условий и порядка использования Товара, недостатков и дефектов товара либо их отсутствия; согласии на хранение данных информации, фотографий и видеозаписей на электронных носителях и в печатной форме; согласии на распространение, данных информации, фотографий и видеозаписей в том числе в сети интернет; согласии на использование указанной данных информации, фотографий и видеозаписей по усмотрению Продавца, в том числе для предоставления в государственные, административные и прочие учреждения и организации любой организационно-правовой формы собственности.
+													.sh-contract__bot
+														.sh-contract__bot-text Нажимая на кнопку отправки сообщения,<br> я соглашаюсь на обработку моих 
+															<a href="">персональных данных</a>
+														.sh-contract__bot-submit
+															input.btn.choose-form__submit(type="submit" value="заказать")
+										.sh-info.sh-info--zamer
+											.sh-info__title Профессиональный замер
+											.sh-info__text Мы соблюдаем все меры безопасности, поэтому наши специалисты работают только в защитных масках и перчатках. Нам важно Ваше здоровье и здоровье наших специалистов. Профессиональный замер позволит избежать погрешностей и не состыковок, что позволит нам создать идеальную кухню по Вашим размерам
+
+									.sh-stages__item.sh-stages__item--delivery
+										.sh-stages__item-info
+											.sh-stages__item-title Производство и доставка кухни
+											.sh-stages__item-text
+												p Компания Lorena на рынке более 30 лет, что позволило неоднократно доказать нам надежность и стабильность. Ежегодно мы производим более … кухонных гарнитуров, чем вызвали доверие более 200 000 счастливых семей. Ситуация в мире нестабильна, но компания Lorena уверенно чувствует себя на рынке и не изменяет своим принципам: высокое качество и надежность
+											.sh-stages__item-btn
+												a(href="").btn Посмотреть видео
+										.sh-stages__item-img
+											img(src="img/photos/sh-stage-1.jpg")
+									.sh-info.sh-info--dopplata
+										.sh-info__title Доплата онлайн
+										.sh-info__text Наши консультанты помогут Вам произвести оплату онлайн
+									.sh-stages__item.sh-stages__item--installation
+										.sh-stages__item-info
+											.sh-stages__item-title Безопасная установка
+											.sh-stages__item-text
+												p Безопасная установка – вот наш главный принцип работы в сложившееся ситуации. Мы соблюдаем все требования безопасности, поэтому вся сборка производится специалистами в защитных масках и перчатках.
+											
+										.sh-stages__item-img
+											img(src="img/photos/sh-stage-2.jpg")
+								.sh-stages-finish 
+									span Наслаждайтесь кухней!
+			
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 
