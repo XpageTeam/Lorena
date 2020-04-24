@@ -363,6 +363,12 @@ try {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("js__fancybox-map");
       }
     });
+
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 660) {
+      console.log(1);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.h-menu').prepend('<li class="h-menu__item"><a href="/online/" class="h-menu__link">Купить онлайн</a></li>');
+    }
+
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".main-slide__title-title, \
 			.for-about .about-img__text-title,\
 			.for-about .adr-text__title,\

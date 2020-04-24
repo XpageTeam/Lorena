@@ -177,7 +177,13 @@ try{
 		})
 
 
-	
+		if($(window).width() < 660) {
+			console.log(1);
+
+
+			$('.h-menu').prepend('<li class="h-menu__item"><a href="/online/" class="h-menu__link">Купить онлайн</a></li>');
+		}
+
 		
 
 
