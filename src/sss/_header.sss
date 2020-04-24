@@ -2,6 +2,8 @@
 	.head__burger
 		display: none
 
+.head__stay-home
+	margin: 0 10px
 
 .main, .tovar, .constructor
 
@@ -246,7 +248,12 @@
 			&:before
 				right: -8px !important
 
+@media (max-width: 1280px)
 
+	.head__stay-home
+		.btn
+			padding: 13px 15px 11px
+			
 @media (max-width: 1200px)
 	.head
 		padding: 10px 20px
@@ -346,7 +353,7 @@
 
 	.head__stay-home
 		display: none
-		
+
 	.head
 
 		&__logo
