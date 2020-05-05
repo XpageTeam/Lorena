@@ -3,6 +3,9 @@
 .about
 	position: relative
 
+	&-img__decors
+		opacity: 0
+
 	&__decors
 		pointer-events: none
 
@@ -46,6 +49,7 @@
 
 	&--decorated
 		overflow: hidden
+		background: url("../img/about-img-decor-right.png") right center no-repeat, var(--thrid-color)
 
 		.wrapper
 			position: absolute 0
@@ -253,14 +257,23 @@
 	size: 85px
 	position: relative
 	background-color: var(--main-color) !important
-	animation: pulse 3s ease infinite
 
 	&:after
+		animation: pulseabout 3s ease infinite
 		content: ""
 		border-radius: inherit
 		position: absolute -19px -19px * *
 		size: 122px
+		flex: none
 		border: 1px solid lighten(#282828, .5)
+
+
+
+@keyframes pulseabout
+	0%, 100%
+		transform: none
+	50%
+		transform: scale(1.1,1.1,1.1)
 
 .hearth-btn
 	background: url("../img/ico-hearth-white.svg") center no-repeat
@@ -703,13 +716,9 @@
 			&-item
 				width: 50%
 
-	.about-img--decorated .about-img__decors
-		display: none
 
-	.about-img
 
-		&:after
-			display: none
+
 
 	.time-line .swiper-slide
 		opacity: 1 !important
@@ -790,6 +799,7 @@
 				margin: 20px 0 0
 
 	.about-img
+		min-height: 50vh
 
 		picture, picture img
 			height: calc(100vh - 320px)
@@ -799,13 +809,15 @@
 			object-position: center
 
 		&__text
-			padding: 20px 
 
 			&-title
 				font-size: 20px
 
 			&-btn
 				margin: 30px 0 0
+
+	.play-btn__text
+		margin: 0 0 0 20px
 
 	.hearth-btn, .pers-btn
 		size: 50px
@@ -852,8 +864,3 @@
 				padding: 42px 0
 
 
-@keyframes pulse
-	0%, 100%
-		transform: none
-	50%
-		transform: scale3d(1.1,1.1,1.1)
