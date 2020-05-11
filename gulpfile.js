@@ -119,12 +119,12 @@ gulp.task('imagemin', () =>
 
 
 gulp.task("deploy:css", () => 
-	gulp.src("docs/css/*.*", {since: gulp.lastRun("postcss")})
+	gulp.src("docs/css/*.*")
 		.pipe(server_conn.dest(remotePathCss))
 );
 
 gulp.task("deploy:js", () => 
-	gulp.src("docs/js/*.js", {since: gulp.lastRun("deploy:js")})
+	gulp.src("docs/js/*.*", {since: gulp.lastRun("deploy:js")})
 		.pipe(server_conn.dest(remotePathJs))
 );
 

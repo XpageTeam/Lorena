@@ -1,15 +1,15 @@
 body.ecomaniya
 
 	.main-choose
-		padding-top: 90px
+		// padding-top: 90px
 
-		&__img
-			margin: 0 0 0 -160px
+		// &__img
+		// 	margin: 0 0 0 -160px
 
-		&__form
-			margin-right: 0
-			position: relative
-			z-index: 1
+		// &__form
+		// 	margin-right: 0
+		// 	position: relative
+		// 	z-index: 1
 
 	#content
 		z-index: auto
@@ -147,6 +147,9 @@ body.eco-loaded
 		transition: opacity .5s ease
 		transition-delay: 7.5s
 
+		// выключил при убирании Ивлева
+		display: none
+
 .eco-title
 	text-align: center
 	font-size: 87px
@@ -234,37 +237,40 @@ body.eco-loaded
 			margin: 0 0 85px
 
 .es-ivlev
-	position: relative
-	display: flex
-	align-items: center
+	// position: relative
+	text-align: center
 
 	&:before, &:after
 		content: ""
 		position: absolute
 
-	&:before
-		background: url("../img/eco-ivlev-top-dorc.png") no-repeat
-		size: width("../img/eco-ivlev-top-dorc.png") height("../img/eco-ivlev-top-dorc.png")
-		top: 0
-		right: 0
+	// &:before
+	// 	background: url("../img/eco-ivlev-top-dorc.png") no-repeat
+	// 	size: width("../img/eco-ivlev-top-dorc.png") height("../img/eco-ivlev-top-dorc.png")
+	// 	top: 0
+	// 	right: 0
 
-	&:after
-		background: url("../img/eco-ivlev-bot-dorc.png") no-repeat
-		size: width("../img/eco-ivlev-bot-dorc.png") height("../img/eco-ivlev-bot-dorc.png")
-		right: 67px
-		bottom: 65px
+	// &:after
+	// 	background: url("../img/eco-ivlev-bot-dorc.png") no-repeat
+	// 	size: width("../img/eco-ivlev-bot-dorc.png") height("../img/eco-ivlev-bot-dorc.png")
+	// 	right: 67px
+	// 	bottom: 65px
 
 	&__img
 		flex: none
 		margin-right: 55px
 
 		img
-			display: block
+			// display: block
 
 	&__text
-		max-width: 800px
+		max-width: 870px
 		font-size: 30px
-		font-weight: bold
+		display: inline-block
+		margin: 20px 0 0
+
+		br
+			display: none
 
 .es-slider
 	overflow: hidden
@@ -697,7 +703,7 @@ body.eco-loaded
 	.es-ivlev
 
 		&__img
-			width: 200px
+			// width: 200px
 			margin-right: 30px
 
 		&__text
