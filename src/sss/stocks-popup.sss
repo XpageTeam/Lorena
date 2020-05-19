@@ -8,6 +8,16 @@
 	&__link, &__img, &__img img
 		display: block
 
+.popup-stocks
+	.popup-stocks__link
+		&--1
+			position: absolute 0 50% 0 0
+
+		&--2
+			position: absolute 0 0 0 55%
+
+
+
 @media (max-width: 660px)
 	.popup-stocks
 		margin: 0 !important
@@ -22,3 +32,11 @@
 
 			&:before
 				display: inline-block !important
+
+	.popup-stocks
+		.popup-stocks__link
+			&--1
+				position: absolute 0 0 50% 0
+
+			&--2
+				position: absolute 50% 0 0 0

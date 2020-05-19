@@ -16,6 +16,30 @@
 		&:not(:first-child)
 			margin: 19px 0 0
 
+.address-list__item
+	.open
+		position: relative
+		font-size: rem(10)
+		text-transform: uppercase
+		margin-left: 35px
+		display: flex
+		align-items: center
+		line-height: 1
+		font-weight: 500
+
+		&::before
+			content: ''
+			display: inline-block
+			margin-right: 16px
+			size: 7px
+			border-radius: 50%
+			background: #24FF00
+			margin-bottom: 2px
+
+.address-detail
+	.open
+		margin: 12px 0 0 0
+
 .address
 
 
@@ -27,8 +51,17 @@
 		cursor: pointer
 		user-select: none
 
+		
+
+
+
+
+
+		&-btn
+			margin-left: auto
+
 		&-title
-			margin-right: auto
+			
 			padding-right: 60px
 
 			span
@@ -423,6 +456,15 @@
 			width: 100%
 
 @media (max-width: 660px)
+
+	.address__top
+		position: relative
+
+		.open
+			margin-left: 10px
+			font-size: 0
+
+
 	.addresses
 		margin: 0 0 30px
 
