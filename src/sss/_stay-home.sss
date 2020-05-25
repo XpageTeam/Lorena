@@ -120,7 +120,6 @@
 			text-align: center
 			margin-top: 20px
 
-
 .sh-stages
 	&__list
 		counter-reset: i
@@ -129,6 +128,11 @@
 		position: relative
 		padding: 100px 0
 		counter-increment: i
+
+		&-btn
+			a
+				&:not(:first-child)
+					margin-left: 20px
 
 		&:nth-child(even)
 			> *
@@ -362,6 +366,15 @@
 		font-size: rem(14)
 		line-height: 195.04%
 
+@media (min-width: 760px)
+
+	#stay-home-credit-online-form
+		width: 870px
+		max-width: 100%
+
+		.sh-contract__top
+			.default-input
+				width: calc((100% - 30px * 3)/3)
 
 @media (max-width: 1600px)
 
@@ -433,6 +446,9 @@
 
 @media (max-width: 1000px)
 
+	.sh-stages__item-text
+		max-width: 300px
+
 	.sh-banner__img
 		img
 			min-height: 50vh
@@ -472,6 +488,9 @@
 		padding: 35px 0 5px 85px
 
 @media (max-width: 667px)
+
+	.sh-stages__item-btn a:not(:first-child)
+		margin: 20px 0 0 0
 
 	.sh-stages__item-bot
 		flex-direction: column
