@@ -293,7 +293,10 @@ li
 
 .arrow-btn
 	color: #fff 
-	background: url("../img/white-arrow.svg") center right 24px no-repeat, var(--main-color)
+	background-image: url("../img/white-arrow.svg") 
+	background-position: center right 24px 
+	background-repeat: no-repeat
+	background-color: var(--main-color)
 	text-transform: uppercase
 	font-size: 10px
 	border-radius: 100px
@@ -427,10 +430,16 @@ li
 
 .favorite-btn
 	border: 1px solid #454545
-	background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--second-color)
+	background-image: url("../img/ico-hearth-white.svg") 
+	background-position: left 21px center 
+	background-repeat: no-repeat
+	background-color: var(--second-color)
 
 	&:hover, &.added
-		background: url("../img/ico-hearth-white.svg") left 21px center no-repeat, var(--main-color)
+		background-image: url("../img/ico-hearth-white.svg") 
+		background-position: left 21px center 
+		background-repeat: no-repeat
+		background-color: var(--main-color)
 
 @media (max-width: 660px)
 	.favorite-btn
@@ -440,7 +449,10 @@ li
 
 .constructor-btn
 	border: 1px solid var(--main-color)
-	background: url("../img/ico-constructor.svg") left 20px center no-repeat, var(--main-color)
+	background-image: url("../img/ico-constructor.svg") 
+	background-position: left 20px center 
+	background-repeat: no-repeat
+	background-color: var(--main-color)
 
 	&:hover, &:focus
 		background-color: lighten(#f60, .1)
