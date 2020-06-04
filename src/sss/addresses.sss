@@ -494,27 +494,17 @@
 
 @media (max-width: 660px)
 
-	[data-city-name="ЧЕЛЯБИНСК"]
-		.address__top
-			flex-wrap: wrap
-
-		.open-online 
-			margin-left: 0
-			margin-top: 15px
-			margin-right: 55px
-
-		.address__top-btn
-			position: absolute calc(50% - 15px) 20px * *
-
-
 	.address__top
 		position: relative
 
-		.open
+		.open, .open-online
 			margin-left: 10px
 			margin-right: 55px
-			margin-top: 15px
+			margin-top: 0
 			font-size: 0
+
+			&::before
+				font-size: rem(10)
 
 
 	.addresses
