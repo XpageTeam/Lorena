@@ -778,6 +778,27 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
                 },
             });
         }
+        if (document.querySelectorAll('.os-slider').length) {
+            var osSlider = new swiper_esm_js_1.Swiper('.os-slider .swiper-list', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: '.os-slider .swiper-button-next',
+                    prevEl: '.os-slider .swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        centeredSlides: false,
+                    },
+                }
+            });
+        }
     });
     app_1.App.domReady(function () {
         ;

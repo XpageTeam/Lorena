@@ -1,0 +1,244 @@
+.flip-clock-wrapper
+  text-align: center
+  position: relative
+  display: flex
+  width: 100%
+
+  
+  
+  a
+    cursor: pointer
+    text-decoration: none
+
+
+  ul
+    list-style: none
+
+  &.clearfix
+    &:before
+      content: " "
+      display: table
+
+    &:after
+      content: " "
+      display: table
+      clear: both
+
+.flip-clock-meridium
+  background: none !important
+  font-size: 36px !important
+
+.flip-clock-wrapper
+
+  &:before
+    content: " "
+    display: table
+
+  &:after
+    content: " "
+    display: table
+    clear: both
+
+  ul
+    position: relative
+    float: left
+    width: 34px
+    height: 50px
+    font-size: 50px
+    font-weight: 600
+    line-height: 51px
+    color: var(--amin-color)
+
+    li
+      z-index: 1
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      text-decoration: none !important
+
+      &:first-child
+        z-index: 2
+
+      a
+        display: block
+        height: 100%
+        margin: 0 !important
+        overflow: visible !important
+        cursor: default !important
+
+        div
+          z-index: 1
+          position: absolute
+          left: 0
+          width: 100%
+          height: 50%
+          overflow: hidden
+
+         
+          &.up
+            transform-origin: 50% 100%
+            top: 0
+
+          &.down
+            transform-origin: 50% 0
+            bottom: 0
+
+          div.inn
+            position: absolute
+            left: 0
+            z-index: 1
+            width: 100%
+            height: 200%
+            color: var(--main-color)
+            text-align: center
+            background-color: var(--second-color)
+            line-height: 52px
+
+          &.up div.inn
+            top: 0
+
+          &.down div.inn
+            bottom: 0
+
+    &.play li
+      &.flip-clock-before
+        z-index: 3
+
+      &.flip-clock-active
+        animation: asd 0.01s 0.49s linear both
+        z-index: 5
+
+.flip-clock-divider
+  float: left
+  display: inline-block
+  position: relative
+  width: 16px
+  height: auto
+
+  &:first-child
+    width: 0
+
+.flip-clock-dot
+  display: block
+  background: var(--main-color)
+  width: 8px
+  height: 8px
+  position: absolute
+  border-radius: 50%
+  left: calc(50% - 4px)
+
+.flip-clock-divider
+  .flip-clock-label
+    position: absolute
+    bottom: -6px
+    right: -57px
+    color: inherit
+    text-shadow: none
+    color: var(--main-color)
+    font-size: 12px
+    color: var(--main-color)
+    transform: translate3d(-6px, 10px, 0)
+
+  &.minutes .flip-clock-label
+    right: -60px
+
+  &.seconds .flip-clock-label
+    right: -68px
+
+
+.flip-clock-dot
+    
+  &.top
+    top: 14px
+
+  &.bottom
+    top: 30px
+
+.flip-clock-wrapper ul
+  &.play li
+    &.flip-clock-active .down
+      z-index: 2
+      animation: turn 0.5s 0.5s linear both
+
+    &.flip-clock-before .up
+      z-index: 2
+      animation: turn2 0.5s linear both
+
+  li.flip-clock-active
+    z-index: 3
+
+@media (max-width: 1000px)
+
+  .flip-clock-wrapper ul
+    width: 27px
+    height: 50px
+    font-size: 38px
+
+  .flip-clock-dot.top
+    top: 15px
+
+  .flip-clock-dot.bottom
+    top: 30px
+
+  .flip-clock-divider .flip-clock-label
+    bottom: 0px
+    right: -50px
+    font-size: 14px
+
+  .flip-clock-divider.minutes .flip-clock-label
+    right: -51px
+
+  .flip-clock-divider.seconds .flip-clock-label
+    right: -54px
+
+@media (max-width: 660px)
+
+  .flip-clock-wrapper ul
+    width: 25px
+    height: 50px
+    font-size: 38px
+
+
+@media (max-width: 370px)
+
+  .flip-clock-wrapper ul
+    width: 19px
+    height: 45px
+    font-size: 30px
+    color: var(--main-color)
+
+  .flip-clock-dot
+    width: 6px
+    height: 6px
+    left: 12px
+
+  .flip-clock-dot
+    left: 8px
+
+  .flip-clock-divider
+    width: 20px
+    height: 60px
+
+  .flip-clock-dot.top
+    top: 19px
+
+  .flip-clock-divider .flip-clock-label
+    bottom: 6px
+    right: -37px
+    font-size: 11px
+
+  .flip-clock-divider .flip-clock-label
+    bottom: 0
+    right: -38px
+    font-size: 11px
+
+  .flip-clock-divider
+    height: 58px
+
+  .flip-clock-divider.minutes .flip-clock-label
+    right: -40px
+
+  .flip-clock-divider.seconds .flip-clock-label
+    right: -40px

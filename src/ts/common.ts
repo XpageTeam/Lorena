@@ -90,6 +90,29 @@ App.domReady(() => {
 		});
 	}
 
+	if(document.querySelectorAll('.os-slider').length){
+		var osSlider = new Swiper('.os-slider .swiper-list', {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			centeredSlides: true,
+			navigation: {
+				nextEl: '.os-slider .swiper-button-next',
+				prevEl: '.os-slider .swiper-button-prev',
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				320: {
+				  slidesPerView: 2,
+				  spaceBetween: 20,
+				  centeredSlides: false,
+				},
+			}
+			
+		});
+	}
+
 
 })
 

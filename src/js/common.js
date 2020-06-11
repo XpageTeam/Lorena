@@ -9,12 +9,15 @@ import "./call-popup-showing.js";
 import "./upload.js";
 import "./size-popup-showing.js";
 
+
 import {Swiper, Navigation} from 'swiper/dist/js/swiper.esm.js'
 
 window.$ = $;
 window.jQuery = $;
 window.Cookies = Cookies;
 window.is = is;
+
+require("./flipclock.min.js");
 
 window.get$ = function(el){
 	return $(el)
@@ -145,6 +148,9 @@ const checScrollIntoView = () => {
 };
 
 try{
+	
+
+
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
 		require("../css/jquery.fancybox.css")
@@ -393,6 +399,16 @@ try {
 				}
 			},
 		});
+
+
+
+
+
+
+		$("body").on('click', '[href^="#"]', function(e){
+			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top}, 1000);
+		});
+
 
 
 		

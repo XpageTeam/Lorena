@@ -1,0 +1,111 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Онлайн-трансляция открытия нового салона
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.tovar.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__content
+					.online-stream-cont
+						.os-banner
+							.os-banner__img
+								picture
+									source(srcset="img/photos/banner-os.jpg" media="(min-width: 660px)")
+									source(srcset="img/photos/banner-os.jpg" media="(max-width: 660px)")
+									img
+							.os-banner__info-cont 
+								.wrapper
+									.os-banner__info
+										.os-banner__date 25 июня в 17:00
+										.os-banner__title Онлайн-трансляция<br> открытия нового салона
+										.os-banner__text г. Тюмень, Чернышевского, 2а
+										.os-banner__btn
+											a(href="#111").default-btn.default-btn--border принять участие
+
+									.os-banner__box
+										.os-banner__box-ico
+											span
+										.os-banner__box-text Призы зрителям<br> трансляции
+
+
+										
+
+						.wrapper
+							.os-title#111 Забронируйте ваше участие<br> в онлайн-трансляции сейчас
+							.os-form
+								form(action="#")
+									.os__inputs
+										.default-input
+											input.default-input__input(type="text" placeholder="Иван" required)
+											label.default-input__label Ваше имя
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" inputmode="tel" data-mask="phone" size="25" pattern='\\+7\\s\\([0-9]{3}\\)\\s[0-9]{3}-[0-9]{2}-[0-9]{2}' required)
+											label.default-input__label Телефон
+											.forms__error-message
+										.default-input
+											input.default-input__input(type="email" placeholder="Ivan@mail.ru" required  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$" inputmode="email")
+											label.default-input__label E-mail
+											.forms__error-message
+										.default-input.default-input--checkbox
+											input(type="checkbox" hidden id="456").default-input__checkbox
+											label.default-input__label(for="456") напомнить за<br> 60 минут до старта
+											.forms__error-message
+										
+									.os-form__bot
+										.os-form__bot-submit
+											input.arrow-btn.choose-form__submit(type="submit" value="Принять участие")
+										.os-form__bot-text Нажимая на кнопку отправки сообщения,<br> я соглашаюсь на обработку моих 
+											<a href="">персональных данных</a>
+
+							.os-timer
+								.os-timer__text Поключись к трансляции с самого начала,<br> участвуй в квесте и выигрывай стильные<br> и полезные на кухне предметы!
+								.os-timer__timer
+									.timer-info
+									.os-timer__timer-label Предложение актуально еще:
+									.timer
+									include inc/timer.js
+						.os-slider-cont
+							.wrapper
+								.os-slider
+									.os-slider__arrow
+										.swiper-button.swiper-button-prev
+										.swiper-button.swiper-button-next
+									.swiper-list
+										.swiper-wrapper
+											.swiper-slide
+												a(href="img/photos/os-1.jpg" data-fancybox=1).os-slider__slide.fancybox
+													img(src="img/photos/os-1.jpg", alt="")
+											.swiper-slide
+												a(href="img/photos/os-2.jpg" data-fancybox=1).os-slider__slide.fancybox
+													img(src="img/photos/os-2.jpg", alt="")
+											.swiper-slide
+												a(href="img/photos/os-3.jpg" data-fancybox=1).os-slider__slide.fancybox
+													img(src="img/photos/os-3.jpg", alt="")
+											.swiper-slide
+												a(href="img/photos/os-1.jpg" data-fancybox=1).os-slider__slide.fancybox
+													img(src="img/photos/os-1.jpg", alt="")
+											.swiper-slide
+												a(href="img/photos/os-2.jpg" data-fancybox=1).os-slider__slide.fancybox
+													img(src="img/photos/os-2.jpg", alt="")
+												
+
+										
+
+
+
+
+								
+			
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		
+		
+
+		//- script(src="js/main-page.js") 

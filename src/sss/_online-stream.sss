@@ -1,0 +1,334 @@
+// .online-stream
+
+
+.os-banner
+	position: relative
+	margin-bottom: 90px
+
+	img
+		width: 100%
+
+	&__info
+		display: flex
+		flex-direction: column
+		
+		&-cont
+			position: absolute 0 0 0 0
+			display: flex
+			align-items: center
+			z-index: 0
+
+			.wrapper
+				width: 100%
+				position: relative
+	&__date
+		font-weight: 600
+		font-size: 18px
+		line-height: 132.78%
+		color: var(--main-color)
+		margin-bottom: 30px
+
+	&__title
+		font-weight: bold
+		font-size: rem(36)
+		line-height: 48px
+	
+	&__text
+		font-weight: 500
+		font-size: 14px
+		line-height: 146.28%
+		margin-top: 10px
+
+	&__btn
+		margin-top: 50px
+
+		.default-btn--border
+			position: relative
+
+			&::before
+				content: ''
+				display: block
+				position: absolute 0 0 0 0
+				border: 1px solid var(--main-color)
+				border-radius: 300px
+				animation: pulseabout2 2s ease infinite
+
+	&__box
+		position: absolute 50% 0 * *
+		transform: translate3d(0,-50%,0)
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		&-ico
+			size: 140px
+			border-radius: 50%
+			background-color: var(--main-color)
+			background-image: url('../img/photos/ico-box.svg')
+			background-position: center
+			background-repeat: no-repeat
+			position: relative
+
+			span
+				background: #FF6600
+				opacity: 0.5
+				position: absolute 0 0 0 0
+				transform: scale(1.3)
+				border-radius: 50%
+				z-index: -1
+		&-text
+			font-weight: bold
+			font-size: 18px
+			line-height: 146.28%
+			text-align: center
+			margin-top: 40px
+
+@keyframes pulseabout2
+	0%, 100%
+		transform: none
+	50%
+		transform: scale3d(1.2,1.4,1.2)	
+
+.os
+	&-title
+		font-weight: bold
+		font-size: 36px
+		line-height: 145%
+		margin-bottom: 80px
+
+	&__inputs
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -35px -35px
+
+		.default-input
+			margin: 0 0 35px 35px
+			width: calc((100% - 35px * 4) / 4)
+
+			&__input
+				background: transparent
+
+
+
+			&--checkbox
+
+				input
+					&:checked, &[checked]
+						~ label
+							&:before
+								background-image: url('../img/ico-check.svg')
+								background-position: center
+								background-repeat: no-repeat
+
+				label
+					position: relative
+					font-size: 12px
+					line-height: 139.78%
+					cursor: pointer
+
+					color: rgba(255, 255, 255, 0.3)
+					padding-left: 45px
+					margin: 0
+
+					&::before
+						content: ''
+						display: block
+						size: 25px
+						background: #454545
+						border-radius: 5px
+						position: absolute 0 * * 0
+
+.os-form__bot
+	margin-top: 70px
+	display: flex
+	align-items: center
+
+	&-text
+		font-size: 12px
+		line-height: 146.28%
+		margin-left: 20px
+
+
+		color: rgba(255, 255, 255, 0.3)
+
+.os-timer
+	border: 1px solid var(--main-color)
+	padding: 45px 55px
+	display: flex
+	margin-top: 90px
+	justify-content: space-between
+
+	&__text
+		font-size: 24px
+		line-height: 146%
+
+	&__timer
+		flex: none
+		margin-left: 20px
+		&-label
+			font-size: rem(14)
+			color: var(--main-color)
+			text-align: center
+			margin-bottom: 10px
+
+.os-slider-cont
+	position: relative
+	margin-top: 90px
+	padding: 80px 0
+	background: #282828
+
+	.swiper-list
+		overflow: visible
+
+	.swiper-slide 
+		&:not(.swiper-slide-next, .swiper-slide-prev, .swiper-slide-active)
+			opacity: .5
+
+	.wrapper
+		position: relative
+
+	.swiper-button
+		border-radius: 50%
+		background: #f60
+		background: var(--main-color)
+		width: 39px
+		height: 39px
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: calc(50% - 3px)
+			right: calc(50% - 3px)
+			border-right: 1px solid #fff
+			border-top: 1px solid #fff
+			width: 5px
+			height: 5px
+			transform: rotate(45deg)
+			z-index: 1
+
+		&-prev
+			transform: rotate(180deg)
+
+
+
+	
+@media (max-width: 1600px)
+
+	.os-banner__info
+		transform: translate3d(0px, 65px, 0px)
+
+	.os-banner__box
+		top: calc(50% + 65px)
+
+@media (max-width: 1300px)
+
+	.os-banner img
+		height: 90vh
+		object-fit: cover
+		object-position: center
+
+@media (max-width: 1200px)
+
+	.os-banner__box
+		right: 30px
+
+	.os-timer__text
+		br
+			display: none
+
+@media (max-width: 1000px)
+
+	.os-banner img
+		height: 70vh
+
+	.os-banner
+		margin-bottom: 50px
+
+	.os-title
+		font-size: 26px
+		margin-bottom: 50px
+
+	.os-timer
+		padding: 30px
+		margin-top: 50px
+
+	.os-form__bot
+		margin-top: 30px
+
+	.os-timer
+		flex-direction: column
+		align-items: center
+
+		&__text
+			text-align: center
+			margin-bottom: 20px
+
+
+@media (max-width: 667px)
+
+	.os-slider-cont
+
+		.swiper-list
+			overflow: hidden
+
+	.os-banner img
+		height: calc(100vh - 80px - 110px)
+
+	.os-banner__date
+		font-size: 15px
+		margin-bottom: 10px
+
+	.os-banner__title
+		font-size: 23px
+		line-height: 30px
+
+	.os-banner__btn
+		margin-top: 25px
+
+	.os-banner__box
+		position: static
+		transform: none
+		display: flex
+		flex-direction: row
+		align-items: center
+		margin-top: 40px
+
+	.os-banner__info-cont .wrapper
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+
+	.os-banner__box-ico
+		size: 80px
+		background-size: 30px
+
+	.os-banner__box-text
+		margin-top: 0
+
+	.os-banner__info
+		transform: none
+
+	.os-banner__box-text
+		text-align: left
+		margin-left: 40px
+
+	.os-title
+		br
+			display: none
+
+	.os__inputs .default-input
+		width: 100%
+
+	.os-form__bot
+		flex-direction: column
+		align-items: flex-start
+
+	.os-form__bot-submit
+		input
+			width: 100%
+			text-align: center
+
+	.os-form__bot-text
+		margin: 20px 0 0 0
+
