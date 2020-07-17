@@ -403,7 +403,7 @@ try {
 
 
 		$("body").on('click', '[href^="#"]', function(e){
-			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top}, 1000);
+			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - $("header").height()}, 1000);
 		});
 
 
