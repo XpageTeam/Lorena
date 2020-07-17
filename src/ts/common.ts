@@ -36,6 +36,26 @@ declare global {
     }
 }
 
+function checkWindowScrollForHeaderFix(header: HTMLElement){
+	if (window.scrollY > 5)
+		header.classList.add("js__scrolled");
+	else
+		header.classList.remove("js__scrolled");
+}
+
+App.domReady(() => {
+	const header = document.querySelectorAll(".main .head, .tovar .head, .constructor .head");
+
+	if (header.length == 0)
+		return;
+
+	checkWindowScrollForHeaderFix(header[0] as HTMLElement);
+
+	document.addEventListener("scroll", function(){
+		checkWindowScrollForHeaderFix(header[0] as HTMLElement);
+	});
+});
+
 App.domReady(() => {
 	new MobileMenu({
 		burger: ".head__burger",

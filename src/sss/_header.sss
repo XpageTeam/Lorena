@@ -8,8 +8,12 @@
 .main, .tovar, .constructor
 
 	.head
-		position: absolute 0 * * 0
+		position: fixed 0 * * 0
 		width: 100%
+		transition: background-color .3s ease
+
+		&.js__scrolled
+			background: var(--thrid-color)
 
 		&__menu
 
@@ -19,6 +23,7 @@
 					opacity: 1
 
 .inner
+
 	&:not(.tovar):not(.constructor)
 
 		.head
