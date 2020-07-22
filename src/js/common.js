@@ -3,11 +3,15 @@ import is from "is_js"
 import stringEffect from "./stringAnimate.js"
 import "./select2.js"
 import Cookies from "js-cookie";
+import "./city-select.js";
 
 import "./stock-popup-showing.js";
 import "./call-popup-showing.js";
 import "./upload.js";
 import "./size-popup-showing.js";
+import citySelect from "./city-select.js";
+
+Vue.component("city-select", citySelect);
 
 
 import {Swiper, Navigation} from 'swiper/dist/js/swiper.esm.js'
@@ -153,7 +157,15 @@ try{
 
 	document.addEventListener("DOMContentLoaded", e => {
 		require("./jquery.fancybox.js")
-		require("../css/jquery.fancybox.css")
+		require("../css/jquery.fancybox.css");
+
+		new Vue({
+			el: ".head__city"
+		});
+
+		$(".city-popup__btns .gray-btn, .side-menu__city .h-city").on("click", function(){
+			window.citySelect.showCityPopup();
+		});
 
 		checScrollIntoView()
 

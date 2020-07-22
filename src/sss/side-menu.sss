@@ -15,6 +15,9 @@
 		transition: transform .3s ease
 		width: 320px
 
+		&__city
+			display: none
+
 		&.js__opened
 			transform: translate3d(100%, 0, 0)
 
@@ -127,3 +130,14 @@
 @media (max-width: 660px)
 	.side-menu
 		width: 100vw
+
+		&__city
+			display: block
+			
+			.h-city
+				padding: 15px 25px
+				text-transform: uppercase
+				font-weight: 500
+
+				&:after
+					margin-left: auto

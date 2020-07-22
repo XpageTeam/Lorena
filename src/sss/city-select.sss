@@ -1,0 +1,147 @@
+.scity-popup
+	display: none 
+	background: var(--second-color) !important
+	padding: 40px 60px 45px !important
+	width: 910px
+	max-width: 100% !important
+
+	&__title
+		font-size: 24px
+		margin: 0 0 50px
+
+	&__content
+
+		&-search
+			margin: 0 0 46px
+
+		&-list
+			overflow-y: auto
+			max-height: vh(500)
+			-webkit-overflow-scrolling: touch
+
+			&::-webkit-scrollbar 
+				width: 13px
+
+				&-track, &-thumb
+					border-left: 10px solid var(--second-color)
+
+				&-track
+					background: #6C6A6A
+
+				&-thumb
+					background: var(--main-color)
+
+.scity-search
+	display: flex
+
+	&__btn
+		flex: none
+		margin-left: 60px
+
+	&__input
+		flex: 1 1 auto
+
+		.default-input
+
+			&__input
+				width: 100%
+				border: none
+				background: url("../img/ico-city-search.svg") left top no-repeat
+				border-bottom: 1px solid #6C6A6A
+				transition: border-color .3s 
+				color: #fff
+				padding: 8px 34px 19px
+
+				&::-webkit-input-placeholder
+					color: #737373 !important
+
+				&:-moz-placeholder
+					color: #737373 !important
+
+				&::-moz-placeholder
+					color: #737373 !important
+
+				&:-ms-input-placeholder
+					color: #737373 !important
+
+.cp-list
+	column-count: 3
+	column-gap: 72px
+
+	&__item
+		font-size: 16px
+		color: #a3a3a3
+		line-height: calc(24 / 16)
+		break-inside: avoid
+
+		&:not(&--active)
+			cursor: pointer
+			transition: color .3s ease
+
+			&:hover
+				color: var(--main-color)
+
+		&--marked
+			text-transform: uppercase
+			color: rgba(255,255,255, .3)
+			font-weight: bold
+
+		&--active
+			color: var(--main-color)
+
+		&:not(:first-child)
+			margin: 22px 0 0
+
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.scity-popup
+		padding: 30px 20px !important
+
+		&__title
+			font-size: 20px
+			margin: 0 0 30px
+
+	.cp-list
+		column-gap: 30px
+
+@media (max-width: 660px)
+	.scity-popup
+		padding: 30px 28px 32px !important
+		position: relative
+		height: 100%
+
+		&__title
+			font-size: 20px
+			margin: 0 0 22px
+
+		&__content
+			height: calc(100% - 48px)
+
+			&-search
+				margin: 0 0 40px
+
+			&-list
+				height: calc(100% - 133px)
+				max-height: none
+
+	.cp-list
+		column-count: 1
+
+		&__item
+
+			&:not(:first-child)
+				margin: 8px 0 0
+
+	.scity-search
+		
+		&__btn
+			margin: 0
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+
+			.default-btn
+				text-align: center
+				width: 100%
