@@ -47,7 +47,7 @@
 	z-index: 3
 	color: #fff
 	text-transform: uppercase
-	padding: 37px 90px 30px 40px
+	padding: 37px 40px 30px
 
 	&__wrap
 		display: flex
@@ -55,6 +55,12 @@
 		align-items: center
 		max-width: 1920px
 		margin: 0 auto
+
+	&__city
+		position: relative
+
+		&-popup
+			position: absolute calc(100% + 20px) * * calc(50% - 92px)
 
 	&__menu
 		margin: 0 1.15vw
@@ -86,6 +92,66 @@
 			font-weight: 500
 			font-size: 10px
 
+.h-city
+	display: flex
+	align-items: center
+	user-select: none
+	cursor: pointer
+
+	&__icon
+		margin-right: 17px
+
+	&__name
+		font-size: 13px
+		font-weight: 500
+		display: flex
+		align-items: center
+
+		&:after
+			content: ""
+			margin-left: 13px
+			border-right: 1px solid #fff
+			border-bottom: 1px solid #fff
+			size: 4px
+			transform: rotateZ(45deg)
+
+.city-popup
+	width: 184px
+	text-align: center
+	background: var(--second-color)
+	padding: 15px
+	position: relative
+
+	&:before
+		content: ""
+		position: absolute * * 100% calc(50% - 5px)
+		size: 0
+		border-style: solid
+		border-width: 0 4px 5px 4px
+		border-color: transparent transparent var(--second-color) transparent
+
+	&__title
+		text-transform: lowercase
+		font-weight: 500
+		font-size: 14px
+		margin: 0 0 15px
+
+		&::first-letter
+			text-transform: uppercase
+
+	&__btns
+
+		&-btn
+
+			&.gray-btn
+				border-color: var(--main-color) !important
+
+			a
+				display: block
+
+			&:not(:first-child)
+				margin-left: 12px
+
 .h-phone
 	font-weight: 400
 
@@ -115,6 +181,7 @@
 		size: 18px
 		margin-right: 17px
 		fill: var(--main-color)
+
 
 
 
@@ -213,9 +280,15 @@
 				margin: 11px 0 0
 
 
-@media (max-width: 1500px)
+@media (max-width: 1500px) and (min-width: 1200px)
 	.head
-		padding: 20px 30px 20px
+		padding: 20px 30px 50px
+
+		&__wrap
+			position: relative
+
+		&__city
+			position: absolute calc(100% + 15px) * * 0
 
 		&__logo
 			max-width: 185px
@@ -270,6 +343,9 @@
 @media (max-width: 1200px)
 	.head
 		padding: 10px 20px
+
+		&__logo
+			margin-right: 20px
 
 		&__menu
 			display: none
@@ -362,6 +438,11 @@
 		.ico
 			fill: #fff
 
+	.h-city__icon
+
+		path
+			fill: #fff
+
 @media (max-width: 660px)
 
 	.head__stay-home
@@ -371,21 +452,48 @@
 
 		&__logo
 			flex: none
-			margin-right: auto
-
-		&__phone
-			display: none
-
+			margin-right: 0
+			max-width: 100px
+			
 		&__links
 			margin-right: auto
 
 			&-lc, &-fav
 
 				&:not(:last-child)
-					margin-right: 21px
+					margin-right: 10px
 
 		&__constructor
-			margin-right: 21px
+			margin-right: 10px
+
+		&__phone, &__burger
+			margin-left: 0
+
+		&__phone
+			margin-right: auto
+
+		&__city
+			position: static
+
+			.h-city
+				display: none
+
+			&-popup
+				top: 100%
+				left: 0
+				right: 0
+				width: auto
+
+	.city-popup
+		width: auto
+
+		&:before
+			display: none
+
+	
+
+	.h-phone
+		font-size: 12px
 
 	.constructor-link__icon
 		margin-right: 0
@@ -394,3 +502,9 @@
 
 		img
 			transform: translate(-2px, 0)
+
+@media (max-width: 360px)
+	.head
+
+		&__logo
+			max-width: 80px
