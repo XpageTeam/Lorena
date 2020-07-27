@@ -1,4 +1,4 @@
-@media (min-width: 1200px)
+@media (min-width: 1201px)
 	.head__burger
 		display: none
 
@@ -277,18 +277,28 @@
 				margin: 11px 0 0
 
 
-@media (max-width: 1500px) and (min-width: 1200px)
+// @media (max-width: 1500px) and (min-width: 1200px)
+// 	.head
+// 		padding: 20px 30px 50px
+
+// 		&__wrap
+// 			position: relative
+
+// 		&__city
+// 			position: absolute calc(100% + 15px) * * 0
+
+// 		&__logo
+// 			max-width: 185px
+
+@media (width <= 1500px)
+
 	.head
-		padding: 20px 30px 50px
+		padding: 20px 30px
 
-		&__wrap
-			position: relative
-
-		&__city
-			position: absolute calc(100% + 15px) * * 0
 
 		&__logo
 			max-width: 185px
+
 
 @media (max-width: 1400px)
 	.h-menu
@@ -324,12 +334,13 @@
 	.h-menu
 
 		&__link
+			font-size: rem(14)
 
 			&:before
-				right: -8px !important
+				right: -10px !important
 
 		&__item:not(:last-child)
-			margin-right: 15px
+			margin-right: 35px
 
 @media (max-width: 1280px)
 
