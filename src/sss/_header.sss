@@ -47,7 +47,7 @@
 	z-index: 3
 	color: #fff
 	text-transform: uppercase
-	padding: 37px 40px 30px
+	padding: 27px 40px 20px
 
 	&__wrap
 		display: flex
@@ -57,13 +57,12 @@
 		margin: 0 auto
 
 	&__city
-		position: relative
 
 		&-popup
 			position: absolute calc(100% + 20px) * * calc(50% - 92px)
 
 	&__menu
-		margin: 0 1.15vw
+		margin: 0 1.15vw 0 auto
 
 	&__links
 		display: flex
@@ -73,12 +72,21 @@
 			&:not(:last-child)
 				margin-right: 30px
 
-	&__constructor, &__links, &__phone, &__logo
+	&__constructor, &__links, &__phone, &__logo,
+	&__city
 		position: relative
 		z-index: 2
 
+	&__logo, &__phone
+		margin-right: 30px
+
 	a
 		color: inherit
+
+.logo
+
+	svg
+		height: auto
 
 .h-favorites
 
@@ -293,7 +301,7 @@
 @media (width <= 1500px)
 
 	.head
-		padding: 20px 30px
+		padding: 17px 30px
 
 
 		&__logo
@@ -432,6 +440,9 @@
 
 		&__burger
 			padding: 18px 0
+
+	.h-menu__item:not(:last-child)
+		margin-right: 0
 
 	.constructor-link
 
