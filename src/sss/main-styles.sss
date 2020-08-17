@@ -1,0 +1,89 @@
+.style
+	position: relative
+	padding: 75px 0 115px
+
+	&__cont
+		background: #282828
+
+	&__title
+		text-align: center
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 115px
+		color: rgba(255,255,255, .04)
+		position: absolute 0 0 *
+
+	&__list
+
+		&-title
+			text-transform: uppercase
+			font-weight: bold
+			font-size: 45px
+			max-width: 600px
+			margin: 0 0 25px
+
+.styles
+	display: flex
+	margin-right: -40px
+
+	&__item
+		margin-right: 40px
+		width: calc((100% - 40px * 3) / 3)
+
+		&:nth-child(even)
+			margin-top: 85px
+
+			.style-item
+
+				&__title
+					justify-content: flex-end
+
+					&-btn
+						margin-top: 30px 
+
+.style-item
+	display: block
+	position: relative
+	background: #333
+
+	&:hover &__img
+		opacity: .63
+
+	&:hover &__title-btn
+		background-color: var(--main-color)
+		border-color: var(--main-color)
+
+	&__img
+		opacity: .15
+		transition: opacity .3s ease
+
+		img
+			display: block
+
+	&__title
+		position: absolute 0
+		padding: 45px 30px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		font-size: 18px
+		line-height: 181%
+
+		&-title
+			text-transform: uppercase
+			color: var(--main-color)
+			font-weight: bold
+
+		&-subtitle
+			max-width: 185px
+
+		&-btn
+			margin: auto 0 0
+			font-size: 14px
+			color: #fff
+			border: 1px solid #fff
+			padding: 12px 15px
+			text-align: center
+			width: 100%
+			text-transform: uppercase
+			border-radius: 70px

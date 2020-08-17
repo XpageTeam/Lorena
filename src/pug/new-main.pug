@@ -1,0 +1,32 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.ms
+			.style__cont
+				.wrapper
+					.style
+						.style__title Стиль
+						.style__list
+							.style__list-title Стиль для вашей кухни
+							.style__list-list
+								.styles
+									each title, i in ["Современная коллекция/модерн", "Городская классика", "Классика"]
+										.styles__item
+											a.style-item(href="#")
+												figure.style-item__img
+													img(src="img/photos/style-img-"+i+".jpg")
+												figcaption.style-item__title
+													span.style-item__title-title Стиль
+													span.style-item__title-subtitle=title
+													span.style-item__title-btn Смотреть коллекцию
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		script(src="js/main-page.js")
