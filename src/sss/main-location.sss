@@ -1,0 +1,54 @@
+.main-contact
+
+	&__cont
+		padding: 100px 0 80px
+
+	&__title
+		font-weight: bold
+		font-size: 45px
+		margin: 0 0 72px
+		text-transform: uppercase
+
+	&__map
+		margin: 55px 0 0
+
+.location-form
+	max-width: 1045px
+
+@media (max-width: 1400px)
+	.main-contact
+		
+		&__cont
+			padding: 70px 0 50px
+
+		&__title
+			font-size: 35px
+			margin: 0 0 35px
+
+
+@media (max-width: 1000px)
+	.main-contact
+		
+		&__cont
+			padding: 50px 0
+
+@media (max-width: 1000px) and (min-width: 667px)
+	.location-form
+
+		.default-input
+
+			&--select
+				width: calc((100% - 54px * 2) / 2) !important
+
+			&:last-child
+				width: calc(100% - 54px)
+
+				.arrow-btn
+					align-self: flex-start
+
+@media ( max-width:  667px)
+
+	.main-contact
+
+		&__title
+			font-size: 20px

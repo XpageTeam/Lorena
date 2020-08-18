@@ -1,8 +1,92 @@
 .main-project
-	padding: 180px 0 110px
+	position: relative
+
+	&__cont
+		padding: 180px 0 0
 
 	&__title
 		text-transform: uppercase
 		font-size: 115px
 		color: rgba(255,255,255, .04)
 		font-weight: bold
+		position: absolute -80px 0 * 115px
+
+.mp-block
+	display: flex
+
+	&__left
+		margin-right: 68px
+
+	&__title
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 25px
+		margin: 0 0 25px
+
+		span
+			font-size: 52px
+			display: block
+
+	&__text
+		max-width: 490px
+		line-height: 181%
+		margin: 0 0 65px
+	
+	&__img
+		margin: -25px 0 0
+
+	&__decor
+		margin: 65px 0 0
+		transform: translate3d(-100px, 0, 0)
+
+
+@media (max-width: 1400px)
+	.main-project
+		
+		&__cont
+			padding: 140px 0 0
+
+		&__title
+			font-size: 95px
+
+@media (max-width: 1000px)
+	.main-project
+		
+		&__cont
+			padding: 100px 0 0
+
+	.mp-block
+		display: block
+
+		&__right
+			margin: 30px 0 0
+
+		&__left
+			margin-right: 0
+
+		&__img, &__decor
+			display: none
+
+		&__text
+			margin: 0 0 20px
+
+
+@media (max-width: 667px)
+	.main-project
+		
+		&__cont
+			padding: 30px 0 0
+
+		&__title
+			font-size: 45px
+			left: 0
+			text-align: center
+			top: -30px
+
+	.mp-block
+		
+		&__title
+			font-size: 22px
+
+			span
+				font-size: 30px

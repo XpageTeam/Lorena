@@ -8,6 +8,34 @@ html(lang="ru")
 		include inc/header.pug
 		main#content
 			.ms
+				.swiper-wrapper
+					.swiper-slide
+						a.ms__slide(href="#")
+							picture
+								source.swiper-lazy(media="(min-width: 667px)" data-srcset="img/photos/new-main-slider-banner.jpg")
+								source.swiper-lazy(media="(max-width: 667px)" data-srcset="img/photos/375-570.jpg")
+								img
+							.swiper-lazy-preloader
+					.swiper-slide
+						a.ms__slide(href="#")
+							picture
+								source.swiper-lazy(media="(min-width: 667px)" data-srcset="img/photos/new-main-slider-banner.jpg")
+								source.swiper-lazy(media="(max-width: 667px)" data-srcset="img/photos/375-570.jpg")
+								img
+							.swiper-lazy-preloader
+					.swiper-slide
+						a.ms__slide(href="#")
+							picture
+								source.swiper-lazy(media="(min-width: 667px)" data-srcset="img/photos/new-main-slider-banner.jpg")
+								source.swiper-lazy(media="(max-width: 667px)" data-srcset="img/photos/375-570.jpg")
+								img
+							.swiper-lazy-preloader
+				.ms__counter
+					.wrapper
+						.ms__counter-content
+							.swiper-button-prev
+							.swiper-pagination
+							.swiper-button-next
 			.style__cont
 				.wrapper
 					.style
@@ -25,6 +53,176 @@ html(lang="ru")
 													span.style-item__title-title Стиль
 													span.style-item__title-subtitle=title
 													span.style-item__title-btn Смотреть коллекцию
+			.main-project__cont
+				.wrapper
+					.main-project
+						.main-project__title Проект
+						.main-project__block
+							.mp-block
+								.mp-block__left
+									.mp-block__title Или просто закажи 
+										span бесплатный 
+										| дизайн проект.
+									.mp-block__btn
+										a.default-btn(href="#") Заявка на дизайн
+									figure.mp-block__img
+										img(src="img/project-img.png")
+								.mp-block__right
+									.mp-block__text
+										p В онлайн конструкторе Вы сможете самостоятельно создать проект своей идеальной кухни. Учтите все свои желания и привычки, особенности помещения и стиль интерьера. Всего 5 шагов и кухня мечты - у вас дома!
+									.mp-block__btn
+										a.default-btn.default-btn--bordered(href="#") Перейти в конструктор
+									figure.mp-block__decor
+										img(src="img/project-decor.png")
+			.main-dream__cont
+				.wrapper
+					.main-dream
+						.main-dream__title Ваша мечта
+						.main-dream__content
+							.mdc
+								.mdc__title 
+									span О какой кухне вы всегда мечтали?
+								.mdc__text
+									p Красивая, надежная и функциональная? Уже 30 лет компания «LORENA кухни» занимается производством кухонных гарнитуров по индивидуальным проектам Чтобы Ваши мечты становились реальными. 
+								.mdc__btn
+									a.default-btn(href="#") Получить консультацию
+						.main-dream__advantages
+							.mda
+								.mda__top Рассрочка платежа 
+									b 70%
+								.mda__list
+									.mdal
+										.mdal__list
+											each title,i in ["Эксклюзивное качество", "Рассрочка платежа", "Бесплатный дизайн проект", "Онлайн конструктор", "Система Трейд Ин", "Бесплатный замер", ]
+												.mdal__list-item
+													.mdali
+														figure.mdali__img
+															img(src="img/ma-"+i+".svg")
+														figcaption.mdali__title=title
+			.main-reviews__cont
+				.wrapper
+					.main-reviews
+						.main-reviews__slider
+							.reviews-slider
+								.swiper-wrapper
+									.swiper-slide
+										.reviews-slide
+											figure.reviews-slide__img(data-date="26.02.2019")
+												img(src="img/photos/main-reviews-img.jpg")
+											.reviews-slide__desc
+												.reviews-slide__name Наташа Александрова
+												.reviews-slide__city Магнитогорск
+												.reviews-slide__text
+													.text-page
+														p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+									- for (let i = 0; i < 10; i++)
+										.swiper-slide
+											.reviews-slide
+												figure.reviews-slide__img(data-date="26.02.2019")
+													img.swiper-lazy(data-src="img/photos/main-reviews-img.jpg")
+													.swiper-lazy-preloader
+												.reviews-slide__desc
+													.reviews-slide__name Наташа Александрова
+													.reviews-slide__city Магнитогорск
+													.reviews-slide__text
+														.text-page
+															p Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали...
+								.swiper-button-prev
+								.swiper-button-next
+						.main-reviews__counter
+							.reviews-counter
+								.reviews-counter__counter
+									.counter
+										.counter__number(data-from="0" data-to="1005") 1005
+										.counter__text отзывов
+								.reviews-counter__title «LORENA кухни» становятся лучше именно с вами. Пишите нам
+								.reviews-counter__btn
+									a.arrow-btn(href="#") Отзывы
+			.main-choose__cont
+				.wrapper
+					.main-choose
+						.main-choose__text
+							.main-choose__text-title Закажите кухню мечты 
+							//- .main-choose__text-subtitle и получи в подарок рецепт от шефа!
+							.main-choose__text-btn
+								a.arrow-btn(href="#") выбрать кухню
+						//- figure.main-choose__img
+						//- 	img(src="img/photos/main-ivlev.png")
+			.main-contact__cont
+				.wrapper
+					.main-contact
+						.main-contact__title Ближайший к вам салон
+						.main-contact__location
+							.location-form
+								.popup-form__inputs.popup-form__inputs--3
+									.default-input.default-input--select
+										select(data-placeholder="Выберите ваш город" onchange="$(this).closest('.default-input--select').find('.default-input__subtext').hide();" class="default-input__input default-input__input--select" name="PROPERTY[71][]" required="") 
+											option(value="") 
+											option(value="22") Альметьевск
+											option(value="129") Анапа
+											option(value="28") Барнаул
+											option(value="29") Белгород
+											option(value="30") Березники
+											option(value="32") Владивосток
+											option(value="31") Владимир
+											option(value="33") Волгоград
+											option(value="97") Воронеж
+											option(value="34") Дзержинск
+											option(value="107") Евпатория
+											option(value="35") Екатеринбург
+											option(value="113") Ижевск
+											option(value="38") Иркутск
+											option(value="21") Казань
+											option(value="39") Калуга
+											option(value="40") Каменск-Уральский
+											option(value="42") Кемерово
+											option(value="41") Киров
+											option(value="43") Краснодар
+											option(value="44") Красноярск
+											option(value="45") Курган
+											option(value="46") Липецк
+											option(value="47") Магнитогорск
+											option(value="20") Миасс
+										label.default-input__label Город
+										.default-input__subtext
+											span Возможно Ваш город 
+											a(href="javascript:;" onclick="$(this).closest('.default-input__subtext').prevAll('select').val(18).trigger('change');") Челябинск
+										.forms__error-message
+									.default-input.default-input--select
+										select.default-input__input.default-input__input--select(data-placeholder="Выберите салон") 
+											option(value="")
+											option(value="1") 1
+											option(value="2") 2
+											option(value="3") 3
+											option(value="4") 4
+										label.default-input__label Салон
+										.forms__error-message
+									.default-input
+										a.arrow-btn(href="#") Отправить геолокацию мне на телефон
+						.main-contact__map
+							.main-map
+								<!-- img/ico-marker.svg -->
+								img(src="img/photos/main-map.jpg")
+			.main-form__cont
+				.wrapper
+					.main-form
+						.main-form__title Остались вопросы?
+						.main-form__subtitle Напиши нам, ответим в ближайшее время
+						.main-form__form
+							form(action="#")
+								.popup-form__inputs.popup-form__inputs--2
+									.default-input
+										.popup-form__inputs.popup-form__inputs--2
+											.default-input
+												input.default-input__input(type="text" placeholder="Иван" required="")
+												label.default-input__label Ваше имя
+											.default-input
+												input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" required="")
+												label.default-input__label Телефон
+									.default-input.default-input--btn
+										input.arrow-btn(type="submit" value="Отправить")
+										.main-form__form-notif Нажимая на кнопку отправки сообщения, я соглашаюсь на обработку моих 
+											a(href="#") персональных данных
 		div(style="display: none")
 			include symbol/sprite.svg
 		include inc/footer.pug

@@ -1,8 +1,14 @@
+// @keyframes moveBg
+// 	0%
+// 		background-position: center left
+// 	100%
+// 		background-position: center left -3355px
+
 @keyframes moveBg
 	0%
 		background-position: center left
 	100%
-		background-position: center left -3355px
+		background-position: center left -2684px
 
 .main-choose
 	display: flex
@@ -12,7 +18,6 @@
 		align-self: center
 		margin-right: 20px
 		padding: 0 0 36px
-
 
 	&__form
 		margin-right: 100px
@@ -50,7 +55,6 @@
 		opacity: 0
 		display: none
 
-
 		img
 			display: block
 
@@ -61,6 +65,10 @@
 			animation: moveBg 20s linear infinite
 			background: url("../img/lorena-bg.svg") center left repeat-x
 			background-color: var(--thrid-color)
+
+			@media (min-width: 1000px)
+				background-size: auto 80%
+				padding: 170px 0
 
 		&--no-bg
 			background-color: #282828

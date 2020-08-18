@@ -1,0 +1,83 @@
+.ms
+	position: relative
+	overflow: hidden
+
+	&:after, &:before
+		content: ""
+		position: absolute 0
+		background-size: cover !important
+		z-index: 2
+
+	&:before
+		background: url("../img/ms-before.png") top center no-repeat
+
+	&:after
+		background: url("../img/ms-after.png") top center no-repeat
+
+	img
+		max-height: 100vh
+		object-fit: cover
+		object-position: top center`
+
+	&:not(.swiper-container-initialized) img
+		min-height: 100vh
+
+	.swiper
+		
+		&-wrapper
+
+			&:after
+				content: ""
+				position: absolute 0
+				background: #000
+				opacity: 0.2
+				z-index: 2
+
+	&__counter
+		position: absolute * 0 130px
+
+		.swiper
+
+			&-button
+
+				&-prev, &-next
+					position: static
+					background: url("../img/ms-arrow.svg") center no-repeat
+					size: 56px 7px
+					margin: 0
+
+				&-prev
+					transform: rotateZ(180deg)
+			
+			&-pagination
+				font-size: 18px
+				margin: 0 20px
+				position: static
+				width: auto
+				
+				&-current
+					font-weight: bold
+					font-size: 30px
+
+		&-content
+			display: flex
+			justify-content: center
+			align-items: center
+
+
+@media (max-width: 1400px)
+	.ms
+		
+		&__counter
+			bottom: 40px
+
+@media (max-width: 1000px)
+	.ms:after, .ms:before
+		display: none
+
+	.ms
+
+		.swiper-wrapper
+
+			&:before
+				display: none

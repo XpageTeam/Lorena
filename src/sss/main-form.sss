@@ -1,0 +1,68 @@
+.main-form
+	background: var(--thrid-color)
+	padding: 60px 40px 60px 50px
+
+	&__cont
+		margin: 0 0 110px
+
+	&__title
+		font-size: 24px
+		font-weight: bold
+		margin: 0 0 8px
+	
+	&__subtitle
+		color: rgba(255,255,255, .3)
+
+	&__form
+		margin: 45px 0 0
+
+		.default-input
+
+			&--btn
+				flex-direction: row !important
+				align-items: center
+
+				.arrow-btn
+					margin-right: 25px
+		
+		&-notif
+			line-height: 146%
+			font-size: 12px
+			color: #C6C6C6
+
+		.popup-form__inputs
+			align-items: flex-end
+
+
+@media (max-width: 1400px)
+	.main-form
+		padding: 40px
+
+		&__form
+			margin: 25px 0 0
+
+
+@media (max-width: 1000px)
+	.main-form
+		padding: 20px
+
+		&__cont
+			margin: 0 0 50px
+
+	.popup-form__inputs
+		display: block
+		margin: 0 !important
+
+		> .default-input
+			width: 100% !important
+			margin: 0 !important
+
+			&:not(:first-child)
+				margin: 25px 0 0 !important
+
+@media (max-width: 667px)
+	.default-input--btn
+		display: block
+
+		.arrow-btn
+			margin: 0 0 20px
