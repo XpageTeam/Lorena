@@ -144,7 +144,7 @@ gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "de
 
 const local = _ => {
 	var WP = process.exec("npm run watch");
-	gulp.watch(["src/sss/*.sss"], gulp.series("postcss"));
+	gulp.watch(["src/sss/**/*.sss"], gulp.series("postcss"));
 	gulp.watch('src/pug/**/*', gulp.series("pug"));
 	gulp.watch('src/img/scene.svg', gulp.series("pug"));
 	// gulp.watch("src/js/*.js", gulp.series("babel"));

@@ -1,0 +1,69 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Каталог
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title.inner-content__title--bg(style="background-image: url(img/photos/title-catalog-bg.jpg)")
+					.wrapper
+						.title-block
+							.title-block__title
+								h1 Кухни
+							nav.title-block__menu
+								ul.title-menu
+									each item in  ["Современная коллекция", "городская классика", "классика"]
+										li
+											a.title-menu__link.gray-btn(href="#")=item
+				.inner-content__content
+					.n-catalog
+						.n-catalog__filter
+							.catalog-filter
+								.catalog-filter__filter
+									.filter
+										.filter__btn
+											a.bordered-btn(href="#") Заказать индивидуальный дизайн проект бесплатно
+										.filter__list
+											.f-list
+												.f-list__item
+													.f-list__item-title Цвет
+													.f-list__item-content 
+														.color-list
+															each color in ["000", "D6E3FF", "A6A671", "7C6254", "CCAC7B", "982222", "28502C", "510000", "47604D"]
+																.color-list__color
+																	input.color-list__color-input(type="checkbox")
+																	label.color-list__color-label(style="background-color: #"+color)
+												.f-list__item
+													.f-list__item-title Материал
+													.f-list__item-content 
+												.f-list__item
+													.f-list__item-title Покрытие
+													.f-list__item-content 
+												.f-list__item
+													.f-list__item-title Декор
+													.f-list__item-content 
+								.catalog-filter__btn
+									a.default-btn(href="#") Распродажа
+						.n-catalog__list
+							.ncatalog-list
+								- for (let j = 0; j < 3; j++)
+									each title, i in ["Волна", "Индастриал", "Дюна", ]
+										.catalog-list__item
+											.ncat-item
+												.ncat-item__img
+													a.ncat-item__img-link(href="#")
+														img(src="img/photos/n-cat-item-img-"+i+".jpg")
+													.ncat-item__img-favorite
+												.ncat-item__desc
+													.ncid
+														.ncid__title
+															.ncid__title-title=title
+															.ncid__title-price
+																.ncid-price Цена от 110 00 ₽
+		div(style="display: none")
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
