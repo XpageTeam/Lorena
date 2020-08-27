@@ -1,0 +1,21 @@
+.check-list
+	max-height: 185px
+	overflow-y: auto
+
+	&::-webkit-scrollbar
+		width: 4px
+
+		&-thumb, &-track
+			width: 4px
+			border-radius: 2px
+
+		&-track
+			background-color: var(--second-color)
+		
+		&-thumb
+			background-color: var(--main-color)
+
+	&__item
+
+		&:not(:first-child)
+			margin: 15px 0 0

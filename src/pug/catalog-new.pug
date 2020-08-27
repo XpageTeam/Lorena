@@ -22,47 +22,113 @@ html(lang="ru")
 					.n-catalog
 						.n-catalog__filter
 							.catalog-filter
+								.catalog-filter__mobile-btn
+									button.default-btn Показать фильтр
 								.catalog-filter__filter
-									.filter
-										.filter__btn
-											a.bordered-btn(href="#") Заказать индивидуальный дизайн проект бесплатно
-										.filter__list
-											.f-list
-												.f-list__item
-													.f-list__item-title Цвет
-													.f-list__item-content 
-														.color-list
-															each color in ["000", "D6E3FF", "A6A671", "7C6254", "CCAC7B", "982222", "28502C", "510000", "47604D"]
-																.color-list__color
-																	input.color-list__color-input(type="checkbox")
-																	label.color-list__color-label(style="background-color: #"+color)
-												.f-list__item
-													.f-list__item-title Материал
-													.f-list__item-content 
-												.f-list__item
-													.f-list__item-title Покрытие
-													.f-list__item-content 
-												.f-list__item
-													.f-list__item-title Декор
-													.f-list__item-content 
+									form(action="#")
+										.filter
+											.filter__close
+											.filter__btn
+												a.default-btn.default-btn--bordered(href="#") Заказать индивидуальный дизайн проект бесплатно
+											.filter__list
+												.f-list
+													.f-list__item.js__opened
+														.f-list__item-title Цвет
+														.f-list__item-content 
+															.color-list
+																each color in ["000", "D6E3FF", "A6A671", "7C6254", "CCAC7B", "982222", "28502C", "510000", "47604D"]
+																	.color-list__color
+																		input.color-list__color-input(type="checkbox")
+																		label.color-list__color-label(style="background-color: #"+color)
+													.f-list__item.js__opened
+														.f-list__item-title Материал
+														.f-list__item-content
+															.check-list
+																- for (let i = 0; i < 3; i++)
+																	each title in ["МДФ", "Термопластик", "Эмаль", ]
+																		.check-list__item
+																			.default-checkbox
+																				input.default-checkbox__input(type="checkbox")
+																				label.default-checkbox__label
+																					span.default-checkbox__label-text=title
+													.f-list__item
+														.f-list__item-title Покрытие
+														.f-list__item-content 
+															.check-list
+																- for (let i = 0; i < 3; i++)
+																	each title in ["МДФ", "Термопластик", "Эмаль", ]
+																		.check-list__item
+																			.default-checkbox
+																				input.default-checkbox__input(type="checkbox")
+																				label.default-checkbox__label
+																					span.default-checkbox__label-text=title
+													.f-list__item
+														.f-list__item-title Декор
+														.f-list__item-content 
+															.check-list
+																- for (let i = 0; i < 3; i++)
+																	each title in ["МДФ", "Термопластик", "Эмаль", ]
+																		.check-list__item
+																			.default-checkbox
+																				input.default-checkbox__input(type="checkbox")
+																				label.default-checkbox__label
+																					span.default-checkbox__label-text=title
+											.filter__submit
+												input.default-btn(type="submit" value="Применить")
 								.catalog-filter__btn
 									a.default-btn(href="#") Распродажа
 						.n-catalog__list
 							.ncatalog-list
 								- for (let j = 0; j < 3; j++)
 									each title, i in ["Волна", "Индастриал", "Дюна", ]
-										.catalog-list__item
+										.ncatalog-list__item
 											.ncat-item
 												.ncat-item__img
 													a.ncat-item__img-link(href="#")
 														img(src="img/photos/n-cat-item-img-"+i+".jpg")
 													.ncat-item__img-favorite
+														.ci-favrites
+															figure.ci-favrites__hearth
+																svg.ico
+																	use(xlink:href="#ico-favorite")
+															figcaption.ci-favrites__count 3
 												.ncat-item__desc
 													.ncid
 														.ncid__title
-															.ncid__title-title=title
+															a.ncid__title-title(href="#")=title
 															.ncid__title-price
+																.ncid-oldprice 210 00 ₽
 																.ncid-price Цена от 110 00 ₽
+														table.ncid__desc
+															tbody.ncid__desc-table
+																tr
+																	td Стиль
+																	td Классика
+																tr
+																	td Материал
+																	td МДФ
+																tr
+																	td Покрытие
+																	td Термопластик, эмаль
+					.inner-content__form
+						.wrapper
+							.main-form
+								.main-form__title Закажите кухню мечты 
+								.main-form__form
+									form(action="#")
+										.popup-form__inputs.popup-form__inputs--2
+											.default-input
+												.popup-form__inputs.popup-form__inputs--2
+													.default-input
+														input.default-input__input(type="text" placeholder="Иван" required="")
+														label.default-input__label Ваше имя
+													.default-input
+														input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" required="")
+														label.default-input__label Телефон
+											.default-input.default-input--btn
+												input.arrow-btn(type="submit" value="Отправить")
+												.main-form__form-notif Нажимая на кнопку отправки сообщения, я соглашаюсь на обработку моих 
+													a(href="#") персональных данных
 		div(style="display: none")
 			include symbol/sprite.svg
 		include inc/footer.pug

@@ -1,0 +1,46 @@
+.color-list
+	display: grid
+	grid-template-columns: repeat(auto-fill, 25px)
+	gap: 9px
+	max-width: 165px
+
+	&__color
+		position: relative
+
+		&-input
+			position: absolute 0 
+			size: 100%
+			opacity: 0
+			cursor: pointer
+			z-index: 1
+
+			&:checked + label
+
+				&:after
+					opacity: 1
+
+				&::before
+					opacity: .3
+
+		&-label
+			display: block
+			size: 25px
+			border-radius: 5px
+			position: relative
+
+			&:after
+				content: ""
+				position: absolute calc(50% - 5px) calc(50% - 2px) * *
+				border-right: 1px solid #fff
+				border-bottom: 1px solid #fff
+				transform: rotateZ(45deg)
+				size: 5px 7px
+				opacity: 0
+				z-index: 1
+
+			&:before
+				content: ""
+				position: absolute 0
+				background-color: #000
+				opacity: 0
+				border-radius: inherit

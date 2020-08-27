@@ -1,6 +1,65 @@
 @import "filter.sss"
+@import "color-list.sss"
+@import "check-list.sss"
+@import "catalog-list.sss"
+@import "catalog-item.sss"
 	
 .n-catalog
 	display: flex
 	max-width: 1702px
-	margin: 80px auto 0
+	padding: 0 20px
+	margin: 80px auto 100px
+
+	&__filter
+		flex: none
+		width: 414px
+		margin-right: 53px
+
+	&__list
+		flex: 1 1 auto
+
+.catalog-filter
+
+	&__mobile-btn
+		display: none
+
+	&__btn
+		margin: 32px 0 0
+
+		.default-btn
+			width: 100%
+
+
+@media (width <= 1400px)
+	.n-catalog
+		margin: 40px auto 60px
+
+		&__filter
+			margin-right: 30px
+			width: 340px
+
+@media (width <= 1000px)
+	.n-catalog
+		margin: 30px 0
+		display: block
+
+		&__filter
+			margin: 0 0 40px
+			width: 100%
+
+	.catalog-filter
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr))
+		gap: 20px
+
+		&__mobile-btn
+			display: block
+
+			.default-btn
+				width: 100%
+		
+		&__filter
+			display: none
+
+		&__btn
+			margin: 0

@@ -1,0 +1,12 @@
+.ncatalog-list
+	display: grid
+	grid-template-columns: repeat(auto-fit, minmax(310px, 1fr))
+	gap: 30px
+	
+	&__item
+		display: flex
+		flex-direction: column
+
+@media (width <= 1000px)
+	.ncatalog-list
+		gap: 20px

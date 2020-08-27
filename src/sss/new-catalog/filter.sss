@@ -1,1 +1,57 @@
 .filter
+	background-color: var(--thrid-color)
+	padding: 35px 20px 45px
+
+	&__close
+		display: none
+
+	&__btn, &__submit
+
+		.default-btn
+			// white-space: nowrap
+			width: 100%
+
+		&:not(:last-child)
+			margin: 0 0 30px
+
+	&__submit
+		margin-top: 40px
+
+.f-list
+
+	&__item
+		border-bottom: 1px solid rgba(255,255,255, .15)
+		padding-bottom: 15px
+
+		&:not(:first-child)
+			margin: 25px 0 0
+
+		&:not(.js__opened) &-content
+			display: none
+
+		&:not(.js__opened) &-title:after
+			transform: rotateZ(45deg)
+
+		&.js__opened &-title:after
+			transform: rotateZ(-135deg)
+
+		&-title
+			cursor: pointer
+			position: relative
+			padding-right: 30px
+			font-size: 14px
+			font-weight: 400
+
+			&:after
+				content: ""
+				position: absolute calc(50% - 2px) 2px * *
+				size: 5px
+				border-right: 1px solid #fff
+				border-bottom: 1px solid #fff
+
+		&-content
+			padding-top: 20px
+
+
+// @media (width <= 1000px)
+	// .catalog-filter__filter
