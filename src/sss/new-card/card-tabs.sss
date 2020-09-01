@@ -1,0 +1,171 @@
+.card-tabs
+	max-width: 611px
+
+	&__tabs
+		display: flex
+		border-block: 1px solid var(--thrid-color)
+		padding: 11px 0
+		margin: 0 0 26px
+
+		&-tab
+			flex: 1 1 auto
+			padding: 3px 10px
+			text-align: center
+			cursor: pointer
+			font-size: 14px
+			position: relative
+
+			&:not(:last-child)
+				border-right: 1px solid var(--thrid-color)
+				
+			&:after
+				content: ""
+				position: absolute calc(100% + 11px) 0 *
+				height: 1px
+				display: block !important
+				background: var(--main-color)
+				opacity: 0
+
+			&.active
+
+				&:after
+					opacity: 1
+
+
+.ct-content
+
+	&__item
+
+		&:not(.active)
+			display: none
+
+
+.features
+	display: table
+	font-size: 14px
+	width: 100%
+
+	&__row
+		display: table-row
+
+		&:nth-child(even)
+			background-color: var(--thrid-color)
+
+		&--marked &-title, &--marked &-content
+			color: var(--main-color)
+
+		&--marked
+			cursor: pointer
+			user-select: none
+
+			&.js__opened
+
+				.features__row-title_content
+					display: block
+
+		&--marked &-content
+
+			&:after
+				content: ""
+				display: inline-block
+				size: 6px
+				border-right: 1px solid var(--main-color)
+				border-bottom: 1px solid var(--main-color)
+				transform: rotateZ(45deg) translateY(-4px)
+				vertical-align: middle
+				margin-left: 12px
+
+		&-title, &-content
+			display: table-cell
+			padding: 10px 20px
+
+		&-title
+			color: rgba(255,255,255, .5)
+
+			&_content
+				color: #fff
+				margin: 15px 0 0
+				display: none
+
+.card-set
+	margin: 0 0 -30px -30px
+	display: flex
+	flex-wrap: wrap
+	// max-width: 570px
+
+	&__item
+		margin: 0 0 30px 30px
+		width: calc((100% - 30px * 4) / 4)
+
+		&-img
+
+			img
+				display: block
+
+		&-title
+			margin: 10px 0 0
+			font-size: 10px
+			line-height: 146%
+
+
+.card-colors
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -30px -20px
+	max-width: 475px
+
+	&__item
+		width: calc((100% - 20px * 4) / 4)
+		margin: 0 0 30px 20px
+		position: relative
+
+		&-input
+			position: absolute 0
+			size: 100%
+			cursor: pointer
+			opacity: 0
+
+			&:checked + label
+				border-color: var(--main-color)
+
+		&-label
+			display: block
+			border-radius: 10px
+			transition: border-color .3s ease
+			min-height: 145px
+			padding: 10px
+			border: 1px solid var(--thrid-color)
+
+		&-color
+			background-size: cover
+			border-radius: 10px
+			size: 72px
+			margin: 0 0 15px
+
+		&-title
+			font-size: 10px
+
+
+.card-desc_text
+	font-size: 14px
+
+.card-reviews
+
+	&__item
+
+		&:not(:first-child)
+			margin: 30px 0 0
+
+.c-review
+	background-color: var(--thrid-color)
+	border-radius: 10px
+	padding: 25px 40px
+	font-size: 14px
+
+	&__city
+		color: rgba(255,255,255, .5)
+		margin: 3px 0 0
+		font-size: 10px
+
+	&__text
+		margin: 14px 0 0

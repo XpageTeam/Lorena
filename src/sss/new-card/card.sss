@@ -1,0 +1,46 @@
+@import "card-advantages.sss"
+@import "card-desc.sss"
+@import "card-slider.sss"
+@import "card-tabs.sss"
+@import "card-hit_slider.sss"
+	
+.card
+	margin: 40px 0 100px
+
+	&__back
+		margin: 0 0 50px
+
+	&__slider
+		margin: 100px 0 0
+
+.card-body
+	display: grid
+	grid-template-columns: repeat(2, calc(50% - 23px))
+	grid-template-rows: auto auto 1fr
+	grid-template-areas: "slider title" "slider desc" "slider tabs"
+	gap: 50px 56px
+
+	&__title
+		grid-area: title
+		padding: 8px 0 0
+
+		&-type
+			color: rgba(255,255,255, .5)
+			text-transform: uppercase
+			font-size: 10px
+			font-weight: 400
+
+		&-title
+			margin: 2px 0 0
+			font-size: 40px
+			line-height: 106%
+			font-weight: bold
+
+	&__slider
+		grid-area: slider
+
+	&__desc
+		grid-area: desc
+
+	&__tabs
+		grid-area: tabs

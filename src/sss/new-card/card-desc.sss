@@ -1,0 +1,41 @@
+.card-desc
+	max-width: 530px
+
+	&__btn
+		margin: 40px 0 0
+
+	&__advantages
+		margin: 60px 0 0
+
+.card-price
+	display: flex
+	align-items: center
+	max-width: 355px
+	border: 1px solid var(--main-color)
+	border-radius: 10px
+	background: var(--thrid-color)
+	padding: 20px 40px
+
+	&__current, &__last-price, &__last-text span
+		white-space: nowrap
+
+	&__current
+		font-weight: bold
+		font-size: 24px
+		flex: 1 1 auto
+		line-height: 1
+
+		&:not(:last-child)
+			margin-right: 20px
+			padding: 5px 0 0
+
+	&__last
+
+		&-price
+			font-size: 14px
+
+		&-text
+			font-size: 10px
+			text-transform: uppercase
+			color: rgba(255,255,255, .5)
+			margin: 5px 0 0

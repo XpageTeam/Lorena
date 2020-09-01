@@ -1,0 +1,54 @@
+
+.hit-slider
+
+	&__title
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 0 0 35px
+
+		&-text
+			font-weight: bold
+			font-size: 45px
+			line-height: 110%
+
+		&-arrows
+			display: flex
+			align-items: center
+
+			.swiper-button
+				
+				&-prev
+					transform: rotateZ(90deg)
+					margin-right: 15px
+
+				&-next
+					transform: rotateZ(-90deg)
+
+				&-prev, &-next
+					border-radius: 50%
+					background: var(--main-color)
+					size: 39px
+					position: static
+
+					&:not(:last-child)
+						margin-right: 20px
+
+					&:matches(:after, :before)
+						content: ""
+						position: absolute
+
+					&:after
+						top: calc(50% - 3px) 
+						right: calc(50% - 3px)
+						border-right: 1px solid #fff
+						border-bottom: 1px solid #fff
+						size: 5px
+						transform: rotateZ(45deg)
+						z-index: 1
+
+	&__slider
+		overflow: hidden
+
+	&__dots
+		display: none

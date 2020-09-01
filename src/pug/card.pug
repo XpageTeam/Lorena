@@ -1,0 +1,197 @@
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__crumbs
+					.wrapper.wrapper--big
+						.bread-crumbs
+							a.bread-crumbs__link(href="#") Главная
+							a.bread-crumbs__link(href="#") Каталог
+							span.bread-crumbs__this Канто
+				.inner-content__content
+					.wrapper.wrapper--big
+						.card
+							.card__back
+								a.default-btn.default-btn--black(href="#") вернуться в каталог
+							.card__body
+								.card-body
+									.card-body__title
+										.card-body__title-type Городская классика
+										h1.card-body__title-title Канто
+									.card-body__slider
+										.tovar-sliders
+											.tovar-sliders__big
+												.swiper-wrapper
+													.swiper-slide
+														a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+															img(src="img/photos/new-kitchen.jpg")
+													- for (let i = 0; i < 2; i++)
+														.swiper-slide
+															a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+																img.swiper-lazy(data-src="img/photos/new-kitchen.jpg")
+															.swiper-lazy-preloader
+											.tovar-sliders__thumbs
+												.thumbs-slider
+													.thumbs-slider__list
+														- for (let i = 0; i < 2; i++)
+															if (i == 0)
+																figure.thumbs-slider__slide.active
+																	img(src="img/photos/kitchen-small-"+i+".jpg")
+															else
+																figure.thumbs-slider__slide
+																	img(src="img/photos/kitchen-small-"+i+".jpg")
+													.thumbs-slider__more
+														<!-- ссылка на третью картинку в полноэкранной галерее -->
+														a.more-imgs.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+															img(src="img/photos/kitchen-small-2.jpg")
+														<!-- ссылки на остальные картинки большой галереи -->
+														- for (let j = 0; j < 3; j++)
+															a.fancybox(href="img/photos/kitchen.jpg" data-fancybox="tovar-gallery")
+									.card-body__desc
+										.card-desc
+											.card-desc__price
+												.card-price
+													.card-price__current от 80 700 Р
+													.card-price__last
+														.card-price__last-price от 82 700 Р
+														.card-price__last-text Выгода 
+															span 2 000 Р 
+											.card-desc__btn
+												a.arrow-btn(href="#") Заказать дизайн-проект
+											.card-desc__advantages
+												.cd-advantages
+													each title, i in ["В наличии", "Доставка по РФ", "Возможна рассрочка", "Бесплатный дизайн проект", "Бесплатный замер", "Гарантия 2 года", ]
+														.cd-advantages__item 
+															figure.cd-advantages__item-img
+																img(src="img/advantages-card-"+i+".svg")
+															figcaption.cd-advantages__item-title=title
+									.card-body__tabs
+										.card-tabs
+											.card-tabs__tabs
+												.card-tabs__tabs-tab.active(data-id="0") Характеристики
+												.card-tabs__tabs-tab(data-id="1") Комплектация
+												.card-tabs__tabs-tab(data-id="2") Цвета
+												.card-tabs__tabs-tab(data-id="3") Описание
+												.card-tabs__tabs-tab(data-id="4") Отзывы
+											.card-tabs__content
+												.ct-content
+													.ct-content__item.active(data-id="0")
+														.features
+															each feature in [{title: "Стиль кухни", text: "Стиль кухни"}, {title: "Габариты", text: "Габариты"}, {title: "Материал фасада", text: "Материал фасада"}, {title: "Покрытие", text: "Покрытие"}, {title: "Столешница", text: "Столешница"}, ]
+																.features__row
+																	.features__row-title=feature.title
+																	.features__row-content=feature.text
+															.features__row.features__row--marked
+																.features__row-title 
+																	span Встроенная техника
+																	.features__row-title_content
+																		.text-page
+																			ul 
+																				li Посудомоечная машина GRAUDE
+																				li Вытяжка KRONA
+																				li Варочная поверхность CANDY
+																.features__row-content Развернуть
+														.tech-text <!-- тут что-то будет -->
+													.ct-content__item(data-id="1")
+														.card-set
+															each title, i in ["Столешница для разделки продуктов", "плита для приготовления пищи", "обеденная группа", "моечная поверхность", ]
+																.card-set__item
+																	figure.card-set__item-img
+																		img(src="img/card-set-img-"+i+".jpg", alt=title)
+																	figcaption.card-set__item-title=title
+													.ct-content__item(data-id="2")
+														.card-colors
+															each color in [{title: "Черный", color: "282828"}, {title: "Оранжевый", color: "FF6600"}, {title: "Оливковый", color: "A6A671"}, {title: "Бордовый", color: "982222"}, ]
+																.card-colors__item
+																	input.card-colors__item-input(type="radio" name="card-color")
+																	label.card-colors__item-label
+																		.card-colors__item-color(style="background-color: #"+color.color)
+																		.card-colors__item-title=color.title
+													.ct-content__item(data-id="3")
+														.card-desc_text
+															.text-page
+																p CANTO – абсолютная новинка 2019 года, способная перевернуть ваше представление о кухне. Это самая вариативная и многоликая модель за всю историю LORENA кухни. Впервые мы даём возможность выбора филёнки и профиля в разных декорах. 
+																p Хотите лёгкости и радости бытия? Обратите внимание на женское прочтение модели. Абсолютно «иньская» - мягкая, тёплая и манящая – она создана для хозяйки с лёгким характером. Словно весна CANTO ворвётся в ваш дом и окутает его бесконечным теплом.
+																p Брутальная и контрастная CANTO станет решением для холостяцкой квартиры. «Яньский» хозяин ставит во главу угла современные технические решения и дизайн.  
+													.ct-content__item(data-id="4")
+														.card-reviews
+															each review in [{name: "Наташа Александрова", city: "Санкт - Петербург", text: "Здравствуйте! Хочется поделиться своими впечатлениями по кухне Lorena, заказанную в декабре 2018 в салоне г. Магнитогорска. Мы долго с мужем выбирали, где заказать нам кухню, побывали..."}, {name: "Александр Коваленко", city: "Москва", text: "Всем доброго дня. Хочу похвастаться своим приобретением кухни в компании Лорена. Мне повезло - проект кухни составили в салоне на Гагарина, дизайнер Ксения. Профессионал своего дела! Очень ей благодарен."}, {name: "Екатерина Маршалова", city: "Магнитогорск", text: "Благодарим компанию LORENA, в Ростове-на-Дону, за нашу кухню. Качественные материалы и замечательный сервис. Нам помогала дизайнер Буланова Анна, подсказывала нам варианты и воплотила нашу мечту в замечательную кухню."}, ]
+																.card-reviews__item
+																	.c-review
+																		.c-review__name=review.name
+																		.c-review__city=review.city
+																		.c-review__text
+																			p=review.text
+							.card__slider
+								.hit-slider
+									.hit-slider__title
+										.hit-slider__title-text Хиты продаж
+										.hit-slider__title-arrows
+											.swiper-button-prev
+											.swiper-button-next
+									.hit-slider__slider
+										.swiper-wrapper
+											- for (let i = 0; i < 3; i++)
+												- for (let j = 0; j < 3; j++)
+													.swiper-slide
+														.ncat-item
+															.ncat-item__img
+																a.ncat-item__img-link(href="#")
+																	img(src="img/photos/n-cat-item-img-"+i+".jpg")
+																.ncat-item__img-favorite
+																	.ci-favrites
+																		figure.ci-favrites__hearth
+																			svg.ico
+																				use(xlink:href="#ico-favorite")
+																		figcaption.ci-favrites__count 3
+															.ncat-item__desc
+																.ncid
+																	.ncid__title
+																		a.ncid__title-title(href="#")=title
+																		.ncid__title-price
+																			.ncid-oldprice 210 00 ₽
+																			.ncid-price Цена от 110 00 ₽
+																	table.ncid__desc
+																		tbody.ncid__desc-table
+																			tr
+																				td Стиль
+																				td Классика
+																			tr
+																				td Материал
+																				td МДФ
+																			tr
+																				td Покрытие
+																				td Термопластик, эмаль
+									.hit-slider__dots
+										.swiper-pagination
+				.inner-content__form
+					.wrapper
+						.main-form
+							.main-form__title Нужна консультация?
+							.main-form__form
+								form(action="#")
+									.popup-form__inputs.popup-form__inputs--2
+										.default-input
+											.popup-form__inputs.popup-form__inputs--2
+												.default-input
+													input.default-input__input(type="text" placeholder="Иван" required="")
+													label.default-input__label Ваше имя
+												.default-input
+													input.default-input__input(type="tel" placeholder="+7 (351) 000 00 00" required="")
+													label.default-input__label Телефон
+										.default-input.default-input--btn
+											input.arrow-btn(type="submit" value="Отправить")
+											.main-form__form-notif Нажимая на кнопку отправки сообщения, я соглашаюсь на обработку моих 
+												a(href="#") персональных данных
+		div(style="display: none")
+			<!-- Эту свг (sprite.svg) нужно вставлять инклюдом, т.к. она может меняться -->
+			include symbol/sprite.svg
+		include inc/footer.pug
+		include inc/scripts.pug
+		//- script(src="js/main-page.js") 

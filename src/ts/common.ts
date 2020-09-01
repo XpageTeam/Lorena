@@ -10,6 +10,8 @@ import "./reviews"
 import "./advantages"
 import "./nav-scrolling"
 import "./about"
+import "./card-tabs"
+import "./card-slider"
 
 
 import "./eco-maniya"
