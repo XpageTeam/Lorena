@@ -52,3 +52,37 @@
 
 	&__dots
 		display: none
+
+
+@media (width <= 660px)
+	.hit-slider
+
+		&__title
+			margin: 0 0 20px
+
+			&-arrows
+				display: none
+
+			&-text
+				font-size: 20px
+		
+		&__dots
+			margin: 20px 0 0
+			display: flex
+			justify-content: center
+
+			.swiper-pagination
+				position: static
+				display: flex
+
+				&-bullet
+					size: 10px
+					opacity: 1 !important
+					background: #fff
+					flex: none
+
+					&:not(:last-child)
+						margin-right: 10px
+
+					&-active
+						background: var(--main-color)

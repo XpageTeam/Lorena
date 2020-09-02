@@ -17,6 +17,11 @@
 	&__submit
 		margin-top: 40px
 
+	&__btn
+
+		.default-btn
+			padding-inline: 10px
+
 .f-list
 
 	&__item
@@ -53,5 +58,13 @@
 			padding-top: 20px
 
 
-// @media (width <= 1000px)
-	// .catalog-filter__filter
+@media (width <= 1000px)
+	.filter
+		flex: 1 1 auto
+
+		&__close
+			background: url("../img/ico-close-white.svg") center no-repeat
+			background-color: var(--second-color)
+			position: absolute 0 0 * *
+			size: 30px
+			display: block

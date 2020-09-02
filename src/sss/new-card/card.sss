@@ -44,3 +44,32 @@
 
 	&__tabs
 		grid-area: tabs
+
+
+@media (width <= 1100px) and (width >= 900px)
+	.card
+		margin: 30px 0 70px
+
+		&__back
+			margin: 0 0 20px
+
+		&__slider
+			margin: 50px 0 0
+
+	.card-body
+		gap: 20px 25px
+
+@media (width <= 900px)
+	.card
+		margin: 25px 0 50px
+
+		&__back
+			margin: 0 0 20px
+
+		&__slider
+			margin: 34px 0 0
+
+	.card-body
+		grid-template-columns: 100%
+		grid-template-areas: "title" "slider" "desc" "tabs"
+		gap: 20px

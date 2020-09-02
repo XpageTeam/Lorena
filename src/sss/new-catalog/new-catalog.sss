@@ -59,7 +59,22 @@
 				width: 100%
 		
 		&__filter
-			display: none
+			position: fixed 67px * 0 0
+			z-index: 10
+			display: flex
+			flex-direction: column
+			overflow-y: auto
+			transition: transform .3s ease
+			max-width: 100%
+
+			&:not(.js__opened)
+				transform: translate3d(-100%, 0, 0)
+
+			> form
+				flex: 1 1 auto
+				display: flex
+				flex-direction: column
+				flex: 1 1 auto
 
 		&__btn
 			margin: 0

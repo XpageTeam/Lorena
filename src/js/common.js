@@ -11,10 +11,10 @@ import "./upload.js";
 import "./size-popup-showing.js";
 import citySelect from "./city-select.js";
 
-Vue.component("city-select", citySelect);
-
-
 import {Swiper, Navigation} from 'swiper/dist/js/swiper.esm.js'
+
+if (typeof Vue != "undefined")
+	Vue.component("city-select", citySelect);
 
 window.$ = $;
 window.jQuery = $;
@@ -159,9 +159,10 @@ try{
 		require("./jquery.fancybox.js")
 		require("../css/jquery.fancybox.css");
 
-		new Vue({
-			el: ".head__city"
-		});
+		if (typeof Vue != "undefined")
+			new Vue({
+				el: ".head__city"
+			});
 
 		$(".city-popup__btns .gray-btn, .side-menu__city .h-city").on("click", function(){
 			window.citySelect.showCityPopup();
@@ -278,10 +279,17 @@ try{
 				$variantsContainer = $(this).closest(".variants-list");
 
 			$variantsContainer.find(`.variants-slider__slide:eq(${index})`).click()
-		})
+		});
+
+
+		$("body").on("click", ".f-list__item-title", function(){
+			const $this = $(this);
+
+			$this.closest(".f-list__item").toggleClass("js__opened");
+		});
 	})
 }catch(e){
-	console.log(e)
+	console.warn(e)
 }
 
 try{

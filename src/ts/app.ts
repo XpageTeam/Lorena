@@ -475,7 +475,7 @@ class mobileMenu{
 
 	constructor(settings: mobileMenuSettings){
 		this._settings = settings
-		this.burger = App.getElement(settings.burger)
+		this.burger = App.getElement(settings.burger)		
 
 		this.menu = App.getElement(settings.menu)
 
@@ -501,6 +501,7 @@ class mobileMenu{
 	}
 
 	public closeMenu(): mobileMenu{
+		console.log(this.settings);
 		if (!window.matchMedia(this.settings.media).matches || !this.state)
 			return
 

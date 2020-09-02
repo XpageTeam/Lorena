@@ -64,3 +64,25 @@
 
 .more-imgs
 	width: 107px
+
+
+@media (width <= 660px)
+	.thumbs-slider
+
+		&__list
+			width: calc(66.66% - 10px)
+
+			&:not(:last-child)
+				margin-right: 10px
+
+		&__slide
+
+			&:not(:last-child)
+				margin-right: 10px
+		
+		&__more
+			width: calc(33.33% - 10px)
+
+
+	.more-imgs
+		width: 100%

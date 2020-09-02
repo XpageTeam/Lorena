@@ -81,6 +81,7 @@
 
 		&-title
 			color: rgba(255,255,255, .5)
+			width: 55%
 
 			&_content
 				color: #fff
@@ -169,3 +170,34 @@
 
 	&__text
 		margin: 14px 0 0
+
+
+@media (width <= 900px)
+	.card-tabs
+		max-width: none
+
+		&__tabs
+			overflow-x: auto
+
+			&-tab
+
+				&:after
+					top: calc(100% + 10px)
+
+@media (width <= 660px)
+	.card-set
+		margin: 0 0 -20px -20px
+
+		&__item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px
+
+	.card-colors
+		margin: 0 -20px -20px 0
+
+		&__item
+			width: auto
+			margin: 0 20px 20px 0
+
+	.c-review
+		padding: 20px

@@ -67,7 +67,19 @@ App.domReady(() => {
 		ignoreWarnings: false,
 		fixBody: true,
 		media: adaptiveMedia
-	})
+	});
+
+	const catalogFilter = new MobileMenu({
+		burger: ".catalog-filter__mobile-btn .default-btn",
+		menu: ".catalog-filter__filter",
+		menuActiveClass: "js__opened",
+		bodyActiveClass: "js__filter-opened",
+		ignoreWarnings: false,
+		fixBody: true,
+		media: adaptiveMedia
+	});
+
+	window.$("body").on("click", ".filter__close", catalogFilter.closeMenu.bind(catalogFilter));
 
 	const sideMenu = new Element(".side-menu");
 
