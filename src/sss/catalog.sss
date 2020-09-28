@@ -1,277 +1,284 @@
-.catalog
+.actions_sale
+	.catalog
 
-	&__text
-		margin: 0 0 40px
+		&__text
+			margin: 0 0 40px
 
-.cat-text
-	display: flex
-	justify-content: space-between
-
-	&__left
-		width: 400px
+	.cat-text
 		display: flex
-		flex-direction: column
+		justify-content: space-between
 
-		&-title
-			font-size: 24px
-			line-height: calc(35 / 24)
-			margin-bottom: auto
+		&__left
+			width: 400px
+			display: flex
+			flex-direction: column
 
-		&-subtext
-			margin: 25px 0 0
+			&-title
+				font-size: 24px
+				line-height: calc(35 / 24)
+				margin-bottom: auto
 
-	&__right
-		width: 500px
-		font-size: 14px
+			&-subtext
+				margin: 25px 0 0
 
-.subtext
+		&__right
+			width: 500px
+			font-size: 14px
 
-	&__title
-		line-height: 23px
+	.subtext
 
-		&:not(:last-child)
-			margin-bottom: 13px
-	
-	&__ast
-		color: rgba(255,255,255, .3)
-		font-size: 14px
-		line-height: calc(27 / 14)
+		&__title
+			line-height: 23px
 
-.ast
-	color: var(--main-color)
-
-.cat-list
-	padding: 7px 100px 85px
-	display: grid
-	grid-gap: 50px 28px
-	grid-template-columns: repeat(4, 1fr)
-	margin: 0 auto
-	max-width: 1920px
-
-	&__item
-		display: flex
-		flex-direction: column
-
-.cat-item
-	flex: 1 1 auto
-	display: flex
-	flex-direction: column
-	position: relative
-
-	&__constructor
-		position: absolute * * 84px 25px
-		z-index: 1
+			&:not(:last-child)
+				margin-bottom: 13px
 		
-		.constructor-btn
-			padding: 0 !important
-			border-radius: 50% !important
-			background-position: center !important
-			size: 35px !important
+		&__ast
+			color: rgba(255,255,255, .3)
+			font-size: 14px
+			line-height: calc(27 / 14)
+
+	.ast
+		color: var(--main-color)
+
+	.cat-list
+		padding: 7px 100px 85px
+		display: grid
+		grid-gap: 50px 28px
+		grid-template-columns: repeat(4, 1fr)
+		margin: 0 auto
+		max-width: 1920px
+
+		&__item
+			display: flex
+			flex-direction: column
+
+	.cat-item
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+		position: relative
+
+		&__constructor
+			position: absolute * * 84px 25px
+			z-index: 1
+			
+			.constructor-btn
+				padding: 0 !important
+				border-radius: 50% !important
+				background-position: center !important
+				size: 35px !important
 
 
-	&:hover, &:focus
+		&:hover, &:focus
+
+			.cat-item
+
+				&__btn
+					opacity: 1
+					pointer-events: all
+
+				&__title
+
+					&-text
+						color: var(--main-color)
+
+		&__img
+			position: relative
+
+			&:not(:last-child)
+				margin-bottom: 37px
+
+			img
+				width: 100%
+				display: block
+
+			.swiper-lazy
+
+				&:not(.swiper-lazy-loaded)
+					display: none
+
+			&-icon
+				position: absolute * 24px 26px *
+
+		&__btn
+			position: absolute 0
+			transition: opacity .3s ease
+			display: flex
+			justify-content: center
+			align-items: center
+			background: #282828
+			opacity: 0
+			flex-direction: column
+			pointer-events: none
+
+			.cat-item__text
+				height: calc(100% - 70px)
+				overflow-y: auto
+				padding: 15px
+
+		&__btnwr
+			display: flex
+			justify-content: space-between
+			width: 100%
+			padding: 10px 15px
+
+
+		&__labels
+			position: absolute 28px * * 0
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+
+		&__title
+			display: flex
+			justify-content: space-between
+
+			&-text
+
+				&:not(:last-child)
+					margin-right: 15px
+
+			&-price
+				white-space: nowrap
+
+				.rub
+					color: rgba(255,255,255, .4)
+
+			&-text
+				font-weight: 300
+				transition: color .3s ease
+				padding-right: 30px
+				position: relative
+
+				&:after
+					content: ""
+					border-top: 1px solid currentColor
+					border-right: 1px solid currentColor
+					size: 5px
+					position: absolute calc(50% - 3px) 0 * *
+					transform: rotateZ(45deg)
+
+		&__text
+			font-size: rem(12)
+			line-height: 18px
+			width: 100%
+
+			&::-webkit-scrollbar
+				width: 30px
+
+				&-thumb
+					background: var(--main-color)
+					border-right: 15px solid var(--thrid-color)
+					border-left: 10px solid var(--thrid-color)
+
+				&-track
+					background: var(--second-color)
+					border-right: 15px solid var(--thrid-color)
+					border-left: 10px solid var(--thrid-color)
+
+
+
+	.cat-item__title-price
+		margin-left: auto
+
+	.tovar-prices__last
+		white-space: nowrap
+		margin-left: 15px
+		margin-top: 3px
+
+	.label
+		flex: none
+		text-transform: uppercase
+		font-weight: bold
+		color: #fff
+		font-size: 12px
+		padding: 6px 10px
+
+		&:not(:first-child)
+			margin: 16px 0 0
+
+		&--new
+			background: var(--main-color)
+
+		&--hit
+			background: #A4C973
+
+@supports(display: grid)
+	.actions_sale
+		.cat-list
+			grid-template-columns: repeat(auto-fill, minmax(380px, 1fr))
+			grid-auto-columns: minmax(max-content, 2fr)
+
+@media (max-width: 1500px)
+	.actions_sale
+		.cat-list
+			padding: 7px 20px 50px
+			grid-gap: 30px
 
 		.cat-item
 
-			&__btn
-				opacity: 1
-				pointer-events: all
+			&__img
 
-			&__title
-
-				&-text
-					color: var(--main-color)
-
-	&__img
-		position: relative
-
-		&:not(:last-child)
-			margin-bottom: 37px
-
-		img
-			width: 100%
-			display: block
-
-		.swiper-lazy
-
-			&:not(.swiper-lazy-loaded)
-				display: none
-
-		&-icon
-			position: absolute * 24px 26px *
-
-	&__btn
-		position: absolute 0
-		transition: opacity .3s ease
-		display: flex
-		justify-content: center
-		align-items: center
-		background: #282828
-		opacity: 0
-		flex-direction: column
-		pointer-events: none
-
-		.cat-item__text
-			height: calc(100% - 70px)
-			overflow-y: auto
-			padding: 15px
-
-	&__btnwr
-		display: flex
-		justify-content: space-between
-		width: 100%
-		padding: 10px 15px
-
-
-	&__labels
-		position: absolute 28px * * 0
-		display: flex
-		flex-direction: column
-		align-items: flex-start
-
-	&__title
-		display: flex
-		justify-content: space-between
-
-		&-text
-
-			&:not(:last-child)
-				margin-right: 15px
-
-		&-price
-			white-space: nowrap
-
-			.rub
-				color: rgba(255,255,255, .4)
-
-		&-text
-			font-weight: 300
-			transition: color .3s ease
-			padding-right: 30px
-			position: relative
-
-			&:after
-				content: ""
-				border-top: 1px solid currentColor
-				border-right: 1px solid currentColor
-				size: 5px
-				position: absolute calc(50% - 3px) 0 * *
-				transform: rotateZ(45deg)
-
-	&__text
-		font-size: rem(12)
-		line-height: 18px
-		width: 100%
-
-		&::-webkit-scrollbar
-			width: 30px
-
-			&-thumb
-				background: var(--main-color)
-				border-right: 15px solid var(--thrid-color)
-				border-left: 10px solid var(--thrid-color)
-
-			&-track
-				background: var(--second-color)
-				border-right: 15px solid var(--thrid-color)
-				border-left: 10px solid var(--thrid-color)
-
-
-
-.cat-item__title-price
-	margin-left: auto
-
-.tovar-prices__last
-	white-space: nowrap
-	margin-left: 15px
-	margin-top: 3px
-
-.label
-	flex: none
-	text-transform: uppercase
-	font-weight: bold
-	color: #fff
-	font-size: 12px
-	padding: 6px 10px
-
-	&:not(:first-child)
-		margin: 16px 0 0
-
-	&--new
-		background: var(--main-color)
-
-	&--hit
-		background: #A4C973
-
-@supports(display: grid)
-	.cat-list
-		grid-template-columns: repeat(auto-fill, minmax(380px, 1fr))
-		grid-auto-columns: minmax(max-content, 2fr)
-
-@media (max-width: 1500px)
-	.cat-list
-		padding: 7px 20px 50px
-		grid-gap: 30px
-
-	.cat-item
-
-		&__img
-
-			&:not(:last-child)
-				margin-bottom: 20px
+				&:not(:last-child)
+					margin-bottom: 20px
 
 @media (max-width: 1000px)
-	.title-block
-		padding: 0 !important
+	.actions_sale
+		.title-block
+			padding: 0 !important
 
-	.cat-list
-		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))
+		.cat-list
+			grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))
 
-	.cat-item
-		.arrow-btn
-			background-position: center right 15px
-			padding: 10px 29px 10px 10px
+		.cat-item
+			.arrow-btn
+				background-position: center right 15px
+				padding: 10px 29px 10px 10px
 
 @media (max-width: 1000px) and (min-width: 660px)
-	.catalog
+	.actions_sale
+		.catalog
 
-		&__text
-			margin: 50px 0 0
+			&__text
+				margin: 50px 0 0
 
 @media (max-width: 660px)
-	.catalog
+	.actions_sale
+		.catalog
 
-		// &__filter
-		// 	background: none
+			// &__filter
+			// 	background: none
 
-		// 	.filter
-		// 		padding-top: 0 !important
+			// 	.filter
+			// 		padding-top: 0 !important
 
-		&__text
-			margin: 0 0 30px
+			&__text
+				margin: 0 0 30px
 
-	.cat-list
-		padding: 0 20px 35px
-		grid-template-columns: 1fr
+		.cat-list
+			padding: 0 20px 35px
+			grid-template-columns: 1fr
 
-	.cat-text
-		display: block
+		.cat-text
+			display: block
 
-		&__left, &__right
-			width: auto
+			&__left, &__right
+				width: auto
 
-			&:not(:first-child)
-				margin: 30px 0 0
+				&:not(:first-child)
+					margin: 30px 0 0
 
-		&__right
-			line-height: 1.92857
+			&__right
+				line-height: 1.92857
 
 @media (width < 370px)
+	.actions_sale
 
-	.cat-item .arrow-btn
-		background-image: none
-		padding: 9px
-		font-size: rem(9)
+		.cat-item .arrow-btn
+			background-image: none
+			padding: 9px
+			font-size: rem(9)
 
-	.cat-list
-		grid-template-columns: 100%
+		.cat-list
+			grid-template-columns: 100%
