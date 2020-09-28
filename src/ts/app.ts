@@ -501,7 +501,7 @@ class mobileMenu{
 	}
 
 	public closeMenu(): mobileMenu{
-		console.log(this.settings);
+		// console.log(this.settings);
 		if (!window.matchMedia(this.settings.media).matches || !this.state)
 			return
 

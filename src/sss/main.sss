@@ -23,10 +23,10 @@
 // @import "filter.sss"
 
 // @import "catalog.sss"
-// @import "tovar.sss"
+@import "tovar.sss"
 
 @import "new-catalog/new-catalog.sss"
-@import "new-card/card.sss"
+// @import "new-card/card.sss"
 
 
 @import "news.sss"
@@ -80,6 +80,90 @@
  * Тут стили декора некторых страниц
  */
 @import "decors.sss"
+
+
+.select2
+
+	&-search
+
+		&:not(:first-child)
+			display: none
+
+		&--dropdown
+			display: none !important
+
+	&-search
+
+		&__field
+			color: #fff !important
+			margin: 0 !important
+
+			&::-webkit-input-placeholder
+				color: #fff
+				opacity: 1
+
+			&:-moz-placeholder
+				color: #fff
+				opacity: 1
+
+			&::-moz-placeholder
+				color: #fff
+				opacity: 1
+
+			&:-ms-input-placeholder
+				color: #fff
+				opacity: 1
+
+	&-selection
+		background: none !important
+		border-radius: 0 !important
+		border: none !important
+		border-bottom: 1px solid rgba(255,255,255, .15) !important
+		padding: 10px 0 0
+
+		&--single
+			height: auto !important
+
+		&__rendered
+			padding: 0 30px 0 0 !important
+			vertical-align: bottom
+			color: #fff !important
+			background: url("../img/ico-white-arrow.svg") center right 14px no-repeat
+
+	&-dropdown
+		background: var(--second-color) !important
+		border: 1px solid hsla(0,0%,100%,.15) !important
+
+	&-results
+
+		&__option
+			transition: background .3s ease
+
+			&--highlighted
+				background: var(--main-color) !important
+
+	&-selection
+
+		&__choice
+			display: flex
+			padding: 0 !important
+			border: 0 !important
+			background: none !important
+			margin-top: 0 !important
+
+			&:not(:last-child)
+				margin-right: 21px !important
+
+			&__remove
+				order: 1
+				font-weight: 300 !important
+				color: #fff !important
+
+			.option
+
+				&__count
+					margin: 0 5px
+					color: rgba(255, 255, 255, 0.3)
 
 
 .fake-design, .angry-ivlev

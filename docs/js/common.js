@@ -847,7 +847,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
             menu: ".catalog-filter__filter",
             menuActiveClass: "js__opened",
             bodyActiveClass: "js__filter-opened",
-            ignoreWarnings: false,
+            ignoreWarnings: true,
             fixBody: true,
             media: adaptiveMedia
         });

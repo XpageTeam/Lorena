@@ -367,7 +367,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __extends = 
             return this;
         };
         mobileMenu.prototype.closeMenu = function () {
-            console.log(this.settings);
             if (!window.matchMedia(this.settings.media).matches || !this.state)
                 return;
             var top = 0;

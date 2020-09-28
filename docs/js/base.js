@@ -219,31 +219,10 @@ __webpack_require__.r(__webpack_exports__);
       citySearchInput: ""
     };
   },
-  created: function created() {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = this.citiesList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var city = _step.value;
-        console.log(city.name);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  },
+  // created(){
+  // 	for (const city of this.citiesList)
+  // 		console.log(city.name);
+  // },
   mounted: function mounted() {
     window.citySelect = this;
   },

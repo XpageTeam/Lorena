@@ -12,10 +12,10 @@ export default {
 	data: () => ({
 		citySearchInput: ""
 	}),
-	created(){
-		for (const city of this.citiesList)
-			console.log(city.name);
-	},
+	// created(){
+	// 	for (const city of this.citiesList)
+	// 		console.log(city.name);
+	// },
 	mounted(){
 		window.citySelect = this;
 	},

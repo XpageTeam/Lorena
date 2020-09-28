@@ -74,7 +74,7 @@ App.domReady(() => {
 		menu: ".catalog-filter__filter",
 		menuActiveClass: "js__opened",
 		bodyActiveClass: "js__filter-opened",
-		ignoreWarnings: false,
+		ignoreWarnings: true,
 		fixBody: true,
 		media: adaptiveMedia
 	});
