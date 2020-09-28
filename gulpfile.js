@@ -12,9 +12,9 @@ let process = require("child_process"),
 	connectionSettings = require("./accesses/accesses.js");
 
 const templatePath = connectionSettings.server.path;
-const remotePathCss = templatePath+"new-css",
-	remotePathJs = templatePath+"new-js",
-	remotePathImg = templatePath+"new-img";
+const remotePathCss = templatePath+"css",
+	remotePathJs = templatePath+"js",
+	remotePathImg = templatePath+"img";
 
 const xpager_conn = ftp.create({
 	host:      connectionSettings.xpager.host,
