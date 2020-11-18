@@ -5,34 +5,9 @@ const $ = require("gulp-load-plugins")(),
 	browserSync = require("browser-sync").create(),
 	gutil = require("gulp-util"),
 	sourcemaps = require("gulp-sourcemaps"),
-	postcss = require("gulp-postcss"),
-	ftp = require("vinyl-ftp");
+	postcss = require("gulp-postcss");
 
-let process = require("child_process"),
-	connectionSettings = require("./accesses/accesses.js");
-
-const templatePath = connectionSettings.server.path;
-const remotePathCss = templatePath+"css",
-	remotePathJs = templatePath+"js",
-	remotePathImg = templatePath+"img";
-
-const xpager_conn = ftp.create({
-	host:      connectionSettings.xpager.host,
-	user:      connectionSettings.xpager.user,
-	password:  connectionSettings.xpager.password,
-	parallel: 2,
-	log: gutil.log
-});
-
-
-const server_conn = ftp.create({
-	host:      connectionSettings.server.host,
-	user:      connectionSettings.server.user,
-	password:  connectionSettings.server.password,
-	parallel: 2,
-	log: gutil.log
-});
-
+let process = require("child_process");
 
 
 gulp.task('browser-sync', () =>  {
@@ -118,29 +93,6 @@ gulp.task('imagemin', () =>
 );
 
 
-gulp.task("deploy:css", () => 
-	gulp.src("docs/css/*.*")
-		.pipe(server_conn.dest(remotePathCss))
-);
-
-gulp.task("deploy:js", () => 
-	gulp.src("docs/js/*.*", {since: gulp.lastRun("deploy:js")})
-		.pipe(server_conn.dest(remotePathJs))
-);
-
-gulp.task("deploy:img", () => 
-	gulp.src("docs/img/**/*", {since: gulp.lastRun("deploy:img")})
-		.pipe(server_conn.dest(remotePathImg))
-);
-
-gulp.task("deploy:docs", _ => 
-	gulp.src("docs/**/*.*", {buffer: false})
-		.pipe(xpager_conn.dest(connectionSettings.xpager.dirName))
-);
-
-gulp.task("deploy", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), "deploy:docs"));
-
-
 
 const local = _ => {
 	var WP = process.exec("npm run watch");
@@ -149,16 +101,7 @@ const local = _ => {
 	gulp.watch('src/img/scene.svg', gulp.series("pug"));
 	// gulp.watch("src/js/*.js", gulp.series("babel"));
 	gulp.watch("src/img/**/*", gulp.series("imagemin"));
-},
-watch = _ => {
-	gulp.watch("docs/css/**/*", gulp.series("deploy:css"));
-	gulp.watch("docs/js/*.js", gulp.series("deploy:js"));
-	gulp.watch("docs/img/**/*", gulp.series("deploy:img"));
-};
-
-gulp.task("deploy-to-server", gulp.series(gulp.parallel("postcss", "pug", "imagemin"), gulp.parallel(local, watch)));
-
-gulp.task("finish:him", gulp.series(gulp.parallel("postcss", "imagemin"), gulp.parallel("deploy:css", "deploy:js")));
+};;
 
 gulp.task("default", gulp.series(gulp.parallel("postcss", "pug", "imagemin", "move:fonts"), gulp.parallel(local, "browser-sync")))
 
