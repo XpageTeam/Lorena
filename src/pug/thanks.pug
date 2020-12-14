@@ -1,0 +1,58 @@
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title Ваша карьера
+        include inc/head.pug
+        include inc/css.pug
+    body.inner.loading
+        main#content
+            .inner-content
+                section.thanks
+                    .thanks__banner
+                        picture.thanks__banner-img
+                            source(media="(max-width: 500px)" srcset="./img/thanks/bg-mobile.png" )
+                            img(src="./img/thanks/bg-screen.png" alt="")
+                        .wrapper
+                            .thanks__banner-title Спасибо за Ваше обращение!
+                            .thanks__banner-text Наши специалисты в самое ближайшее время с Вами свяжутся
+                    .thanks__content
+                        .wrapper
+                            .thanks__buttons
+                                a(href="#") ПЕРЕЙТИ В КАТАЛОГ
+                                a(href="#") ВЕРНУТЬСЯ
+                            
+                            .thanks__bg-word Спасибо
+
+                            .thanks__catalog
+                                a(href="#").thanks__catalog-card
+                                    .thanks__catalog-card-tags
+                                        span.new NEW
+                                        span.hit HIT
+                                    .thanks__catalog-card-img
+                                        img(src="./img/thanks/img1.png" alt="")
+                                    .thanks__catalog-card-info
+                                        span Индастриал Софт
+                                        p Цена от 81 000 Р
+                                a(href="#").thanks__catalog-card
+                                    .thanks__catalog-card-tags
+                                        span.new NEW
+                                    .thanks__catalog-card-img
+                                        img(src="./img/thanks/img1.png" alt="")
+                                    .thanks__catalog-card-info
+                                        span Николь
+                                        p Цена от 85 000 Р
+                                a(href="#").thanks__catalog-card
+                                    .thanks__catalog-card-tags
+                                        span.new NEW
+                                        span.hit HIT
+                                    .thanks__catalog-card-img
+                                        img(src="./img/thanks/img1.png" alt="")
+                                    .thanks__catalog-card-info
+                                        span Эрника
+                                        p Цена от 84 000 Р
+
+
+
+
+        //- include inc/scripts.pug
+        //- script(src="js/main-page.js") 
